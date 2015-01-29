@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="stancevalue">
+		<genericcontrol>
+			<anchored>
+				<size>
+					<width>44</width>
+					<height>17</height>
+				</size>
+			</anchored>
+			<frame mergerule="replace">
+				<name>modifier</name>
+				<offset>4,5,4,3</offset>
+			</frame>		
+			<script file="classes/common/stancevalue.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

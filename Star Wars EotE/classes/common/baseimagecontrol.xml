@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="baseimagecontrol">
+		<imagecontrol>
+			<indicators>
+				<availability>indicator_sent</availability>
+				<locked>indicator_locked</locked>
+				<loading>indicator_loading</loading>
+				<zoom>indicator_zoom</zoom>
+				<shortcuts>indicator_shortcuts</shortcuts>
+			</indicators>
+			<shortcut>
+				<icon>pin</icon>
+				<hotspot>2,21</hotspot>
+			</shortcut>
+			<script file="classes/common/baseimagecontrol.lua" />			
+		</imagecontrol>
+	</template>
+		
+</root>

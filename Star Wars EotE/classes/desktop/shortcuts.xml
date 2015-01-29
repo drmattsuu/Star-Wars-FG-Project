@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<windowclass name="shortcuts">
+		<sizelimits>
+			<maximum>
+				<height>10000</height>
+			</maximum>
+		</sizelimits>
+		<script>
+			function onInit()
+				DesktopManager.registerContainerWindow(self);
+			end
+		</script>
+		<sheetdata>
+		</sheetdata>
+	</windowclass>
+
+</root>

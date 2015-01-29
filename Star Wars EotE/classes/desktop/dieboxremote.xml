@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<!--diceboxremote used to display the contents of the diebox on the remote FG instance - i.e. allows the GM and players to view other people's dieboxes.-->
+	<template name="dieboxremote">
+<!--		<sizelimits>
+			<minimum>
+				<height>30</height>
+			</minimum>
+		</sizelimits>-->
+		<!--<frame>collector</frame>-->
+		<!--<frame>referencebox</frame>-->
+<!--		<placement>
+			<size>
+				<width>387</width>
+				<height>40</height>
+			</size>
+		</placement>-->		
+		<!--<sheetdata>-->
+			<genericcontrol name="dieboxcontrol">
+				<bounds>0,0,-1,-1</bounds>
+				<droptypes>
+					<type>dice</type>
+				</droptypes>
+				<stateframe>
+					<drophilight>
+						<name>modstackfocus</name>
+						<offset>-3,-3,-2,-2</offset>
+					</drophilight>
+				</stateframe>
+				<script file="classes/desktop/dieboxremote.lua" />				
+			</genericcontrol>		
+			<closebutton />			
+		<!--</sheetdata>-->
+	</template>
+</root>

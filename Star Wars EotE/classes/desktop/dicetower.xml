@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="dicetower">
+		<noclose />
+		<sizelimits>
+			<minimum>
+				<width>72</width>
+				<height>72</height>
+			</minimum>
+			<maximum>
+				<width>72</width>
+				<height>72</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<dicetower>
+				<bounds>0,0,72,72</bounds>
+			</dicetower>
+		</sheetdata>
+	</windowclass>
+</root>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="dockitem">	
+		<windowreferencecontrol>
+			<bounds>0,0,91,86</bounds>
+			<icon>
+				<normal>button_book</normal>
+			</icon>			
+			<script file="classes/desktop/dockitem.lua" />						
+		</windowreferencecontrol>
+	</template>
+	
+</root>

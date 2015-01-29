@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+		
+	<template name="specialisationlist">
+		<basewindowlist>
+			<allowdelete />
+			<skipempty />
+			<script file="classes/common/specialisationlist.lua" />
+		</basewindowlist>
+	</template>
+	
+</root>

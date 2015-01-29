@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="disease_symptoms">
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="symptoms_name">
+				<bounds>12,20,264,40</bounds>
+			</sheetframe>
+			<windowshortcut name="symptoms_name_shortcut">
+				<anchored>
+					<to>symptoms_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>disease</class>
+			</windowshortcut>
+			<basestringfield name="symptoms_name_name" source="name">
+				<anchored>			
+					<to>symptoms_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Disease &#187;</empty>			
+			</basestringfield>
+			
+<!-- SYMPTOMS -->			
+			<sheetframe name="symptoms_symptoms">
+				<bounds>12,60,264,220</bounds>
+			</sheetframe>
+			<sheetframetitle name="symptoms_symptoms_title">
+				<anchored>
+					<to>symptoms_symptoms</to>
+				</anchored>
+				<static>Total Symptoms</static>
+			</sheetframetitle>
+			
+			<!-- Current Symptom -->
+			<genericcontrol name="symptoms_symptoms_icon">
+				<anchored>
+					<left>
+						<parent>symptoms_symptoms</parent>
+						<anchor>left</anchor>
+						<offset>12</offset>
+					</left>
+					<top>
+						<parent>symptoms_symptoms</parent>					
+						<anchor>top</anchor>
+						<offset>19</offset>
+					</top>
+					<size>
+						<width>20</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<icon>button_emptytarget</icon>
+			</genericcontrol>
+			<basestringfield name="name" source="symptom">
+				<anchored>
+					<left>
+						<parent>symptoms_symptoms</parent>
+						<anchor>left</anchor>
+						<offset>33</offset>
+					</left>
+					<top>
+						<parent>symptoms_symptoms</parent>					
+						<anchor>top</anchor>
+						<offset>22</offset>
+					</top>
+					<size>
+						<width>187</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<empty>&#171; Symptom &#187;</empty>
+				<disabled />
+			</basestringfield>			
+			<sheetnumberfield name="symptoms_symptoms_severity" source="severity">
+				<anchored>
+					<left>
+						<parent>symptoms_symptoms</parent>
+						<anchor>left</anchor>
+						<offset>226</offset>
+					</left>
+					<top>
+						<parent>symptoms_symptoms</parent>					
+						<anchor>top</anchor>
+						<offset>21</offset>
+					</top>			
+				</anchored>
+				<disabled />
+			</sheetnumberfield>			
+			
+			<!-- Additional Symptoms -->
+			<sheetlist name="symptoms_symptoms_symptoms">
+				<anchored>
+					<left>
+						<parent>symptoms_symptoms</parent>
+						<anchor>left</anchor>
+						<offset>12</offset>					
+					</left>
+					<right>
+						<parent>symptoms_symptoms</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>symptoms_symptoms</parent>
+						<anchor>top</anchor>
+						<offset>38</offset>
+					</top>
+					<bottom>
+						<parent>symptoms_symptoms</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.symptoms</datasource>
+				<class>diseasesymptom</class>
+				<allowcreate />
+				<acceptdrop>
+					<class>disease</class>
+					<field>name</field>
+					<field>traits</field>
+					<field>symptom</field>
+					<field>severity</field>
+					<field>description</field>
+				</acceptdrop>
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>symptoms_symptoms_symptoms</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>symptoms_symptoms_symptoms</target>
+			</scrollbar>			
+			
+<!-- TOTAL SEVERITY -->
+			<sheetframe name="symptoms_severity">
+				<bounds>12,280,264,40</bounds>
+			</sheetframe>
+			
+			<sheetlabel>
+				<anchored>
+					<to>symptoms_severity</to>
+					<offset>13,14</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Total Severity</static>
+			</sheetlabel>
+			<sheetnumbercontrol name="symptoms_severity_severity">
+				<anchored>
+					<to>symptoms_severity</to>
+					<offset>226,13</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<disabled />
+				<script>
+					local updating = false;
+				
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();
+						if windownode then
+							local symptomsnode = windownode.getChild("symptoms");
+							if symptomsnode then
+								symptomsnode.onChildUpdate = onChildUpdate;
+							end
+						end
+						update();
+					end
+					
+					function onChildUpdate(source)
+						update();
+					end
+					
+					function update()
+						if not updating then
+							updating = true;
+							local total = 0;
+							local windownode = window.getDatabaseNode();
+							if windownode then
+								local severitynode = windownode.getChild("severity");
+								if severitynode then
+									total = total + severitynode.getValue();
+								end
+								local symptomsnode = windownode.getChild("symptoms");
+								if symptomsnode then
+									for k, n in pairs(symptomsnode.getChildren()) do
+										local severitynode = n.getChild("severity");
+										if severitynode then
+											total = total + severitynode.getValue();									
+										end
+									end
+								end
+							end
+							setValue(total);
+							updating = false;
+						end
+					end
+				</script>
+			</sheetnumbercontrol>			
+						
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

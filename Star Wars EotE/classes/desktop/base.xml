@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/desktop/careergenerator.xml" />
+	<includefile source="classes/desktop/characterlist.xml" />
+	<includefile source="classes/desktop/characterlistentry.xml" />
+	<includefile source="classes/desktop/chat.xml" />
+	<includefile source="classes/desktop/chit.xml" />
+	<includefile source="classes/desktop/conditiongenerator.xml" />
+	<includefile source="classes/desktop/corruptionchit.xml" />			
+	<includefile source="classes/desktop/criticalgenerator.xml" />	
+	<includefile source="classes/desktop/crownchit.xml" />	
+	<includefile source="classes/desktop/dboost.xml" />
+	<includefile source="classes/desktop/dsetback.xml" />
+	<includefile source="classes/desktop/dability.xml" />
+	<includefile source="classes/desktop/ddifficulty.xml" />
+	<includefile source="classes/desktop/dproficiency.xml" />
+	<includefile source="classes/desktop/dchallenge.xml" />
+	<includefile source="classes/desktop/dforce.xml" />
+	<includefile source="classes/desktop/dcharacteristic.xml" />
+	<includefile source="classes/desktop/dconservative.xml" />
+	<includefile source="classes/desktop/dexpertise.xml" />
+	<includefile source="classes/desktop/dfortune.xml" />	
+	<includefile source="classes/desktop/dicetower.xml" />
+	<includefile source="classes/desktop/diebox.xml" />
+	<includefile source="classes/desktop/diepanel.xml" />
+	<includefile source="classes/desktop/diseasegenerator.xml" />		
+	<includefile source="classes/desktop/dmisfortune.xml" />
+	<includefile source="classes/desktop/dockitem.xml" />
+	<includefile source="classes/desktop/dreckless.xml" />
+	<includefile source="classes/desktop/fatiguechit.xml" />	
+	<includefile source="classes/desktop/favourchit.xml" />
+	<includefile source="classes/desktop/fortunechit.xml" />	
+	<includefile source="classes/desktop/identitylist.xml" />
+	<includefile source="classes/desktop/identitylistentry.xml" />
+	<includefile source="classes/desktop/insanitygenerator.xml" />			
+	<includefile source="classes/desktop/librarygenerator.xml" />
+	<includefile source="classes/desktop/miscastgenerator.xml" />	
+	<includefile source="classes/desktop/mutationgenerator.xml" />
+	<includefile source="classes/desktop/modifierstack.xml" />
+	<includefile source="classes/desktop/partyidentity.xml" />
+	<includefile source="classes/desktop/pennychit.xml" />
+	<includefile source="classes/desktop/powerchit.xml" />
+	<includefile source="classes/desktop/rechargechit.xml" />	
+	<includefile source="classes/desktop/shillingchit.xml" />
+	<includefile source="classes/desktop/shortcuts.xml" />
+	<includefile source="classes/desktop/stackitem.xml" />
+	<includefile source="classes/desktop/stresschit.xml" />
+	<includefile source="classes/desktop/strainchit.xml" />
+	<includefile source="classes/desktop/woundchit.xml" />	
+	<includefile source="classes/desktop/lightsidechit.xml" />
+	<includefile source="classes/desktop/darksidechit.xml" />
+	
+	<includefile source="classes/desktop/dieboxremote.xml" />
+	<includefile source="classes/desktop/dieboxviewslot.xml" />
+	<includefile source="classes/desktop/dieboxviewlist.xml" />
+	<includefile source="classes/desktop/dieboxview.xml" />
+	
+	
+</root>

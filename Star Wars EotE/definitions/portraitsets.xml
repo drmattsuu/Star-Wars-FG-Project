@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<portraitset name="charlist">
+		<base>charlist_base</base>
+		<mask>charlist_mask</mask>
+	</portraitset>
+	
+	<portraitset name="miniportrait">
+		<base>miniportrait_base</base>
+		<mask>miniportrait_mask</mask>
+	</portraitset>
+	
+	<portraitset name="targetportrait">
+		<base>targetportrait_base</base>
+		<mask>targetportrait_mask</mask>
+	</portraitset>
+	
+	<portraitset name="token">
+		<base>portraittoken_base</base>
+		<mask>portraittoken_mask</mask>
+		<createtoken />
+	</portraitset>
+</root>

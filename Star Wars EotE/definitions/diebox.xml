@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<diebox>
+		<frame name="" />
+		<margin value="13" numbertailmargin="10" />
+		<secreticon name="" />
+		<tracker diecountmargin="20" diecountfont="narratorfont" />
+	</diebox>
+	
+</root>

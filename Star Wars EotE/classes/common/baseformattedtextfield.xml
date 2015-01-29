@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="baseformattedtextfield">
+		<formattedtextfield>
+			<font>
+				<normal>chatfont</normal>
+				<bold>narratorfont</bold>
+				<italic>chatitalicfont</italic>
+				<bolditalic>chatbolditalicfont</bolditalic>
+				<title>sheetlabel</title>
+			</font>
+			<linkicon>
+				<link>button_openwindow</link>
+				<emptylink>button_emptytarget</emptylink>
+			</linkicon>
+			<icon>
+				<chat>button_speak</chat>
+			</icon>
+			<!--<footer>footer_narrow</footer>-->
+			<selectioncolor>#FFD296</selectioncolor>
+			<empty>Click to enter text</empty>		
+			<script file="classes/common/baseformattedtextfield.lua" />		
+		</formattedtextfield>
+	</template>
+		
+</root>

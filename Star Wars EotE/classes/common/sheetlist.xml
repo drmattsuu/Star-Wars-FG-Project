@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+		
+	<template name="sheetlist">
+		<basewindowlist>
+			<allowdelete />
+			<script file="classes/common/sheetlist.lua" />
+		</basewindowlist>
+	</template>
+	
+</root>

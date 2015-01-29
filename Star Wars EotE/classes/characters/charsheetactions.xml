@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- BLESSINGS -->
+	<windowclass name="charsheet_actions_blessings">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Blessings</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>blessingsmall</class>
+				<datasource>.blessings</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- MELEE -->
+	<windowclass name="charsheet_actions_melee">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Melee</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>meleesmall</class>
+				<datasource>.melee</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- RANGED -->
+	<windowclass name="charsheet_actions_ranged">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Ranged</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>rangedsmall</class>
+				<datasource>.ranged</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SOCIAL -->
+	<windowclass name="charsheet_actions_social">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Social</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>socialsmall</class>
+				<datasource>.social</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SPELLS -->
+	<windowclass name="charsheet_actions_spells">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Spells</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>spellsmall</class>
+				<datasource>.spells</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SUPPORT -->
+	<windowclass name="charsheet_actions_support">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Support</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>supportsmall</class>
+				<datasource>.support</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- WINDOW -->
+	<windowclass name="charsheetactions">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>557</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- CHARACTERISTICS -->
+			<sheetframe name="actions_characteristics">
+				<bounds>12,20,472,111</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			<sheetframetitle name="actions_characteristics_title">
+				<anchored>
+					<to>actions_characteristics</to>
+				</anchored>
+				<static>Characteristics</static>
+			</sheetframetitle>
+
+			<!-- STRENGTH -->
+			<sheetcharacteristicvalue name="actions_characteristics_strength_current" source="strength.current">
+				<anchored>
+					<to>actions_characteristics</to>
+					<offset>42,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_strength_bonus</next>
+					<prev>actions_characteristics_stance_reckless</prev>
+				</tabtarget>
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="actions_characteristics_strength_bonus" source="strength.bonus">
+				<anchored>
+					<to>actions_characteristics_strength_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_toughness_current</next>
+					<prev>actions_characteristics_strength_current</prev>
+				</tabtarget>					
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>actions_characteristics_strength_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>
+					</top>
+					<left>
+						<parent>actions_characteristics_strength_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>actions_characteristics_strength_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Strength</static>
+			</sheettitle>
+
+			<!-- TOUGHNESS -->
+			<sheetcharacteristicvalue name="actions_characteristics_toughness_current" source="toughness.current">
+				<anchored>
+					<to>actions_characteristics</to>
+					<offset>113,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_toughness_bonus</next>
+					<prev>actions_characteristics_strength_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="actions_characteristics_toughness_bonus" source="toughness.bonus">
+				<anchored>
+					<to>actions_characteristics_toughness_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_agility_current</next>
+					<prev>actions_characteristics_toughness_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>actions_characteristics_toughness_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>actions_characteristics_toughness_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>actions_characteristics_toughness_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Toughness</static>
+			</sheettitle>
+
+			<!-- AGILITY -->
+			<sheetcharacteristicvalue name="actions_characteristics_agility_current" source="agility.current">
+				<anchored>
+					<to>actions_characteristics</to>
+					<offset>184,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_agility_bonus</next>
+					<prev>actions_characteristics_toughness_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="actions_characteristics_agility_bonus" source="agility.bonus">
+				<anchored>
+					<to>actions_characteristics_agility_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_intelligence_current</next>
+					<prev>actions_characteristics_agility_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>actions_characteristics_agility_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>actions_characteristics_agility_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>actions_characteristics_agility_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Agility</static>
+			</sheettitle>
+		
+			<!-- INTELLIGENCE -->
+			<sheetcharacteristicvalue name="actions_characteristics_intelligence_current" source="intelligence.current">
+				<anchored>
+					<to>actions_characteristics</to>
+					<offset>255,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_intelligence_bonus</next>
+					<prev>actions_characteristics_agility_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="actions_characteristics_intelligence_bonus" source="intelligence.bonus">
+				<anchored>
+					<to>actions_characteristics_intelligence_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_willpower_current</next>
+					<prev>actions_characteristics_intelligence_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>actions_characteristics_intelligence_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>actions_characteristics_intelligence_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>actions_characteristics_intelligence_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Intelligence</static>
+			</sheettitle>			
+			
+			<!-- WILLPOWER -->
+			<sheetcharacteristicvalue name="actions_characteristics_willpower_current" source="willpower.current">
+				<anchored>
+					<to>actions_characteristics</to>
+					<offset>326,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_willpower_bonus</next>
+					<prev>actions_characteristics_intelligence_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="actions_characteristics_willpower_bonus" source="willpower.bonus">
+				<anchored>
+					<to>actions_characteristics_willpower_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_fellowship_current</next>
+					<prev>actions_characteristics_willpower_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>actions_characteristics_willpower_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>actions_characteristics_willpower_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>actions_characteristics_willpower_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Willpower</static>
+			</sheettitle>			
+			
+			<!-- FELLOWSHIP -->
+			<sheetcharacteristicvalue name="actions_characteristics_fellowship_current" source="fellowship.current">
+				<anchored>
+					<to>actions_characteristics</to>
+					<offset>397,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_fellowship_bonus</next>
+					<prev>actions_characteristics_willpower_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="actions_characteristics_fellowship_bonus" source="fellowship.bonus">
+				<anchored>
+					<to>actions_characteristics_fellowship_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_stance_conservative</next>
+					<prev>actions_characteristics_fellowship_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>actions_characteristics_fellowship_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>actions_characteristics_fellowship_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>actions_characteristics_fellowship_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Fellowship</static>
+			</sheettitle>
+			
+			<!-- STANCE -->
+			<stancetracker name="actions_characteristics_stance">
+				<sourcename>stance.current</sourcename>
+				<conservativename>stance.conservative</conservativename>
+				<recklessname>stance.reckless</recklessname>
+				<careersname>careers</careersname>
+				<anchored>
+					<left>
+						<parent>actions_characteristics</parent>
+						<anchor>left</anchor>
+						<offset>74</offset>					
+					</left>
+					<right>
+						<parent>actions_characteristics</parent>
+						<anchor>right</anchor>
+						<offset>-74</offset>					
+					</right>
+					<top>
+						<parent>actions_characteristics</parent>
+						<anchor>top</anchor>
+						<offset>74</offset>
+					</top>
+					<size>
+						<height>24</height>
+					</size>
+				</anchored>
+			</stancetracker>
+			
+			<!-- CONSERVATIVE -->
+			<sheetnumberfield name="actions_characteristics_stance_conservative" source="stance.conservative">
+				<anchored>
+					<left>
+						<parent>actions_characteristics</parent>
+						<anchor>left</anchor>
+						<offset>24</offset>
+					</left>
+					<top>
+						<parent>actions_characteristics</parent>
+						<anchor>top</anchor>
+						<offset>75</offset>
+					</top>
+					<size>
+						<width>24</width>
+						<height>24</height>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_stance_reckless</next>
+					<prev>actions_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+			<!-- RECKLESS -->
+			<sheetnumberfield name="actions_characteristics_stance_reckless" source="stance.reckless">
+				<anchored>
+					<left>
+						<parent>actions_characteristics</parent>
+						<anchor>left</anchor>
+						<offset>424</offset>
+					</left>
+					<top>
+						<parent>actions_characteristics</parent>
+						<anchor>top</anchor>
+						<offset>75</offset>
+					</top>
+					<size>
+						<width>24</width>
+						<height>24</height>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>actions_characteristics_strength_current</next>
+					<prev>actions_characteristics_stance_conservative</prev>
+				</tabtarget>
+			</sheetnumberfield>		
+		
+<!-- ACTIONS -->
+			<sheetframe name="actions_actions">
+				<bounds>12,131,472,322</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			
+			<!-- Actions -->
+			<basewindowlist name="actions_actions_actions">
+				<class>empty</class>
+				<skipempty />
+				<anchored>
+					<left>
+						<parent>actions_actions</parent>
+						<anchor>left</anchor>
+						<offset>7</offset>					
+					</left>
+					<right>
+						<parent>actions_actions</parent>
+						<anchor>right</anchor>
+						<offset>-7</offset>					
+					</right>
+					<top>
+						<parent>actions_actions</parent>
+						<anchor>top</anchor>
+						<offset>7</offset>
+					</top>
+					<bottom>
+						<parent>actions_actions</parent>
+						<anchor>bottom</anchor>
+						<offset>-7</offset>
+					</bottom>
+				</anchored>
+				<script>
+					function onInit()
+						createWindowWithClass("charsheet_actions_blessings", window.getDatabaseNode());
+						createWindowWithClass("charsheet_actions_melee", window.getDatabaseNode());
+						createWindowWithClass("charsheet_actions_ranged", window.getDatabaseNode());					
+						createWindowWithClass("charsheet_actions_social", window.getDatabaseNode());
+						createWindowWithClass("charsheet_actions_spells", window.getDatabaseNode());					
+						createWindowWithClass("charsheet_actions_support", window.getDatabaseNode());
+					end
+				</script>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>actions_actions_actions</to>
+					<offset>-9,-8</offset>
+				</anchored>
+				<target>actions_actions_actions</target>
+			</scrollbar>
+						
+<!-- TALENT SLOTS -->
+			<sheetframe name="actions_slots">
+				<bounds>12,453,472,90</bounds>
+			</sheetframe>
+			<sheetframetitle name="actions_slots_title">
+				<anchored>
+					<to>actions_slots</to>
+				</anchored>
+				<static>Talent Slots</static>
+			</sheetframetitle>
+
+			<!-- SLOT 1 -->			
+			<charactertalentslot name="actions_slots_1">
+				<sourcename>slots.1</sourcename>
+				<slotnumber>1</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>11,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</charactertalentslot>
+			<rechargenumberfield name="actions_slots_1_recharge" source="slots.1.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>208,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_1.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>
+
+			<!-- SLOT 2 -->
+			<charactertalentslot name="actions_slots_2">
+				<sourcename>slots.2</sourcename>
+				<slotnumber>2</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>237,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</charactertalentslot>
+			<rechargenumberfield name="actions_slots_2_recharge" source="slots.2.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>434,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_2.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>			
+
+			<!-- SLOT 3 -->
+			<charactertalentslot name="actions_slots_3">
+				<sourcename>slots.3</sourcename>
+				<slotnumber>3</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>11,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</charactertalentslot>
+			<rechargenumberfield name="actions_slots_3_recharge" source="slots.3.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>208,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_3.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>			
+			
+			<!-- SLOT 4 -->
+			<charactertalentslot name="actions_slots_4">
+				<sourcename>slots.4</sourcename>
+				<slotnumber>4</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>237,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</charactertalentslot>			
+			<rechargenumberfield name="actions_slots_4_recharge" source="slots.4.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>434,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_4.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>	
+			
+			<!-- SLOT 5 -->
+			<charactertalentslot name="actions_slots_5">
+				<sourcename>slots.5</sourcename>
+				<slotnumber>5</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>11,59</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</charactertalentslot>
+			<rechargenumberfield name="actions_slots_5_recharge" source="slots.5.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>208,61</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_5.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>			
+			
+			<!-- SLOT 6 -->
+			<charactertalentslot name="actions_slots_6">
+				<sourcename>slots.6</sourcename>
+				<slotnumber>6</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>237,59</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</charactertalentslot>			
+			<rechargenumberfield name="actions_slots_6_recharge" source="slots.6.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>434,61</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_6.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>				
+		
+		</sheetdata>
+	</windowclass>
+</root>

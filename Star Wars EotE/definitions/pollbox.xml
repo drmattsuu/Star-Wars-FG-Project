@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<pollbox>
+		<frame name="diebox" />
+		<margin value="21" numbertailmargin="10" />
+		<icons empty="poll_empty" positive="poll_check" negative="poll_negative" />
+	</pollbox>
+
+</root>

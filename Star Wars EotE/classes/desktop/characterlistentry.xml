@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="characterlistentry">
+		<genericcontrol>
+			<bounds>0,0,66,96</bounds>
+			<script file="classes/desktop/characterlistentry.lua" />
+		</genericcontrol>		
+	</template>	
+</root>

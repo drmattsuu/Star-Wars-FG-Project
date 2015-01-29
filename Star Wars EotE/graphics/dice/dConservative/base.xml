@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>	
+	<icon name="dConservativeicon" file="graphics/dice/dConservative/dConservative.png" />
+	<icon name="dConservativeicon.1" file="graphics/dice/dConservative/dConservative.1.png" />
+	<icon name="dConservativeicon.2" file="graphics/dice/dConservative/dConservative.2.png" />
+	<icon name="dConservativeicon.3" file="graphics/dice/dConservative/dConservative.3.png" />
+	<icon name="dConservativeicon.4" file="graphics/dice/dConservative/dConservative.4.png" />
+	<icon name="dConservativeicon.5" file="graphics/dice/dConservative/dConservative.5.png" />
+	<icon name="dConservativeicon.6" file="graphics/dice/dConservative/dConservative.6.png" />
+	<icon name="dConservativeicon.7" file="graphics/dice/dConservative/dConservative.7.png" />
+	<icon name="dConservativeicon.8" file="graphics/dice/dConservative/dConservative.8.png" />
+	<icon name="dConservativeicon.9" file="graphics/dice/dConservative/dConservative.9.png" />
+	<icon name="dConservativeicon.10" file="graphics/dice/dConservative/dConservative.10.png" />
+
+</root>

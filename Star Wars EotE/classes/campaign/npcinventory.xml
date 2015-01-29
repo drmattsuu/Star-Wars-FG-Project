@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- ITEM -->
+	<windowclass name="npc_inventorysmall">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>item</class>
+			</windowbutton>
+			
+			<basestringfield name="name">
+				<bounds>21,3,-1,17</bounds>
+				<empty>&#171; New Item &#187;</empty>
+				<disabled />
+			</basestringfield>
+
+			<checkbox name="isequipped" source="isequipped">
+				<bounds>300,0,25,20</bounds>
+				<tooltip>
+					<text>Add weapon to Combat Tab</text>
+				</tooltip>
+			</checkbox>			
+			
+			<sheetnumberfield name="quantity" source="quantity">
+				<anchored>
+					<offset>339,2</offset>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+			</sheetnumberfield>			
+			
+			<sheetnumbercontrol name="totalencumbrance">
+				<anchored>
+					<offset>395,2</offset>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<disabled />
+				<script>
+					local quantitynode = nil;
+					local encumbrancenode = nil;
+					
+					function onUpdate(source)
+						local quantity = 0;
+						if not quantitynode then
+							quantitynode = window.getDatabaseNode().getChild("quantity");
+							if quantitynode then
+								quantitynode.onUpdate = onUpdate;
+							end
+						end
+						if quantitynode then
+							quantity = quantitynode.getValue();
+						end
+
+						local encumbrance = 0;
+						if not encumbrancenode then
+							encumbrancenode = window.getDatabaseNode().getChild("encumbrance");
+							if encumbrancenode then
+								encumbrancenode.onUpdate = onUpdate;
+							end							
+						end
+						if encumbrancenode then
+							encumbrance = encumbrancenode.getValue();
+						end
+					
+						setValue(quantity * encumbrance);
+						onValueChanged();
+						
+						window.windowlist.updateencumbrance();
+					end
+					
+					function onInit()
+						super.onInit();
+						onUpdate(nil);
+					end
+				</script>
+			</sheetnumbercontrol>
+			
+		</sheetdata>
+	</windowclass>
+
+<!-- WINDOW -->
+	<windowclass name="npcinventory">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>557</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- GOLD -->
+			<sheetframe name="inventory_gold">
+				<bounds>12,2,118,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="inventory_gold_title">
+				<anchored>
+					<to>inventory_gold</to>
+				</anchored>
+				<static>Credits</static>
+			</sheetframetitle>
+			<chitnumberfield name="inventory_gold_gold" source="currency.gold">
+				<chit>crown</chit>
+				<frame />
+				<anchored>
+					<to>inventory_gold</to>
+					<offset>14,21</offset>
+					<size>
+						<width>91</width>
+						<height>37</height>						
+					</size>				
+				</anchored>
+			</chitnumberfield>			
+			
+<!-- SILVER -->
+	<!--		<sheetframe name="inventory_silver">
+				<bounds>130,20,118,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="inventory_silver_title">
+				<anchored>
+					<to>inventory_silver</to>
+				</anchored>
+				<static>Shillings</static>
+			</sheetframetitle>
+			<chitnumberfield name="inventory_silver_silver" source="currency.silver">
+				<chit>shilling</chit>
+				<frame />
+				<anchored>
+					<to>inventory_silver</to>
+					<offset>14,21</offset>
+					<size>
+						<width>91</width>
+						<height>37</height>						
+					</size>				
+				</anchored>
+			</chitnumberfield>			
+
+<!-- BRASS -->
+		<!--	<sheetframe name="inventory_brass">
+				<bounds>248,20,118,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="inventory_brass_title">
+				<anchored>
+					<to>inventory_brass</to>
+				</anchored>
+				<static>Pennies</static>
+			</sheetframetitle>
+			<chitnumberfield name="inventory_brass_brass" source="currency.brass">
+				<chit>penny</chit>
+				<frame />
+				<anchored>
+					<to>inventory_brass</to>
+					<offset>14,21</offset>
+					<size>
+						<width>91</width>
+						<height>37</height>						
+					</size>				
+				</anchored>
+			</chitnumberfield>
+
+<!-- CONVERSION -->
+		<!--	<sheetframe name="inventory_conversion">
+				<bounds>366,20,118,70</bounds>
+			</sheetframe>
+			<basestringcontrol>
+				<anchored>
+					<to>inventory_conversion</to>
+					<position>insidetop</position>
+					<offset>0,19</offset>
+					<size>
+						<height>17</height>
+					</size>
+				</anchored>
+				<center/>
+				<static>1 GC : 100 SS</static>
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>inventory_conversion</to>
+					<position>insidetop</position>
+					<offset>0,39</offset>
+					<size>
+						<height>17</height>
+					</size>
+				</anchored>
+				<center/>
+				<static>1 SS : 25 BP</static>
+			</basestringcontrol>	-->		
+					
+<!-- INVENTORY -->
+			<sheetframe name="inventory_inventory">
+				<!--<bounds>12,65,472,405</bounds>-->
+				<bounds>12,65,472,-10</bounds>
+			</sheetframe>	
+			<sheetframetitle name="inventory_inventory_isequipped">
+				<anchored>
+					<to>inventory_inventory</to>
+					<position>insidetopleft</position>
+					<offset>300,8</offset>
+					<size>
+						<width>50</width>
+					</size>					
+				</anchored>
+				<center />
+				<static>COMBAT?</static>
+			</sheetframetitle>			
+			<sheetframetitle name="inventory_inventory_quantity">
+				<anchored>
+					<to>inventory_inventory</to>
+					<position>insidetopleft</position>
+					<offset>352,8</offset>
+					<size>
+						<width>50</width>
+					</size>					
+				</anchored>
+				<center />
+				<static>Qty</static>
+			</sheetframetitle>			
+			<sheetframetitle name="inventory_inventory_encumbrance">
+				<anchored>
+					<to>inventory_inventory</to>
+					<position>insidetopleft</position>
+					<offset>408,8</offset>
+					<size>
+						<width>50</width>
+					</size>					
+				</anchored>
+				<center />
+				<static>Enc</static>
+			</sheetframetitle>			
+			
+			<sheetlist name="inventory_inventory_list">
+				<anchored>
+					<left>
+						<parent>inventory_inventory</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>inventory_inventory</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>inventory_inventory</parent>
+						<anchor>top</anchor>
+						<offset>19</offset>
+					</top>
+					<bottom>
+						<parent>inventory_inventory</parent>
+						<anchor>bottom</anchor>
+						<offset>-39</offset>
+					</bottom>
+				</anchored>
+				<datasource>.inventory</datasource>
+				<class>npc_inventorysmall</class>
+				<allowcreate />
+				<script>
+					function updateencumbrance()
+						local total = 0;
+						for k, w in pairs(getWindows()) do
+							total = total + w.totalencumbrance.getValue();
+						end
+						if window.inventory_encumbrance_total then						
+							window.inventory_encumbrance_total.setValue(total);
+							window.inventory_encumbrance_total.onValueChanged();
+						end
+					end
+					
+					function onListRearranged(listchanged)
+						updateencumbrance()
+					end
+				</script>
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>inventory_inventory_list</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>inventory_inventory_list</target>
+			</scrollbar>			
+
+			<!-- TOTAL encumbrance -->
+			<sheetlabel name="inventory_enumberance_label">
+				<anchored>
+					<top>
+						<parent>inventory_inventory</parent>
+						<anchor>bottom</anchor>
+						<offset>-28</offset>
+					</top>
+					<left>
+						<parent>inventory_inventory</parent>
+						<anchor>right</anchor>
+						<offset>-186</offset>
+					</left>						
+					<size>
+						<width>123</width>
+					</size>
+				</anchored>
+				<static>Total Encumbrance</static>
+			</sheetlabel>
+			<sheetnumbercontrol name="inventory_encumbrance_total">
+				<anchored>
+					<top>
+						<parent>inventory_inventory</parent>
+						<anchor>bottom</anchor>
+						<offset>-29</offset>
+					</top>
+					<left>
+						<parent>inventory_inventory</parent>
+						<anchor>right</anchor>
+						<offset>-63</offset>
+					</left>	
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<disabled />
+				<script>
+					function onInit()
+						super.onInit();
+						window.inventory_inventory_list.updateencumbrance();
+					end
+				</script>
+			</sheetnumbercontrol>			
+						
+		</sheetdata>
+	</windowclass>
+</root>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="modificationfield">
+		<genericcontrol>
+			<anchored>
+				<size>
+					<height>20</height>
+					<width>20</width>
+				</size>
+			</anchored>		
+			<script file="classes/common/modificationfield.lua" />		
+		</genericcontrol>
+	</template>
+	
+</root>

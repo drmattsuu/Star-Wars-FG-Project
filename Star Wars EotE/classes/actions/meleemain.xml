@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="meleemain">
+		<placement>
+			<size>
+				<width>300</width>
+				<height>384</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>12,20,264,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>melee</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Melee &#187;</empty>
+				<tabtarget>
+					<next>main_details_traits</next>
+					<prev>main_currentrecharge_currentrecharge</prev>
+				</tabtarget>				
+			</basestringfield>
+			<actiondicepool>
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopright</position>					
+					<offset>9,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>
+			</actiondicepool>			
+			
+<!-- DETAILS -->			
+			<sheetframe name="main_details">
+				<bounds>12,60,264,90</bounds>
+			</sheetframe>			
+			<sheetframetitle name="main_details_title">
+				<anchored>
+					<to>main_details</to>
+				</anchored>
+				<static>Details</static>
+			</sheetframetitle>
+			
+			<!-- TRAITS -->
+			<sheetlabel>
+				<anchored>
+					<to>main_details</to>
+					<offset>13,22</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Traits</static>
+			</sheetlabel>
+			<sheetstringfield name="main_details_traits" source="traits">
+				<anchored>
+					<top>
+						<parent>main_details</parent>
+						<anchor>top</anchor>
+						<offset>22</offset>
+					</top>
+					<right>
+						<parent>main_details</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>
+				</anchored>
+				<empty>&#171; Traits &#187;</empty>
+				<tabtarget>
+					<next>main_details_check</next>
+					<prev>main_name_name</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- CHECK -->
+			<sheetlabel>
+				<anchored>
+					<to>main_details</to>
+					<offset>13,42</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Check</static>
+			</sheetlabel>
+			<sheetstringfield name="main_details_check" source="check">
+				<anchored>
+					<top>
+						<parent>main_details</parent>
+						<anchor>top</anchor>
+						<offset>42</offset>
+					</top>
+					<right>
+						<parent>main_details</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>
+				</anchored>
+				<empty>&#171; Check &#187;</empty>
+				<tabtarget>
+					<next>main_details_recharge_conservative</next>
+					<prev>main_details_traits</prev>
+				</tabtarget>
+			</sheetstringfield>		
+
+			<!-- RECHARGE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_details</to>
+					<offset>13,62</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Recharge</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_details_recharge_conservative" source="conservative.recharge">
+				<anchored>
+					<to>main_details</to>
+					<offset>195,61</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_details_recharge_reckless</next>
+					<prev>main_details_check</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			<sheetnumberfield name="main_details_recharge_reckless" source="reckless.recharge">
+				<anchored>
+					<to>main_details</to>
+					<offset>226,61</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_difficulty_challenge_conservative</next>
+					<prev>main_details_recharge_conservative</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			
+<!-- DIFFICULTY -->			
+			<sheetframe name="main_difficulty">
+				<bounds>12,150,264,110</bounds>
+			</sheetframe>			
+			<sheetframetitle name="main_difficulty_title">
+				<anchored>
+					<to>main_difficulty</to>
+				</anchored>
+				<static>Difficulty</static>
+			</sheetframetitle>
+			
+			<!-- CHALLENGE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>13,22</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Challenge</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_difficulty_challenge_conservative" source="conservative.difficulty.challenge">
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>195,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_difficulty_challenge_reckless</next>
+					<prev>main_details_recharge_reckless</prev>
+				</tabtarget>				
+			</sheetnumberfield>			
+			<sheetnumberfield name="main_difficulty_challenge_reckless" source="reckless.difficulty.challenge">
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>226,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_difficulty_misfortune_conservative</next>
+					<prev>main_difficulty_challenge_conservative</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			
+			<!-- MISFORTUNE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>13,42</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Misfortune</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_difficulty_misfortune_conservative" source="conservative.difficulty.misfortune">
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>195,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_difficulty_misfortune_reckless</next>
+					<prev>main_difficulty_challenge_reckless</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			<sheetnumberfield name="main_difficulty_misfortune_reckless" source="reckless.difficulty.misfortune">
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>226,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_difficulty_fortune_conservative</next>
+					<prev>main_difficulty_misfortune_conservative</prev>
+				</tabtarget>				
+			</sheetnumberfield>			
+				
+			<!-- FORTUNE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>13,62</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Fortune</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_difficulty_fortune_conservative" source="conservative.difficulty.fortune">
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>195,61</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_difficulty_fortune_reckless</next>
+					<prev>main_difficulty_misfortune_reckless</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			<sheetnumberfield name="main_difficulty_fortune_reckless" source="reckless.difficulty.fortune">
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>226,61</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_difficulty_expertise_conservative</next>
+					<prev>main_difficulty_fortune_conservative</prev>
+				</tabtarget>				
+			</sheetnumberfield>			
+			
+			<!-- EXPERTISE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>13,82</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Expertise</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_difficulty_expertise_conservative" source="conservative.difficulty.expertise">
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>195,81</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_difficulty_expertise_reckless</next>
+					<prev>main_difficulty_fortune_reckless</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			<sheetnumberfield name="main_difficulty_expertise_reckless" source="reckless.difficulty.expertise">
+				<anchored>
+					<to>main_difficulty</to>
+					<offset>226,81</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_modifiers_challenges_conservative</next>
+					<prev>main_difficulty_expertise_conservative</prev>
+				</tabtarget>				
+			</sheetnumberfield>					
+			
+<!-- MODIFIERS -->
+			<sheetframe name="main_modifiers">
+				<bounds>12,260,264,70</bounds>
+			</sheetframe>			
+			<sheetframetitle name="main_modifiers_title">
+				<anchored>
+					<to>main_modifiers</to>
+				</anchored>
+				<static>Modifiers</static>
+			</sheetframetitle>
+			
+			<!-- CHALLENGES -->
+			<sheetlabel>
+				<anchored>
+					<to>main_modifiers</to>
+					<offset>13,22</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Challenges</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_modifiers_challenges_conservative" source="conservative.modifiers.challenges">
+				<anchored>
+					<to>main_modifiers</to>
+					<offset>195,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_modifiers_challenges_reckless</next>
+					<prev>main_difficulty_expertise_reckless</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			<sheetnumberfield name="main_modifiers_challenges_reckless" source="reckless.modifiers.challenges">
+				<anchored>
+					<to>main_modifiers</to>
+					<offset>226,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_modifiers_banes_conservative</next>
+					<prev>main_modifiers_challenges_conservative</prev>
+				</tabtarget>				
+			</sheetnumberfield>			
+			
+			<!-- BANES -->
+			<sheetlabel>
+				<anchored>
+					<to>main_modifiers</to>
+					<offset>13,42</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Banes</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_modifiers_banes_conservative" source="conservative.modifiers.banes">
+				<anchored>
+					<to>main_modifiers</to>
+					<offset>195,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_modifiers_banes_reckless</next>
+					<prev>main_modifiers_challenges_reckless</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			<sheetnumberfield name="main_modifiers_banes_reckless" source="reckless.modifiers.banes">
+				<anchored>
+					<to>main_modifiers</to>
+					<offset>226,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_currentrecharge_currentrecharge</next>
+					<prev>main_modifiers_banes_conservative</prev>
+				</tabtarget>				
+			</sheetnumberfield>			
+			
+<!-- CURRENT RECHARGE -->
+			<sheetframe name="main_currentrecharge">
+				<bounds>12,330,264,40</bounds>
+			</sheetframe>
+			
+			<sheetlabel>
+				<anchored>
+					<to>main_currentrecharge</to>
+					<offset>13,14</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Current Recharge</static>
+			</sheetlabel>
+			<rechargenumberfield name="main_currentrecharge_currentrecharge" source="currentrecharge">
+				<anchored>
+					<to>main_currentrecharge</to>
+					<offset>226,13</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_name_name</next>
+					<prev>main_modifiers_banes_reckless</prev>
+				</tabtarget>				
+			</rechargenumberfield>			
+			
+		</sheetdata>
+	</windowclass>
+			
+</root>

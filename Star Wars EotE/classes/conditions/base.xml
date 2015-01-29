@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/conditions/condition.xml" />
+	<includefile source="classes/conditions/conditionmain.xml" />
+	<includefile source="classes/conditions/critical.xml" />
+	<includefile source="classes/conditions/criticalmain.xml" />
+	<includefile source="classes/conditions/criticalsevere.xml" />
+	<includefile source="classes/conditions/disease.xml" />
+	<includefile source="classes/conditions/diseasemain.xml" />
+	<includefile source="classes/conditions/diseasesymptoms.xml" />
+	<includefile source="classes/conditions/insanity.xml" />
+	<includefile source="classes/conditions/insanitymain.xml" />
+	<includefile source="classes/conditions/miscast.xml" />
+	<includefile source="classes/conditions/miscastmain.xml" />
+	<includefile source="classes/conditions/mutation.xml" />
+	<includefile source="classes/conditions/mutationmain.xml" />
+</root>

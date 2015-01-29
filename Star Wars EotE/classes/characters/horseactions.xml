@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- BLESSINGS -->
+	<windowclass name="horse_actions_blessings">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Blessings</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>blessingsmall</class>
+				<datasource>.blessings</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- MELEE -->
+	<windowclass name="horse_actions_melee">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Melee</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>meleesmall</class>
+				<datasource>.melee</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- RANGED -->
+	<windowclass name="horse_actions_ranged">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Ranged</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>rangedsmall</class>
+				<datasource>.ranged</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SOCIAL -->
+	<windowclass name="horse_actions_social">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Social</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>socialsmall</class>
+				<datasource>.social</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SPELLS -->
+	<windowclass name="horse_actions_spells">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Spells</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>spellsmall</class>
+				<datasource>.spells</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SUPPORT -->
+	<windowclass name="horse_actions_support">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Support</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>supportsmall</class>
+				<datasource>.support</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+	
+<!-- WINDOW -->
+	<windowclass name="horseactions">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>351</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- ACTIONS -->
+			<sheetframe name="actions_actions">
+				<bounds>12,20,472,247</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+
+			<!-- Actions -->
+			<basewindowlist name="actions_actions_actions">
+				<class>empty</class>
+				<skipempty />
+				<anchored>
+					<left>
+						<parent>actions_actions</parent>
+						<anchor>left</anchor>
+						<offset>7</offset>					
+					</left>
+					<right>
+						<parent>actions_actions</parent>
+						<anchor>right</anchor>
+						<offset>-7</offset>					
+					</right>
+					<top>
+						<parent>actions_actions</parent>
+						<anchor>top</anchor>
+						<offset>7</offset>
+					</top>
+					<bottom>
+						<parent>actions_actions</parent>
+						<anchor>bottom</anchor>
+						<offset>-7</offset>
+					</bottom>
+				</anchored>
+				<script>
+					function onInit()
+						createWindowWithClass("horse_actions_blessings", window.getDatabaseNode());
+						createWindowWithClass("horse_actions_melee", window.getDatabaseNode());
+						createWindowWithClass("horse_actions_ranged", window.getDatabaseNode());					
+						createWindowWithClass("horse_actions_social", window.getDatabaseNode());
+						createWindowWithClass("horse_actions_spells", window.getDatabaseNode());					
+						createWindowWithClass("horse_actions_support", window.getDatabaseNode());
+					end
+				</script>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>actions_actions_actions</to>
+					<offset>-9,-8</offset>
+				</anchored>
+				<target>actions_actions_actions</target>
+			</scrollbar>
+			
+<!-- TALENT SLOTS -->
+			<sheetframe name="actions_slots">
+				<bounds>12,267,472,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="actions_slots_title">
+				<anchored>
+					<to>actions_slots</to>
+				</anchored>
+				<static>Talent Slots</static>
+			</sheetframetitle>
+			
+			<!-- SLOT 1 -->			
+			<horsetalentslot name="actions_slots_1">
+				<sourcename>slots.1</sourcename>
+				<slotnumber>1</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>11,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</horsetalentslot>
+			<rechargenumberfield name="actions_slots_1_recharge" source="slots.1.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>208,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_1.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>
+
+			<!-- SLOT 2 -->
+			<horsetalentslot name="actions_slots_2">
+				<sourcename>slots.2</sourcename>
+				<slotnumber>2</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>237,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</horsetalentslot>
+			<rechargenumberfield name="actions_slots_2_recharge" source="slots.2.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>434,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_2.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>			
+
+			<!-- SLOT 3 -->
+			<horsetalentslot name="actions_slots_3">
+				<sourcename>slots.3</sourcename>
+				<slotnumber>3</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>11,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</horsetalentslot>
+			<rechargenumberfield name="actions_slots_3_recharge" source="slots.3.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>208,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_3.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>			
+			
+			<!-- SLOT 4 -->
+			<horsetalentslot name="actions_slots_4">
+				<sourcename>slots.4</sourcename>
+				<slotnumber>4</slotnumber>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>237,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</horsetalentslot>			
+			<rechargenumberfield name="actions_slots_4_recharge" source="slots.4.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>actions_slots</to>
+					<offset>434,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.actions_slots_4.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>
+		
+		</sheetdata>
+	</windowclass>
+</root>

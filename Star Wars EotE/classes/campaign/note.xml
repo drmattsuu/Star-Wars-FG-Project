@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="notesmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<playercontrol />
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>note</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>22,3,-1,18</bounds>
+				<empty>&#171; New Note &#187;</empty>
+				<disabled />				
+			</basestringfield>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="note">
+		<frame>storybox</frame>
+		<placement>
+			<size>
+				<width>250</width>
+				<height>300</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic />
+			<minimum>
+				<width>250</width>
+				<height>300</height>
+			</minimum>
+			<maximum>
+				<width>475</width>
+				<height>570</height>
+			</maximum>			
+		</sizelimits>
+		<minimize>minimized_note</minimize>
+		<playercontrol />
+		<sharable />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<windowshortcut>
+				<bounds>10,8,20,20</bounds>
+				<class>note</class>
+			</windowshortcut>
+			<basestringfield name="name">
+				<bounds>31,11,-15,20</bounds>
+				<empty>&#171; New Note &#187;</empty>
+			</basestringfield>
+			<baseformattedtextfield name="text">
+				<bounds>12,43,-19,-10</bounds>
+				<font>
+					<normal>chatfont</normal>
+					<bold>narratorfont</bold>
+					<italic>chatitalicfont</italic>
+					<bolditalic>chatbolditalicfont</bolditalic>
+					<title>sheetlabel</title>
+				</font>
+				<linkicon>
+					<link>button_openwindow</link>
+					<emptylink>button_emptytarget</emptylink>
+				</linkicon>
+				<footer>footer_narrow</footer>
+				<selectioncolor>#FFD296</selectioncolor>
+				<empty>Click to enter text</empty>
+			</baseformattedtextfield>
+			<viewerlist>
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>11</offset>
+					</left>
+					<bottom>
+						<anchor>bottom</anchor>
+						<offset>-14</offset>
+					</bottom>
+				</anchored>
+			</viewerlist>
+			<scrollercontrol>
+				<bounds>-53,-35,45,27</bounds>
+				<target>text</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+				</button>
+			</scrollercontrol>
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+
+</root>

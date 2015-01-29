@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="modifierstack">
+		<script>
+			function onInit()
+				ModifierStack.registerControl(self);
+			end
+			
+			function onClose()
+				ModifierStack.registerControl(nil);
+			end
+		</script>
+		<sheetdata>
+			<genericcontrol name="base">
+				<bounds>0,5,64,52</bounds>
+				<icon>modcollector</icon>
+				<counters>
+					<icon>modcollector_counter</icon>
+					<offset>
+						<x>11</x>
+						<y>47</y>
+					</offset>
+					<spacing>9</spacing>
+					<hoversize>4</hoversize>
+				</counters>
+				<script file="classes/desktop/modifierstackbase.lua" />
+			</genericcontrol>
+			<numbercontrol name="modifier">
+				<bounds>5,0,54,42</bounds>
+				<font>modcollector</font>
+				<displaysign />
+				<keyeditframe>
+					<name>modstackfocus</name>
+					<offset>-1,-11,-1,-8</offset>
+				</keyeditframe>
+				<droptypes>
+					<type>number</type>
+				</droptypes>
+				<stateframe>
+					<drophilight>
+						<name>modstackfocus</name>
+						<offset>0,-11,0,3</offset>
+					</drophilight>
+				</stateframe>
+				<script file="classes/desktop/modifierstackmodifier.lua" />
+			</numbercontrol>
+			<basestringcontrol name="label">
+				<bounds>5,34,54,12</bounds>
+				<font>modcollectorlabel</font>
+				<static>Modifier</static>
+				<center />
+				<script>
+					function onDrop(x, y, draginfo)
+						return window.base.onDrop(x, y, draginfo);
+					end
+				</script>
+			</basestringcontrol>
+		</sheetdata>
+	</windowclass>
+	
+</root>

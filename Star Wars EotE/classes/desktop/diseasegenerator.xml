@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="diseasegenerator">
+		<sizelimits>
+			<maximum>
+				<width>90</width>			
+				<height>130</height>
+			</maximum>
+			<minimum>
+				<width>90</width>			
+				<height>130</height>
+			</minimum>
+		</sizelimits>	
+		<sheetdata>
+			<librarygenerator>
+				<icon>
+					<normal>diseasecard</normal>
+				</icon>
+				<class>disease</class>
+				<bounds>0,0,90,130</bounds>
+			</librarygenerator>
+		</sheetdata>
+	</windowclass>	
+</root>

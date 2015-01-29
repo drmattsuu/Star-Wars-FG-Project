@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="identitylistentry">
+		<genericcontrol>
+			<anchored>
+				<left>
+					<parent>anchor</parent>
+					<anchor>right</anchor>
+					<relation>relative</relation>
+					<offset>3</offset>
+				</left>
+				<top>
+					<parent>anchor</parent>
+					<anchor>top</anchor>
+					<offset>2</offset>
+				</top>
+				<size>
+					<width>70</width>
+					<height>15</height>
+				</size>
+			</anchored>
+			<frame>
+				<name>mini_name</name>
+			</frame>
+			<script file="classes/desktop/identitylistentry.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

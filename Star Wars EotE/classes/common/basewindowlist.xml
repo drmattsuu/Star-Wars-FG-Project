@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+		
+	<template name="basewindowlist">
+		<windowlist>
+			<useallmodules />		
+			<script file="classes/common/basewindowlist.lua" />
+		</windowlist>
+	</template>
+	
+</root>

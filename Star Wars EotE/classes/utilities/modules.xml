@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<template name="modulepermissioncontrol">
+		<genericcontrol>
+			<script>
+				function onDragStart(button, x, y, draginfo)
+					return onDrag(button, x, y, draginfo);
+				end
+			
+				function onDrag(button, x, y, draginfo)
+					draginfo.setType("modulepermissions");
+					draginfo.setStringData(permissions[1]);
+					draginfo.setIcon(icon[1]);
+					
+					setIcon(nil);
+					
+					return true;
+				end
+				
+				function onDragEnd(draginfo)
+					setIcon(icon[1]);
+				end
+				
+				function onInit()
+					setHoverCursor("hand");
+					if not User.isHost() then
+						setVisible(false);
+					end
+				end
+			</script>
+		</genericcontrol>
+	</template>
+	
+	<windowclass name="moduleselection_entry">
+		<sizelimits>
+			<minimum>
+				<height>80</height>
+			</minimum>
+		</sizelimits>
+		<frame>modifier</frame>
+		<script file="classes/utilities/moduleselectionentry.lua" />
+		<sheetdata>
+			<genericcontrol name="thumbnail">
+				<bounds>8,8,63,63</bounds>
+				<script>
+					localwidget = nil;
+				
+					function onDoubleClick()
+						if window.active then
+							window.deactivate();
+						else
+							window.activate();
+						end
+					end
+					
+					function onInit()
+						localwidget = addBitmapWidget("indicator_sent");
+						localwidget.setPosition("bottomleft", 10, -10);
+						localwidget.setVisible(false);
+					end
+				</script>
+			</genericcontrol>
+			<basestringcontrol name="name">
+				<bounds>80,23,-10,15</bounds>
+				<font>sheetlabel</font>
+				<readonly /> 
+			</basestringcontrol>
+			<basestringcontrol name="author">
+				<bounds>80,40,-10,15</bounds>
+				<font>sheetlabelsmall</font>
+				<readonly /> 
+			</basestringcontrol>
+			<genericcontrol name="load">
+				<bounds>-50,10,40,28</bounds>
+				<states>
+					<loaded>indicator_moduleloaded</loaded>
+					<unloaded>indicator_moduleunloaded</unloaded>
+					<loading>indicator_moduleloading</loading>
+					<unloading>indicator_moduleunloading</unloading>
+				</states>
+				<script file="classes/utilities/moduleselectionentryload.lua" />
+			</genericcontrol>
+			<genericcontrol name="permissions">
+				<bounds>-50,-40,40,31</bounds>
+				<states>
+					<none>indicator_modulestatenone</none>
+					<pending>indicator_modulestatepending</pending>
+					<block>indicator_modulestateblocked</block>
+					<allow>indicator_modulestateallowed</allow>
+					<autoload>indicator_modulestateautoload</autoload>
+				</states>
+				<script>
+					function onDrop(x, y, draginfo)
+						if draginfo.isType("modulepermissions") then
+							window.setPermissions(draginfo.getStringData());
+							return true;
+						end
+						
+						return false;
+					end
+				</script>
+			</genericcontrol>
+		</sheetdata>
+	</windowclass>
+	
+	<windowclass name="moduleselection">
+		<frame>indexbox</frame>
+		<placement>
+			<size>
+				<width>600</width>
+				<height>400</height>
+			</size>
+		</placement>
+		<script>
+			function createEntry(name)
+				local win = list.createWindow();
+				win.setName(name);
+			end
+		
+			function onInit()
+				list.getWindows()[1].close();
+			
+				local modules = Module.getModules();
+				
+				for k, v in ipairs(modules) do
+					createEntry(v);
+				end
+				
+				Module.onModuleAdded = createEntry;
+			end
+		</script>
+		<sheetdata>
+			<genericcontrol>
+				<bounds>195,0,200,40</bounds>
+				<frame>
+					<name>indexboxtitle</name>
+				</frame>
+			</genericcontrol>
+			
+			<basestringcontrol>
+				<bounds>26,15,-30,17</bounds>
+				<font>sheetlabel</font>
+				<color>#9fffffff</color>
+				<center />
+				<static>Module Activation</static>
+			</basestringcontrol>
+			<basestringcontrol>
+				<bounds>25,14,-30,17</bounds>
+				<font>sheetlabel</font>
+				<center />
+				<static>Module Activation</static>
+			</basestringcontrol>
+			
+			<basewindowlist name="list">
+				<class>moduleselection_entry</class>
+				<bounds>23,40,-27,-51</bounds>
+				<columns>
+					<width>275</width>
+					<fillwidth />
+				</columns>
+				<frame>
+					<name>sheetgroup</name>
+					<offset>9,7,9,7</offset>
+				</frame>
+			</basewindowlist>
+			<scrollercontrol>
+				<bounds>-70,-45,45,27</bounds>
+				<target>list</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+				</button>
+			</scrollercontrol>
+			
+			<modulepermissioncontrol>
+				<bounds>20,-47,30,31</bounds>
+				<icon>indicator_modulestateblocked</icon>
+				<permissions>disallow</permissions>
+				<tooltip>
+					<text>Block from players</text>
+				</tooltip>
+			</modulepermissioncontrol>
+			<modulepermissioncontrol>
+				<bounds>50,-47,30,31</bounds>
+				<icon>indicator_modulestateallowed</icon>
+				<permissions>allow</permissions>
+				<tooltip>
+					<text>Allow for players</text>
+				</tooltip>
+			</modulepermissioncontrol>
+			<modulepermissioncontrol>
+				<bounds>80,-47,30,31</bounds>
+				<icon>indicator_modulestateautoload</icon>
+				<permissions>autoload</permissions>
+				<tooltip>
+					<text>Force load for players</text>
+				</tooltip>
+			</modulepermissioncontrol>
+			
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>2</offset>
+					</top>
+					<right>
+						<offset>-5</offset>
+					</right>
+				</anchored>
+			</closebutton>
+		</sheetdata>
+	</windowclass>
+</root>

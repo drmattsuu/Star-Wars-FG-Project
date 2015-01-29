@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="sheetstringfield">
+		<basestringfield>
+			<frame>
+				<name>textline</name>
+			</frame>
+			<anchored>
+				<size>
+					<height>20</height>
+				</size>
+			</anchored>			
+			<script file="classes/common/sheetstringfield.lua" />
+		</basestringfield>
+	</template>
+	
+</root>

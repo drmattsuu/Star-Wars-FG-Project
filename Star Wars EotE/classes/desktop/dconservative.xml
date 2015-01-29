@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="dConservative">
+		<sizelimits>
+			<maximum>
+				<width>55</width>			
+				<height>55</height>
+			</maximum>
+			<minimum>
+				<width>55</width>			
+				<height>55</height>
+			</minimum>
+		</sizelimits>	
+		<sheetdata>
+			<diepanel>
+				<bounds>0,0,55,55</bounds>
+				<type>dConservative</type>
+				<modifier>mDelay</modifier>				
+			</diepanel>
+		</sheetdata>
+	</windowclass>
+</root>

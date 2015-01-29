@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="dicepool">
+		<genericcontrol>
+			<icon>textentry_die</icon>
+			<script file="classes/common/dicepool.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

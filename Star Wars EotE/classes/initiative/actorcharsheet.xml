@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--Trenloe - changes
+- Commented out <gmvisibleonly /> tags for strain - now players can see their strain on the CT
+-->
+<root>
+
+	<windowclass name="actorcharsheet">
+		<frame>ctentrybox</frame>
+		<sizelimits>
+			<minimum>
+				<height>32</height>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+		
+			<!-- active indicator -->
+<!--			<actoractiveindicator name="active">
+				<anchored>
+					<top>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<anchor>left</anchor>
+					</left>
+					<size>
+						<width>33</width>
+					</size>
+				</anchored>
+			</actoractiveindicator>-->			
+			
+			<buttoncontrol name="ct_addtoinitslot">
+				<bounds>1,4,25,23</bounds>
+				<icon>
+					<normal>button_submit</normal>
+					<pressed>button_submit_down</pressed>
+				</icon>
+				<tooltip>
+					<text>Move Character to Current Init Slot</text>
+				</tooltip>
+				<invisible />
+				<script>
+					function onInit()
+						local nodeslotactiveclass = DB.findNode("initiativetracker.activeslotclass.slotactiveclass")
+						nodeslotactiveclass.onUpdate = onUpdate;
+						onUpdate();
+					end
+				
+					function onUpdate()
+						local nodeslotactiveclass = DB.findNode("initiativetracker.activeslotclass.slotactiveclass");
+						if nodeslotactiveclass.getValue() == "reset" then
+							Debug.console("actorcharsheet.xml:onUpdate - reset code called.  Add any round reset code here.");						
+						elseif nodeslotactiveclass.getValue() == "charsheet" then
+							local actedlist = InitiativeManager.listActedThisRound();
+							local alreadyacted = false;
+							for k, v in pairs(actedlist) do
+								if window.getDatabaseNode().getNodeName() == v.getNodeName() then
+									alreadyacted = true;
+									break;
+								end
+							end
+							if alreadyacted then
+								setVisible(false);
+							else
+								local windownode = window.getDatabaseNode();
+								if InitiativeManager.isOwnedIdentity(window.getDatabaseNode()) or User.isHost() then
+									setVisible(true);
+								end
+							end
+						else
+							setVisible(false);
+						end
+					end
+				
+					function onButtonPress()
+						if User.isHost() then
+							InitiativeManager.addToInitSlot(window.getDatabaseNode());
+							window.twomaneuvers.setState(false);
+						else
+							InitiativeManager.clientAddToInitSlot(window.getDatabaseNode());
+							window.twomaneuvers.setState(false);
+						end
+					end
+				</script>
+			</buttoncontrol>
+
+			<tokenfield name="main_token" source="token">
+				<bounds>30,0,32,32</bounds>
+				<empty>indicator_emptytoken</empty>
+				<script>
+					local dragging = false;
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+					
+					function onDrag(button, x, y, draginfo)
+						if not dragging and getPrototype() then
+							draginfo.setType("npc");
+							draginfo.setTokenData(getPrototype());
+							draginfo.setShortcutData("charsheet", window.getDatabaseNode().getNodeName());
+							draginfo.setDatabaseNode(window.getDatabaseNode().getNodeName());
+							draginfo.setStringData(window.name.getValue());
+
+							local base = draginfo.createBaseData();
+							base.setType("token");
+							base.setTokenData(getPrototype());
+
+							dragging = true;
+							return true;
+						end
+						return false;
+					end
+
+					function onDragEnd(draginfo)
+						dragging = false;
+					end					
+				</script>
+			</tokenfield>	
+			
+			<!-- shortcut -->
+			<buttoncontrol name="shortcut">	
+				<bounds>62,6,20,20</bounds>			
+				<icon>
+					<normal>button_openwindow</normal>
+					<pressed>button_emptytarget</pressed>
+				</icon>
+				<gmvisibleonly />
+				<script>
+					function onInit()
+						local windownode = window.getDatabaseNode();
+						if windownode and windownode.isOwner() then
+							--[[setVisible(true);]]
+						end
+					end
+
+					function onButtonPress()					
+						CharacterManager.openCharacterSheet(window.getDatabaseNode());
+					end
+				</script>
+			</buttoncontrol>			
+			
+			<!-- name -->
+			<basestringfield name="name">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>82</offset>
+					</left>
+					<right>
+						<anchor>right</anchor>
+						<offset>-245</offset>
+					</right>
+					<top>
+						<anchor>top</anchor>
+						<offset>9</offset>
+					</top>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>	
+				<color>#FF000000</color>
+				<empty>&#171; Unnamed &#187;</empty>
+				<disabled/>
+			</basestringfield>
+	
+			<checkbox name="twomaneuvers">
+				<!--<bounds>300,0,25,20</bounds>-->
+				<anchored>
+					<position>insidetopright</position>
+					<offset>220,5</offset>
+					<size>
+						<width>25</width>
+						<height>20</height>
+					</size>
+				</anchored>				
+				<tooltip>
+					<text>Character has used their 2 maneuvers</text>
+				</tooltip>
+			</checkbox>			
+			
+			<sheetnumberfield name="boost_dice" source="actor.boost_dice">
+				<!--<disabled />-->
+				<anchored>
+					<position>insidetopright</position>
+					<offset>180,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tooltip>
+					<text>Number of bonus boost dice to be used on next action</text>
+				</tooltip>				
+				<!--<gmvisibleonly />-->				
+			</sheetnumberfield>			
+			
+			<sheetnumberfield name="setback_dice" source="actor.setback_dice">
+				<!--<disabled />-->
+				<anchored>
+					<position>insidetopright</position>
+					<offset>143,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tooltip>
+					<text>Number of penaly setback dice to be used on next action</text>
+				</tooltip>				
+				<!--<gmvisibleonly />-->				
+			</sheetnumberfield>
+			
+			<!-- strain current -->
+			<strainnumberfield name="strain_current" source="strain.current">
+				<chit>strain</chit>
+				<anchored>
+					<position>insidetopright</position>
+					<offset>107,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>initiative</next>
+					<prev>initiative</prev>
+				</tabtarget>
+				<!--<gmvisibleonly />-->				
+			</strainnumberfield>			
+			
+			<!-- strain threshhold -->
+			<sheetnumberfield name="strain_threshold" source="strain.threshold">
+				<disabled />
+				<anchored>
+					<position>insidetopright</position>
+					<offset>76,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<!--<gmvisibleonly />	-->			
+			</sheetnumberfield>
+			
+			<!-- wounds current -->
+			<woundnumberfield name="wounds_current" source="wounds.current">
+				<chit>wound</chit>
+				<anchored>
+					<position>insidetopright</position>
+					<offset>40,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>initiative</next>
+					<prev>favour</prev>
+				</tabtarget>
+				<!--<invisible />-->
+				<script>
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();						
+						if windownode and windownode.isOwner() then
+							setVisible(true);
+						end
+					end
+					
+					function onValueChanged()
+						super.onValueChanged();
+						if node then
+							local criticalsnode = node.getChild("criticals");
+							if criticalsnode then
+								local criticals = criticalsnode.getChildCount();
+								local value = getValue();
+								if criticals > value then
+									setValue(criticals);
+								end
+							end
+						end
+					end					
+				</script>				
+			</woundnumberfield>			
+			
+			<!-- wound threshhold -->
+			<sheetnumberfield name="wounds_threshold" source="wounds.threshold">
+				<disabled />
+				<anchored>
+					<position>insidetopright</position>
+					<offset>9,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<!--<invisible />-->
+				<script>
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();
+						if windownode and windownode.isOwner() then
+							setVisible(true);
+						end
+					end
+				</script>				
+			</sheetnumberfield>
+
+			<!-- stance 
+			<stancevalue>
+				<anchored>
+					<position>insidetopright</position>
+					<offset>9,8</offset>
+				</anchored>
+				<invisible />
+				<script>
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();
+						if windownode and windownode.isOwner() then
+							setVisible(true);
+						end
+					end
+				</script>				
+			</stancevalue> -->
+		
+		</sheetdata>
+		<script file="classes/initiative/actorcharsheet.lua" />		
+	</windowclass>
+	
+</root>

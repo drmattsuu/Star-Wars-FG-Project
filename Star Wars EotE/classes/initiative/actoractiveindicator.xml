@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="actoractiveindicator">
+		<genericcontrol>
+			<icon>indicator_ctpassive</icon>
+			<activeicon>indicator_ctactive</activeicon>
+			<script file="classes/initiative/actoractiveindicator.lua" />
+		</genericcontrol>
+	</template>
+
+</root>

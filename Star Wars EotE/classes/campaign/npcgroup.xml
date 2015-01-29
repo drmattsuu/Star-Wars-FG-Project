@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="npcgroupsmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>npcgroup</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>22,3,-1,20</bounds>
+				<empty>&#171; New NPC Group &#187;</empty>
+				<disabled />				
+			</basestringfield>
+		</sheetdata>
+	</windowclass>
+
+<!-- WINDOW -->
+	<windowclass name="npcgroup">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>509</width>
+				<height>462</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<minimum>
+				<width>509</width>
+				<height>462</height>
+			</minimum>
+		</sizelimits>	
+		<minimize>minimized_npc</minimize>
+		<nodelete />
+		<playercontrol />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>npcgroupmain</class>
+				<script file="classes/campaign/npcgroup.lua" />
+			</subwindow>
+			<subwindow name="actions">
+				<bounds>0,0,-1,-1</bounds>
+				<class>npcgroupactions</class>
+				<script file="classes/campaign/npcgroup.lua" />
+			</subwindow>			
+			<subwindow name="details">
+				<bounds>0,0,-1,-1</bounds>
+				<class>npcgroupdetails</class>
+				<script file="classes/campaign/npcgroup.lua" />
+			</subwindow>								
+			<subwindow name="notes">
+				<bounds>0,0,-1,-1</bounds>
+				<class>npcgroupnotes</class>
+				<script file="classes/campaign/npcgroup.lua" />
+			</subwindow>			
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,291</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_actions</icon>
+					<subwindow>actions</subwindow>
+				</tab>				
+				<tab>
+					<icon>tab_details</icon>
+					<subwindow>details</subwindow>
+				</tab>				
+				<tab>
+					<icon>tab_notes</icon>
+					<subwindow>notes</subwindow>
+				</tab>				
+				<activate>1</activate>
+			</tabcontrol>
+			<closebutton />
+		</sheetdata>
+	</windowclass>	
+	
+</root>

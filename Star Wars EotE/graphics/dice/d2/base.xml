@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="d2icon" file="graphics/dice/d2/d2.png" />
+	<icon name="d2icon.1" file="graphics/dice/d2/d2.1.png" />
+	<icon name="d2icon.2" file="graphics/dice/d2/d2.2.png" />
+</root>

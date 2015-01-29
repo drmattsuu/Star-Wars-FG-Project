@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="actorretainer">
+		<frame>ctentrybox</frame>
+		<sizelimits>
+			<minimum>
+				<height>32</height>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+		
+			<!-- active indicator -->
+			<actoractiveindicator name="active">
+				<anchored>
+					<top>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<anchor>left</anchor>
+					</left>
+					<size>
+						<width>33</width>
+					</size>
+				</anchored>
+			</actoractiveindicator>
+			
+			<!-- shortcut -->
+			<buttoncontrol name="shortcut">	
+				<bounds>30,6,20,20</bounds>			
+				<icon>
+					<normal>button_openwindow</normal>
+					<pressed>button_emptytarget</pressed>
+				</icon>
+				<invisible />
+				<script>
+					function onInit()
+						local windownode = window.getDatabaseNode();
+						if windownode and windownode.isOwner() then
+							setVisible(true);
+						end
+					end
+				
+					function onButtonPress()
+						RetainerManager.openRetainerSheet(window.getDatabaseNode());
+					end
+				</script>
+			</buttoncontrol>
+			
+			<!-- name -->
+			<basestringfield name="name">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>52</offset>
+					</left>
+					<right>
+						<anchor>right</anchor>
+						<offset>-276</offset>
+					</right>
+					<top>
+						<anchor>top</anchor>
+						<offset>9</offset>
+					</top>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>			
+				<empty>&#171; Unnamed &#187;</empty>
+				<disabled/>
+			</basestringfield>
+			
+			<!-- initiative -->
+			<sheetnumberfield name="initiative" source="actor.initiative">
+				<anchored>
+					<position>insidetopright</position>				
+					<offset>245,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>wounds_current</next>
+					<prev>wounds_current</prev>
+				</tabtarget>
+				<script>
+					function onValueChanged()
+						super.onValueChanged();
+						window.windowlist.applySort();
+					end
+				</script>				
+			</sheetnumberfield>
+								
+			<!-- wound current -->
+			<woundnumberfield name="wounds_current" source="wounds.current">
+				<chit>wound</chit>
+				<anchored>
+					<position>insidetopright</position>
+					<offset>90,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>initiative</next>
+					<prev>initiative</prev>
+				</tabtarget>
+				<invisible />
+				<script>
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();
+						if windownode and windownode.isOwner() then
+							setVisible(true);
+						end
+					end
+				</script>				
+			</woundnumberfield>			
+			
+			<!-- wound threshhold -->
+			<sheetnumberfield name="wounds_threshold" source="wounds.threshold">
+				<disabled />
+				<anchored>
+					<position>insidetopright</position>
+					<offset>59,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<invisible />
+				<script>
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();
+						if windownode and windownode.isOwner() then
+							setVisible(true);
+						end
+					end
+				</script>				
+			</sheetnumberfield>
+
+			<!-- stance -->
+			<stancevalue>
+				<anchored>
+					<position>insidetopright</position>
+					<offset>9,8</offset>
+				</anchored>
+				<invisible />
+				<script>
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();
+						if windownode and windownode.isOwner() then
+							setVisible(true);
+						end
+					end
+				</script>				
+			</stancevalue>			
+		
+		</sheetdata>
+		<script file="classes/initiative/actorretainer.lua" />		
+	</windowclass>
+	
+</root>

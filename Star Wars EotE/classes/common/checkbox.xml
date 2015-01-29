@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="checkbox">
+		<genericcontrol>
+			<stateicons>
+				<on>indicator_checkon</on>
+				<off>indicator_checkoff</off>
+			</stateicons>
+			<script file="classes/common/checkbox.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

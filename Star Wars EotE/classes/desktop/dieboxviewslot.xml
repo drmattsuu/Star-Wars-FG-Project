@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="dieboxviewslot">
+		<frame>tooltipbox</frame>
+		<sizelimits>
+			<minimum>
+				<height>45</height>
+				<!--<width>380</width>-->
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+		
+		<stringcontrol name=dieboxviewslotname>
+				<bounds>5,2,150,12</bounds>
+				<font>sheetlabel</font>
+				<color>#ffffffff</color>
+				<static>1234567890</static>
+				<!--<center />-->
+		</stringcontrol>
+			
+		<dieboxremote name="dieboxremote" />
+		
+		</sheetdata>
+		<script file="classes/desktop/dieboxviewslot.lua" />		
+	</windowclass>
+	
+</root>

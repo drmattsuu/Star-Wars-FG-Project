@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+		
+	<template name="sheettextfield">
+		<stringfield>
+			<multilinespacing>20</multilinespacing>
+			<font>sheetlabel</font>
+			<frame>
+				<name>textline</name>
+			</frame>
+		</stringfield>	
+	</template>
+	
+</root>

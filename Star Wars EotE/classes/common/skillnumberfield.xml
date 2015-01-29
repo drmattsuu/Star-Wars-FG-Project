@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="skillnumberfield">
+		<genericcontrol>
+			<script file="classes/common/skillnumberfield.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

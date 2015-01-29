@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<windowclass name="locationlist">
+		<frame>scrollbox</frame>
+		<placement>
+			<size>
+				<width>275</width>
+				<height>350</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic />
+			<minimum>
+				<width>250</width>
+				<height>300</height>
+			</minimum>
+			<maximum>
+				<width>475</width>
+				<height>570</height>
+			</maximum>			
+		</sizelimits>
+		<nodelete />
+		<sheetdata>
+			<basewindowlist name="list">
+				<bounds>38,25,-30,-34</bounds>
+				<datasource>.</datasource>
+				<class>locationsmall</class>
+				<sortfields>name</sortfields>
+				<footer>footer_narrow</footer>
+				<allowcreate />
+				<allowdelete />
+				<acceptdrop>
+					<class>location</class>
+					<field>*</field>
+				</acceptdrop>				
+				<script>
+					function onSortCompare(w1, w2)
+						return w1.name.getValue() &gt; w2.name.getValue();
+					end
+				</script>
+			</basewindowlist>
+			<scrollercontrol>
+				<bounds>-105,-61,45,27</bounds>
+				<target>list</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+				</button>
+			</scrollercontrol>
+			<buttoncontrol>
+				<bounds>-55,-57,34,25</bounds>
+				<icon>
+					<normal>button_newwindow</normal>
+					<pressed>button_newwindowdown</pressed>
+				</icon>
+				<class>location</class>
+				<script>
+					function onButtonPress()
+						local node = window.getDatabaseNode();
+						if node then
+							node = node.createChild();
+							if node then
+								Interface.openWindow(class[1], node.getNodeName());
+							end
+						end
+					end
+				</script>
+			</buttoncontrol>
+			<categoryselectioncontrol>
+				<bounds>24,-39,-24,-1</bounds>
+				<targetcontrol>list</targetcontrol>
+			</categoryselectioncontrol>
+		
+			<closebuttonlist />		
+		</sheetdata>
+	</windowclass>
+</root>

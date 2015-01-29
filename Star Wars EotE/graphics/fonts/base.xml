@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<font name="default">
+		<fgffile name="graphics/fonts/regular.fgf" />
+		<color value="#ffffff" />
+	</font>
+
+	<font name="chatfont">
+		<fgffile name="graphics/fonts/regular.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="chatitalicfont">
+		<fgffile name="graphics/fonts/regularitalic.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="chatbolditalicfont">
+		<fgffile name="graphics/fonts/regularbolditalic.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="npcchatfont">
+		<fgffile name="graphics/fonts/regular.fgf" />
+		<color value="#000066" />
+	</font>
+
+	<font name="gmfont">
+		<fgffile name="graphics/fonts/regularitalic.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="narratorfont">
+		<fgffile name="graphics/fonts/regularbold.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="titlefont">
+		<fgffile name="graphics/fonts/title.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="systemfont">
+		<fgffile name="graphics/fonts/regular.fgf" />
+		<color value="#660066" />
+	</font>
+
+	<font name="oocfont">
+		<fgffile name="graphics/fonts/regular.fgf" />
+		<color value="#005500" />
+	</font>
+
+	<font name="msgfont">
+		<fgffile name="graphics/fonts/regularbold.fgf" />
+		<color value="#660066" />
+	</font>
+
+	<font name="emotefont">
+		<fgffile name="graphics/fonts/regular.fgf" />
+		<color value="#880000" />
+	</font>
+
+	<font name="draglabel">
+		<fgffile name="graphics/fonts/draglabel.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="diemod">
+		<fgffile name="graphics/fonts/diemod.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="diemodsmall">
+		<fgffile name="graphics/fonts/diemodsmall.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="dieresult">
+		<fgffile name="graphics/fonts/dieresult.fgf" />
+		<color value="#ffffff" />
+	</font>
+
+	<font name="modcollector">
+		<fgffile name="graphics/fonts/diemod.fgf" />
+		<color value="#E7CDAC" />
+	</font>
+
+	<font name="modcollectorlabel">
+		<fgffile name="graphics/fonts/modcollectorlabel.fgf" />
+		<color value="#E7CDAC" />
+	</font>
+
+	<font name="hotkey">
+		<fgffile name="graphics/fonts/regular.fgf" />
+		<color value="#ffffff" />
+	</font>
+
+	<font name="defaultstringcontrol">
+		<fgffile name="graphics/fonts/control.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="defaultnumbercontrol">
+		<fgffile name="graphics/fonts/control.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="smallcontrol">
+		<fgffile name="graphics/fonts/smallcontrol.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="mini_name">
+		<fgffile name="graphics/fonts/smallcontrol.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="mini_name_selected">
+		<fgffile name="graphics/fonts/smallcontrolbold.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="sheetnumber">
+		<fgffile name="graphics/fonts/sheetnumber.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="sheetnumbersmall">
+		<fgffile name="graphics/fonts/sheetnumbersmall.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="sheettext">
+		<fgffile name="graphics/fonts/sheettext.fgf" />
+		<color value="#000000" />
+	</font>
+	
+	<font name="sheettextsmall">
+		<fgffile name="graphics/fonts/sheettextsmall.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="sheettextblock">
+		<fgffile name="graphics/fonts/sheettextblock.fgf" />
+		<color value="#000000" />
+	</font>
+
+	<font name="sheetlabel">
+		<fgffile name="graphics/fonts/sheetlabel.fgf" />
+		<color value="#261A12" />
+	</font>
+	
+	<font name="sheetlabelwhite">
+		<fgffile name="graphics/fonts/sheetlabel.fgf" />
+		<color value="#ffffff" />
+	</font>	
+
+	<font name="sheetlabelsmall">
+		<fgffile name="graphics/fonts/sheetlabelsmall.fgf" />
+		<color value="#261A12" />
+	</font>
+	
+	<font name="sheetlabelsmallbold">
+		<fgffile name="graphics/fonts/sheetlabelsmallbold.fgf" />
+		<color value="#261A12" />
+	</font>
+	
+	<font name="sheetlabelinline">
+		<fgffile name="graphics/fonts/sheetlabelsmall.fgf" />
+		<color value="#AE8E69" />
+	</font>
+	
+	<font name="sheetlabeldisabled">
+		<fgffile name="graphics/fonts/sheetlabel.fgf" />
+		<color value="#BCA180" />
+	</font>
+	
+	<!-- Formatted text fields - from CoreRPG 3.0.5 -->
+	<font name="reference-h">
+		<ttf file="graphics/fonts/MarcellusSC-Regular.ttf" name="Marcellus SC" size="24" />
+		<color value="#660000" />
+	</font>
+	<font name="reference-r">
+		<fgffile name="graphics/fonts/regular-10.fgf" />
+		<color value="#000000" />
+	</font>
+	<font name="reference-i">
+		<fgffile name="graphics/fonts/italic-10.fgf" />
+		<color value="#000000" />
+	</font>
+	<font name="reference-b">
+		<fgffile name="graphics/fonts/bold-10.fgf" />
+		<color value="#000000" />
+	</font>
+	<font name="reference-bi">
+		<fgffile name="graphics/fonts/bolditalic-10.fgf" />
+		<color value="#000000" />
+	</font>
+	<font name="reference-b-large">
+		<fgffile name="graphics/fonts/bold-11.fgf" />
+		<color value="#000000" />		
+	</font>	
+	
+	<!-- Windows -->
+	<font name="windowtitle">
+		<ttf file="graphics/fonts/AlegreyaSansSC-Bold.ttf" name="Alegreya Sans SC" size="26" />
+		<color value="#000000" />
+		<shadow offset="1,1" color="#808080" />
+	</font>	
+	
+</root>

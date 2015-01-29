@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- SKILL -->
+<!--	<windowclass name="charsheet_skills_skillsmall">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>skill</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>21,3,-80,17</bounds>
+				<empty>&#171; New Skill &#187;</empty>
+				<disabled />				
+			</basestringfield>
+			<sheetnumberfield name="advances">
+				<bounds>-54,0,36,20</bounds>
+				<!{1}**<disabled/>**{1}>
+			</sheetnumberfield>
+			<skilldicepool>
+				<bounds>-16,0,20,20</bounds>
+			</skilldicepool>			
+		</sheetdata>
+	</windowclass>-->
+
+<!-- WINDOW -->
+	<windowclass name="charsheetcombattab">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>557</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- CHARACTERISTICS -->
+			<sheetframe name="combattab_characteristics">
+				<bounds>12,2,346,86</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			<sheetframetitle name="combattab_characteristics_title">
+				<anchored>
+					<to>combattab_characteristics</to>
+				</anchored>
+				<static>Characteristics</static>
+			</sheetframetitle>
+
+			<!-- STRENGTH BRAWN -->
+			<sheetcharacteristicvalue name="combattab_characteristics_brawn_current" source="brawn.current">
+				<anchored>
+					<to>combattab_characteristics</to>
+					<offset>17,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>combattab_characteristics_brawn_bonus</next>
+					<prev>combattab_characteristics_stance_reckless</prev>
+				</tabtarget>
+			</sheetcharacteristicvalue>
+<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_brawn_bonus" source="brawn.bonus">
+				<anchored>
+					<to>skills_characteristics_brawn_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>skills_characteristics_agility_current</next>
+					<prev>skills_characteristics_brawn_current</prev>
+				</tabtarget>					
+			</sheetcharacteristicbonusvalue>-->
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>combattab_characteristics_brawn_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>
+					</top>
+					<left>
+						<parent>combattab_characteristics_brawn_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>combattab_characteristics_brawn_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Brawn</static>
+			</sheettitle>
+
+			<!-- TOUGHNESS AGILITY-->
+			<sheetcharacteristicvalue name="combattab_characteristics_agility_current" source="agility.current">
+				<anchored>
+					<to>combattab_characteristics</to>
+					<offset>73,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>combattab_characteristics_agility_bonus</next>
+					<prev>combattab_characteristics_brawn_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_agility_bonus" source="agility.bonus">
+				<anchored>
+					<to>skills_characteristics_agility_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>skills_characteristics_agility_current</next>
+					<prev>skills_characteristics_intellect_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>-->
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>combattab_characteristics_agility_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>combattab_characteristics_agility_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>combattab_characteristics_agility_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Agility</static>
+			</sheettitle>
+
+			<!-- AGILITY INTELLECT-->
+			<sheetcharacteristicvalue name="combattab_characteristics_intellect_current" source="intellect.current">
+				<anchored>
+					<to>combattab_characteristics</to>
+					<offset>129,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>combattab_characteristics_intellect_bonus</next>
+					<prev>combattab_characteristics_agility_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_intellect_bonus" source="intellect.bonus">
+				<anchored>
+					<to>skills_characteristics_intellect_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>skills_characteristics_cunning_current</next>
+					<prev>skills_characteristics_intellect_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>-->
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>combattab_characteristics_intellect_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>combattab_characteristics_intellect_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>combattab_characteristics_intellect_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Intellect</static>
+			</sheettitle>
+		
+			<!-- INTELLIGENCE CUNNING-->
+			<sheetcharacteristicvalue name="combattab_characteristics_cunning_current" source="cunning.current">
+				<anchored>
+					<to>combattab_characteristics</to>
+					<offset>185,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>combattab_characteristics_cunning_bonus</next>
+					<prev>combattab_characteristics_intellect_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_cunning_bonus" source="cunning.bonus">
+				<anchored>
+					<to>skills_characteristics_cunning_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>skills_characteristics_willpower_current</next>
+					<prev>skills_characteristics_cunning_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>-->
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>combattab_characteristics_cunning_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>combattab_characteristics_cunning_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>combattab_characteristics_cunning_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Cunning</static>
+			</sheettitle>			
+			
+			<!-- WILLPOWER WILLPOWER-->
+			<sheetcharacteristicvalue name="combattab_characteristics_willpower_current" source="willpower.current">
+				<anchored>
+					<to>combattab_characteristics</to>
+					<offset>241,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>combattab_characteristics_willpower_bonus</next>
+					<prev>combattab_characteristics_cunning_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_willpower_bonus" source="willpower.bonus">
+				<anchored>
+					<to>skills_characteristics_willpower_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>skills_characteristics_presence_current</next>
+					<prev>skills_characteristics_willpower_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>-->
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>combattab_characteristics_willpower_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>combattab_characteristics_willpower_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>combattab_characteristics_willpower_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Willpower</static>
+			</sheettitle>			
+			
+			<!-- FELLOWSHIP PRESENCE-->
+			<sheetcharacteristicvalue name="combattab_characteristics_presence_current" source="presence.current">
+				<anchored>
+					<to>combattab_characteristics</to>
+					<offset>297,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>combattab_characteristics_presence_bonus</next>
+					<prev>combattab_characteristics_willpower_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_presence_bonus" source="presence.bonus">
+				<anchored>
+					<to>skills_characteristics_presence_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>skills_characteristics_stance_conservative</next>
+					<prev>skills_characteristics_presence_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>-->
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>combattab_characteristics_presence_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>combattab_characteristics_presence_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>combattab_characteristics_presence_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Presence</static>
+			</sheettitle>
+			
+			<!-- STANCE --> <!--
+			<stancetracker name="skills_characteristics_stance">
+				<sourcename>stance.current</sourcename>
+				<conservativename>stance.conservative</conservativename>
+				<recklessname>stance.reckless</recklessname>
+				<careersname>careers</careersname>
+				<anchored>
+					<left>
+						<parent>skills_characteristics</parent>
+						<anchor>left</anchor>
+						<offset>74</offset>					
+					</left>
+					<right>
+						<parent>skills_characteristics</parent>
+						<anchor>right</anchor>
+						<offset>-74</offset>					
+					</right>
+					<top>
+						<parent>skills_characteristics</parent>
+						<anchor>top</anchor>
+						<offset>74</offset>
+					</top>
+					<size>
+						<height>24</height>
+					</size>
+				</anchored>
+			</stancetracker>
+			
+			<!-- CONSERVATIVE --> <!--
+			<sheetnumberfield name="skills_characteristics_stance_conservative" source="stance.conservative">
+				<anchored>
+					<left>
+						<parent>skills_characteristics</parent>
+						<anchor>left</anchor>
+						<offset>24</offset>
+					</left>
+					<top>
+						<parent>skills_characteristics</parent>
+						<anchor>top</anchor>
+						<offset>75</offset>
+					</top>
+					<size>
+						<width>24</width>
+						<height>24</height>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>skills_characteristics_stance_reckless</next>
+					<prev>skills_characteristics_presence_bonus</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+			<!-- RECKLESS --> <!--
+			<sheetnumberfield name="skills_characteristics_stance_reckless" source="stance.reckless">
+				<anchored>
+					<left>
+						<parent>skills_characteristics</parent>
+						<anchor>left</anchor>
+						<offset>424</offset>
+					</left>
+					<top>
+						<parent>skills_characteristics</parent>
+						<anchor>top</anchor>
+						<offset>75</offset>
+					</top>
+					<size>
+						<width>24</width>
+						<height>24</height>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>skills_characteristics_brawn_current</next>
+					<prev>skills_characteristics_stance_conservative</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+<!-- INITIATIVE -->
+			<sheetframe name="combat_init">
+				<bounds>355,2,128,86</bounds>
+			</sheetframe>
+			<sheetframetitle name="combat_init_title">
+				<anchored>
+					<to>combat_init</to>
+				</anchored>
+				<static>Initiative</static>
+			</sheetframetitle>
+			
+			<!-- Cool -->
+			<sheetlabel name="combat_init_cool">
+				<anchored>
+					<to>combat_init</to>
+					<offset>34,27</offset>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<static>Cool</static>
+			</sheetlabel>
+
+			<initdicepool name="combat_init_cool_btn">
+				<anchored>
+					<to>combat_init</to>
+					<offset>85,27</offset>
+					<position>insidetopleft</position>
+					<size>
+						<width>18</width>
+						<height>14</height>
+					</size>					
+				</anchored>			
+				<!--<bounds>118,26,10,10</bounds>-->
+			</initdicepool>
+			
+<!--			<sheetnumberfield name="combat_init_cool" source="init.cool">
+				<anchored>
+					<to>combat_init</to>
+					<offset>76,26</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<!{1}**<disabled />**{1}>
+			</sheetnumberfield>-->									
+
+			<!-- Vigilance -->
+			<sheetlabel name = "combat_init_vigilance">
+				<anchored>
+					<to>combat_init</to>
+					<offset>20,54</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Vigilance</static>
+			</sheetlabel>		
+			
+			<initdicepool name="combat_init_vigilance_btn">
+				<anchored>
+					<to>combat_init</to>
+					<offset>85,54</offset>
+					<position>insidetopleft</position>
+					<size>
+						<width>18</width>
+						<height>14</height>
+					</size>
+				</anchored>		
+				<!--<bounds>118,26,10,10</bounds>-->
+			</initdicepool>			
+			
+<!--			<sheetnumberfield name="combat_init_vigilance" source="init.vigilance">
+				<anchored>
+					<to>combat_init</to>
+					<offset>90,53</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<!{1}**<disabled />**{1}>
+			</sheetnumberfield>-->				
+
+<!-- SOAK -->
+			<sheetframe name="combat_soak">
+				<bounds>12,83,118,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="combat_soak_title">
+				<anchored>
+					<to>combat_soak</to>
+				</anchored>
+				<static>Soak</static>
+			</sheetframetitle>
+			
+			<!-- SOAK -->
+			<!--<sheetlabel>
+				<anchored>
+					<to>combat_soak</to>
+					<offset>13,22</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Soak</static>
+			</sheetlabel>-->
+			<sheetnumberfield name="combat_armour_soak" source="armour.soak">
+				<anchored>
+					<to>combat_soak</to>
+					<offset>47,25</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<!--<disabled />-->				
+			</sheetnumberfield>
+			
+<!-- WOUNDS -->
+			<sheetframe name="combat_wounds">
+				<bounds>130,83,118,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="combat_wounds_title">
+				<anchored>
+					<to>combat_wounds</to>
+				</anchored>
+				<static>Wounds</static>
+			</sheetframetitle>
+
+			<!-- THRESHOLD -->
+			<sheetlabel>
+				<anchored>
+					<to>combat_wounds</to>
+					<offset>13,22</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Threshold</static>
+			</sheetlabel>
+			<sheetnumberfield name="combat_wounds_threshold" source="wounds.threshold">
+				<anchored>
+					<to>combat_wounds</to>
+					<offset>80,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>combat_wounds_current</next>
+					<prev>combat_characteristics_stance_reckless</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+			<!-- CURRENT -->
+			<sheetlabel>
+				<anchored>
+					<to>combat_wounds</to>
+					<offset>13,42</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Current</static>
+			</sheetlabel>
+			<woundnumberfield name="combat_wounds_current" source="wounds.current">
+				<chit>wound</chit>
+				<anchored>
+					<to>combat_wounds</to>
+					<offset>80,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>combat_physiology_fatigue</next>
+					<prev>combat_wounds_threshold</prev>
+				</tabtarget>
+				<script>
+					function onValueChanged()
+						super.onValueChanged();
+						local criticalsnode = window.getDatabaseNode().getChild("criticals");
+						if criticalsnode then
+							local criticals = criticalsnode.getChildCount();
+							local value = getValue();
+							if criticals > value then
+								setValue(criticals);
+							end
+						end
+					end
+				</script>
+			</woundnumberfield>
+			
+<!-- STRAIN -->
+			<sheetframe name="combat_strain">
+				<bounds>248,83,118,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="combat_strain_title">
+				<anchored>
+					<to>combat_strain</to>
+				</anchored>
+				<static>Strain</static>
+			</sheetframetitle>
+
+			<!-- THRESHOLD -->
+			<sheetlabel>
+				<anchored>
+					<to>combat_strain</to>
+					<offset>13,22</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Threshold</static>
+			</sheetlabel>
+			<sheetnumberfield name="combat_strain_threshold" source="strain.threshold">
+				<anchored>
+					<to>combat_strain</to>
+					<offset>80,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>combat_strain_current</next>
+					<prev>combat_characteristics_stance_reckless</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+			<!-- CURRENT -->
+			<sheetlabel>
+				<anchored>
+					<to>combat_strain</to>
+					<offset>13,42</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Current</static>
+			</sheetlabel>
+			<strainnumberfield name="combat_strain_current" source="strain.current">
+				<chit>wound</chit>
+				<anchored>
+					<to>combat_strain</to>
+					<offset>80,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>combat_physiology_fatigue</next>
+					<prev>combat_wounds_threshold</prev>
+				</tabtarget>
+				<script>
+					function onValueChanged()
+						super.onValueChanged();
+						local criticalsnode = window.getDatabaseNode().getChild("criticals");
+						if criticalsnode then
+							local criticals = criticalsnode.getChildCount();
+							local value = getValue();
+							if criticals > value then
+								setValue(criticals);
+							end
+						end
+					end
+				</script>
+			</strainnumberfield>
+			
+<!-- ARMOR -->
+<!--			<sheetframe name="combat_armour">
+				<bounds>366,101,118,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="combat_armour_title">
+				<anchored>
+					<to>combat_armour</to>
+				</anchored>
+				<static>Armor</static>
+			</sheetframetitle>
+
+			<!{1}** DEFENCE **{1}>
+			<sheetlabel>
+				<anchored>
+					<to>combat_armour</to>
+					<offset>13,22</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Defence</static>
+			</sheetlabel>
+			<sheetnumberfield name="combat_armour_defence" source="armour.defence">
+				<anchored>
+					<to>combat_armour</to>
+					<offset>80,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<!{1}**<disabled />**{1}>
+			</sheetnumberfield>-->
+			
+			<sheetframe name="combat_armour">
+				<bounds>366,83,118,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="combat_armour_title">
+				<anchored>
+					<to>combat_armour</to>
+				</anchored>
+				<static>Defense</static>
+			</sheetframetitle>
+
+			<!-- DEFENCE -->
+			<sheetlabel>
+				<anchored>
+					<to>combat_armour</to>
+					<offset>13,22</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Melee</static>
+			</sheetlabel>
+			<sheetlabel>
+				<anchored>
+					<to>combat_armour</to>
+					<offset>54,22</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Ranged</static>
+			</sheetlabel>
+			<sheetnumberfield name="combat_armour_meleedefence" source="armour.meleedefence">
+				<anchored>
+					<to>combat_armour</to>
+					<offset>26,38</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>				
+			</sheetnumberfield>
+			<sheetnumberfield name="combat_armour_rangeddefence" source="armour.rangeddefence">
+				<anchored>
+					<to>combat_armour</to>
+					<offset>70,38</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>				
+			</sheetnumberfield>			
+
+			<!-- SOAK 
+			<sheetlabel>
+				<anchored>
+					<to>combat_armour</to>
+					<offset>13,42</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Soak</static>
+			</sheetlabel>
+			<sheetnumberfield name="combat_armour_soak" source="armour.soak">
+				<anchored>
+					<to>combat_armour</to>
+					<offset>80,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<!--<disabled />-->				
+			<!-- </sheetnumberfield> -->
+			
+			<!-- Armour Updater -->
+			<genericcontrol>
+				<bounds>0,0,1,1</bounds>
+				<!--<script>
+					function updateArmour()
+						local inventorynode = window.getDatabaseNode().getChild("inventory");
+						if inventorynode then
+							local defence = 0;
+							local soak = 0;
+							for k, n in pairs(inventorynode.getChildren()) do
+								local isequippednode = n.getChild("isequipped");
+								if isequippednode then
+									if isequippednode.getValue() == 1 then
+										local isarmournode = n.getChild("isarmour");
+										if isarmournode then
+											if isarmournode.getValue() == 1 then
+												defence = defence + n.getChild("armour.defence").getValue();
+												soak = soak + n.getChild("armour.soak").getValue();
+											end
+										end
+									end
+								end
+							end
+							window.combat_armour_defence.setValue(defence);
+							window.combat_armour_soak.setValue(soak);
+						end
+					end
+				
+					function onChildAdded(source, child)
+						updateArmour();
+					end
+
+					function onChildUpdate(source)
+						updateArmour()
+					end
+				
+					function onInit()
+						local inventorynode = window.getDatabaseNode().getChild("inventory");
+						if inventorynode then
+							inventorynode.onChildAdded = onChildAdded;
+							inventorynode.onChildUpdate = onChildUpdate;
+						end
+						updateArmour();
+					end
+				
+				</script> -->
+			</genericcontrol>	
+			
+			
+<!-- BASIC SKILLS --> 
+<!--			<sheetframe name="combattab_basic">
+				<bounds>12,166,238,380</bounds>
+			</sheetframe>
+			<sheetframetitle name="combattab_basic_title">
+				<anchored>
+					<to>combattab_basic</to>
+				</anchored>
+				<static>Basic Skills</static>
+			</sheetframetitle>
+			
+			<!{1}** SKILLS **{1}>
+			<sheetlist name="skills_basic_skills">
+				<anchored>
+					<left>
+						<parent>skills_basic</parent>
+						<anchor>left</anchor>
+						<offset>12</offset>					
+					</left>
+					<right>
+						<parent>skills_basic</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>skills_basic</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>skills_basic</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.skills</datasource>
+				<class>charsheet_skills_skillsmall</class>
+				<allowcreate />
+				<allowdelete />
+				<script>
+					function onFilter(w)				
+						local windownode = w.getDatabaseNode();
+						if windownode then
+							local advancednode = windownode.getChild("advanced");
+							if advancednode and advancednode.getValue() == 1 then
+								return false;
+							end
+						end
+						return true;					
+					end
+					
+					function onInit()
+						local skillsnode = window.getDatabaseNode().getChild("skills");
+						if skillsnode then
+							local skillautocreated = skillsnode.createChild("autogenerated", "number");
+							if skillautocreated.getValue() ~= 1 then
+								for k,v in pairs(DataCommon.basicskilldata) do
+									Debug.console("Skillname = " .. k);
+									local skillnode = skillsnode.createChild();
+									skillnode.createChild("name","string").setValue(k);					
+									skillnode.createChild("characteristic","string").setValue(v.characteristic);
+									skillnode.createChild("description","formattedtext").setValue(v.description);
+								end
+								skillsnode.getChild("autogenerated").setValue(1);
+							end
+						end		
+					end
+					
+					function onDrop(x, y, draginfo)
+						local type = draginfo.getType();
+						if type == "shortcut" then
+							local class, recordname = draginfo.getShortcutData();
+							if class == "skill" then
+								local recordnode = DB.findNode(recordname)
+								if recordnode and not recordnode.isStatic() and recordnode.isOwner() then
+									if string.find(recordnode.getNodeName(), window.getDatabaseNode().getNodeName(), 1, true) then
+										recordnode.createChild("advanced", "number").setValue(0);
+										return true;
+									end
+								end
+							end
+						end
+					end						
+				</script>
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>skills_basic_skills</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>skills_basic_skills</target>
+			</scrollbar>-->
+
+<!-- CONDITIONS -->
+			<sheetframe name="combat_conditions">
+				<!--<bounds>12,201,236,252</bounds>-->
+				<bounds>12,148,200,-10</bounds>
+				
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>			
+
+			<!-- Conditions -->
+			<basewindowlist name="combat_conditions_conditions">
+				<class>empty</class>
+				<skipempty />
+				<anchored>
+					<left>
+						<parent>combat_conditions</parent>
+						<anchor>left</anchor>
+						<offset>7</offset>					
+					</left>
+					<right>
+						<parent>combat_conditions</parent>
+						<anchor>right</anchor>
+						<offset>-7</offset>					
+					</right>
+					<top>
+						<parent>combat_conditions</parent>
+						<anchor>top</anchor>
+						<offset>7</offset>
+					</top>
+					<bottom>
+						<parent>combat_conditions</parent>
+						<anchor>bottom</anchor>
+						<offset>-7</offset>
+					</bottom>
+				</anchored>
+				<script>
+					function onInit()
+						createWindowWithClass("charsheet_combat_criticals", window.getDatabaseNode());						
+						createWindowWithClass("charsheet_combat_conditions", window.getDatabaseNode());			
+					end
+				</script>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>combat_conditions_conditions</to>
+					<offset>-9,-8</offset>
+				</anchored>
+				<target>combat_conditions_conditions</target>
+			</scrollbar>
+			
+<!--<!{1}** ADVANCED SKILLS **{1}> 
+			<sheetframe name="combattab_advanced">
+				<bounds>248,166,236,100</bounds>
+			</sheetframe>
+			<sheetframetitle name="combattab_advanced_title">
+				<anchored>
+					<to>combattab_advanced</to>
+				</anchored>
+				<static>Combat Skills</static>
+			</sheetframetitle>
+			
+			<!{1}** SKILLS **{1}>
+			<sheetlist name="combattab_advanced_skills">
+				<anchored>
+					<left>
+						<parent>combattab_advanced</parent>
+						<anchor>left</anchor>
+						<offset>12</offset>					
+					</left>
+					<right>
+						<parent>combattab_advanced</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>combattab_advanced</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>combattab_advanced</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.skills</datasource>
+				<class>charsheet_skills_skillsmall</class>
+				<allowdelete />
+				<script>
+					function onInit()
+						local node = getDatabaseNode();
+						if node and node.isOwner() then
+							registerMenuItem("Create Item", "insert", 5);						
+						end
+					end
+					
+					function onMenuSelection(selection)
+						if selection == 5 then
+							local node = getDatabaseNode();
+							if node and node.isOwner() then
+								local child = node.createChild();
+								child.createChild("advanced", "number").setValue(1);
+							end
+						end
+					end					
+				
+					function onFilter(w)
+						local windownode = w.getDatabaseNode();
+						if windownode then
+							local advancednode = windownode.getChild("advanced");
+							if advancednode and advancednode.getValue() == 1 then
+								return true;
+							end
+						end
+						return false;
+					end
+					
+					function onDrop(x, y, draginfo)
+						local type = draginfo.getType();
+						if type == "shortcut" then
+							local class, recordname = draginfo.getShortcutData();
+							if class == "skill" then
+								local recordnode = DB.findNode(recordname)
+								if recordnode and not recordnode.isStatic() and recordnode.isOwner() then
+									if string.find(recordnode.getNodeName(), window.getDatabaseNode().getNodeName(), 1, true) then
+										recordnode.createChild("advanced", "number").setValue(1);
+										return true;
+									end
+								end
+							end
+						end
+					end					
+				</script>				
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>combattab_advanced_skills</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>combattab_advanced_skills</target>
+			</scrollbar>-->			
+		
+		
+
+	
+<!-- WEAPONS (the listbox)-->
+			<sheetframe name="combat_weapons">
+				<bounds>208,148,276,320</bounds>
+				<bounds>208,148,276,-10</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			<sheettitle name="combat_weapons_whatskill">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>136,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Skill</static>
+			</sheettitle>		
+			<sheettitle name="combat_weapons_damage">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>165,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Dam</static>
+			</sheettitle>			
+			<sheettitle name="combat_weapons_critical">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>194,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Crit</static>
+			</sheettitle>			
+			<sheettitle name="combat_weapons_range">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>223,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Rng</static>
+			</sheettitle>
+
+			<sheetlist name="combat_weapons_weapons">
+				<anchored>
+					<left>
+						<parent>combat_weapons</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>combat_weapons</parent>
+						<anchor>right</anchor>
+						<offset>-10</offset>					
+					</right>
+					<top>
+						<parent>combat_weapons</parent>
+						<anchor>top</anchor>
+						<offset>19</offset>
+					</top>
+					<bottom>
+						<parent>combat_weapons</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.inventory</datasource>
+				<class>charsheet_combat_weapon</class>
+				<script>
+					function onFilter(w)
+						local itemnode = w.getDatabaseNode();
+						
+						local isequippednode = itemnode.getChild("isequipped");
+						if not isequippednode then
+							return false;						
+						end
+						if isequippednode.getValue() == 0 then
+							return false;
+						end
+						
+						local isweaponnode = itemnode.getChild("isweapon");
+						if not isweaponnode then
+							return false;
+						end
+						if isweaponnode.getValue() == 0 then
+							return false;
+						end
+						
+						return true;
+					end								
+				</script>
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>combat_weapons_weapons</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>combat_weapons_weapons</target>
+			</scrollbar>
+
+<!-- SPECIALISATIONS  
+			<sheetframe name="skills_specialisations">
+				<bounds>248,382,236,161</bounds>
+			</sheetframe>
+			<sheetframetitle name="skills_specialisations_title">
+				<anchored>
+					<to>skills_specialisations</to>
+				</anchored>
+				<static>Specialisations</static>
+			</sheetframetitle> -->
+			
+			<!-- SKILLS 
+			<specialisationlist name="skills_specialisations_specialisations">
+				<anchored>
+					<left>
+						<parent>skills_specialisations</parent>
+						<anchor>left</anchor>
+						<offset>12</offset>					
+					</left>
+					<right>
+						<parent>skills_specialisations</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>skills_specialisations</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>skills_specialisations</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<class>specialisationsmall</class>
+				<script>
+					function onDrop(x, y, draginfo)
+						local type = draginfo.getType();
+						if type == "shortcut" then
+							local class, recordname = draginfo.getShortcutData();
+							if class == "skill" then
+								local recordnode = DB.findNode(recordname)
+								if recordnode and not recordnode.isStatic() and recordnode.isOwner() then
+									if string.find(recordnode.getNodeName(), window.getDatabaseNode().getNodeName(), 1, true) then
+										recordnode.createChild("specialisations").createChild();
+										return true;
+									end
+								end
+							end
+						end
+					end
+				</script>
+			</specialisationlist>
+			<scrollbar>
+				<anchored>
+					<to>skills_specialisations_specialisations</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>skills_specialisations_specialisations</target>
+			</scrollbar>	-->		
+			
+
+			
+		</sheetdata>
+	</windowclass>
+</root>

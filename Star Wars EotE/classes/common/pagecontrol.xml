@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="pagecontrol">
+		<genericcontrol>
+			<page mergerule="resetandadd" />
+			<script file="classes/common/pagecontrol.lua" />
+		</genericcontrol>
+	</template>	
+	
+</root>

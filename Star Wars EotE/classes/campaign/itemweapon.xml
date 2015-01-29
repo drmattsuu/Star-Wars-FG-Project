@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="itemweapon">
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>12,20,264,45</bounds>
+			</sheetframe>
+			
+			<sheetframetitle name="main_name_title">
+				<anchored>
+					<to>main_name</to>
+				</anchored>
+				<static>Item</static>
+			</sheetframetitle>			
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,18</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>item</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,19</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Item &#187;</empty>
+				<tabtarget>
+					<next>main_inventory_value</next>
+					<prev>main_inventory_encumbrance</prev>
+				</tabtarget>				
+			</basestringfield>
+			
+<!-- WEAPON -->			
+			<sheetframe name="weapon_weapon">
+				<bounds>12,60,264,260</bounds>
+			</sheetframe>			
+			<sheetframetitle name="weapon_weapon_title">
+				<anchored>
+					<to>weapon_weapon</to>
+				</anchored>
+				<static>Weapon</static>
+			</sheetframetitle>
+								
+			<!-- Damage -->
+			<sheetlabel name="weapon_weapon_damage_label">
+				<anchored>
+					<to>weapon_weapon</to>
+					<offset>13,62</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Damage</static>
+			</sheetlabel>
+			<sheetnumberfield name="weapon_weapon_damage_value" source="weapon.damage">
+				<anchored>
+					<to>weapon_weapon</to>
+					<offset>226,59</offset>
+				</anchored>
+				<tabtarget>
+					<next>weapon_weapon_weaponskill_value</next>
+					<prev>weapon_name_name</prev>
+				</tabtarget>
+			</sheetnumberfield>			
+			
+			<!-- Critical -->
+			<sheetlabel name="weapon_weapon_critical_label">
+				<anchored>
+					<to>weapon_weapon</to>
+					<offset>13,82</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Critical</static>
+			</sheetlabel>
+			<sheetnumberfield name="weapon_weapon_critical_value" source="weapon.critical">
+				<anchored>
+					<to>weapon_weapon</to>
+					<offset>226,79</offset>
+				</anchored>
+				<tabtarget>
+					<next>weapon_weapon_damage_value</next>
+					<prev>weapon_weapon_initiative_value</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- Range -->
+			<sheetlabel name="weapon_weapon_range_label">
+				<anchored>
+					<to>weapon_weapon</to>
+					<offset>13,102</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Range</static>
+			</sheetlabel>
+			<rangecontrol name="weapon_weapon_range_value">
+				<sourcename>weapon.range</sourcename>
+				<anchored>
+					<left>
+						<parent>weapon_weapon</parent>
+						<anchor>left</anchor>
+						<offset>226</offset>					
+					</left>
+					<top>
+						<parent>weapon_weapon</parent>
+						<anchor>top</anchor>
+						<offset>99</offset>
+					</top>					
+					
+				</anchored>
+			</rangecontrol>
+			
+			<!-- What Skill -->
+			<sheetlabel name="weapon_weapon_skill_label">
+				<anchored>
+					<to>weapon_weapon</to>
+					<offset>13,122</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>What Skill</static>
+			</sheetlabel>
+			<weaponskillcontrol name="weapon_weapon_skill_value">
+				<sourcename>weapon.skill</sourcename>
+				<anchored>
+					<left>
+						<parent>weapon_weapon</parent>
+						<anchor>left</anchor>
+						<offset>226</offset>					
+					</left>
+					<top>
+						<parent>weapon_weapon</parent>
+						<anchor>top</anchor>
+						<offset>119</offset>
+					</top>					
+					
+				</anchored>
+			</weaponskillcontrol>
+
+			<!-- Is Personal Weapon -->
+			<sheetlabel>
+				<anchored>
+					<to>weapon_weapon</to>
+					<offset>13,22</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Is Personal Weapon?</static>
+			</sheetlabel>			
+			<checkbox name="weapon_weapon_isweapon">
+				<sourcename>isweapon</sourcename>
+				<anchored>
+					<to>weapon_weapon</to>
+					<position>insidetopleft</position>
+					<offset>222,19</offset>
+					<size>
+						<width>33</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onClickDown(button, x, y)
+						if User.isHost() or window.getDatabaseNode().isOwner() then
+							super.onClickDown(button, x, y);
+						end
+					end					
+				</script>	
+
+<!--				<script>
+					function onClickDown(button, x, y)
+						if User.isHost() or window.getDatabaseNode().isOwner() then
+							super.onClickDown(button, x, y);
+						end
+					end
+				
+					function onValueChanged()
+						local value = getState();
+						if value then
+							window.weapon_weapon_damage_label.setColor(nil);
+							window.weapon_weapon_damage_value.onValueChanged();
+							window.weapon_weapon_damage_value.setEnabled(true);
+							
+							window.weapon_weapon_critical_label.setColor(nil);
+							window.weapon_weapon_critical_value.onValueChanged();
+							window.weapon_weapon_critical_value.setEnabled(true);
+							
+							window.weapon_weapon_range_label.setColor(nil);
+							window.weapon_weapon_range_value.update();
+							window.weapon_weapon_range_value.setEnabled(true);
+						else
+							window.weapon_weapon_damage_label.setColor("20000000");
+							window.weapon_weapon_damage_value.setColor("20000000");
+							window.weapon_weapon_damage_value.setEnabled(false);
+							
+							window.weapon_weapon_critical_label.setColor("20000000");
+							window.weapon_weapon_critical_value.setColor("20000000");
+							window.weapon_weapon_critical_value.setEnabled(false);
+							
+							window.weapon_weapon_range_label.setColor("20000000");
+							window.weapon_weapon_range_value.setColor("20000000");
+							window.weapon_weapon_range_value.setEnabled(false);
+						end					
+					end					
+				</script>-->
+			</checkbox>
+			
+			<!-- Is Starthip Weapon -->
+			<sheetlabel>
+				<anchored>
+					<to>weapon_weapon</to>
+					<offset>13,39</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Is Starship Weapon?</static>
+			</sheetlabel>			
+			<checkbox name="weapon_weapon_isweapon">
+				<sourcename>isstarshipweapon</sourcename>
+				<anchored>
+					<to>weapon_weapon</to>
+					<position>insidetopleft</position>
+					<offset>222,39</offset>
+					<size>
+						<width>33</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onClickDown(button, x, y)
+						if User.isHost() or window.getDatabaseNode().isOwner() then
+							super.onClickDown(button, x, y);
+						end
+					end				
+				</script>			
+
+<!--				<script>
+					function onClickDown(button, x, y)
+						if User.isHost() or window.getDatabaseNode().isOwner() then
+							super.onClickDown(button, x, y);
+						end
+					end
+				
+					function onValueChanged()
+						local value = getState();
+						if value then
+							window.weapon_weapon_damage_label.setColor(nil);
+							window.weapon_weapon_damage_value.onValueChanged();
+							window.weapon_weapon_damage_value.setEnabled(true);
+							
+							window.weapon_weapon_critical_label.setColor(nil);
+							window.weapon_weapon_critical_value.onValueChanged();
+							window.weapon_weapon_critical_value.setEnabled(true);
+							
+							window.weapon_weapon_range_label.setColor(nil);
+							window.weapon_weapon_range_value.update();
+							window.weapon_weapon_range_value.setEnabled(true);
+						else
+							window.weapon_weapon_damage_label.setColor("20000000");
+							window.weapon_weapon_damage_value.setColor("20000000");
+							window.weapon_weapon_damage_value.setEnabled(false);
+							
+							window.weapon_weapon_critical_label.setColor("20000000");
+							window.weapon_weapon_critical_value.setColor("20000000");
+							window.weapon_weapon_critical_value.setEnabled(false);
+							
+							window.weapon_weapon_range_label.setColor("20000000");
+							window.weapon_weapon_range_value.setColor("20000000");
+							window.weapon_weapon_range_value.setEnabled(false);
+						end					
+					end					
+				</script>-->	
+
+				</checkbox>			
+								
+		</sheetdata>
+	</windowclass>
+
+</root>

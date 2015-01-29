@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="dDifficultyicon" file="graphics/dice/dDifficulty/dDifficulty.png" />
+	<icon name="dDifficultyicon.1" file="graphics/dice/dDifficulty/dDifficulty.1.png" />
+	<icon name="dDifficultyicon.2" file="graphics/dice/dDifficulty/dDifficulty.2.png" />
+	<icon name="dDifficultyicon.3" file="graphics/dice/dDifficulty/dDifficulty.3.png" />
+	<icon name="dDifficultyicon.4" file="graphics/dice/dDifficulty/dDifficulty.4.png" />
+	<icon name="dDifficultyicon.5" file="graphics/dice/dDifficulty/dDifficulty.5.png" />
+	<icon name="dDifficultyicon.6" file="graphics/dice/dDifficulty/dDifficulty.6.png" />
+	<icon name="dDifficultyicon.7" file="graphics/dice/dDifficulty/dDifficulty.7.png" />
+	<icon name="dDifficultyicon.8" file="graphics/dice/dDifficulty/dDifficulty.8.png" />
+	
+</root>

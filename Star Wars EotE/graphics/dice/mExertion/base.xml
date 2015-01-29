@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>	
+	<icon name="mExertionicon" file="graphics/dice/mExertion/mExertion.png" />
+	<icon name="mExertionicon.1" file="graphics/dice/mExertion/mExertion.1.png" />
+	<icon name="mExertionicon.2" file="graphics/dice/mExertion/mExertion.2.png" />
+	<icon name="mExertionicon.3" file="graphics/dice/mExertion/mExertion.3.png" />
+	<icon name="mExertionicon.4" file="graphics/dice/mExertion/mExertion.4.png" />
+	<icon name="mExertionicon.5" file="graphics/dice/mExertion/mExertion.5.png" />
+	<icon name="mExertionicon.6" file="graphics/dice/mExertion/mExertion.6.png" />
+	<icon name="mExertionicon.7" file="graphics/dice/mExertion/mExertion.7.png" />
+	<icon name="mExertionicon.8" file="graphics/dice/mExertion/mExertion.8.png" />
+	<icon name="mExertionicon.9" file="graphics/dice/mExertion/mExertion.9.png" />
+	<icon name="mExertionicon.10" file="graphics/dice/mExertion/mExertion.10.png" />
+</root>

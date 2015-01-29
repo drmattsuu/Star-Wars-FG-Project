@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="dSetbackicon" file="graphics/dice/dSetback/dSetback.png" />
+	<icon name="dSetbackicon.1" file="graphics/dice/dSetback/dSetback.1.png" />
+	<icon name="dSetbackicon.2" file="graphics/dice/dSetback/dSetback.2.png" />
+	<icon name="dSetbackicon.3" file="graphics/dice/dSetback/dSetback.3.png" />
+	<icon name="dSetbackicon.4" file="graphics/dice/dSetback/dSetback.4.png" />
+	<icon name="dSetbackicon.5" file="graphics/dice/dSetback/dSetback.5.png" />
+	<icon name="dSetbackicon.6" file="graphics/dice/dSetback/dSetback.6.png" />	
+	
+</root>

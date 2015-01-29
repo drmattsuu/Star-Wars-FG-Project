@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- WINDOW -->
+	<windowclass name="retainermain">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>307</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- CHARACTER -->
+			<sheetframe name="main_character">
+				<bounds>12,20,393,72</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_character_title">
+				<anchored>
+					<to>main_character</to>
+				</anchored>
+				<static>Retainer</static>
+			</sheetframetitle>			
+
+			<!-- NAME -->
+			<sheetstringfield name="main_character_name" source="name">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>
+					<offset>13,18</offset>
+					<size>
+						<width>218</width>
+					</size>
+				</anchored>
+				<label>Name</label>
+				<tabtarget>
+					<next>main_character_type</next>
+					<prev>main_ace_expertise</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- TYPE -->
+			<sheetstringfield name="main_character_type" source="type">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>					
+					<offset>237,18</offset>
+					<size>
+						<width>143</width>
+					</size>
+				</anchored>
+				<label>Type</label>
+				<tabtarget>
+					<next>main_character_description</next>
+					<prev>main_character_name</prev>
+				</tabtarget>
+			</sheetstringfield>			
+			
+			<!-- DESCRIPTION -->
+			<sheetstringfield name="main_character_description" source="description">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>					
+					<offset>13,38</offset>
+					<size>
+						<width>367</width>
+					</size>
+				</anchored>
+				<label>Description</label>
+				<tabtarget>
+					<next>main_characteristics_strength_current</next>
+					<prev>main_character_type</prev>
+				</tabtarget>
+			</sheetstringfield>
+					
+<!-- TOKEN -->			
+			<tokenfield name="main_token" source="token">
+				<bounds>409,24,64,64</bounds>
+				<empty>indicator_emptytoken</empty>
+				<script>
+					local dragging = false;
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+					
+					function onDrag(button, x, y, draginfo)
+						if not dragging and getPrototype() then
+							draginfo.setType("retainer");
+							draginfo.setTokenData(getPrototype());
+							draginfo.setShortcutData("retainer", window.getDatabaseNode().getNodeName());
+							draginfo.setDatabaseNode(window.getDatabaseNode().getNodeName());
+							draginfo.setStringData(window.main_character_name.getValue());
+
+							local base = draginfo.createBaseData();
+							base.setType("token");
+							base.setTokenData(getPrototype());
+
+							dragging = true;
+							return true;
+						end
+						return false;
+					end
+
+					function onDragEnd(draginfo)
+						dragging = false;
+					end					
+				</script>
+			</tokenfield>		
+			
+<!-- IDENTITY -->
+			<buttoncontrol name="main_identity">
+				<bounds>466,20,23,22</bounds>
+				<icon>
+					<normal>button_identityactivate</normal>
+					<pressed>button_identityactivate_down</pressed>
+				</icon>
+				<script>
+					function onInit()
+						if not User.isHost() then
+							setVisible(false);
+						end
+					end
+				
+					function onButtonPress()
+						GmIdentityManager.addIdentity(window.main_character_name.getValue());
+					end
+				</script>
+			</buttoncontrol>
+			
+<!-- CHARACTERISTICS -->
+			<sheetframe name="main_characteristics">
+				<bounds>12,92,472,111</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			<sheetframetitle name="main_characteristics_title">
+				<anchored>
+					<to>main_characteristics</to>
+				</anchored>
+				<static>Characteristics</static>
+			</sheetframetitle>
+
+			<!-- STRENGTH -->
+			<sheetcharacteristicvalue name="main_characteristics_strength_current" source="strength.current">
+				<anchored>
+					<to>main_characteristics</to>
+					<offset>42,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_strength_bonus</next>
+					<prev>main_character_description</prev>
+				</tabtarget>
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="main_characteristics_strength_bonus" source="strength.bonus">
+				<anchored>
+					<to>main_characteristics_strength_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_toughness_current</next>
+					<prev>main_characteristics_strength_current</prev>
+				</tabtarget>					
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>main_characteristics_strength_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>
+					</top>
+					<left>
+						<parent>main_characteristics_strength_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>main_characteristics_strength_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Strength</static>
+			</sheettitle>
+
+			<!-- TOUGHNESS -->
+			<sheetcharacteristicvalue name="main_characteristics_toughness_current" source="toughness.current">
+				<anchored>
+					<to>main_characteristics</to>
+					<offset>113,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_toughness_bonus</next>
+					<prev>main_characteristics_strength_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="main_characteristics_toughness_bonus" source="toughness.bonus">
+				<anchored>
+					<to>main_characteristics_toughness_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_agility_current</next>
+					<prev>main_characteristics_toughness_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>main_characteristics_toughness_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>main_characteristics_toughness_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>main_characteristics_toughness_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Toughness</static>
+			</sheettitle>
+
+			<!-- AGILITY -->
+			<sheetcharacteristicvalue name="main_characteristics_agility_current" source="agility.current">
+				<anchored>
+					<to>main_characteristics</to>
+					<offset>184,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_agility_bonus</next>
+					<prev>main_characteristics_toughness_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="main_characteristics_agility_bonus" source="agility.bonus">
+				<anchored>
+					<to>main_characteristics_agility_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_intelligence_current</next>
+					<prev>main_characteristics_agility_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>main_characteristics_agility_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>main_characteristics_agility_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>main_characteristics_agility_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Agility</static>
+			</sheettitle>
+		
+			<!-- INTELLIGENCE -->
+			<sheetcharacteristicvalue name="main_characteristics_intelligence_current" source="intelligence.current">
+				<anchored>
+					<to>main_characteristics</to>
+					<offset>255,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_intelligence_bonus</next>
+					<prev>main_characteristics_agility_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="main_characteristics_intelligence_bonus" source="intelligence.bonus">
+				<anchored>
+					<to>main_characteristics_intelligence_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_willpower_current</next>
+					<prev>main_characteristics_intelligence_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>main_characteristics_intelligence_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>main_characteristics_intelligence_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>main_characteristics_intelligence_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Intelligence</static>
+			</sheettitle>			
+			
+			<!-- WILLPOWER -->
+			<sheetcharacteristicvalue name="main_characteristics_willpower_current" source="willpower.current">
+				<anchored>
+					<to>main_characteristics</to>
+					<offset>326,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_willpower_bonus</next>
+					<prev>main_characteristics_intelligence_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="main_characteristics_willpower_bonus" source="willpower.bonus">
+				<anchored>
+					<to>main_characteristics_willpower_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_fellowship_current</next>
+					<prev>main_characteristics_willpower_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>main_characteristics_willpower_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>main_characteristics_willpower_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>main_characteristics_willpower_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Willpower</static>
+			</sheettitle>			
+			
+			<!-- FELLOWSHIP -->
+			<sheetcharacteristicvalue name="main_characteristics_fellowship_current" source="fellowship.current">
+				<anchored>
+					<to>main_characteristics</to>
+					<offset>397,24</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_fellowship_bonus</next>
+					<prev>main_characteristics_willpower_bonus</prev>
+				</tabtarget>				
+			</sheetcharacteristicvalue>
+			<sheetcharacteristicbonusvalue name="main_characteristics_fellowship_bonus" source="fellowship.bonus">
+				<anchored>
+					<to>main_characteristics_fellowship_current</to>
+					<position>righthigh</position>
+					<offset>1,0</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_stance_conservative</next>
+					<prev>main_characteristics_fellowship_current</prev>
+				</tabtarget>				
+			</sheetcharacteristicbonusvalue>
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>main_characteristics_fellowship_current</parent>
+						<anchor>bottom</anchor>
+						<offset>3</offset>						
+					</top>
+					<left>
+						<parent>main_characteristics_fellowship_current</parent>
+						<anchor>left</anchor>
+						<offset>-20</offset>
+					</left>
+					<right>
+						<parent>main_characteristics_fellowship_current</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<center />
+				<static>Fellowship</static>
+			</sheettitle>
+						
+			<!-- CONSERVATIVE -->			
+			<sheetnumberfield name="main_characteristics_stance_conservative" source="stance.conservative">
+				<anchored>
+					<left>
+						<parent>main_characteristics</parent>
+						<anchor>left</anchor>
+						<offset>192</offset>
+					</left>
+					<top>
+						<parent>main_characteristics</parent>
+						<anchor>top</anchor>
+						<offset>75</offset>
+					</top>
+					<size>
+						<width>24</width>
+						<height>24</height>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_characteristics_stance_reckless</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			<sheettitle>
+				<anchored>
+					<to>main_characteristics_stance_conservative</to>
+					<position>leftlow</position>
+					<offset>0,0</offset>
+					<size>
+						<width>76</width>
+						<height>18</height>
+					</size>
+				</anchored>
+				<static>Conservative</static>
+			</sheettitle>
+			
+			<!-- STANCE -->
+			<stanceselector>
+				<sourcename>stance.current</sourcename>
+				<anchored>
+					<left>
+						<parent>main_characteristics</parent>
+						<anchor>left</anchor>
+						<offset>222</offset>
+					</left>
+					<top>
+						<parent>main_characteristics</parent>
+						<anchor>top</anchor>
+						<offset>75</offset>
+					</top>
+					<size>
+						<width>28</width>
+						<height>24</height>
+					</size>
+				</anchored>
+			</stanceselector>			
+
+			<!-- RECKLESS -->
+			<sheetnumberfield name="main_characteristics_stance_reckless" source="stance.reckless">
+				<anchored>
+					<left>
+						<parent>main_characteristics</parent>
+						<anchor>left</anchor>
+						<offset>256</offset>
+					</left>
+					<top>
+						<parent>main_characteristics</parent>
+						<anchor>top</anchor>
+						<offset>75</offset>
+					</top>
+					<size>
+						<width>24</width>
+						<height>24</height>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_wounds_threshold</next>
+					<prev>main_characteristics_stance_conservative</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			<sheettitle>
+				<anchored>
+					<to>main_characteristics_stance_reckless</to>
+					<position>rightlow</position>
+					<offset>6,0</offset>
+					<size>
+						<width>76</width>
+						<height>18</height>
+					</size>
+				</anchored>
+				<static>Reckless</static>
+			</sheettitle>
+			
+<!-- WOUNDS -->
+			<sheetframe name="main_wounds">
+				<bounds>12,203,157,90</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_wounds_title">
+				<anchored>
+					<to>main_wounds</to>
+				</anchored>
+				<static>Wounds</static>
+			</sheetframetitle>
+			
+			<!-- THRESHOLD -->
+			<sheetlabel>
+				<anchored>
+					<to>main_wounds</to>
+					<offset>13,22</offset>
+					<size>
+						<width>100</width>
+					</size>
+				</anchored>
+				<static>Threshold</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_wounds_threshold" source="wounds.threshold">
+				<anchored>
+					<to>main_wounds</to>
+					<offset>119,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_wounds_current</next>
+					<prev>main_characteristics_stance_reckless</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+			<!-- CURRENT -->
+			<sheetlabel>
+				<anchored>
+					<to>main_wounds</to>
+					<offset>13,42</offset>
+					<size>
+						<width>100</width>
+					</size>
+				</anchored>
+				<static>Current</static>
+			</sheetlabel>
+			<woundnumberfield name="main_wounds_current" source="wounds.current">
+				<chit>wound</chit>			
+				<anchored>
+					<to>main_wounds</to>
+					<offset>119,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_combat_damage</next>
+					<prev>main_wounds_threshold</prev>
+				</tabtarget>
+			</woundnumberfield>			
+
+<!-- COMBAT -->
+			<sheetframe name="main_combat">
+				<bounds>169,203,158,90</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_combat_title">
+				<anchored>
+					<to>main_combat</to>
+				</anchored>
+				<static>Combat</static>
+			</sheetframetitle>
+
+			<!-- DAMAGE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_combat</to>
+					<offset>13,22</offset>
+					<size>
+						<width>100</width>
+					</size>
+				</anchored>
+				<static>Damage</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_combat_damage" source="damage">
+				<anchored>
+					<to>main_combat</to>
+					<offset>120,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_combat_soak</next>
+					<prev>main_wounds_current</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+			<!-- SOAK -->
+			<sheetlabel>
+				<anchored>
+					<to>main_combat</to>
+					<offset>13,42</offset>
+					<size>
+						<width>100</width>
+					</size>
+				</anchored>
+				<static>Soak</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_combat_soak" source="soak">
+				<anchored>
+					<to>main_combat</to>
+					<offset>120,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_combat_defence</next>
+					<prev>main_combat_damage</prev>
+				</tabtarget>
+			</sheetnumberfield>			
+			
+			<!-- DEFENCE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_combat</to>
+					<offset>13,62</offset>
+					<size>
+						<width>100</width>
+					</size>
+				</anchored>
+				<static>Defence</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_combat_defence" source="defence">
+				<anchored>
+					<to>main_combat</to>
+					<offset>120,61</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_ace_aggression</next>
+					<prev>main_combat_soak</prev>
+				</tabtarget>
+			</sheetnumberfield>				
+			
+<!-- ACE -->
+			<sheetframe name="main_ace">
+				<bounds>327,203,157,90</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_ace_title">
+				<anchored>
+					<to>main_ace</to>
+				</anchored>
+				<static>ACE</static>
+			</sheetframetitle>
+
+			<!-- AGGRESSION -->
+			<sheetlabel>
+				<anchored>
+					<to>main_ace</to>
+					<offset>13,22</offset>
+					<size>
+						<width>100</width>
+					</size>
+				</anchored>
+				<static>Aggression</static>
+			</sheetlabel>
+			<dicenumberfield name="main_ace_aggression" source="aggression">
+				<dice>dFortune</dice>
+				<anchored>
+					<to>main_ace</to>
+					<offset>119,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_ace_cunning</next>
+					<prev>main_combat_defence</prev>
+				</tabtarget>
+			</dicenumberfield>
+
+			<!-- CUNNING -->
+			<sheetlabel>
+				<anchored>
+					<to>main_ace</to>
+					<offset>13,42</offset>
+					<size>
+						<width>100</width>
+					</size>
+				</anchored>
+				<static>Cunning</static>
+			</sheetlabel>
+			<dicenumberfield name="main_ace_cunning" source="cunning">
+				<dice>dFortune</dice>
+				<anchored>
+					<to>main_ace</to>
+					<offset>119,41</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_ace_expertise</next>
+					<prev>main_ace_aggression</prev>
+				</tabtarget>
+			</dicenumberfield>			
+			
+			<!-- EXPERTISE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_ace</to>
+					<offset>13,62</offset>
+					<size>
+						<width>100</width>
+					</size>
+				</anchored>
+				<static>Expertise</static>
+			</sheetlabel>
+			<dicenumberfield name="main_ace_expertise" source="expertise">
+				<dice>dExpertise</dice>
+				<anchored>
+					<to>main_ace</to>
+					<offset>119,61</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_character_name</next>
+					<prev>main_ace_cunning</prev>
+				</tabtarget>
+			</dicenumberfield>				
+			
+		</sheetdata>
+	</windowclass>
+</root>

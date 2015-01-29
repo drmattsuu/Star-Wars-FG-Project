@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/abilities/ability.xml" />
+	<includefile source="classes/abilities/abilitymain.xml" />
+	<includefile source="classes/abilities/faith.xml" />
+	<includefile source="classes/abilities/faithmain.xml" />
+	<includefile source="classes/abilities/focus.xml" />
+	<includefile source="classes/abilities/focusmain.xml" />
+	<includefile source="classes/abilities/invention.xml" />
+	<includefile source="classes/abilities/inventionmain.xml" />
+	<includefile source="classes/abilities/oath.xml" />
+	<includefile source="classes/abilities/oathmain.xml" />
+	<includefile source="classes/abilities/order.xml" />
+	<includefile source="classes/abilities/ordermain.xml" />
+	<includefile source="classes/abilities/reputation.xml" />
+	<includefile source="classes/abilities/reputationmain.xml" />
+	<includefile source="classes/abilities/tactic.xml" />
+	<includefile source="classes/abilities/tacticmain.xml" />
+	<includefile source="classes/abilities/talent.xml" />
+	<includefile source="classes/abilities/talentmain.xml" />
+	<includefile source="classes/abilities/trick.xml" />
+	<includefile source="classes/abilities/trickmain.xml" />
+	
+	<includefile source="classes/abilities/obligation.xml" />	
+	<includefile source="classes/abilities/obligationmain.xml" />	
+	<includefile source="classes/abilities/duty.xml" />	
+	<includefile source="classes/abilities/dutymain.xml" />	
+	<includefile source="classes/abilities/morality.xml" />	
+	<includefile source="classes/abilities/moralitymain.xml" />		
+	<includefile source="classes/abilities/motivation.xml" />	
+	<includefile source="classes/abilities/motivationmain.xml" />	
+</root>

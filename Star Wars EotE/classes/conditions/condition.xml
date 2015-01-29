@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="conditionsmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,1,20,20</bounds>
+				<class>condition</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>21,4,-1,17</bounds>
+				<empty>&#171; New Condition &#187;</empty>
+				<disabled />
+			</basestringfield>
+			<rechargenumberfield name="currentrecharge">
+				<rechargevalue>3</rechargevalue>			
+				<anchored>
+					<left>
+						<anchor>right</anchor>
+						<offset>-29</offset>
+					</left>
+					<top>
+						<anchor>top</anchor>
+						<offset>3</offset>
+					</top>
+				</anchored>
+			</rechargenumberfield>			
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="condition">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic />
+			<minimum>
+				<width>20</width>
+				<height>20</height>
+			</minimum>
+		</sizelimits>	
+		<minimize>minimized_reference</minimize>
+		<playercontrol />
+		<sharable />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>condition_main</class>
+				<script file="classes/conditions/base.lua" />				
+			</subwindow>
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,90</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<activate>1</activate>
+			</tabcontrol>		
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

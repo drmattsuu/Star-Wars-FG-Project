@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="dicetower">
+		<genericcontrol>
+			<icon>dicetower</icon>
+			<iconhover>dicetowerhover</iconhover>
+			<tooltip><text>Dice Tower</text></tooltip>
+			<script file="classes/common/dicetower.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="basestringfield">
+		<stringfield>
+			<font>sheetlabel</font>
+			<selectioncolor>#90ffffff</selectioncolor>			
+			<underlineoffset>-3</underlineoffset>		
+ 			<nodrop />
+ 			<nodrag />			
+			<script file="classes/common/basestringfield.lua" />		
+		</stringfield>
+	</template>
+		
+</root>

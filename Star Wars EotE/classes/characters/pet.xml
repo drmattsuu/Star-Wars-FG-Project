@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="petsmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,1,20,20</bounds>
+				<class>pet</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>21,4,-1,17</bounds>
+				<empty>&#171; New Pet &#187;</empty>
+				<disabled />				
+			</basestringfield>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="pet">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>509</width>
+				<height>351</height>
+			</size>
+		</placement>
+		<minimize>minimized_pet</minimize>
+		<playercontrol />
+		<sharable />		
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>petmain</class>
+				<script file="classes/characters/pet.lua" />				
+			</subwindow>
+			<subwindow name="talents">
+				<bounds>0,0,-1,-1</bounds>
+				<class>pettalents</class>
+				<script file="classes/characters/pet.lua" />								
+			</subwindow>				
+			<subwindow name="actions">
+				<bounds>0,0,-1,-1</bounds>
+				<class>petactions</class>
+				<script file="classes/characters/pet.lua" />								
+			</subwindow>						
+			<subwindow name="notes">
+				<bounds>0,0,-1,-1</bounds>
+				<class>petnotes</class>
+				<script file="classes/characters/pet.lua" />								
+			</subwindow>						
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,291</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_talents</icon>
+					<subwindow>talents</subwindow>
+				</tab>				
+				<tab>
+					<icon>tab_actions</icon>
+					<subwindow>actions</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_notes</icon>
+					<subwindow>notes</subwindow>
+				</tab>				
+				<activate>1</activate>
+			</tabcontrol>
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+
+</root>

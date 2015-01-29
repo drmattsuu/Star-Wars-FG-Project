@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="closebuttonlist">
+		<closebutton>
+			<anchored>
+				<top>
+					<offset>12</offset>
+				</top>
+				<right>
+					<offset>-4</offset>
+				</right>
+			</anchored>
+		</closebutton>
+	</template>
+	
+</root>

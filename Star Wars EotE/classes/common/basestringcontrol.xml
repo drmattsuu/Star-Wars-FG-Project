@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="basestringcontrol">
+		<stringcontrol>
+			<font>sheetlabel</font>		
+			<underlineoffset>-3</underlineoffset>
+ 			<nodrop />
+ 			<nodrag />			
+			<script file="classes/common/basestringcontrol.lua" />		
+		</stringcontrol>
+	</template>
+		
+</root>

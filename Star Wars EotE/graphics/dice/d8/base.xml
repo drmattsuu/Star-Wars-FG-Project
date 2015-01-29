@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="d8icon" file="graphics/dice/d8/d8.png" />
+	<icon name="d8icon.1" file="graphics/dice/d8/d8.1.png" />
+	<icon name="d8icon.2" file="graphics/dice/d8/d8.2.png" />
+	<icon name="d8icon.3" file="graphics/dice/d8/d8.3.png" />
+	<icon name="d8icon.4" file="graphics/dice/d8/d8.4.png" />
+	<icon name="d8icon.5" file="graphics/dice/d8/d8.5.png" />
+	<icon name="d8icon.6" file="graphics/dice/d8/d8.6.png" />
+	<icon name="d8icon.7" file="graphics/dice/d8/d8.7.png" />
+	<icon name="d8icon.8" file="graphics/dice/d8/d8.8.png" />
+
+</root>

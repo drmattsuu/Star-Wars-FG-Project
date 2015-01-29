@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="closebutton">
+		<buttoncontrol>
+			<anchored>
+				<top>
+					<anchor>top</anchor>
+					<offset>-2</offset>
+				</top>
+				<right>
+					<anchor>right</anchor>
+					<offset>-3</offset>
+				</right>
+				<size>
+					<height>24</height>
+					<width>24</width>
+				</size>
+			</anchored>
+			<icon>
+				<normal>button_close</normal>
+				<pressed>button_close_down</pressed>
+				<hover>button_close_hover</hover>
+			</icon>
+			<script file="classes/common/closebutton.lua" />
+		</buttoncontrol>
+	</template>
+	
+</root>

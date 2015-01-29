@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="d10icon" file="graphics/dice/d10/d10.png" />
+	<icon name="d10icon.1" file="graphics/dice/d10/d10.1.png" />
+	<icon name="d10icon.2" file="graphics/dice/d10/d10.2.png" />
+	<icon name="d10icon.3" file="graphics/dice/d10/d10.3.png" />
+	<icon name="d10icon.4" file="graphics/dice/d10/d10.4.png" />
+	<icon name="d10icon.5" file="graphics/dice/d10/d10.5.png" />
+	<icon name="d10icon.6" file="graphics/dice/d10/d10.6.png" />
+	<icon name="d10icon.7" file="graphics/dice/d10/d10.7.png" />
+	<icon name="d10icon.8" file="graphics/dice/d10/d10.8.png" />
+	<icon name="d10icon.9" file="graphics/dice/d10/d10.9.png" />
+	<icon name="d10icon.10" file="graphics/dice/d10/d10.10.png" />
+	
+</root>

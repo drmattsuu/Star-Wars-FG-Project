@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- HORSES -->
+	<windowclass name="charsheet_other_vehicles">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Vehicles</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>horsesmall</class>
+				<datasource>.vehicles</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+	
+<!-- PETS -->
+	<windowclass name="charsheet_other_pets">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Pets</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>petsmall</class>
+				<datasource>.pets</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>	
+
+<!-- RETAINERS -->
+	<windowclass name="charsheet_other_retainers">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Retainers</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>retainersmall</class>
+				<datasource>.retainers</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>		
+	
+<!-- WINDOW -->
+	<windowclass name="charsheetother">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>509</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- COMPANIONS -->
+<!--			<sheetframe name="other_companions">
+				<bounds>12,20,472,261</bounds>
+			</sheetframe>
+
+			<!{1}** COMPANIONS **{1}>
+			<basewindowlist name="other_companions_companions">
+				<class>empty</class>
+				<skipempty />
+				<anchored>
+					<left>
+						<parent>other_companions</parent>
+						<anchor>left</anchor>
+						<offset>7</offset>					
+					</left>
+					<right>
+						<parent>other_companions</parent>
+						<anchor>right</anchor>
+						<offset>-7</offset>					
+					</right>
+					<top>
+						<parent>other_companions</parent>
+						<anchor>top</anchor>
+						<offset>7</offset>
+					</top>
+					<bottom>
+						<parent>other_companions</parent>
+						<anchor>bottom</anchor>
+						<offset>-7</offset>
+					</bottom>
+				</anchored>
+				<script>
+					function onInit()
+						createWindowWithClass("charsheet_other_vehicles", window.getDatabaseNode());
+						createWindowWithClass("charsheet_other_pets", window.getDatabaseNode());
+						createWindowWithClass("charsheet_other_retainers", window.getDatabaseNode());						
+					end
+				</script>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>other_companions_companions</to>
+					<offset>-9,-8</offset>
+				</anchored>
+				<target>other_companions_companions</target>
+			</scrollbar>-->			
+
+<!-- NOTES -->				
+			<sheetframe name="other_notes">
+				<!--<bounds>12,2,472,469</bounds>-->
+				<bounds>12,2,472,-10</bounds>
+			</sheetframe>
+			<sheetframetitle name="other_notes_title">
+				<anchored>
+					<to>other_notes</to>
+				</anchored>
+				<static>Notes</static>
+			</sheetframetitle>			
+			
+			<sheetformattedtextfield name="other_notes_notes" source="notes">
+				<anchored>
+					<left>
+						<parent>other_notes</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>other_notes</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>other_notes</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>other_notes</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>		
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>other_notes_notes</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>other_notes_notes</target>
+			</scrollbar>			
+			
+		</sheetdata>
+	</windowclass>
+</root>

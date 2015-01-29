@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/characters/career.xml" />
+	<includefile source="classes/characters/careeradvances.xml" />
+	<includefile source="classes/characters/careermain.xml" />
+	<includefile source="classes/characters/charsheet.xml" />
+	<includefile source="classes/characters/charsheetactions.xml" />
+	<includefile source="classes/characters/charsheetcombat.xml" />
+	<includefile source="classes/characters/charsheetinventory.xml" />
+	<includefile source="classes/characters/charsheetmain.xml" />
+	<includefile source="classes/characters/charsheetother.xml" />
+	<includefile source="classes/characters/charsheetskills.xml" />
+	<includefile source="classes/characters/charsheettalents.xml" />
+	<includefile source="classes/characters/horse.xml" />
+	<includefile source="classes/characters/horseactions.xml" />
+	<includefile source="classes/characters/horsemain.xml" />
+	<includefile source="classes/characters/horsenotes.xml" />
+	<includefile source="classes/characters/horsetalents.xml" />
+	<includefile source="classes/characters/horsetalentslot.xml" />	
+	<includefile source="classes/characters/partysheet.xml" />
+	<includefile source="classes/characters/partysheetmain.xml" />
+	<includefile source="classes/characters/partysheetnotes.xml" />
+	<includefile source="classes/characters/partysheetinventory.xml" />
+	<includefile source="classes/characters/partysheetstarship.xml" />
+	<includefile source="classes/characters/pet.xml" />
+	<includefile source="classes/characters/petactions.xml" />
+	<includefile source="classes/characters/petmain.xml" />
+	<includefile source="classes/characters/petnotes.xml" />
+	<includefile source="classes/characters/pettalents.xml" />
+	<includefile source="classes/characters/pettalentslot.xml" />
+	<includefile source="classes/characters/retainer.xml" />
+	<includefile source="classes/characters/retainercombat.xml" />
+	<includefile source="classes/characters/retainermain.xml" />
+	<includefile source="classes/characters/retainernotes.xml" />
+	<includefile source="classes/characters/skill.xml" />
+	<includefile source="classes/characters/skillmain.xml" />
+	<includefile source="classes/characters/skillspecialisations.xml" />
+	<includefile source="classes/characters/specialisation.xml" />
+	<includefile source="classes/characters/initdicepool.xml" />	
+
+	<includefile source="classes/characters/charsheetcombattab.xml" />	
+	<includefile source="classes/characters/weapondicepool.xml" />	
+</root>

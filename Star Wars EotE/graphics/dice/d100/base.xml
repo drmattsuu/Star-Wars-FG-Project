@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="d100icon" file="graphics/dice/d100/d100.png" />
+	<icon name="d100icon.0" file="graphics/dice/d100/d100.0.png" />
+	<icon name="d100icon.10" file="graphics/dice/d100/d100.10.png" />
+	<icon name="d100icon.20" file="graphics/dice/d100/d100.20.png" />
+	<icon name="d100icon.30" file="graphics/dice/d100/d100.30.png" />
+	<icon name="d100icon.40" file="graphics/dice/d100/d100.40.png" />
+	<icon name="d100icon.50" file="graphics/dice/d100/d100.50.png" />
+	<icon name="d100icon.60" file="graphics/dice/d100/d100.60.png" />
+	<icon name="d100icon.70" file="graphics/dice/d100/d100.70.png" />
+	<icon name="d100icon.80" file="graphics/dice/d100/d100.80.png" />
+	<icon name="d100icon.90" file="graphics/dice/d100/d100.90.png" />
+
+</root>

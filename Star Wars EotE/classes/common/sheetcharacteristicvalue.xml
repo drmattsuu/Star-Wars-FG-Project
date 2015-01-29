@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="sheetcharacteristicvalue">
+		<sheetnumberfield>
+			<anchored>
+				<position>insidetopleft</position>
+				<size>
+					<width>32</width>
+					<height>32</height>
+				</size>
+			</anchored>
+			<script file="classes/common/sheetcharacteristicvalue.lua" />
+		</sheetnumberfield>
+	</template>
+	
+</root>

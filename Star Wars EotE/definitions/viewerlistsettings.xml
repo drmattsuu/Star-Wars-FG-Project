@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<viewerlistsettings>
+		<portrait file="data\icons\mini_portrait.png" mask="data\icons\mini_portrait_mask.png" />
+		<spacing value="0" />
+	</viewerlistsettings>
+
+</root>

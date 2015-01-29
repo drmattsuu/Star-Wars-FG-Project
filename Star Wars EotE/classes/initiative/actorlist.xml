@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="actorlist">
+		<basewindowlist>
+			<class>actornpc</class>
+			<skipempty />
+			<empty>
+				<font>systemfont</font>
+				<text>Drop PCs/NPCs here to add to Actor list and create Init Slot.</text>
+			</empty>
+			<script file="classes/initiative/actorlist.lua" />		
+		</basewindowlist>
+	</template>
+
+</root>

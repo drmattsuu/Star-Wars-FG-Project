@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="partysheetsecret">
+		<placement>
+			<size>
+				<width>1</width>
+				<height>1</height>
+			</size>
+			<position>
+				<x>1</x>
+				<y>1</y>
+			</position>
+		</placement>
+		<sharable>
+			<shareas>partysheet</shareas>
+		</sharable>
+	</windowclass>
+	
+	<windowclass name="partysheet">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>509</width>
+				<height>557</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic />
+			<minimum>
+				<width>509</width>
+				<height>557</height>
+			</minimum>
+			<maximum>
+				<width>509</width>
+			</maximum>
+		</sizelimits>	
+		<minimize>minimized_npc</minimize>
+		<nodelete />
+		<sharable />
+		<playercontrol />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>partysheetmain</class>
+				<script file="classes/characters/partysheet.lua" />
+			</subwindow>
+			<subwindow name="notes">
+				<bounds>0,0,-1,-1</bounds>
+				<class>partysheetnotes</class>
+				<script file="classes/characters/partysheet.lua" />
+			</subwindow>
+			<subwindow name="starship">
+				<bounds>0,0,-1,-1</bounds>
+				<class>partysheetstarship</class>
+				<script file="classes/characters/partysheet.lua" />
+			</subwindow>
+			<subwindow name="inventory">
+				<bounds>0,0,-1,-1</bounds>
+				<class>partysheetinventory</class>
+				<script file="classes/characters/partysheet.lua" />
+			</subwindow>	
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,290</bounds>
+<!--				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>-->
+				<tab>
+					<icon>tab_starship</icon>
+					<subwindow>starship</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_inventory</icon>
+					<subwindow>inventory</subwindow>
+				</tab>				
+				<tab>
+					<icon>tab_notes</icon>
+					<subwindow>notes</subwindow>
+				</tab>
+	
+				<activate>1</activate>
+			</tabcontrol>
+			<closebutton />
+		</sheetdata>
+	</windowclass>	
+	
+</root>

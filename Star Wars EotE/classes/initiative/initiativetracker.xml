@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="initiativetrackersecret">
+		<placement>
+			<size>
+				<width>1</width>
+				<height>1</height>
+			</size>
+			<position>
+				<x>1</x>
+				<y>1</y>
+			</position>
+		</placement>
+		<sharable>
+			<shareas>initiativetracker</shareas>
+		</sharable>
+	</windowclass>
+
+	<windowclass name="initiativetracker">
+		<frame>ctbox</frame>
+		<placement>
+			<size>
+				<width>500</width>
+				<height>400</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<minimum>
+				<width>500</width>
+				<height>400</height>
+			</minimum>
+			<dynamic>
+				<resize>both</resize>
+			</dynamic>
+		</sizelimits>
+		<minimize>minimized_combat</minimize>
+		<playercontrol />
+		<nodelete />
+		<script file="classes/initiative/initiativetracker.lua" />		
+		<sheetdata>
+		
+<!-- Init Slots -->
+			<!-- labels -->
+			<stringcontrol name="initslot_label">
+				<bounds>60,10,132,15</bounds>
+				<font>sheetlabel</font>
+				<!--<color>#ffffffff</color>-->
+				<static>Initiative Slots - Skill:</static>
+				<center	/>
+			</stringcontrol>
+
+			<!--Initiative skill selector (used for auto init rolls)-->
+			<initskillcontrol name="init_skill_value">
+				<sourcename>initskill</sourcename>
+				<anchored>
+					<left>
+						<parent>initslot_label</parent>
+						<anchor>right</anchor>
+						<offset>5</offset>					
+					</left>
+					<top>
+						<parent>initslot_label</parent>
+						<anchor>top</anchor>
+						<offset>-1</offset>
+					</top>										
+				</anchored>
+			</initskillcontrol>	
+			
+			<stringcontrol>
+				<bounds>-196,15,25,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Init</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<bounds>-161,15,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ff0000ff</color>
+				<static>Boosts</static>
+				<center />
+			</stringcontrol>	
+			<stringcontrol>
+				<bounds>-120,15,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#00000000</color>
+				<static>Setbacks</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<bounds>-70,15,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#0000A000</color>
+				<static>Add dice</static>
+				<center />
+			</stringcontrol>			
+
+			<!-- actor list -->
+<!--			<actorlist name="actorlist">
+				<bounds>0,30,-18,-50</bounds>
+			</actorlist>-->
+			<!--Acting list tracks the actual init slots and who has used them/is in them-->
+			<initslotlist name="trackerinitslotlist">
+				<bounds>0,30,-18,-240</bounds>
+			</initslotlist>
+
+			<scrollbarcontrol>
+				<!--<bounds>-60,-50,45,27</bounds>-->
+				<target>trackerinitslotlist</target>
+				<anchored to="trackerinitslotlist" position="right" offset="-5,-5" width="20" />
+				<frame name="scrollbar_base" offset="0,12,0,12" />				
+				<normal name="scrollbutton_normal" />
+			</scrollbarcontrol>			
+			
+			<genericcontrol> 	
+				<icon>inittracker_separator</icon>
+				<anchored>
+					<top>
+						<parent>trackerinitslotlist</parent>
+						<anchor>bottom</anchor>
+						<offset>2</offset>
+					</top>
+					<left>
+						<anchor>left</anchor>
+					</left>
+					<right>
+						<anchor>right</anchor>
+					</right>					
+					<size>
+<!--						<width>136</width>-->
+						<height>19</height>
+					</size>
+				</anchored>
+				<!--<bounds>0,30,-18,-150</bounds>-->
+			</genericcontrol> 			
+
+			<stringcontrol>
+				<!--<bounds>60,15,90,15</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="35" />
+					<left anchor="left" offset="63" />
+					<size width="100" height="15" />
+				</anchored>				
+				<font>sheetlabel</font>
+				<!--<color>#ffffffff</color>-->
+				<static>Initiative Actors</static>
+				<center	/>
+			</stringcontrol>
+			
+			<stringcontrol>
+				<!--<bounds>-280,-215,50,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="25" />
+					<right anchor="right" offset="-230" />
+					<size width="50" height="10" />
+				</anchored>				
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Used 2</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<!--<bounds>-280,-203,50,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
+					<right anchor="right" offset="-230" />
+					<size width="50" height="10" />
+				</anchored>					
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Maneuvers</static>
+				<center />
+			</stringcontrol>			
+			<stringcontrol>
+				<!--<bounds>-234,-203,45,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
+					<right anchor="right" offset="-188" />
+					<size width="45" height="10" />
+				</anchored>					
+				<font>sheetlabelsmall</font>
+				<color>#ff0000ff</color>
+				<static>Boosts</static>
+				<center />
+			</stringcontrol>	
+			<stringcontrol>
+				<!--<bounds>-195,-203,45,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
+					<right anchor="right" offset="-149" />
+					<size width="45" height="10" />
+				</anchored>				
+				<font>sheetlabelsmall</font>
+				<color>#00000000</color>
+				<static>Setbacks</static>
+				<center />
+			</stringcontrol>			
+			<stringcontrol>
+				<!--<bounds>-146,-215,45,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="25" />
+					<right anchor="right" offset="-100" />
+					<size width="45" height="10" />
+				</anchored>				
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>STRAIN</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<!--<bounds>-150,-203,25,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
+					<right anchor="right" offset="-125" />
+					<size width="25" height="10" />
+				</anchored>				
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Curr</static>
+				<center />
+			</stringcontrol>	
+			<stringcontrol>
+				<!--<bounds>-119,-203,25,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
+					<right anchor="right" offset="-94" />
+					<size width="25" height="10" />
+				</anchored>				
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Thres</static>
+				<center />
+			</stringcontrol>			
+			<stringcontrol>
+				<!--<bounds>-80,-215,45,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="25" />
+					<right anchor="right" offset="-33" />
+					<size width="45" height="10" />
+				</anchored>				
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>WOUNDS</static>
+				<center />
+			</stringcontrol>	
+			<stringcontrol>
+				<!--<bounds>-84,-203,25,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
+					<right anchor="right" offset="-57" />
+					<size width="25" height="10" />
+				</anchored>					
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Curr</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<!--<bounds>-53,-203,25,10</bounds>-->
+				<anchored>
+					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
+					<right anchor="right" offset="-27" />
+					<size width="25" height="10" />
+				</anchored>				
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Thres</static>
+				<center />
+			</stringcontrol>			
+			
+			<!--Actorlist takes the drop action for PCs, NPCs, etc. and shows the list of actors waiting to act - i.e. they have not acted this turn.-->
+			<actorlist name="actorlist">
+				<bounds>0,-195,-18,-50</bounds>
+			</actorlist>			
+
+			<scrollbarcontrol>
+				<!--<bounds>-60,-50,45,27</bounds>-->
+				<target>actorlist</target>
+				<anchored to="actorlist" position="right" offset="-5,-5" width="20" />
+				<frame name="scrollbar_base" offset="0,12,0,12" />				
+				<normal name="scrollbutton_normal" />
+			</scrollbarcontrol>
+			
+<!--			<scrollercontrol>
+				<anchored>
+					<to>actorlist</to>
+					<position>belowright</position>
+					<offset>1,5</offset>
+					<size>
+						<width>45</width>
+						<height>27</height>
+					</size>
+				</anchored>
+				<target>actorlist</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+				</button>
+			</scrollercontrol>-->
+
+			<!-- next actor button -->
+			<buttoncontrol>
+				<bounds>5,-45,33,26</bounds>
+				<icon>
+					<normal>button_ctnextactor</normal>
+					<pressed>button_ctnextactor_down</pressed>
+				</icon>
+				<tooltip>
+					<text>Next Actor - Advance Turn Indicator</text>
+				</tooltip>
+				<class>image</class>
+				<script>					
+					function onButtonPress()
+						if User.isHost() then
+							InitiativeManager.nextActor();
+						else
+							InitiativeManager.clientNextActor();
+						end
+					end
+				</script>
+			</buttoncontrol>
+			
+			<!-- Menu button -->
+			<buttoncontrol>
+				<bounds>40,-40,40,15</bounds>
+				<icon>
+					<normal>button_menu</normal>
+					<pressed>button_menu_down</pressed>
+				</icon>
+				<tooltip>
+					<text>Combat tracker actions</text>
+				</tooltip>
+				<class>image</class>
+				<script>
+					function onInit()
+						registerMenuItem("Remove all entries", "erase", 5);
+						registerMenuItem("CONFIRM - Remove all entries???", "erase", 5, 3);
+						registerMenuItem("Initiative", "turn", 7);
+						registerMenuItem("Roll All Initiatives", "shuffle", 7, 8);
+						registerMenuItem("Roll NPC Initiatives", "mask", 7, 7);
+						registerMenuItem("Roll PC Initiatives", "portrait", 7, 6);
+						registerMenuItem("Clear All Initiatives", "pointer_circle", 7, 4);
+					end
+					
+					function onButtonPress()
+						if User.isHost() then
+							InitiativeManager.nextActor();
+						else
+							InitiativeManager.clientNextActor();
+						end
+					end
+					
+					function onClickRelease(button, x, y)
+						if button == 1 then
+							Interface.openRadialMenu();
+							return true;
+						end
+					end
+					
+					function onMenuSelection(item, subitem)
+						if item == 5 and subitem == 3 then
+							window.clearTracker();
+						elseif item == 7 and subitem == 4 then
+							window.clearAllInit();
+						elseif item == 7 and subitem == 6 then
+							window.rollPCInit();
+						elseif item == 7 and subitem == 7 then
+							window.rollNPCInit();
+						elseif item == 7 and subitem == 8 then
+							window.rollAllInit();							
+						end
+					end
+				</script>
+				<gmvisibleonly />
+			</buttoncontrol>			
+			
+<!--			<buttoncontrol>
+				<bounds>-100,-40,40,15</bounds>
+				<icon>
+					<normal>button_blank</normal>
+					<pressed>button_blank_down</pressed>
+				</icon>
+				<state>
+					<font>sheetlabelsmall</font>
+					<!{1}**<color>#ffffffff</color>**{1}>
+					<text>Menu</text>		
+					<icon>button_blank</icon>					
+				</state>
+				<tooltip>
+					<text>Init Tracker Menu Options</text>
+				</tooltip>
+				<class>image</class>
+				<script>
+					function onButtonPress()
+						if User.isHost() then
+							InitiativeManager.nextActor();
+						else
+							InitiativeManager.clientNextActor();
+						end
+					end
+				</script>
+			</buttoncontrol>-->			
+			
+			<!-- end of round button -->
+			<buttoncontrol>
+				<bounds>-53,-45,33,26</bounds>
+				<icon>
+					<normal>button_ctnextround</normal>
+					<pressed>button_ctnextround_down</pressed>
+				</icon>
+				<tooltip>
+					<text>End of Round - Reset Init Slots</text>
+				</tooltip>
+				<class>image</class>
+				<script>
+					function onButtonPress()
+						InitiativeManager.endOfTurn();
+					end
+				</script>
+				<gmvisibleonly />
+			</buttoncontrol>			
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+</root>

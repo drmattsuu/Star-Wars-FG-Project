@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="identitylist">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+			<genericcontrol name="anchor">
+				<bounds>0,0,1,1</bounds>
+			</genericcontrol>
+		</sheetdata>
+		<script file="classes/desktop/identitylist.lua" />
+	</windowclass>
+
+</root>

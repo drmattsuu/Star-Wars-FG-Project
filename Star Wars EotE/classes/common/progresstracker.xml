@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="progresstracker">
+		<genericcontrol>
+			<script file="classes/common/progresstracker.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

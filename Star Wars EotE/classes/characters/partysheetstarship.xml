@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- WEAPON each individual one  -->
+	<windowclass name="starship_combat_weapon">
+		<sizelimits>
+			<dynamic />
+			<!--<maximum>
+				<height>40</height>
+			</maximum>-->
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>item</class>
+			</windowbutton>
+			
+			<basestringfield name="name">
+				<bounds>21,3,196,17</bounds> <!--width was 96-->
+				<empty>&#171; New Item &#187;</empty>
+				<disabled />
+			</basestringfield>
+			
+			<baseformattedtextfield name="description">
+				<!--<bounds>21,24,231,34</bounds>-->
+				<!--<anchored>
+					<to>charsheet_combat_weapon</to>
+					<position>insidetopleft</position>
+					<offset>60,38</offset> 
+					<size>
+						<width>90</width>
+					</size>
+				</anchored>-->	
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>25</offset>					
+					</left>
+					<top>
+						<anchor>top</anchor>
+						<offset>21</offset>
+					</top>	
+					<size>
+						<width>450</width>
+					</size>
+				</anchored>
+				<!--<anchored>
+					<to>starship_combat_weapon</to>
+					<offset>42,24</offset>
+				</anchored>-->
+				<!--<disabled />-->
+			</baseformattedtextfield>
+			
+			<weaponskillcontrol name="skill">
+				<sourcename>weapon.skill</sourcename>
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>273</offset>					
+					</left>
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>					
+				</anchored>
+				<disabled />
+			</weaponskillcontrol>	
+			
+			<sheetnumberfield name="damage" source="weapon.damage">
+				<anchored>
+					<offset>304,2</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<disabled />
+			</sheetnumberfield>			
+			
+			
+			
+			<rangecontrol name="range">
+				<sourcename>weapon.range</sourcename>
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>335</offset>					
+					</left>
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>					
+				</anchored>
+				<disabled />
+			</rangecontrol>		
+			
+			<sheetnumberfield name="critical" source="weapon.critical">
+				<anchored>
+					<offset>366,2</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<disabled />
+			</sheetnumberfield>
+			
+		</sheetdata>
+	</windowclass>
+
+	<!-- partystarship window class-->
+	<windowclass name="partysheetstarship">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>429</height>
+			</size>
+		</placement>
+		<nodelete />	
+		<sheetdata>
+
+<!-- NAME -->
+<!--			<sheetframe name="ship_info">
+				<bounds>12,20,372,72</bounds>
+			</sheetframe>-->
+			
+		<!-- Starship -->
+			<sheetframe name="ship_info">
+				<bounds>12,10,393,72</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_ship_title">
+				<anchored>
+					<to>ship_info</to>
+				</anchored>
+				<static>Starship</static>
+			</sheetframetitle>			
+
+			<!-- NAME -->
+			<sheetstringfield name="main_ship_name" source="name">
+				<anchored>
+					<to>ship_info</to>
+					<position>insidetopleft</position>
+					<offset>13,15</offset>
+					<size>
+						<width>218</width>
+					</size>
+				</anchored>
+				<label>Name</label>
+				<tabtarget>
+					<next>main_ship_type</next>
+					<prev>main_ace_expertise</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- Make/Model -->
+			<sheetstringfield name="main_ship_type" source="type">
+				<anchored>
+					<to>ship_info</to>
+					<position>insidetopleft</position>					
+					<offset>237,15</offset>
+					<size>
+						<width>143</width>
+					</size>
+				</anchored>
+				<label>Make/Model</label>
+				<tabtarget>
+					<next>main_ship_hardpoints</next>
+					<prev>main_ship_name</prev>
+				</tabtarget>
+			</sheetstringfield>			
+			
+			<!-- Hard Points -->
+			<sheetstringfield name="main_ship_hardpoints" source="hardpoints">
+				<anchored>
+					<to>ship_info</to>
+					<position>insidetopleft</position>					
+					<offset>13,38</offset>
+					<size>
+						<width>218</width>
+					</size>
+				</anchored>
+				<label>Hard Points</label>
+				<tabtarget>
+					<next>main_enc_capacity</next>
+					<prev>main_ship_type</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- Encumbrance Capacity -->
+			<sheetstringfield name="main_enc_capacity" source="encumbrance_capacity">
+				<anchored>
+					<to>ship_info</to>
+					<position>insidetopleft</position>					
+					<offset>237,38</offset>
+					<size>
+						<width>143</width>
+					</size>
+				</anchored>
+				<label>Encumbrance Capacity</label>
+				<tabtarget>
+					<next>main_characteristics_brawn_current</next>
+					<prev>main_ship_hardpoints</prev>
+				</tabtarget>
+			</sheetstringfield>			
+			
+<!--			<windowshortcut name="notes_name_shortcut">
+				<anchored>
+					<to>notes_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>partysheet</class>
+			</windowshortcut>
+			<basestringfield name="notes_name_name" source="name">
+				<anchored>			
+					<to>notes_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; Starship Name &#187;</empty>
+				<tabtarget>
+					<next>notes_slots_faith</next>
+					<prev>notes_slots_tactic</prev>
+				</tabtarget>					
+			</basestringfield>			
+			<basestringfield name="notes_name_make" source="make">
+				<anchored>			
+					<to>notes_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,34</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; Make Model &#187;</empty>				
+			</basestringfield>-->
+
+<!-- TOKEN -->			
+			<tokenfield name="main_token" source="token">
+				<bounds>402,18,64,64</bounds>
+				<empty>indicator_emptytoken</empty>
+				<script>
+					local dragging = false;
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+					
+					function onDrag(button, x, y, draginfo)
+						if not dragging and getPrototype() then
+							draginfo.setType("partysheet");
+							draginfo.setTokenData(getPrototype());
+							draginfo.setShortcutData("partysheet", window.getDatabaseNode().getNodeName());
+							draginfo.setDatabaseNode(window.getDatabaseNode().getNodeName());
+							draginfo.setStringData("partytoken");
+
+							local base = draginfo.createBaseData();
+							base.setType("token");
+							base.setTokenData(getPrototype());
+
+							dragging = true;
+							return true;
+						end
+						return false;
+					end
+
+					function onDragEnd(draginfo)
+						dragging = false;
+					end					
+				</script>
+			</tokenfield>		
+			
+<!-- CHARACTERISTICS -->
+			<sheetframe name="starship_characteristics">
+				<bounds>12,92,288,180</bounds>
+			</sheetframe>
+			<sheetframetitle name="starship_char_title">
+				<anchored>
+					<to>starship_characteristics</to>
+				</anchored>
+				<static>Characteristics</static>
+			</sheetframetitle>
+			
+			<!-- Silhouette -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>15,66</offset>
+					<size>
+						<width>84</width>
+					</size>
+				</anchored>
+				<static>SILHOUETTE</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_silhouette" source="silhouette">
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>23,25</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_speed</next>
+					<prev>starship_shields_aft</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- SPEED -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>126,66</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>SPEED</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_speed" source="speed">
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>128,25</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_handling</next>
+					<prev>starship_silhouette</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- HANDLING -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>212,66</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>HANDLING</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_handling" source="handling">
+				<minvalue>-10</minvalue>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>220,25</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_soak</next>
+					<prev>starship_speed</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- ARMOR = SOAK -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>15,91</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>ARMOR</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_soak" source="soak">
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>23,110</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_port</next>
+					<prev>starship_speed</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- HULL TRAUMA -->
+			<sheetframe name="starship_hulltrauma">
+				<bounds>85,180,102,65</bounds>
+			</sheetframe>
+			<sheetframetitle name="starship_title">
+				<anchored>
+					<to>starship_hulltrauma</to>
+				</anchored>
+				<static>Hull Trauma</static>
+			</sheetframetitle>
+			
+			<sheetlabel>
+				<anchored>
+					<to>starship_hulltrauma</to>
+					<offset>8,44</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Thrsh</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_woundsthreshold" source="wounds.threshold">
+				<anchored>
+					<to>starship_hulltrauma</to>
+					<offset>15,22</offset>
+					<size>
+						<width>25</width>
+						<height>25</height>				
+					</size>
+				</anchored>				
+			</sheetnumberfield>
+			
+			<sheetlabel>
+				<anchored>
+					<to>starship_hulltrauma</to>
+					<offset>60,44</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Curr</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_woundscurrent" source="wounds.current">
+				<anchored>
+					<to>starship_hulltrauma</to>
+					<offset>60,22</offset>
+					<size>
+						<width>25</width>
+						<height>25</height>				
+					</size>
+				</anchored>				
+			</sheetnumberfield>
+			
+			<!-- SYSTEM STRAIN  -->
+			<sheetframe name="starship_systemstrain">
+				<bounds>190,180,102,65</bounds>
+			</sheetframe>
+			<sheetframetitle name="starship_title">
+				<anchored>
+					<to>starship_systemstrain</to>
+				</anchored>
+				<static>System Strain</static>
+			</sheetframetitle>
+			
+			<sheetlabel>
+				<anchored>
+					<to>starship_systemstrain</to>
+					<offset>8,44</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Thrsh</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_strainthreshold" source="strain.threshold">
+				<anchored>
+					<to>starship_systemstrain</to>
+					<offset>15,22</offset>
+					<size>
+						<width>25</width>
+						<height>25</height>				
+					</size>
+				</anchored>				
+			</sheetnumberfield>
+			
+			<sheetlabel>
+				<anchored>
+					<to>starship_systemstrain</to>
+					<offset>60,44</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Curr</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_straincurrent" source="strain.current">
+				<anchored>
+					<to>starship_systemstrain</to>
+					<offset>60,22</offset>
+					<size>
+						<width>25</width>
+						<height>25</height>				
+					</size>
+				</anchored>				
+			</sheetnumberfield>
+			
+<!-- SHIELDS -->
+			<sheetframe name="starship_shields">
+				<bounds>300,92,180,200</bounds>
+			</sheetframe>
+			<sheetframetitle name="starship_title">
+				<anchored>
+					<to>starship_shields</to>
+				</anchored>
+				<static>DEFENSE</static>
+			</sheetframetitle>
+			
+			<!-- FORE -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_shields</to>
+					<offset>114,40</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>FORE</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_shields_fore" source="shields.fore">
+				<anchored>
+					<to>starship_shields</to>
+					<offset>75,31</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_port</next>
+					<prev>starship_shields_aft</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- PORT -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_shields</to>
+					<offset>18,67</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>PORT</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_shields_port" source="shields.port">
+				<anchored>
+					<to>starship_shields</to>
+					<offset>15,85</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>	
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_starboard</next>
+					<prev>starship_shields_fore</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- STARBOARD -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_shields</to>
+					<offset>133,120</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>STBD</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_shields_starboard" source="shields.starboard">
+				<anchored>
+					<to>starship_shields</to>
+					<offset>130,85</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>	
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_aft</next>
+					<prev>starship_shields_fore</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- AFT -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_shields</to>
+					<offset>47,154</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>AFT</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_shields_aft" source="shields.aft">
+				<anchored>
+					<to>starship_shields</to>
+					<offset>75,145</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>	
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_fore</next>
+					<prev>starship_shields_starboard</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			
+<!--shields not working :( -->
+			<frame>
+				<name>starshipshields</name>
+				<!--<offset>280,60,100,100</offset>-->
+				<bounds>120,60,250,250</bounds>
+			</frame>
+						
+			
+<!-- NOTES -->
+			<sheetframe name="notes_notes">
+				<bounds>12,285,472,100</bounds> <!-- was 472,245 -->
+			</sheetframe>
+			<sheetframetitle name="notes_notes_title">
+				<anchored>
+					<to>notes_notes</to>
+				</anchored>
+				<static>Notes</static>
+			</sheetframetitle>			
+			
+			<sheetformattedtextfield name="notes_notes_notes" source="notes">
+				<anchored>
+					<left>
+						<parent>notes_notes</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>notes_notes</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>notes_notes</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>notes_notes</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>		
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>notes_notes_notes</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>notes_notes_notes</target>
+			</scrollbar>
+			
+			
+	
+	
+	
+		<!-- WEAPONS (the listbox)-->
+			<sheetframe name="combat_weapons">
+				<!--<bounds>12,385,472,160</bounds>-->
+				<bounds>12,385,472,-10</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			
+			<sheettitle name="combat_weapons_skill">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>29,8</offset>
+					<size>
+						<width>50</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Weapon</static>
+			</sheettitle>			
+					
+			<sheettitle name="combat_weapons_skill">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>284,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Skill</static>
+			</sheettitle>	
+			<sheettitle name="combat_weapons_damage">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>316,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Dam</static>
+			</sheettitle>			
+			<sheettitle name="combat_weapons_range">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>348,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Rng</static>
+			</sheettitle>	
+			<sheettitle name="combat_weapons_crit">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>380,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Crit</static>
+			</sheettitle>			
+
+			<sheetlist name="combat_weapons_weapons">
+				<anchored>
+					<left>
+						<parent>combat_weapons</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>combat_weapons</parent>
+						<anchor>right</anchor>
+						<offset>-10</offset>					
+					</right>
+					<top>
+						<parent>combat_weapons</parent>
+						<anchor>top</anchor>
+						<offset>19</offset>
+					</top>
+					<bottom>
+						<parent>combat_weapons</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.inventory</datasource>
+				<class>starship_combat_weapon</class>
+				<script>
+					function onFilter(w)
+						local itemnode = w.getDatabaseNode();
+						
+						local isequippednode = itemnode.getChild("isequipped");
+						if not isequippednode then
+							return false;						
+						end
+						if isequippednode.getValue() == 0 then
+							return false;
+						end
+						
+						local isweaponnode = itemnode.getChild("isstarshipweapon");
+						if not isweaponnode then
+							return false;
+						end
+						if isweaponnode.getValue() == 0 then
+							return false;
+						end
+						
+						return true;
+					end								
+				</script>
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>combat_weapons_weapons</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>combat_weapons_weapons</target>
+			</scrollbar>	
+			
+
+		</sheetdata>
+	</windowclass>
+	
+</root>

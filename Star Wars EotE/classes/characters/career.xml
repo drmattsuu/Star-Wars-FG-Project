@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="careersmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>career</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>21,3,-1,17</bounds>
+				<empty>&#171; New Career &#187;</empty>
+				<disabled />
+			</basestringfield>
+		</sheetdata>	
+	</windowclass>
+
+	<windowclass name="career">
+		<frame>charsheet</frame>
+		<sizelimits>
+			<minimum>
+				<width>600</width>
+				<height>442</height>
+			</minimum>
+		</sizelimits>
+		<minimize>minimized_reference</minimize>
+		<playercontrol />
+		<sharable />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>careermain</class>
+			</subwindow>
+			<subwindow name="advances">
+				<bounds>0,0,-1,-1</bounds>
+				<class>careeradvances</class>
+			</subwindow>
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,157</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_advances</icon>
+					<subwindow>advances</subwindow>
+				</tab>
+				<activate>1</activate>
+			</tabcontrol>		
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

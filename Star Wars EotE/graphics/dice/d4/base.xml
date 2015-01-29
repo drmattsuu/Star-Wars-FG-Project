@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="d4icon" file="graphics/dice/d4/d4.png" />
+	<icon name="d4icon.1" file="graphics/dice/d4/d4.1.png" />
+	<icon name="d4icon.2" file="graphics/dice/d4/d4.2.png" />
+	<icon name="d4icon.3" file="graphics/dice/d4/d4.3.png" />
+	<icon name="d4icon.4" file="graphics/dice/d4/d4.4.png" />	
+</root>

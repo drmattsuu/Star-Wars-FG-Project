@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="filtertrigger">
+		<genericcontrol>
+			<icon>search_icon</icon>
+			<widgetposition>
+				<anchor>bottomleft</anchor>
+				<offsetx>5</offsetx>
+				<offsety>-5</offsety>
+			</widgetposition>
+			<script file="classes/common/filtertrigger.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

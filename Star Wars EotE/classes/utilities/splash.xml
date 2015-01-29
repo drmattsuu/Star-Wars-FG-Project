@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="splash">
+		<frame>referencebox</frame>
+		<playercontrol />
+		<nodelete />
+		<placement>
+			<size>
+				<width>300</width>
+				<height>420</height>
+			</size>
+		</placement>
+		<sheetdata>
+			<genericcontrol>
+				<bounds>17,22,-20,72</bounds>
+				<icon>splash</icon>
+			</genericcontrol>
+
+			<basestringcontrol>
+				<bounds>17,102,-20,20</bounds>
+				<font>sheetlabel</font>
+				<disabled />
+				<center />
+				<nodrag />
+				<nodrop />
+				<static>Warhammer Fantasy Roleplay v3</static>
+			</basestringcontrol>
+			<basestringcontrol>
+				<bounds>17,122,-20,20</bounds>
+				<font>sheetlabel</font>
+				<disabled />				
+				<center />
+				<nodrag />
+				<nodrop />
+				<static>Ruleset</static>
+			</basestringcontrol>
+			
+			<basestringcontrol name="version">
+				<bounds>17,162,-20,20</bounds>
+				<font>sheetlabel</font>
+				<disabled />				
+				<center />
+				<nodrag />
+				<nodrop />
+				<static>Version 1.4.1</static>		
+			</basestringcontrol>
+		
+			<basestringcontrol>
+				<bounds>17,202,-20,20</bounds>
+				<font>sheetlabel</font>
+				<disabled />				
+				<center />
+				<nodrag />
+				<nodrop />
+				<static>Created by Neil G. Foster</static>
+			</basestringcontrol>
+			<basestringcontrol>
+				<bounds>17,222,-20,20</bounds>
+				<font>sheetlabel</font>
+				<disabled />				
+				<center />
+				<nodrag />
+				<nodrop />
+				<static>http://www.theforbiddentome.com</static>
+			</basestringcontrol>
+			
+			<basestringcontrol>
+				<bounds>17,262,-20,40</bounds>
+				<font>sheetlabel</font>
+				<multilinespacing >20</multilinespacing>
+				<disabled />				
+				<center />
+				<nodrag />
+				<nodrop />
+				<static>Based upon the 3.5e edition ruleset by Smiteworks Ltd.</static>
+			</basestringcontrol>			
+
+			<basestringcontrol>
+				<bounds>17,322,-20,80</bounds>
+				<font>sheetlabel</font>
+				<multilinespacing >20</multilinespacing>
+				<disabled />				
+				<center />
+				<nodrag />
+				<nodrop />
+				<static>This ruleset is not affiliated with, nor endorsed by, Games Workshop, Fantasy Flight Games, or Smiteworks Ltd.</static>
+			</basestringcontrol>
+		
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+
+</root>

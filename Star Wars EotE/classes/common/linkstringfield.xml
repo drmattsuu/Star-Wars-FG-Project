@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="linkstringfield">
+		<stringfield>
+			<underlineoffset>-3</underlineoffset>
+			<nodrag />
+			<script file="classes/common/linkstringfield.lua" />
+		</stringfield>
+	</template>
+	
+</root>

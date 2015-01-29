@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="corruptionchit" file="graphics/chits/corruption.png" />
+	<icon name="crownchit" file="graphics/chits/crown.png" />
+	<icon name="fatiguechit" file="graphics/chits/fatigue.png" />
+	<icon name="favourchit" file="graphics/chits/favour.png" />
+	<icon name="fortunechit" file="graphics/chits/fortune.png" />
+	<icon name="pennychit" file="graphics/chits/penny.png" />
+	<icon name="powerchit" file="graphics/chits/power.png" />
+	<icon name="rechargechit" file="graphics/chits/recharge.png" />
+	<icon name="shillingchit" file="graphics/chits/shilling.png" />
+	<icon name="stresschit" file="graphics/chits/stress.png" />
+	<icon name="strainchit" file="graphics/chits/strain.png" />
+	<icon name="woundchit" file="graphics/chits/wound.png" />
+	<icon name="lightsidechit" file="graphics/chits/lightside.png" />
+	<icon name="lightsidechit1" file="graphics/chits/lightside1.png" />
+	<icon name="lightsidechit2" file="graphics/chits/lightside2.png" />
+	<icon name="lightsidechit3" file="graphics/chits/lightside3.png" />
+	<icon name="lightsidechit4" file="graphics/chits/lightside4.png" />
+	<icon name="lightsidechit5" file="graphics/chits/lightside5.png" />
+	<icon name="lightsidechit6" file="graphics/chits/lightside6.png" />
+	<icon name="lightsidechit7" file="graphics/chits/lightside7.png" />
+	<icon name="lightsidechit8more" file="graphics/chits/lightside8more.png" />
+	<icon name="lightsidechit0" file="graphics/chits/lightside0.png" />
+	<icon name="darksidechit" file="graphics/chits/darkside.png" />
+	<icon name="darksidechit1" file="graphics/chits/darkside1.png" />
+	<icon name="darksidechit2" file="graphics/chits/darkside2.png" />
+	<icon name="darksidechit3" file="graphics/chits/darkside3.png" />
+	<icon name="darksidechit4" file="graphics/chits/darkside4.png" />
+	<icon name="darksidechit5" file="graphics/chits/darkside5.png" />
+	<icon name="darksidechit6" file="graphics/chits/darkside6.png" />
+	<icon name="darksidechit7" file="graphics/chits/darkside7.png" />
+	<icon name="darksidechit8more" file="graphics/chits/darkside8more.png" />
+	<icon name="darksidechit0" file="graphics/chits/darkside0.png" />
+</root>

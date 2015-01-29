@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="disease_main">
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>12,20,264,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>disease</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Disease &#187;</empty>
+				<tabtarget>
+					<next>main_details_traits</next>
+					<prev>main_details_severity</prev>
+				</tabtarget>				
+			</basestringfield>
+			
+<!-- DETAILS -->			
+			<sheetframe name="main_details">
+				<bounds>12,60,264,110</bounds>
+			</sheetframe>			
+			<sheetframetitle name="main_main_title">
+				<anchored>
+					<to>main_details</to>
+				</anchored>
+				<static>Details</static>
+			</sheetframetitle>
+			
+			<!-- TRAITS -->
+			<sheetlabel>
+				<anchored>
+					<to>main_details</to>
+					<offset>13,22</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Traits</static>
+			</sheetlabel>
+			<sheetstringfield name="main_details_traits" source="traits">
+				<anchored>
+					<top>
+						<parent>main_details</parent>
+						<anchor>top</anchor>
+						<offset>22</offset>
+					</top>
+					<right>
+						<parent>main_details</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>
+				</anchored>
+				<empty>&#171; Traits &#187;</empty>
+				<tabtarget>
+					<next>main_details_symptom</next>
+					<prev>main_name_name</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- SYMPTOM -->
+			<sheetlabel>
+				<anchored>
+					<to>main_details</to>
+					<offset>13,42</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Symptom</static>
+			</sheetlabel>
+			<sheetstringfield name="main_details_symptom" source="symptom">
+				<anchored>
+					<top>
+						<parent>main_details</parent>
+						<anchor>top</anchor>
+						<offset>42</offset>
+					</top>
+					<right>
+						<parent>main_details</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>
+				</anchored>
+				<empty>&#171; Symptom &#187;</empty>
+				<tabtarget>
+					<next>main_details_severity</next>
+					<prev>main_details_traits</prev>
+				</tabtarget>
+			</sheetstringfield>		
+
+			<!-- SEVERITY -->
+			<sheetlabel>
+				<anchored>
+					<to>main_details</to>
+					<offset>13,62</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Severity</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_details_severity" source="severity">
+				<anchored>
+					<to>main_details</to>
+					<offset>226,61</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>main_name_name</next>
+					<prev>main_details_symptom</prev>
+				</tabtarget>				
+			</sheetnumberfield>
+			
+			<!-- TOTAL SEVERITY -->
+			<sheetlabel>
+				<anchored>
+					<to>main_details</to>
+					<offset>13,82</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Total Severity</static>
+			</sheetlabel>
+			<sheetnumbercontrol name="symptoms_severity_severity">
+				<anchored>
+					<to>main_details</to>
+					<offset>226,81</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<disabled />
+				<script>
+					local updating = false;
+				
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();
+						if windownode then
+							local symptomsnode = windownode.getChild("symptoms");
+							if symptomsnode then
+								symptomsnode.onChildUpdate = onChildUpdate;
+							end
+						end
+						update();
+					end
+					
+					function onChildUpdate(source)
+						update();
+					end
+					
+					function update()
+						if not updating then
+							updating = true;
+							local total = 0;
+							local windownode = window.getDatabaseNode();
+							if windownode then
+								local severitynode = windownode.getChild("severity");
+								if severitynode then
+									total = total + severitynode.getValue();
+								end
+								local symptomsnode = windownode.getChild("symptoms");
+								if symptomsnode then
+									for k, n in pairs(symptomsnode.getChildren()) do
+										local severitynode = n.getChild("severity");
+										if severitynode then
+											total = total + severitynode.getValue();									
+										end
+									end
+								end
+							end
+							setValue(total);
+							updating = false;
+						end
+					end
+				</script>
+			</sheetnumbercontrol>			
+			
+<!-- DESCRIPTION -->
+			<sheetframe name="main_description">
+				<bounds>12,170,264,150</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_description_title">
+				<anchored>
+					<to>main_description</to>
+				</anchored>
+				<static>Description</static>
+			</sheetframetitle>
+			
+			<sheetformattedtextfield name="main_description_description" source="description">
+				<anchored>
+					<left>
+						<parent>main_description</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>main_description</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_description</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>main_description</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>main_description_description</to>
+					<offset>-9,-8</offset>
+				</anchored>
+				<target>main_description_description</target>
+			</scrollbar>			
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

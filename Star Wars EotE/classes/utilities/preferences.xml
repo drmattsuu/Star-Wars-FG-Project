@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="preferences_entry">
+		<frame>prefentrybox</frame>
+		<sizelimits>
+			<minimum>
+				<height>28</height>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+			<basestringcontrol name="label">
+				<font>chatfont</font>
+				<bounds>12,5,200,-3</bounds>
+				<empty>&#171; Unnamed Option &#187;</empty>
+				<readonly />
+			</basestringcontrol>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="preferences_entry_boolean">
+		<frame>prefentrybox</frame>
+		<sizelimits>
+			<minimum>
+				<height>28</height>
+			</minimum>
+		</sizelimits>
+		<script>
+			function setOptionData(e)
+				entry = e;
+				checkbox.setState(PreferenceManager.getValue(entry.name));
+			end
+		</script>
+		<sheetdata>
+			<basestringcontrol name="label">
+				<font>chatfont</font>
+				<bounds>12,6,-50,-3</bounds>
+				<empty>&#171; Unnamed Option &#187;</empty>
+				<readonly />
+			</basestringcontrol>
+			<checkbox name="checkbox">
+				<bounds>-40,3,20,20</bounds>
+				<script>
+					function onValueChanged()
+						PreferenceManager.setValue(window.entry.name, getState());
+					end
+				</script>
+			</checkbox>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="preferences_entry_string">
+		<frame>prefentrybox</frame>
+		<sizelimits>
+			<minimum>
+				<height>28</height>
+			</minimum>
+		</sizelimits>
+		<script>
+			function setOptionData(e)
+				entry = e;
+				value.setValue(PreferenceManager.getValue(entry.name));
+			end
+		</script>
+		<sheetdata>
+			<basestringcontrol name="label">
+				<font>chatfont</font>
+				<bounds>12,6,-120,-3</bounds>
+				<empty>&#171; Unnamed Option &#187;</empty>
+				<readonly />
+			</basestringcontrol>
+			<basestringcontrol name="value">
+				<font>chatfont</font>
+				<bounds>-110,6,-10,-3</bounds>
+				<empty>&#171; No value &#187;</empty>
+				<center />
+				<frame>
+					<name>bonus</name>
+					<offset>7,6,5,0</offset>
+				</frame>
+				<script>
+					function onValueChanged()
+						PreferenceManager.setValue(window.entry.name, getValue());
+					end
+				</script>
+			</basestringcontrol>
+		</sheetdata>
+	</windowclass>
+	
+	<windowclass name="preferences_entry_number">
+		<frame>prefentrybox</frame>
+		<sizelimits>
+			<minimum>
+				<height>28</height>
+			</minimum>
+		</sizelimits>
+		<script>
+			function setOptionData(e)
+				entry = e;
+				value.setValue(PreferenceManager.getValue(entry.name));
+			end
+		</script>
+		<sheetdata>
+			<basestringcontrol name="label">
+				<font>chatfont</font>
+				<bounds>12,6,-60,-3</bounds>
+				<empty>&#171; Unnamed Option &#187;</empty>
+				<readonly />
+			</basestringcontrol>
+			<basenumbercontrol name="value">
+				<font>chatfont</font>
+				<bounds>-50,0,-10,-3</bounds>
+				<center />
+				<frame>
+					<name>bonus</name>
+					<offset>7,0,5,0</offset>
+				</frame>
+				<script>
+					function onValueChanged()
+						PreferenceManager.setValue(window.entry.name, getValue());
+					end
+				</script>
+			</basenumbercontrol>
+		</sheetdata>
+	</windowclass>	
+
+	<windowclass name="preferences_entrygroup">
+		<sizelimits>
+			<minimum>
+				<height>40</height>
+			</minimum>
+		</sizelimits>
+		<frame>prefgroupbox</frame>
+		<sheetdata>
+			<buttoncontrol name="foldclose">
+				<bounds>10,8,23,23</bounds>
+				<icon>
+					<normal>button_groupopen</normal>
+					<pressed>button_groupopen_down</pressed>
+				</icon>
+				<invisible />				
+				<script>
+					function onButtonPress()
+						setVisible(false);
+						window.foldopen.setVisible(true);
+						window.entries.setVisible(false);
+					end
+				</script>
+			</buttoncontrol>
+			<buttoncontrol name="foldopen">
+				<bounds>10,8,23,23</bounds>
+				<icon>
+					<normal>button_groupclosed</normal>
+					<pressed>button_groupclosed_down</pressed>
+				</icon>
+				<script>
+					function onButtonPress()
+						setVisible(false);
+						window.foldclose.setVisible(true);
+						window.entries.setVisible(true);
+					end
+				</script>
+			</buttoncontrol>
+		
+			<basestringcontrol name="label">
+				<font>sheetlabel</font>
+				<bounds>40,12,-15,20</bounds>
+				<empty>&#171; Unnamed Group &#187;</empty>
+				<frame>
+					<name>bonus</name>
+					<offset>7,7,5,0</offset>
+				</frame>
+				<readonly />
+			</basestringcontrol>
+			
+			<basewindowlist name="entries">
+				<class>preferences_entry</class>
+				<skipempty />
+				<noscroll />
+				<invisible />
+				<anchored>
+					<top>
+						<anchor>top</anchor>
+						<offset>38</offset>
+					</top>
+					<left>
+						<anchor>left</anchor>
+						<offset>2</offset>
+					</left>
+					<right>
+						<anchor>right</anchor>
+						<offset>-5</offset>
+					</right>
+				</anchored>
+				<script>
+					function onSortCompare(w1, w2)
+						return w1.label.getValue() &gt; w2.label.getValue();
+					end
+				</script>
+			</basewindowlist>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="preferences">
+		<frame>indexbox</frame>
+		<placement>
+			<size>
+				<width>500</width>
+				<height>400</height>
+			</size>
+		</placement>
+		<script file="classes/utilities/preferences.lua" />
+		<sheetdata>
+			<!-- Title -->
+			<genericcontrol>
+				<bounds>150,0,200,40</bounds>
+				<frame>
+					<name>indexboxtitle</name>
+				</frame>
+			</genericcontrol>
+			
+			<basestringcontrol>
+				<bounds>26,15,-30,17</bounds>
+				<font>sheetlabel</font>
+				<color>#9fffffff</color>
+				<center />
+				<static>Preferences</static>
+			</basestringcontrol>
+			<basestringcontrol>
+				<bounds>25,14,-30,17</bounds>
+				<font>sheetlabel</font>
+				<center />
+				<static>Preferences</static>
+			</basestringcontrol>
+			
+			<!-- Generic -->
+			<genericcontrol name="genericframe">
+				<bounds>23,44,-27,-27</bounds>
+				<frame>
+					<name>sheetgroup</name>
+					<offset>9,7,9,6</offset>
+				</frame>
+			</genericcontrol>
+			
+			<!-- Items -->
+			<basewindowlist name="groups">
+				<class>preferences_entrygroup</class>
+				<bounds>23,44,-27,-27</bounds>
+				<skipempty />
+				<script>
+					function onSortCompare(w1, w2)
+						return w1.label.getValue() &gt; w2.label.getValue();
+					end
+				</script>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>groups</to>
+					<offset>-8,-5</offset>					
+				</anchored>
+				<target>groups</target>
+			</scrollbar>
+			
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>2</offset>
+					</top>
+					<right>
+						<offset>-5</offset>
+					</right>
+				</anchored>
+			</closebutton>
+		</sheetdata>
+	</windowclass>
+</root>

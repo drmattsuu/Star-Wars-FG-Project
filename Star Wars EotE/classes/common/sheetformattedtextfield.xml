@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="sheetformattedtextfield">
+		<baseformattedtextfield>
+			<script file="classes/common/sheetformattedtextfield.lua" />
+		</baseformattedtextfield>
+	</template>
+	
+</root>

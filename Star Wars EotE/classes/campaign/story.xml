@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="storysmall">
+<!--		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>-->
+		<script file="classes/campaign/campaign_list_record.lua" />
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>story</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>22,3,-1,18</bounds>
+				<empty>&#171; New Story &#187;</empty>
+				<disabled />				
+			</basestringfield>
+
+			<genericcontrol name="rightanchor">
+				<anchored height="0" width="0">
+					<top />
+					<right />
+				</anchored>
+			</genericcontrol>
+			<button_idelete name="idelete">
+				<anchored>
+					<top />
+					<right parent="rightanchor" anchor="left" relation="relative" offset="-5" />
+				</anchored>
+			</button_idelete>			
+			<icon_access name="access" />
+			<icon_modified name="modified" />			
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="story">
+		<frame>storybox</frame>
+		<placement>
+			<size>
+				<width>250</width>
+				<height>300</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic />
+			<minimum>
+				<width>250</width>
+				<height>300</height>
+			</minimum>
+			<maximum>
+				<width>475</width>
+				<height>570</height>
+			</maximum>			
+		</sizelimits>
+		<minimize>minimized_story</minimize>
+		<playercontrol />
+		<sharable />
+		<nodelete />
+		<tooltip field="name" />
+		<script>
+			function onInit()
+				onLockChanged();
+			end
+			
+			function onLockChanged()
+				local bReadOnly = WindowManager.getReadOnlyState(getDatabaseNode());
+				
+				name.setReadOnly(bReadOnly);
+				text.setReadOnly(bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<windowshortcut>
+				<bounds>10,8,20,20</bounds>
+				<class>story</class>
+			</windowshortcut>
+			<basestringfield name="name">
+				<bounds>31,11,-15,20</bounds>
+				<empty>&#171; New Story &#187;</empty>
+			</basestringfield>
+			<baseformattedtextfield name="text">
+				<bounds>12,43,-19,-10</bounds>
+				<font>
+					<normal>chatfont</normal>
+					<bold>narratorfont</bold>
+					<italic>chatitalicfont</italic>
+					<bolditalic>chatbolditalicfont</bolditalic>
+					<title>sheetlabel</title>
+				</font>
+				<linkicon>
+					<link>button_openwindow</link>
+					<emptylink>button_emptytarget</emptylink>
+				</linkicon>
+				<footer>footer_narrow</footer>
+				<selectioncolor>#FFD296</selectioncolor>
+				<empty>Click to enter text</empty>
+			</baseformattedtextfield>
+			<viewerlist>
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>11</offset>
+					</left>
+					<bottom>
+						<anchor>bottom</anchor>
+						<offset>-14</offset>
+					</bottom>
+				</anchored>
+			</viewerlist>
+			<scrollercontrol>
+				<bounds>-53,-35,45,27</bounds>
+				<target>text</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+				</button>
+			</scrollercontrol>
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="mSuccessicon" file="graphics/dice/mSuccess/mSuccess.png" />
+	<icon name="mSuccessicon.1" file="graphics/dice/mSuccess/mSuccess.1.png" />
+	<icon name="mSuccessicon.2" file="graphics/dice/mSuccess/mSuccess.2.png" />
+	<icon name="mSuccessicon.3" file="graphics/dice/mSuccess/mSuccess.3.png" />
+	<icon name="mSuccessicon.4" file="graphics/dice/mSuccess/mSuccess.4.png" />
+	<icon name="mSuccessicon.5" file="graphics/dice/mSuccess/mSuccess.5.png" />
+	<icon name="mSuccessicon.6" file="graphics/dice/mSuccess/mSuccess.6.png" />
+	<icon name="mSuccessicon.7" file="graphics/dice/mSuccess/mSuccess.7.png" />
+	<icon name="mSuccessicon.8" file="graphics/dice/mSuccess/mSuccess.8.png" />
+</root>

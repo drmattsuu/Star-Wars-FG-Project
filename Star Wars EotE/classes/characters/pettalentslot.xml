@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="pettalentslot">
+		<genericcontrol>
+			<anchored>
+				<position>insidetopleft</position>
+				<size>
+					<height>20</height>
+				</size>
+			</anchored>
+			<droptypes>
+				<type>shortcut</type>
+			</droptypes>
+			<script file="classes/characters/pettalentslot.lua" />
+		</genericcontrol>
+	</template>	
+	
+</root>

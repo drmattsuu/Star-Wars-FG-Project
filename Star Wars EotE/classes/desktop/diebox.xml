@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<windowclass name="diebox">
+		<sizelimits>
+			<minimum>
+				<height>30</height>
+			</minimum>
+		</sizelimits>
+		<frame>collector</frame>
+		<sheetdata>
+			<genericcontrol name="dieboxcontrol">
+				<bounds>0,0,-1,-1</bounds>
+				<droptypes>
+					<type>dice</type>
+				</droptypes>
+				<stateframe>
+					<drophilight>
+						<name>modstackfocus</name>
+						<offset>-3,-3,-2,-2</offset>
+					</drophilight>
+				</stateframe>
+				<script file="classes/desktop/diebox.lua" />				
+			</genericcontrol>
+			
+			<buttoncontrol name="dieboxupgradedifficulty">
+				<bounds>1,1,20,20</bounds>
+				<icon>
+					<normal>button_upgrade_difficulty</normal>
+					<pressed>button_upgrade_difficulty_down</pressed>
+				</icon>
+				<tooltip>
+					<text>Upgrade Dice Pool Difficulty Die</text>
+				</tooltip>				
+				<script>
+					function onButtonPress()
+						window.dieboxcontrol.DieBoxUpgradeDowngradeButtonPress(self.getName());
+					end	
+					
+					function onDrop(x, y, draginfo)
+						window.dieboxcontrol.onDrop(x, y, draginfo);
+						return true;
+					end
+				</script>
+			</buttoncontrol>
+			
+			<buttoncontrol name="dieboxdowngradechallenge">
+				<bounds>1,21,20,20</bounds>
+				<icon>
+					<normal>button_downgrade_challenge</normal>
+					<pressed>button_downgrade_challenge_down</pressed>
+				</icon>
+				<tooltip>
+					<text>Downgrade Dice Pool Challenge Die</text>
+				</tooltip>				
+				<script>
+					function onButtonPress()
+						window.dieboxcontrol.DieBoxUpgradeDowngradeButtonPress(self.getName());
+					end	
+					
+					function onDrop(x, y, draginfo)
+						window.dieboxcontrol.onDrop(x, y, draginfo);
+						return true;
+					end
+				</script>
+			</buttoncontrol>			
+			
+			<buttoncontrol name="dieboxupgradeability">
+				<bounds>22,1,20,20</bounds>
+				<icon>
+					<normal>button_upgrade_ability</normal>
+					<pressed>button_upgrade_ability_down</pressed>
+				</icon>
+				<tooltip>
+					<text>Upgrade Dice Pool Ability Die</text>
+				</tooltip>				
+				<script>
+					function onButtonPress()
+						window.dieboxcontrol.DieBoxUpgradeDowngradeButtonPress(self.getName());
+					end	
+					
+					function onDrop(x, y, draginfo)
+						window.dieboxcontrol.onDrop(x, y, draginfo);
+						return true;
+					end
+				</script>
+			</buttoncontrol>
+			
+			<buttoncontrol name="dieboxdowngradeproficiency">
+				<bounds>22,21,20,20</bounds>
+				<icon>
+					<normal>button_downgrade_proficiency</normal>
+					<pressed>button_downgrade_proficiency_down</pressed>
+				</icon>
+				<tooltip>
+					<text>Downgrade Dice Pool Proficiency Die</text>
+				</tooltip>				
+				<script>
+					function onButtonPress()
+						window.dieboxcontrol.DieBoxUpgradeDowngradeButtonPress(self.getName());
+					end	
+					
+					function onDrop(x, y, draginfo)
+						window.dieboxcontrol.onDrop(x, y, draginfo);
+						return true;
+					end
+				</script>
+			</buttoncontrol>
+			
+			<buttoncontrol name="dieboxroll">
+				<bounds>-32,1,32,23</bounds>
+				<icon>
+					<normal>button_submit</normal>
+					<pressed>button_submit_down</pressed>
+				</icon>
+				<tooltip>
+					<text>Roll Dice Pool</text>
+				</tooltip>				
+				<script>
+					function onButtonPress()
+						window.dieboxcontrol.onDieboxButtonPress();
+					end	
+					
+					function onDrop(x, y, draginfo)
+						window.dieboxcontrol.onDrop(x, y, draginfo);
+						return true;
+					end
+				</script>
+			</buttoncontrol>	
+			
+			<buttoncontrol name="dieboxgmhidden">
+				<bounds>-32,20,32,23</bounds>
+<!--				<tooltip>
+					<text>Show/Hide GM Diebox and Rolls</text>
+				</tooltip>-->
+				<state>
+					<icon>visibilityon</icon>
+					<tooltip>Show GM Dice Pool and Roll Result to Players</tooltip>
+				</state>
+				<state>
+					<icon>visibilityoff</icon>
+					<tooltip>Hide GM Dice Pool and Roll Result from Players</tooltip>
+				</state>				
+				<script>
+					function onInit()
+						if User.isHost() then
+							DieBoxManager.registerGMHiddenControl(self);
+						end
+					end
+				
+					function onValueChanged()
+						window.dieboxcontrol.onHiddenButtonPress(self);
+					end					
+					
+					function onDrop(x, y, draginfo)
+						window.dieboxcontrol.onDrop(x, y, draginfo);
+						return true;
+					end
+				</script>
+				 <gmvisibleonly /> 
+			</buttoncontrol>
+		</sheetdata>
+	</windowclass>
+</root>

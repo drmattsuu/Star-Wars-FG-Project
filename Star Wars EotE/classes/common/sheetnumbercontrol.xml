@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="sheetnumbercontrol">
+		<basenumbercontrol>
+			<anchored>
+				<position>insidetopleft</position>
+				<size>
+					<width mergerule="replace">25</width>
+					<height mergerule="replace">17</height>
+				</size>
+			</anchored>
+			<frame mergerule="replace">
+				<name>modifier</name>
+				<offset>4,5,4,3</offset>
+			</frame>
+			<script file="classes/common/sheetnumbercontrol.lua" />
+		</basenumbercontrol>	
+	</template>
+	
+</root>

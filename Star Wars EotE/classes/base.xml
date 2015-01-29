@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/abilities/base.xml" />
+	<includefile source="classes/actions/base.xml" />	
+	<includefile source="classes/campaign/base.xml" />
+	<includefile source="classes/characters/base.xml" />
+	<includefile source="classes/common/base.xml" />
+	<includefile source="classes/conditions/base.xml" />
+	<includefile source="classes/desktop/base.xml" />
+	<includefile source="classes/initiative/base.xml" />	
+	<includefile source="classes/utilities/base.xml" />
+	
+	<!--Reference classes from 3.5e and CoreRPG 3.0.5-->
+	<includefile source="classes/reference/base.xml" />	
+</root>

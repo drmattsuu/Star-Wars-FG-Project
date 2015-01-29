@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="actorhorse">
+		<frame>ctentrybox</frame>
+		<sizelimits>
+			<minimum>
+				<height>32</height>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+		
+			<!-- active indicator -->
+			<actoractiveindicator name="active">
+				<anchored>
+					<top>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<anchor>left</anchor>
+					</left>
+					<size>
+						<width>33</width>
+					</size>
+				</anchored>
+			</actoractiveindicator>
+			
+			<!-- shortcut -->
+			<buttoncontrol name="shortcut">	
+				<bounds>30,6,20,20</bounds>			
+				<icon>
+					<normal>button_openwindow</normal>
+					<pressed>button_emptytarget</pressed>
+				</icon>
+				<invisible />
+				<script>
+					function onInit()
+						local windownode = window.getDatabaseNode();
+						if windownode and windownode.isOwner() then
+							setVisible(true);
+						end
+					end
+				
+					function onButtonPress()
+						HorseManager.openHorseSheet(window.getDatabaseNode());
+					end
+				</script>
+			</buttoncontrol>
+			
+			<!-- name -->
+			<basestringfield name="name">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>52</offset>
+					</left>
+					<right>
+						<anchor>right</anchor>
+						<offset>-276</offset>
+					</right>
+					<top>
+						<anchor>top</anchor>
+						<offset>9</offset>
+					</top>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>			
+				<empty>&#171; Unnamed &#187;</empty>
+				<disabled/>
+			</basestringfield>
+			
+			<!-- initiative -->
+			<sheetnumberfield name="initiative" source="actor.initiative">
+				<anchored>
+					<position>insidetopright</position>				
+					<offset>245,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>wounds_current</next>
+					<prev>wounds_current</prev>
+				</tabtarget>
+				<script>
+					function onValueChanged()
+						super.onValueChanged();
+						window.windowlist.applySort();
+					end
+				</script>				
+			</sheetnumberfield>
+								
+			<!-- health -->
+			<chitnumberfield name="wounds_current" source="health.value">
+				<chit>wound</chit>
+				<anchored>
+					<position>insidetopright</position>
+					<offset>90,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>initiative</next>
+					<prev>initiative</prev>
+				</tabtarget>
+				<invisible />
+				<script>
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();
+						if windownode and windownode.isOwner() then
+							setVisible(true);
+						end
+					end
+				</script>				
+			</chitnumberfield>				
+		
+		</sheetdata>
+		<script file="classes/initiative/actorhorse.lua" />		
+	</windowclass>
+	
+</root>

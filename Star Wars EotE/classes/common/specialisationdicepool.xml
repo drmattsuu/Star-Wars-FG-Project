@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="specialisationdicepool">
+		<buttoncontrol>
+			<icon>
+				<normal>textentry_die</normal>
+			</icon>
+			<script file="classes/common/specialisationdicepool.lua" />
+		</buttoncontrol>
+	</template>
+	
+</root>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="darksidechit">
+		<sizelimits>
+			<maximum>
+				<height>56</height>
+				<width>56</width>
+			</maximum>
+			<minimum>
+				<height>56</height>
+				<width>56</width>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+			<chit>
+				<chit>darkside</chit>
+				<bounds>0,0,56,56</bounds>
+				<tooltip>
+					<text>Darkside Token(drag off to remove)</text>
+				</tooltip>					
+			</chit>
+			<!--<basenumbercontrol name="darksidechit" source="lightsidechit">
+				<bounds>5,0,54,42</bounds>
+				<font>modcollector</font>
+				<displaysign />
+				<keyeditframe>
+					<name>modstackfocus</name>
+					<offset>-1,-11,-1,-8</offset>
+				</keyeditframe>
+				<droptypes>
+					<type>number</type>
+				</droptypes>
+				<stateframe>
+					<drophilight>
+						<name>modstackfocus</name>
+						<offset>0,-11,0,3</offset>
+					</drophilight>
+				</stateframe>
+				<!--<script file="classes/desktop/modifierstackmodifier.lua" />-->
+			<!--</basenumbercontrol>
+			<basestringcontrol name="label">
+				<bounds>5,34,54,12</bounds>
+				<font>modcollectorlabel</font>
+				<static>Modifier</static>
+				<center />
+			</basestringcontrol>-->
+		</sheetdata>
+		
+	</windowclass>	
+</root>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- WINDOW -->
+	<windowclass name="petmain">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>351</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- PET -->
+			<sheetframe name="main_pet">
+				<bounds>12,20,393,72</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_pet_title">
+				<anchored>
+					<to>main_pet</to>
+				</anchored>
+				<static>Pet</static>
+			</sheetframetitle>			
+
+			<!-- NAME -->
+			<sheetstringfield name="main_pet_name" source="name">
+				<anchored>
+					<to>main_pet</to>
+					<position>insidetopleft</position>
+					<offset>13,18</offset>
+					<size>
+						<width>367</width>
+					</size>
+				</anchored>
+				<label>Name</label>
+				<tabtarget>
+					<next>main_pet_type</next>
+					<prev>main_pet_traits</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- TRAITS -->
+			<sheetstringfield name="main_pet_traits" source="traits">
+				<anchored>
+					<to>main_pet</to>
+					<position>insidetopleft</position>					
+					<offset>13,38</offset>
+					<size>
+						<width>367</width>
+					</size>
+				</anchored>
+				<label>Traits</label>
+				<tabtarget>
+					<next>main_pet_name</next>
+					<prev>main_pet_type</prev>
+				</tabtarget>
+			</sheetstringfield>
+					
+<!-- TOKEN -->			
+			<tokenfield name="main_token" source="token">
+				<bounds>409,24,64,64</bounds>
+				<empty>indicator_emptytoken</empty>
+				<script>
+					local dragging = false;
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+					
+					function onDrag(button, x, y, draginfo)
+						if not dragging and getPrototype() then
+							draginfo.setType("pet");
+							draginfo.setTokenData(getPrototype());
+							draginfo.setShortcutData("pet", window.getDatabaseNode().getNodeName());
+							draginfo.setDatabaseNode(window.getDatabaseNode().getNodeName());
+							draginfo.setStringData(window.main_pet_name.getValue());
+
+							local base = draginfo.createBaseData();
+							base.setType("token");
+							base.setTokenData(getPrototype());
+
+							dragging = true;
+							return true;
+						end
+						return false;
+					end
+
+					function onDragEnd(draginfo)
+						dragging = false;
+					end					
+				</script>
+			</tokenfield>		
+			
+<!-- HEALTH -->
+			<sheetframe name="main_health">
+				<bounds>12,92,472,65</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_health_title">
+				<anchored>
+					<to>main_health</to>
+				</anchored>
+				<static>Obedience</static>
+			</sheetframetitle>
+		
+			<progresstracker name="main_health_health">
+				<sourcename>health</sourcename>
+				<max>12</max>
+				<anchored>
+					<left>
+						<parent>main_health</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>main_health</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_health</parent>
+						<anchor>top</anchor>
+						<offset>20</offset>
+					</top>
+					<size>
+						<height>32</height>
+					</size>
+				</anchored>
+			</progresstracker>
+			
+<!-- SOCKETS -->
+			<sheetframe name="main_sockets">
+				<bounds>12,157,125,110</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_sockets_title">
+				<anchored>
+					<to>main_sockets</to>
+				</anchored>
+				<static>Slots</static>
+			</sheetframetitle>
+			
+			<!-- SLOT 1 -->
+			<sheetlabel>
+				<anchored>
+					<to>main_sockets</to>
+					<offset>13,22</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Slot 1</static>
+			</sheetlabel>			
+			<talentslotselector name="main_sockets_socket_1">
+				<sourcename>sockets.1</sourcename>
+				<talents>Trick</talents>
+				<anchored>
+					<left>
+						<parent>main_sockets</parent>
+						<anchor>left</anchor>
+						<offset>87</offset>					
+					</left>
+					<top>
+						<parent>main_sockets</parent>
+						<anchor>top</anchor>
+						<offset>21</offset>
+					</top>
+				</anchored>
+			</talentslotselector>
+
+			<!-- SLOT 2 -->
+			<sheetlabel>
+				<anchored>
+					<to>main_sockets</to>
+					<offset>13,42</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Slot 2</static>
+			</sheetlabel>				
+			<talentslotselector name="main_sockets_socket_2">
+				<sourcename>sockets.2</sourcename>			
+				<talents>Trick</talents>
+				<anchored>
+					<left>
+						<parent>main_sockets</parent>
+						<anchor>left</anchor>
+						<offset>87</offset>					
+					</left>
+					<top>
+						<parent>main_sockets</parent>
+						<anchor>top</anchor>
+						<offset>41</offset>
+					</top>
+				</anchored>
+			</talentslotselector>
+
+			<!-- SLOT 3 -->
+			<sheetlabel>
+				<anchored>
+					<to>main_sockets</to>
+					<offset>13,62</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Slot 3</static>
+			</sheetlabel>	
+			<talentslotselector name="main_sockets_socket_3">
+				<sourcename>sockets.3</sourcename>
+				<talents>Trick</talents>
+				<anchored>
+					<left>
+						<parent>main_sockets</parent>
+						<anchor>left</anchor>
+						<offset>87</offset>					
+					</left>
+					<top>
+						<parent>main_sockets</parent>
+						<anchor>top</anchor>
+						<offset>61</offset>
+					</top>
+				</anchored>
+			</talentslotselector>
+
+			<!-- SLOT 4 -->
+			<sheetlabel>
+				<anchored>
+					<to>main_sockets</to>
+					<offset>13,82</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Slot 4</static>
+			</sheetlabel>	
+			<talentslotselector name="main_sockets_socket_4">
+				<sourcename>sockets.4</sourcename>
+				<talents>Trick</talents>
+				<anchored>
+					<left>
+						<parent>main_sockets</parent>
+						<anchor>left</anchor>
+						<offset>87</offset>					
+					</left>
+					<top>
+						<parent>main_sockets</parent>
+						<anchor>top</anchor>
+						<offset>81</offset>
+					</top>
+				</anchored>
+			</talentslotselector>
+			
+<!-- DESCRIPTION -->
+			<sheetframe name="main_description">
+				<bounds>137,157,347,110</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_description_title">
+				<anchored>
+					<to>main_description</to>
+				</anchored>
+				<static>Description</static>
+			</sheetframetitle>
+			
+			<sheetformattedtextfield name="main_description_description" source="description">
+				<anchored>
+					<left>
+						<parent>main_description</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>main_description</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_description</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>main_description</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>			
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>main_description_description</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>main_description_description</target>
+			</scrollbar>
+			
+<!-- TALENT SLOTS -->
+			<sheetframe name="main_slots">
+				<bounds>12,267,472,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_slots_title">
+				<anchored>
+					<to>main_slots</to>
+				</anchored>
+				<static>Talent Slots</static>
+			</sheetframetitle>
+			
+			<!-- SLOT 1 -->			
+			<pettalentslot name="main_slots_1">
+				<sourcename>slots.1</sourcename>
+				<slotnumber>1</slotnumber>
+				<anchored>
+					<to>main_slots</to>
+					<offset>11,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</pettalentslot>
+			<rechargenumberfield name="main_slots_1_recharge" source="slots.1.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>208,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.main_slots_1.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>
+
+			<!-- SLOT 2 -->
+			<pettalentslot name="main_slots_2">
+				<sourcename>slots.2</sourcename>
+				<slotnumber>2</slotnumber>
+				<anchored>
+					<to>main_slots</to>
+					<offset>237,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</pettalentslot>
+			<rechargenumberfield name="main_slots_2_recharge" source="slots.2.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>434,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.main_slots_2.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>			
+
+			<!-- SLOT 3 -->
+			<pettalentslot name="main_slots_3">
+				<sourcename>slots.3</sourcename>
+				<slotnumber>3</slotnumber>
+				<anchored>
+					<to>main_slots</to>
+					<offset>11,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</pettalentslot>
+			<rechargenumberfield name="main_slots_3_recharge" source="slots.3.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>208,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.main_slots_3.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>			
+			
+			<!-- SLOT 4 -->
+			<pettalentslot name="main_slots_4">
+				<sourcename>slots.4</sourcename>
+				<slotnumber>4</slotnumber>
+				<anchored>
+					<to>main_slots</to>
+					<offset>237,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</pettalentslot>			
+			<rechargenumberfield name="main_slots_4_recharge" source="slots.4.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>434,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.main_slots_4.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>
+			
+		</sheetdata>
+	</windowclass>
+</root>

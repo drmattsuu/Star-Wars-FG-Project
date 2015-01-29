@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="dAbilityicon" file="graphics/dice/dAbility/dAbility.png" />
+	<icon name="dAbilityicon.1" file="graphics/dice/dAbility/dAbility.1.png" />
+	<icon name="dAbilityicon.2" file="graphics/dice/dAbility/dAbility.2.png" />
+	<icon name="dAbilityicon.3" file="graphics/dice/dAbility/dAbility.3.png" />
+	<icon name="dAbilityicon.4" file="graphics/dice/dAbility/dAbility.4.png" />
+	<icon name="dAbilityicon.5" file="graphics/dice/dAbility/dAbility.5.png" />
+	<icon name="dAbilityicon.6" file="graphics/dice/dAbility/dAbility.6.png" />
+	<icon name="dAbilityicon.7" file="graphics/dice/dAbility/dAbility.7.png" />
+	<icon name="dAbilityicon.8" file="graphics/dice/dAbility/dAbility.8.png" />
+	
+</root>

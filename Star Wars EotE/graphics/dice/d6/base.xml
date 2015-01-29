@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="d6icon" file="graphics/dice/d6/d6.png" />
+	<icon name="d6icon.1" file="graphics/dice/d6/d6.1.png" />
+	<icon name="d6icon.2" file="graphics/dice/d6/d6.2.png" />
+	<icon name="d6icon.3" file="graphics/dice/d6/d6.3.png" />
+	<icon name="d6icon.4" file="graphics/dice/d6/d6.4.png" />
+	<icon name="d6icon.5" file="graphics/dice/d6/d6.5.png" />
+	<icon name="d6icon.6" file="graphics/dice/d6/d6.6.png" />	
+
+</root>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="dFortuneicon" file="graphics/dice/dFortune/dFortune.png" />
+	<icon name="dFortuneicon.1" file="graphics/dice/dFortune/dFortune.1.png" />
+	<icon name="dFortuneicon.2" file="graphics/dice/dFortune/dFortune.2.png" />
+	<icon name="dFortuneicon.3" file="graphics/dice/dFortune/dFortune.3.png" />
+	<icon name="dFortuneicon.4" file="graphics/dice/dFortune/dFortune.4.png" />
+	<icon name="dFortuneicon.5" file="graphics/dice/dFortune/dFortune.5.png" />
+	<icon name="dFortuneicon.6" file="graphics/dice/dFortune/dFortune.6.png" />	
+</root>

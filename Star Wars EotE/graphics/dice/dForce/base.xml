@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="dForceicon" file="graphics/dice/dForce/dForce.png" />
+	<icon name="dForceicon.1" file="graphics/dice/dForce/dForce.1.png" />
+	<icon name="dForceicon.2" file="graphics/dice/dForce/dForce.2.png" />
+	<icon name="dForceicon.3" file="graphics/dice/dForce/dForce.3.png" />
+	<icon name="dForceicon.4" file="graphics/dice/dForce/dForce.4.png" />
+	<icon name="dForceicon.5" file="graphics/dice/dForce/dForce.5.png" />
+	<icon name="dForceicon.6" file="graphics/dice/dForce/dForce.6.png" />
+	<icon name="dForceicon.7" file="graphics/dice/dForce/dForce.7.png" />
+	<icon name="dForceicon.8" file="graphics/dice/dForce/dForce.8.png" />
+	<icon name="dForceicon.9" file="graphics/dice/dForce/dForce.9.png" />
+	<icon name="dForceicon.10" file="graphics/dice/dForce/dForce.10.png" />
+	<icon name="dForceicon.11" file="graphics/dice/dForce/dForce.11.png" />
+	<icon name="dForceicon.12" file="graphics/dice/dForce/dForce.12.png" />
+
+</root>

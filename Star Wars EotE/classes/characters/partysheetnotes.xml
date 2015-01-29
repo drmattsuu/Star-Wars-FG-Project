@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="partysheetnotes">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>429</height>
+			</size>
+		</placement>
+		<nodelete />	
+		<sheetdata>
+
+<!-- NAME -->
+			<sheetframe name="notes_name">
+				<bounds>12,20,472,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="notes_name_shortcut">
+				<anchored>
+					<to>notes_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>partysheet</class>
+			</windowshortcut>
+			<basestringfield name="notes_name_name" source="name">
+				<anchored>			
+					<to>notes_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Party &#187;</empty>
+				<tabtarget>
+					<next>notes_slots_faith</next>
+					<prev>notes_slots_tactic</prev>
+				</tabtarget>					
+			</basestringfield>
+
+<!-- TRAITS -->
+<!--			<sheetframe name="notes_traits">
+				<bounds>12,60,472,40</bounds>
+			</sheetframe>
+
+			<!{1}** TRAITS **{1}>
+			<sheetlabel name="notes_traits_header">
+				<anchored>
+					<to>notes_traits</to>
+					<position>insidetopleft</position>
+					<offset>13,14</offset>
+					<size>
+						<width>49</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Traits :</static>
+			</sheetlabel>
+			<basestringfield name="notes_traits_traits" source="traits">
+				<anchored>
+					<top>
+						<parent>notes_traits_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>notes_traits_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>notes_traits</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>notes_name_name</next>
+					<prev>notes_name_name</prev>
+				</tabtarget>
+			</basestringfield>		-->		
+			
+<!-- NOTES -->
+			<sheetframe name="notes_notes">
+				<!--<bounds>12,100,472,245</bounds>-->
+				<bounds>12,60,472,-10</bounds>
+			</sheetframe>
+			<sheetframetitle name="notes_notes_title">
+				<anchored>
+					<to>notes_notes</to>
+				</anchored>
+				<static>Notes</static>
+			</sheetframetitle>			
+			
+			<sheetformattedtextfield name="notes_notes_notes" source="notes">
+				<anchored>
+					<left>
+						<parent>notes_notes</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>notes_notes</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>notes_notes</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>notes_notes</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>		
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>notes_notes_notes</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>notes_notes_notes</target>
+			</scrollbar>
+			
+<!-- TALENT SLOTS -->
+<!--			<sheetframe name="notes_slots">
+				<bounds>12,345,472,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="notes_slots_title">
+				<anchored>
+					<to>notes_slots</to>
+				</anchored>
+				<static>Talent Slots</static>
+			</sheetframetitle>
+			
+			<!{1}** SLOT 1 **{1}>			
+			<partytalentslot name="notes_slots_1">
+				<sourcename>slots.1</sourcename>
+				<slotnumber>1</slotnumber>
+				<anchored>
+					<to>notes_slots</to>
+					<offset>11,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</partytalentslot>
+			<rechargenumberfield name="notes_slots_1_recharge" source="slots.1.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>notes_slots</to>
+					<offset>208,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.notes_slots_1.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>
+
+			<!{1}** SLOT 2 **{1}>
+			<partytalentslot name="notes_slots_2">
+				<sourcename>slots.2</sourcename>
+				<slotnumber>2</slotnumber>
+				<anchored>
+					<to>notes_slots</to>
+					<offset>237,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</partytalentslot>
+			<rechargenumberfield name="notes_slots_2_recharge" source="slots.2.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>notes_slots</to>
+					<offset>434,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.notes_slots_2.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>			
+
+			<!{1}** SLOT 3 **{1}>
+			<partytalentslot name="notes_slots_3">
+				<sourcename>slots.3</sourcename>
+				<slotnumber>3</slotnumber>
+				<anchored>
+					<to>notes_slots</to>
+					<offset>11,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</partytalentslot>
+			<rechargenumberfield name="notes_slots_3_recharge" source="slots.3.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>notes_slots</to>
+					<offset>208,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.notes_slots_3.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>			
+			
+			<!{1}** SLOT 4 **{1}>
+			<partytalentslot name="notes_slots_4">
+				<sourcename>slots.4</sourcename>
+				<slotnumber>4</slotnumber>
+				<anchored>
+					<to>notes_slots</to>
+					<offset>237,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</partytalentslot>			
+			<rechargenumberfield name="notes_slots_4_recharge" source="slots.4.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>notes_slots</to>
+					<offset>434,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.notes_slots_4.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>	-->
+
+		</sheetdata>
+	</windowclass>
+	
+</root>

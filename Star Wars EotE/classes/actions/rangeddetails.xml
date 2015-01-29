@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="rangeddetails">
+		<placement>
+			<size>
+				<width>300</width>
+				<height>384</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="details_name">
+				<bounds>12,20,264,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="details_name_shortcut">
+				<anchored>
+					<to>details_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>ranged</class>
+			</windowshortcut>
+			<basestringfield name="details_name_name" source="name">
+				<anchored>			
+					<to>details_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Ranged &#187;</empty>
+				<tabtarget>
+					<next>details_currentrecharge_currentrecharge</next>
+					<prev>details_currentrecharge_currentrecharge</prev>
+				</tabtarget>				
+			</basestringfield>
+
+<!-- REQUIREMENTS -->
+			<sheetframe name="details_requirements">
+				<bounds>12,60,264,135</bounds>
+			</sheetframe>
+			<sheetframetitle name="details_requirements_title">
+				<anchored>
+					<to>details_requirements</to>
+				</anchored>
+				<static>Requirements</static>
+			</sheetframetitle>
+			
+			<sheetformattedtextfield name="details_requirements_details" source="requirements">
+				<anchored>
+					<left>
+						<parent>details_requirements</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>details_requirements</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>details_requirements</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>details_requirements</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>details_requirements_details</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>details_requirements_details</target>
+			</scrollbar>			
+			
+<!-- DESCRIPTION -->
+			<sheetframe name="details_description">
+				<bounds>12,195,264,135</bounds>
+			</sheetframe>
+			<sheetframetitle name="details_description_title">
+				<anchored>
+					<to>details_description</to>
+				</anchored>
+				<static>Description</static>
+			</sheetframetitle>
+			
+			<sheetformattedtextfield name="details_description_details" source="description">
+				<anchored>
+					<left>
+						<parent>details_description</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>details_description</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>details_description</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>details_description</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>details_description_details</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>details_description_details</target>
+			</scrollbar>			
+
+<!-- CURRENT RECHARGE -->
+			<sheetframe name="details_currentrecharge">
+				<bounds>12,330,264,40</bounds>
+			</sheetframe>
+			
+			<sheetlabel>
+				<anchored>
+					<to>details_currentrecharge</to>
+					<offset>13,14</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Current Recharge</static>
+			</sheetlabel>
+			<rechargenumberfield name="details_currentrecharge_currentrecharge" source="currentrecharge">
+				<anchored>
+					<to>details_currentrecharge</to>
+					<offset>226,13</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>details_name_name</next>
+					<prev>details_name_name</prev>
+				</tabtarget>				
+			</rechargenumberfield>
+			
+		</sheetdata>
+	</windowclass>
+			
+</root>

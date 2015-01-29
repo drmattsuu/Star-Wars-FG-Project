@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="imagesmall">
+<!--		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>-->
+		<script file="classes/campaign/campaign_list_record.lua" />
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>image</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>22,3,-1,18</bounds>
+				<empty>&#171; New Image &#187;</empty>
+				<script>
+					editmode = false;
+
+					function setEditMode(state)
+						if state then
+							editmode = true;
+							resetMenuItems();
+							registerMenuItem("Stop editing", "stopedit", 5);
+							setFocus();
+							setCursorPosition(#getValue()+1);
+							setSelectionPosition(0);
+						else
+							editmode = false;
+							resetMenuItems();
+							registerMenuItem("Edit", "edit", 4);
+						end
+					end
+					
+					function onClickDown(button, x, y)
+						if not editmode then
+							return true;
+						end
+					end
+					
+					function onMenuSelection(...)
+						setEditMode(not editmode);
+					end
+					
+					function onLoseFocus()
+						setEditMode(false);
+					end
+					
+					function onInit()
+						setEditMode(false);
+					end				
+				</script>
+			</basestringfield>
+
+			<genericcontrol name="rightanchor">
+				<anchored height="0" width="0">
+					<top />
+					<right />
+				</anchored>
+			</genericcontrol>
+			<button_idelete name="idelete">
+				<anchored>
+					<top />
+					<right parent="rightanchor" anchor="left" relation="relative" offset="-5" />
+				</anchored>
+			</button_idelete>			
+			<icon_access name="access" />
+			<icon_modified name="modified" />
+			
+		</sheetdata>
+	</windowclass>
+	
+	<windowclass name="image">
+		<frame>imagebox</frame>
+		<sharable />
+		<minimize>minimized_image</minimize>
+		<sizelimits>
+			<dynamic>
+				<hostcontrol />
+			</dynamic>
+			<minimum>
+				<width>200</width>
+				<height>200</height>
+			</minimum>
+			<maximum>
+				<width>2048</width>
+				<height>2048</height>
+			</maximum>
+		</sizelimits>
+		<playercontrol />
+		<sharable />
+		<nodelete />		
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<baseimagecontrol name="image">
+				<bounds>20,22,-26,-27</bounds>
+				<drawingdefaultsize>500,500</drawingdefaultsize>
+			</baseimagecontrol>
+			<scrollercontrol>
+				<bounds>-69,-68,40,38</bounds>
+				<target>image</target>
+				<button>
+					<normal>button_scrollerpan</normal>
+					<pressed>button_scrollerpan_down</pressed>
+					<zoom>button_zoomer</zoom>
+					<zoompressed>button_zoomer_down</zoompressed>
+				</button>
+			</scrollercontrol>
+			<viewerlist>
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>21</offset>
+					</left>
+					<bottom>
+						<anchor>bottom</anchor>
+						<offset>-27</offset>
+					</bottom>
+				</anchored>
+			</viewerlist>
+			
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>3</offset>
+					</top>
+					<right>
+						<offset>-8</offset>
+					</right>
+				</anchored>
+			</closebutton>
+		</sheetdata>
+	</windowclass>	
+	
+</root>

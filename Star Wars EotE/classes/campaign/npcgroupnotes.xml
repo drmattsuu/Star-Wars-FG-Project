@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="npcgroupnotes">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>462</height>
+			</size>
+		</placement>
+		<nodelete />	
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="notes_name">
+				<bounds>12,20,472,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="notes_name_shortcut">
+				<anchored>
+					<to>notes_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>npcgroup</class>
+			</windowshortcut>
+			<basestringfield name="notes_name_name" source="name">
+				<anchored>			
+					<to>notes_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New NPC Group &#187;</empty>
+				<tabtarget>
+					<next>notes_name_name</next>
+					<prev>notes_name_name</prev>
+				</tabtarget>					
+			</basestringfield>
+			
+<!-- NOTES -->
+			<sheetframe name="notes_notes">
+				<bounds>12,60,472,388</bounds>
+			</sheetframe>
+			<sheetframetitle name="notes_notes_title">
+				<anchored>
+					<to>notes_notes</to>
+				</anchored>
+				<static>Notes</static>
+			</sheetframetitle>			
+			
+			<sheetformattedtextfield name="notes_notes_notes" source="notes">
+				<anchored>
+					<left>
+						<parent>notes_notes</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>notes_notes</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>notes_notes</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>notes_notes</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>		
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>notes_notes_notes</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>notes_notes_notes</target>
+			</scrollbar>
+			
+		</sheetdata>
+	</windowclass>
+	
+</root>

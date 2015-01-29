@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="careermain">
+		<placement>
+			<size>
+				<width>600</width>
+				<height>442</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>12,20,563,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>career</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Career &#187;</empty>
+				<tabtarget>
+					<next>main_details_race</next>
+					<prev>main_advances_wound</prev>
+				</tabtarget>				
+			</basestringfield>
+
+<!-- DETAILS -->
+			<sheetframe name="main_details">
+				<bounds>12,60,428,170</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_details_title">
+				<anchored>
+					<to>main_details</to>
+				</anchored>
+				<static>Details</static>
+			</sheetframetitle>
+			
+			<!-- RACE -->
+			<sheetlabel name="main_details_race_header">
+				<anchored>
+					<to>main_details</to>
+					<position>insidetopleft</position>
+					<offset>13,22</offset>
+					<size>
+						<width>40</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Race :</static>
+			</sheetlabel>
+			<sheetstringfield name="main_details_race" source="details.race">
+				<anchored>
+					<top>
+						<parent>main_details_race_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>main_details_race_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>main_details</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_details_level</next>
+					<prev>main_name_name</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- LEVEL -->
+			<sheetlabel name="main_details_level_header">
+				<anchored>
+					<to>main_details</to>
+					<position>insidetopleft</position>
+					<offset>13,42</offset>
+					<size>
+						<width>43</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Level :</static>
+			</sheetlabel>
+			<sheetstringfield name="main_details_level" source="details.level">
+				<anchored>
+					<top>
+						<parent>main_details_level_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>main_details_level_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>main_details</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_details_traits</next>
+					<prev>main_details_race</prev>
+				</tabtarget>
+			</sheetstringfield>			
+			
+			<!-- TRAITS -->
+			<sheetlabel name="main_details_traits_header">
+				<anchored>
+					<to>main_details</to>
+					<position>insidetopleft</position>
+					<offset>13,62</offset>
+					<size>
+						<width>49</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Traits :</static>
+			</sheetlabel>
+			<sheetstringfield name="main_details_traits" source="details.traits">
+				<anchored>
+					<top>
+						<parent>main_details_traits_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>main_details_traits_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>main_details</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_details_skills</next>
+					<prev>main_details_level</prev>
+				</tabtarget>
+			</sheetstringfield>			
+
+			<!-- SKILLS -->
+			<sheetlabel name="main_details_skills_header">
+				<anchored>
+					<to>main_details</to>
+					<position>insidetopleft</position>
+					<offset>13,82</offset>
+					<size>
+						<width>88</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Career Skills :</static>
+			</sheetlabel>
+			<sheetstringfield name="main_details_skills" source="details.skills">
+				<anchored>
+					<top>
+						<parent>main_details_skills_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>main_details_skills_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>main_details</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_details_characteristics</next>
+					<prev>main_details_traits</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- CHARACTERISTICS -->
+			<sheetlabel name="main_details_characteristics_header">
+				<anchored>
+					<to>main_details</to>
+					<position>insidetopleft</position>
+					<offset>13,102</offset>
+					<size>
+						<width>156</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Primary Characteristics :</static>
+			</sheetlabel>
+			<sheetstringfield name="main_details_characteristics" source="details.characteristics">
+				<anchored>
+					<top>
+						<parent>main_details_characteristics_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>main_details_characteristics_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>main_details</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_details_stance_conservative</next>
+					<prev>main_details_skills</prev>
+				</tabtarget>
+			</sheetstringfield>			
+						
+			<!-- STANCE -->
+			<sheetlabel name="main_details_stance_header">
+				<anchored>
+					<to>main_details</to>
+					<position>insidetopleft</position>
+					<offset>13,122</offset>
+					<size>
+						<width>131</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Career Stance (C/R) :</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_details_stance_conservative" source="details.stance.conservative">
+				<anchored>
+					<top>
+						<parent>main_details_stance_header</parent>
+						<anchor>top</anchor>
+						<offset>-1</offset>
+					</top>
+					<left>
+						<parent>main_details_stance_header</parent>
+						<anchor>right</anchor>
+					</left>
+				</anchored>			
+				<tabtarget>
+					<next>main_details_stance_reckless</next>
+					<prev>main_details_characteristics</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			<sheetnumberfield name="main_details_stance_reckless" source="details.stance.reckless">
+				<anchored>
+					<top>
+						<parent>main_details_stance_header</parent>
+						<anchor>top</anchor>
+						<offset>-1</offset>						
+					</top>
+					<left>
+						<parent>main_details_stance_conservative</parent>
+						<anchor>right</anchor>
+						<offset>6</offset>
+					</left>
+				</anchored>			
+				<tabtarget>
+					<next>main_advances_action</next>
+					<prev>main_details_stance_conservative</prev>
+				</tabtarget>
+			</sheetnumberfield>			
+			
+			<!-- SOCKETS -->
+			<sheetlabel name="main_details_sockets_header">
+				<anchored>
+					<to>main_details</to>
+					<position>insidetopleft</position>
+					<offset>13,142</offset>
+					<size>
+						<width>79</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Talent Slots :</static>
+			</sheetlabel>
+			<talentslotselector name="main_details_sockets_1">
+				<sourcename>details.sockets.1</sourcename>
+				<anchored>
+					<top>
+						<parent>main_details_sockets_header</parent>
+						<anchor>top</anchor>
+						<offset>-1</offset>
+					</top>
+					<left>
+						<parent>main_details_sockets_header</parent>
+						<anchor>right</anchor>
+						<offset>6</offset>
+					</left>
+				</anchored>			
+			</talentslotselector>
+			<talentslotselector name="main_details_sockets_2">
+				<sourcename>details.sockets.2</sourcename>
+				<anchored>
+					<top>
+						<parent>main_details_sockets_header</parent>
+						<anchor>top</anchor>
+						<offset>-1</offset>						
+					</top>
+					<left>
+						<parent>main_details_sockets_1</parent>
+						<anchor>right</anchor>
+						<offset>6</offset>
+					</left>
+				</anchored>			
+			</talentslotselector>
+			<talentslotselector name="main_details_sockets_3">
+				<sourcename>details.sockets.3</sourcename>
+				<anchored>
+					<top>
+						<parent>main_details_sockets_header</parent>
+						<anchor>top</anchor>
+						<offset>-1</offset>						
+					</top>
+					<left>
+						<parent>main_details_sockets_2</parent>
+						<anchor>right</anchor>
+						<offset>6</offset>
+					</left>
+				</anchored>			
+			</talentslotselector>						
+			<talentslotselector name="main_details_sockets_4">
+				<sourcename>details.sockets.4</sourcename>			
+				<anchored>
+					<top>
+						<parent>main_details_sockets_header</parent>
+						<anchor>top</anchor>
+						<offset>-1</offset>						
+					</top>
+					<left>
+						<parent>main_details_sockets_3</parent>
+						<anchor>right</anchor>
+						<offset>6</offset>
+					</left>
+				</anchored>			
+			</talentslotselector>
+			<talentslotselector name="main_details_sockets_5">
+				<sourcename>details.sockets.5</sourcename>			
+				<anchored>
+					<top>
+						<parent>main_details_sockets_header</parent>
+						<anchor>top</anchor>
+						<offset>-1</offset>						
+					</top>
+					<left>
+						<parent>main_details_sockets_4</parent>
+						<anchor>right</anchor>
+						<offset>6</offset>
+					</left>
+				</anchored>			
+			</talentslotselector>
+			<talentslotselector name="main_details_sockets_6">
+				<sourcename>details.sockets.6</sourcename>			
+				<anchored>
+					<top>
+						<parent>main_details_sockets_header</parent>
+						<anchor>top</anchor>
+						<offset>-1</offset>						
+					</top>
+					<left>
+						<parent>main_details_sockets_5</parent>
+						<anchor>right</anchor>
+						<offset>6</offset>
+					</left>
+				</anchored>			
+			</talentslotselector>			
+
+<!-- ADVANCES -->
+			<sheetframe name="main_advances">
+				<bounds>440,60,135,170</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_advances_title">
+				<anchored>
+					<to>main_advances</to>
+				</anchored>
+				<static>Advances</static>
+			</sheetframetitle>
+			
+			<!-- ACTION -->
+			<sheetlabel>
+				<anchored>
+					<to>main_advances</to>
+					<offset>13,22</offset>
+					<size>
+						<width>80</width>
+					</size>
+				</anchored>
+				<static>Action</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_advances_action" source="advances.action">
+				<anchored>
+					<to>main_advances</to>
+					<offset>97,21</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_advances_talent</next>
+					<prev>main_details_stance_reckless</prev>
+				</tabtarget>
+			</sheetnumberfield>			
+
+			<!-- TALENT -->
+			<sheetlabel>
+				<anchored>
+					<to>main_advances</to>
+					<offset>13,42</offset>
+					<size>
+						<width>80</width>
+					</size>
+				</anchored>
+				<static>Talent</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_advances_talent" source="advances.talent">
+				<anchored>
+					<to>main_advances</to>
+					<offset>97,41</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_advances_skill</next>
+					<prev>main_advances_action</prev>
+				</tabtarget>
+			</sheetnumberfield>			
+
+			<!-- SKILL -->
+			<sheetlabel>
+				<anchored>
+					<to>main_advances</to>
+					<offset>13,62</offset>
+					<size>
+						<width>80</width>
+					</size>
+				</anchored>
+				<static>Skill</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_advances_skill" source="advances.skill">
+				<anchored>
+					<to>main_advances</to>
+					<offset>97,61</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_advances_fortune</next>
+					<prev>main_advances_talent</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+			<!-- FORTUNE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_advances</to>
+					<offset>13,82</offset>
+					<size>
+						<width>80</width>
+					</size>
+				</anchored>
+				<static>Fortune</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_advances_fortune" source="advances.fortune">
+				<anchored>
+					<to>main_advances</to>
+					<offset>97,81</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_advances_conservative</next>
+					<prev>main_advances_skill</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+			<!-- CONSERVATIVE -->
+			<sheetlabel>
+				<anchored>
+					<to>main_advances</to>
+					<offset>13,102</offset>
+					<size>
+						<width>80</width>
+					</size>
+				</anchored>
+				<static>Conservative</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_advances_conservative" source="advances.conservative">
+				<anchored>
+					<to>main_advances</to>
+					<offset>97,101</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_advances_reckless</next>
+					<prev>main_advances_fortune</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- RECKLESS -->
+			<sheetlabel>
+				<anchored>
+					<to>main_advances</to>
+					<offset>13,122</offset>
+					<size>
+						<width>80</width>
+					</size>
+				</anchored>
+				<static>Reckless</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_advances_reckless" source="advances.reckless">
+				<anchored>
+					<to>main_advances</to>
+					<offset>97,121</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_advances_wound</next>
+					<prev>main_advances_conservative</prev>
+				</tabtarget>
+			</sheetnumberfield>			
+
+			<!-- WOUND -->
+			<sheetlabel>
+				<anchored>
+					<to>main_advances</to>
+					<offset>13,142</offset>
+					<size>
+						<width>80</width>
+					</size>
+				</anchored>
+				<static>Wound</static>
+			</sheetlabel>
+			<sheetnumberfield name="main_advances_wound" source="advances.wound">
+				<anchored>
+					<to>main_advances</to>
+					<offset>97,141</offset>
+				</anchored>
+				<tabtarget>
+					<next>main_name_name</next>
+					<prev>main_advances_reckless</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+<!-- DESCRIPTION -->
+			<sheetframe name="main_description">
+				<bounds>12,230,563,198</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_description_title">
+				<anchored>
+					<to>main_description</to>
+				</anchored>
+				<static>Description</static>
+			</sheetframetitle>
+			
+			<sheetformattedtextfield name="main_description_description" source="description">
+				<anchored>
+					<left>
+						<parent>main_description</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>main_description</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_description</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>main_description</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>			
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>main_description_description</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>main_description_description</target>
+			</scrollbar>			
+						
+		</sheetdata>
+	</windowclass>
+			
+</root>

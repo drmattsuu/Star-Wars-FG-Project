@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="npcsmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>npc</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>22,3,-1,20</bounds>
+				<empty>&#171; New NPC &#187;</empty>
+				<disabled />				
+			</basestringfield>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="npc">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>509</width>
+				<height>557</height> <!-- was 307-->
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic />
+			<minimum>
+				<width>509</width>
+				<height>557</height>
+			</minimum>
+			<maximum>
+				<width>509</width>
+			</maximum>
+		</sizelimits>	
+		<minimize>minimized_npc</minimize>
+		<playercontrol />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		
+		<sheetdata>
+		<!-- CHARACTER -->
+			<sheetframe name="main_character">
+				<bounds>12,10,393,72</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_character_title">
+				<anchored>
+					<to>main_character</to>
+				</anchored>
+				<static>NPC</static>
+			</sheetframetitle>			
+
+			<!-- NAME -->
+			<sheetstringfield name="main_character_name" source="name">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>
+					<offset>13,18</offset>
+					<size>
+						<width>218</width>
+					</size>
+				</anchored>
+				<label>Name</label>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_ace_expertise</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- RACE -->
+			<sheetstringfield name="main_character_race" source="race">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>					
+					<offset>237,18</offset>
+					<size>
+						<width>143</width>
+					</size>
+				</anchored>
+				<label>Race</label>
+				<tabtarget>
+					<next>main_character_category</next>
+					<prev>main_character_name</prev>
+				</tabtarget>
+			</sheetstringfield>			
+			
+			<!-- CATEGORY -->
+			<sheetstringfield name="main_character_category" source="categoryname">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>					
+					<offset>13,38</offset>
+					<size>
+						<width>218</width>
+					</size>
+				</anchored>
+				<label>Category</label>
+				<tabtarget>
+					<next>main_character_threat</next>
+					<prev>main_character_race</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- THREAT RATING -->
+			<sheetstringfield name="main_character_threat" source="threat">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>					
+					<offset>237,38</offset>
+					<size>
+						<width>143</width>
+					</size>
+				</anchored>
+				<label>Threat Rating</label>
+				<tabtarget>
+					<next>main_characteristics_brawn_current</next>
+					<prev>main_character_category</prev>
+				</tabtarget>
+			</sheetstringfield>
+					
+<!-- TOKEN -->			
+			<tokenfield name="main_token" source="token">
+				<bounds>409,15,64,64</bounds>
+				<empty>indicator_emptytoken</empty>
+				<script>
+					local dragging = false;
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+					
+					function onDrag(button, x, y, draginfo)
+						if not dragging and getPrototype() then
+							draginfo.setType("npc");
+							draginfo.setTokenData(getPrototype());
+							draginfo.setShortcutData("npc", window.getDatabaseNode().getNodeName());
+							draginfo.setDatabaseNode(window.getDatabaseNode().getNodeName());
+							draginfo.setStringData(window.main_character_name.getValue());
+
+							local base = draginfo.createBaseData();
+							base.setType("token");
+							base.setTokenData(getPrototype());
+
+							dragging = true;
+							return true;
+						end
+						return false;
+					end
+
+					function onDragEnd(draginfo)
+						dragging = false;
+					end		
+				</script>
+			</tokenfield>		
+			
+<!-- IDENTITY -->
+			<buttoncontrol name="main_identity">
+				<bounds>466,10,23,22</bounds>
+				<icon>
+					<normal>button_identityactivate</normal>
+					<pressed>button_identityactivate_down</pressed>
+				</icon>
+				<script>
+					function onInit()
+						if not User.isHost() then
+							setVisible(false);
+						end
+					end
+				
+					function onButtonPress()
+						GmIdentityManager.addIdentity(window.main_character_name.getValue());
+					end
+				</script>
+			</buttoncontrol>
+
+			
+		
+			<subwindow name="main">
+				<bounds>0,75,-1,-1</bounds>
+				<class>npcmain</class>
+				<script file="classes/campaign/npc.lua" />				
+			</subwindow>
+			<subwindow name="skills">
+				<bounds>0,75,-1,-1</bounds>
+				<class>charsheetskills</class>
+				<script file="classes/characters/charsheet.lua" />
+			</subwindow>			
+			<subwindow name="combat">
+				<bounds>0,75,-1,-1</bounds>
+				<class>charsheetcombattab</class>
+				<script file="classes/campaign/npc.lua" />								
+			</subwindow>			
+			<subwindow name="inventory">
+				<bounds>0,75,-1,-1</bounds>
+				<class>npcinventory</class>
+				<script file="classes/campaign/npc.lua" />								
+			</subwindow>
+			<subwindow name="starship">
+				<bounds>0,75,-1,-1</bounds>
+				<class>npcstarship</class>
+				<script file="classes/campaign/npc.lua" />								
+			</subwindow>			
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,509</bounds> 
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_skills</icon>
+					<subwindow>skills</subwindow>
+				</tab>				
+				<tab>
+					<icon>tab_combat</icon>
+					<subwindow>combat</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_inventory</icon>
+					<subwindow>inventory</subwindow>
+				</tab>	
+				<tab>
+					<icon>tab_starship</icon>
+					<subwindow>starship</subwindow>
+				</tab>	
+				<activate>1</activate>
+			</tabcontrol>
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+
+</root>

@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="export_entry">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>
+		<script>
+			function onInit()
+				registerMenuItem("Remove from list", "erase", 5);
+			end
+			
+			function onMenuSelection(...)
+				close();
+			end
+		</script>
+		<sheetdata>
+			<windowreferencecontrol name="open">
+				<bounds>25,0,20,20</bounds>
+				<icon>
+					<normal>button_openwindow</normal>
+					<pressed>button_emptytarget</pressed>
+				</icon>
+				<description>
+					<field>name</field>
+				</description>
+			</windowreferencecontrol>
+			<basestringfield name="name">
+				<bounds>50,0,-60,20</bounds>
+				<readonly />
+			</basestringfield>
+			
+			<!-- States -->
+			<checkbox name="index">
+				<bounds>-80,0,-61,20</bounds>
+				<sourceless />
+			</checkbox>
+			<checkbox name="host">
+				<bounds>-60,0,-41,20</bounds>
+				<sourceless />
+				<checked />
+				<script>
+					function onClickDown(button, x, y)
+						setState(true);
+						window.common.setState(false);
+						window.client.setState(false);
+						return true;
+					end
+				</script>
+			</checkbox>
+			<checkbox name="common">
+				<bounds>-40,0,-21,20</bounds>
+				<sourceless />
+				<script>
+					function onClickDown(button, x, y)
+						window.host.setState(false);
+						setState(true);
+						window.client.setState(false);
+						return true;
+					end
+				</script>
+			</checkbox>
+			<checkbox name="client">
+				<bounds>-20,0,-1,20</bounds>
+				<sourceless />
+				<script>
+					function onClickDown(button, x, y)
+						window.host.setState(false);
+						window.common.setState(false);
+						setState(true);
+						return true;
+					end
+				</script>
+			</checkbox>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="export_categoryentry">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>
+		<script>
+			exportsource = "";
+			exportclass = "";
+			
+			function setExportName(n)
+				exportsource = n;
+			end
+			
+			function setExportClass(n)
+				exportclass = n;
+			end
+		</script>
+		<sheetdata>
+			<checkbox name="all">
+				<bounds>0,0,20,20</bounds>
+				<tooltip>
+					<text>Export all</text>
+				</tooltip>
+				<script>
+					function onValueChanged()
+						local state = getState();
+						
+						window.entries.setVisible(not state);
+						window.index.setVisible(state);
+						window.host.setVisible(state);
+						window.common.setVisible(state);
+						window.client.setVisible(state);
+					end
+				</script>
+			</checkbox>
+			<basestringcontrol name="label">
+				<bounds>20,3,-61,15</bounds>
+				<font>sheetlabel</font>
+				<readonly />
+			</basestringcontrol>
+			
+			<!-- States -->
+			<checkbox name="index">
+				<bounds>-80,0,-61,20</bounds>
+				<sourceless />
+				<invisible />
+			</checkbox>
+			<checkbox name="host">
+				<bounds>-60,0,-41,20</bounds>
+				<sourceless />
+				<checked />
+				<invisible />
+				<script>
+					function onClickDown(button, x, y)
+						setState(true);
+						window.common.setState(false);
+						window.client.setState(false);
+						return true;
+					end
+				</script>
+			</checkbox>
+			<checkbox name="common">
+				<bounds>-40,0,-21,20</bounds>
+				<sourceless />
+				<invisible />
+				<script>
+					function onClickDown(button, x, y)
+						window.host.setState(false);
+						setState(true);
+						window.client.setState(false);
+						return true;
+					end
+				</script>
+			</checkbox>
+			<checkbox name="client">
+				<bounds>-20,0,-1,20</bounds>
+				<sourceless />
+				<invisible />
+				<script>
+					function onClickDown(button, x, y)
+						window.host.setState(false);
+						window.common.setState(false);
+						setState(true);
+						return true;
+					end
+				</script>
+			</checkbox>
+			
+			<basewindowlist name="entries">
+				<class>export_entry</class>
+				<bounds>0,19,-1,-1</bounds>
+				<skipempty />
+				<script>
+					function onSortCompare(w1, w2)
+						return w1.name.getValue() &gt; w2.name.getValue();
+					end
+				</script>
+			</basewindowlist>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="export_token">
+		<sizelimits>
+			<minimum>
+				<height>22</height>
+			</minimum>
+		</sizelimits>
+		<script>
+			function onInit()
+				registerMenuItem("Remove from list", "erase", 5);
+			end
+			
+			function onMenuSelection(...)
+				close();
+			end
+		</script>
+		<sheetdata>
+			<tokencontrol name="token">
+				<bounds>1,1,20,20</bounds>
+				<script>
+					--[[ Pass drop to list ]]
+					function onDrop(x, y, draginfo)
+						return false;
+					end
+				</script>
+			</tokencontrol>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="export">
+		<frame>indexbox</frame>
+		<placement>
+			<size>
+				<width>500</width>
+				<height>600</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic>
+				<resize>vertical</resize>
+			</dynamic>
+		</sizelimits>
+		<script file="classes/utilities/export.lua" />
+		<sheetdata>
+			<!-- Title -->
+			<genericcontrol>
+				<bounds>150,0,200,40</bounds>
+				<frame>
+					<name>indexboxtitle</name>
+				</frame>
+			</genericcontrol>
+			
+			<basestringcontrol>
+				<bounds>26,15,-30,17</bounds>
+				<font>sheetlabel</font>
+				<color>#9fffffff</color>
+				<center />
+				<static>Module Export</static>
+			</basestringcontrol>
+			<basestringcontrol>
+				<bounds>25,14,-30,17</bounds>
+				<font>sheetlabel</font>
+				<center />
+				<static>Module Export</static>
+			</basestringcontrol>
+			
+			<!-- Generic -->
+			<genericcontrol name="genericframe">
+				<bounds>23,44,-27,145</bounds>
+				<frame>
+					<name>sheetgroup</name>
+					<offset>9,7,9,6</offset>
+				</frame>
+			</genericcontrol>
+			
+			<basestringcontrol name="name">
+				<anchored>
+					<to>genericframe</to>
+					<position>insidetopleft</position>
+					<offset>90,6</offset>
+					<right>
+						<anchor>right</anchor>
+						<offset>-10</offset>
+					</right>
+				</anchored>
+				<font>sheetlabel</font>
+				<frame>
+					<name>textline</name>
+				</frame>
+				<empty>&#171; The module name [required] &#187;</empty>
+				<tabtarget>
+					<next>file</next>
+					<prev>thumbnail</prev>
+				</tabtarget>
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>name</to>
+					<position>insidetopleft</position>
+					<offset>-80,2</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<static>Name</static>
+			</basestringcontrol>
+
+			<basestringcontrol name="file">
+				<anchored>
+					<to>name</to>
+					<position>below</position>
+					<offset>0,3</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<frame>
+					<name>textline</name>
+				</frame>
+				<empty>&#171; The module file name [required] &#187;</empty>
+				<tabtarget>
+					<next>author</next>
+					<prev>name</prev>
+				</tabtarget>
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>file</to>
+					<position>insidetopleft</position>
+					<offset>-80,2</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<static>File name</static>
+			</basestringcontrol>
+
+			<basestringcontrol name="author">
+				<anchored>
+					<to>file</to>
+					<position>below</position>
+					<offset>0,3</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<frame>
+					<name>textline</name>
+				</frame>
+				<empty>&#171; The author name &#187;</empty>
+				<tabtarget>
+					<next>indexgroup</next>
+					<prev>file</prev>
+				</tabtarget>
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>author</to>
+					<position>insidetopleft</position>
+					<offset>-80,2</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<static>Author</static>
+			</basestringcontrol>
+
+			<basestringcontrol name="indexgroup">
+				<anchored>
+					<to>author</to>
+					<position>below</position>
+					<offset>0,3</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<frame>
+					<name>textline</name>
+				</frame>
+				<empty>&#171; The category in the library [req. if index enabled] &#187;</empty>
+				<tabtarget>
+					<next>mergeid</next>
+					<prev>author</prev>
+				</tabtarget>
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>indexgroup</to>
+					<position>insidetopleft</position>
+					<offset>-80,2</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<static>Index group</static>
+			</basestringcontrol>
+
+			<basestringcontrol name="mergeid">
+				<anchored>
+					<to>indexgroup</to>
+					<position>below</position>
+					<offset>0,3</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<frame>
+					<name>textline</name>
+				</frame>
+				<empty>&#171; Modules with same ID share tabs [optional] &#187;</empty>
+				<tabtarget>
+					<next>thumbnail</next>
+					<prev>indexgroup</prev>
+				</tabtarget>
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>mergeid</to>
+					<position>insidetopleft</position>
+					<offset>-80,2</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<static>Merge ID</static>
+			</basestringcontrol>
+
+			<basestringcontrol name="thumbnail">
+				<anchored>
+					<to>mergeid</to>
+					<position>below</position>
+					<offset>0,3</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<frame>
+					<name>textline</name>
+				</frame>
+				<empty>&#171; Thumbnail icon file [optional] &#187;</empty>
+				<tabtarget>
+					<next>name</next>
+					<prev>mergeid</prev>
+				</tabtarget>
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>thumbnail</to>
+					<position>insidetopleft</position>
+					<offset>-80,2</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<static>Thumbnail</static>
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>thumbnail</to>
+					<position>below</position>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Specify a file path relative to the application data directory as thumbnail</static>
+			</basestringcontrol>
+			
+
+			<!-- Node list -->
+			<basewindowlist name="categories">
+				<class>export_categoryentry</class>
+				<bounds>23,219,-27,-151</bounds>
+				<frame>
+					<name>sheetgroup</name>
+					<offset>9,27,9,20</offset>
+				</frame>
+				<script file="classes/utilities/exportlist.lua" />
+			</basewindowlist>
+			<scrollercontrol>
+				<anchored>
+					<to>categories</to>
+					<position>insidebottomright</position>
+					<size>
+						<width>45</width>
+						<height>27</height>
+					</size>
+				</anchored>
+				<target>categories</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+				</button>
+			</scrollercontrol>
+
+			<basestringcontrol>
+				<anchored>
+					<to>categories</to>
+					<position>above</position>
+				</anchored>
+				<font>sheetlabel</font>
+				<static>Exported data</static>
+				<center />
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>categories</to>
+					<position>belowright</position>
+					<offset>4,0</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>I - Create index in library, H - Host data, S - Common shared data, C - Client data</static>
+			</basestringcontrol>
+
+			<basestringcontrol>
+				<anchored>
+					<to>categories</to>
+					<position>insidetopright</position>
+					<offset>61,-10</offset>
+					<size>
+						<width>20</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>I</static>
+				<center />
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>categories</to>
+					<position>insidetopright</position>
+					<offset>41,-10</offset>
+					<size>
+						<width>20</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>H</static>
+				<center />
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>categories</to>
+					<position>insidetopright</position>
+					<offset>21,-10</offset>
+					<size>
+						<width>20</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>S</static>
+				<center />
+			</basestringcontrol>
+			<basestringcontrol>
+				<anchored>
+					<to>categories</to>
+					<position>insidetopright</position>
+					<offset>1,-10</offset>
+					<size>
+						<width>20</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>C</static>
+				<center />
+			</basestringcontrol>
+			
+			<!-- Tokens -->
+			<genericcontrol name="tokenframe">
+				<bounds>23,-127,-27,100</bounds>
+				<frame>
+					<name>sheetgroup</name>
+					<offset>9,7,9,6</offset>
+				</frame>
+			</genericcontrol>
+
+			<basewindowlist name="tokens">
+				<class>export_token</class>
+				<anchored>
+					<to>tokenframe</to>
+					<position>over</position>
+					<top>
+						<offset>18</offset>
+					</top>
+				</anchored>
+				<columns>
+					<width>22</width>
+					<fillwidth />
+				</columns>
+				<skipempty />
+				<script file="classes/utilities/exporttokens.lua" />
+			</basewindowlist>
+			
+			<basestringcontrol>
+				<anchored>
+					<to>tokenframe</to>
+					<position>insidetop</position>
+					<offset>0,5</offset>
+				</anchored>
+				<font>sheetlabel</font>
+				<static>Exported tokens</static>
+				<center />
+			</basestringcontrol>
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+</root>

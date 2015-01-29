@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="dBoosticon" file="graphics/dice/dBoost/dBoost.png" />
+	<icon name="dBoosticon.1" file="graphics/dice/dBoost/dBoost.1.png" />
+	<icon name="dBoosticon.2" file="graphics/dice/dBoost/dBoost.2.png" />
+	<icon name="dBoosticon.3" file="graphics/dice/dBoost/dBoost.3.png" />
+	<icon name="dBoosticon.4" file="graphics/dice/dBoost/dBoost.4.png" />
+	<icon name="dBoosticon.5" file="graphics/dice/dBoost/dBoost.5.png" />
+	<icon name="dBoosticon.6" file="graphics/dice/dBoost/dBoost.6.png" />
+	
+	
+</root>

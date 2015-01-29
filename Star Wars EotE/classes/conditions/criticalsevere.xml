@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="critical_severe">
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="severe_name">
+				<bounds>12,20,264,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="severe_name_shortcut">
+				<anchored>
+					<to>severe_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>critical</class>
+			</windowshortcut>
+			<basestringfield name="severe_name_name" source="name">
+				<anchored>			
+					<to>severe_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Critical &#187;</empty>
+				<tabtarget>
+					<next>severe_details_severity</next>
+					<prev>severe_details_severity</prev>
+				</tabtarget>				
+			</basestringfield>
+			
+<!-- DETAILS -->			
+			<sheetframe name="severe_details">
+				<bounds>12,60,264,50</bounds>
+			</sheetframe>			
+			<sheetframetitle name="severe_severe_title">
+				<anchored>
+					<to>severe_details</to>
+				</anchored>
+				<static>Details</static>
+			</sheetframetitle>			
+
+			<!-- SEVERITY THRESHOLD-->
+			<sheetlabel>
+				<anchored>
+					<to>severe_details</to>
+					<offset>13,22</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Threshold</static>
+			</sheetlabel>
+			<sheetnumberfield name="severe_details_threshold" source="threshold">
+				<anchored>
+					<to>severe_details</to>
+					<offset>226,21</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>severe_name_name</next>
+					<prev>severe_name_name</prev>
+				</tabtarget>				
+			</sheetnumberfield>			
+			
+<!-- EFFECT -->
+			<sheetframe name="severe_effect">
+				<bounds>12,110,264,210</bounds>
+			</sheetframe>
+			<sheetframetitle name="severe_effect_title">
+				<anchored>
+					<to>severe_effect</to>
+				</anchored>
+				<static>EFFECT</static>
+			</sheetframetitle>
+			
+			<sheetformattedtextfield name="severe_effect_effect" source="effect">
+				<anchored>
+					<left>
+						<parent>severe_effect</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>severe_effect</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>severe_effect</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>severe_effect</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>severe_effect_effect</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>severe_effect_effect</target>
+			</scrollbar>			
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

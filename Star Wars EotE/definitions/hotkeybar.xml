@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<hotkeybar>
+		<frame>hotkeybox</frame>
+		<location>
+			<offset>0</offset>
+			<height>33</height>
+		</location>
+		<title>
+			<frame>hotkeytitlebox</frame>
+			<frameoffset>2,-2,7,5</frameoffset>
+			<margin>2,1</margin>
+			<font>hotkey</font>
+		</title>
+		<label>
+			<margin>10,12</margin>
+			<font>hotkey</font>
+		</label>
+		<iconmargins>0,3,0,0</iconmargins>
+	</hotkeybar>
+
+</root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="sheettitle">
+		<basestringcontrol>
+			<font>sheetlabelinline</font>
+			<staticcase>upper</staticcase>
+		</basestringcontrol>						
+	</template>
+	
+</root>

@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- BLESSINGS -->
+	<windowclass name="retainer_combat_blessings">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Blessings</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>blessingsmall</class>
+				<datasource>.blessings</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- MELEE -->
+	<windowclass name="retainer_combat_melee">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Melee</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>meleesmall</class>
+				<datasource>.melee</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- RANGED -->
+	<windowclass name="retainer_combat_ranged">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Ranged</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>rangedsmall</class>
+				<datasource>.ranged</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SOCIAL -->
+	<windowclass name="retainer_combat_social">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Social</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>socialsmall</class>
+				<datasource>.social</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SPELLS -->
+	<windowclass name="retainer_combat_spells">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Spells</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>spellsmall</class>
+				<datasource>.spells</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SUPPORT -->
+	<windowclass name="retainer_combat_support">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Support</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>supportsmall</class>
+				<datasource>.support</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- CONDITIONS -->
+	<windowclass name="retainer_combat_conditions">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Conditions</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>conditionsmall</class>
+				<datasource>.conditions</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- CRITICALS -->
+	<windowclass name="retainer_combat_criticals">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Criticals</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>criticalsmall</class>
+				<datasource>.criticals</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+	
+<!-- DISEASES -->
+	<windowclass name="retainer_combat_diseases">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Diseases</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>diseasesmall</class>
+				<datasource>.diseases</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+	
+<!-- INSANITIES -->
+	<windowclass name="retainer_combat_insanities">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Insanities</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>insanitysmall</class>
+				<datasource>.insanities</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+	
+<!-- MISCASTS -->
+	<windowclass name="retainer_combat_miscasts">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Miscasts</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>miscastsmall</class>
+				<datasource>.miscasts</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>	
+	
+<!-- MUTATIONS -->
+	<windowclass name="retainer_combat_mutations">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Mutations</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>mutationsmall</class>
+				<datasource>.mutations</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>		
+	
+<!-- WINDOW -->
+	<windowclass name="retainercombat">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>307</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- ACTIONS -->
+			<sheetframe name="combat_actions">
+				<bounds>12,20,236,273</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			
+			<!-- Actions -->
+			<basewindowlist name="combat_actions_actions">
+				<class>empty</class>
+				<skipempty />
+				<anchored>
+					<left>
+						<parent>combat_actions</parent>
+						<anchor>left</anchor>
+						<offset>7</offset>					
+					</left>
+					<right>
+						<parent>combat_actions</parent>
+						<anchor>right</anchor>
+						<offset>-7</offset>					
+					</right>
+					<top>
+						<parent>combat_actions</parent>
+						<anchor>top</anchor>
+						<offset>7</offset>
+					</top>
+					<bottom>
+						<parent>combat_actions</parent>
+						<anchor>bottom</anchor>
+						<offset>-7</offset>
+					</bottom>
+				</anchored>
+				<script>
+					function onInit()
+						createWindowWithClass("retainer_combat_blessings", window.getDatabaseNode());
+						createWindowWithClass("retainer_combat_melee", window.getDatabaseNode());
+						createWindowWithClass("retainer_combat_ranged", window.getDatabaseNode());					
+						createWindowWithClass("retainer_combat_social", window.getDatabaseNode());
+						createWindowWithClass("retainer_combat_spells", window.getDatabaseNode());					
+						createWindowWithClass("retainer_combat_support", window.getDatabaseNode());
+					end
+				</script>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>combat_actions_actions</to>
+					<offset>-9,-8</offset>
+				</anchored>
+				<target>combat_actions_actions</target>
+			</scrollbar>			
+			
+<!-- CONDITIONS -->
+			<sheetframe name="combat_conditions">
+				<bounds>248,20,236,273</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			
+			<!-- Conditions -->
+			<basewindowlist name="combat_conditions_conditions">
+				<class>empty</class>
+				<skipempty />
+				<anchored>
+					<left>
+						<parent>combat_conditions</parent>
+						<anchor>left</anchor>
+						<offset>7</offset>					
+					</left>
+					<right>
+						<parent>combat_conditions</parent>
+						<anchor>right</anchor>
+						<offset>-7</offset>					
+					</right>
+					<top>
+						<parent>combat_conditions</parent>
+						<anchor>top</anchor>
+						<offset>7</offset>
+					</top>
+					<bottom>
+						<parent>combat_conditions</parent>
+						<anchor>bottom</anchor>
+						<offset>-7</offset>
+					</bottom>
+				</anchored>
+				<script>
+					function onInit()
+						createWindowWithClass("retainer_combat_conditions", window.getDatabaseNode());
+						createWindowWithClass("retainer_combat_criticals", window.getDatabaseNode());
+						createWindowWithClass("retainer_combat_diseases", window.getDatabaseNode());
+						createWindowWithClass("retainer_combat_insanities", window.getDatabaseNode());					
+						createWindowWithClass("retainer_combat_miscasts", window.getDatabaseNode());
+						createWindowWithClass("retainer_combat_mutations", window.getDatabaseNode());					
+					end
+				</script>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>combat_conditions_conditions</to>
+					<offset>-9,-8</offset>
+				</anchored>
+				<target>combat_conditions_conditions</target>
+			</scrollbar>			
+		
+		</sheetdata>
+	</windowclass>
+</root>

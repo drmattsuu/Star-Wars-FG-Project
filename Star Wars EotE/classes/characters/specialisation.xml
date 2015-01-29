@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="specialisationsmall">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>specialisation</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>21,3,-1,17</bounds>
+				<empty>&#171; New Specialisation &#187;</empty>
+				<disabled />
+			</basestringfield>
+			<specialisationdicepool>
+				<bounds>-16,0,20,20</bounds>
+			</specialisationdicepool>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="specialisation">
+		<frame>referencebox</frame>
+		<placement>
+			<size>
+				<width>300</width>
+				<height>300</height>
+			</size>
+		</placement>
+		<minimize>minimized_reference</minimize>
+		<playercontrol />
+		<sharable />		
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<windowshortcut>
+				<bounds>18,16,20,20</bounds>
+				<class>specialisation</class>
+			</windowshortcut>
+			<basestringfield name="name">
+				<anchored>
+					<left>
+						<offset>39</offset>
+					</left>
+					<top>
+						<offset>19</offset>
+					</top>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<empty>&#171; New Specialisation &#187;</empty>
+			</basestringfield>
+			<basestringcontrol>
+				<anchored>
+					<left>
+						<parent>name</parent>
+						<anchor>right</anchor>
+					</left>
+					<top>
+						<parent>name</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>name</parent>
+						<anchor>bottom</anchor>					
+					</bottom>
+				</anchored>
+				<disabled />
+				<script>
+					function onInit()
+						super.onInit();
+						local windownode = window.getDatabaseNode();
+						if windownode then
+							local skillnode = windownode.getParent().getParent();
+							if skillnode then
+								local namenode = skillnode.getChild("name");
+								if namenode then
+									setValue(" (" .. namenode.getValue() .. ")");
+								end
+							end
+						end
+					end
+				</script>
+			</basestringcontrol>
+
+			<sheetformattedtextfield name="description">
+				<bounds>20,38,-24,-20</bounds>
+				<font>
+					<normal>chatfont</normal>
+					<bold>narratorfont</bold>
+					<italic>chatitalicfont</italic>
+					<bolditalic>chatbolditalicfont</bolditalic>
+					<title>sheetlabel</title>
+				</font>
+				<linkicon>
+					<link>button_openwindow</link>
+					<emptylink>button_emptytarget</emptylink>
+				</linkicon>
+				<footer>footer_narrow</footer>
+				<selectioncolor>#FFD296</selectioncolor>
+				<empty>Click to enter text</empty>				
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>description</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>description</target>
+			</scrollbar>
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

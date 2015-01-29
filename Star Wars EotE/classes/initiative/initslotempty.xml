@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="initslotempty">
+		<frame>ctentrybox</frame>
+		<sizelimits>
+			<minimum>
+				<height>32</height>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+		
+			<!-- active indicator -->
+			<actoractiveindicator name="initslotactive">
+				<anchored>
+					<top>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<anchor>left</anchor>
+					</left>
+					<size>
+						<width>33</width>
+					</size>
+				</anchored>
+			</actoractiveindicator>
+			
+			<tokenfield name="initslotactor_token">
+				<bounds>30,0,32,32</bounds>
+				<empty>indicator_emptytoken</empty>
+				<script>
+					function onDragStart(button, x, y, draginfo)
+						return true;
+					end
+				</script>
+			</tokenfield>	
+			
+			<!-- shortcut -->
+			<buttoncontrol name="shortcut">	
+				<bounds>62,6,20,20</bounds>			
+				<icon>
+					<normal>button_openwindow</normal>
+					<pressed>button_emptytarget</pressed>
+				</icon>
+				<gmvisibleonly />
+				<script>
+					function onButtonPress()
+						if User.isHost() then
+							local recordnode = window.getDatabaseNode().getChild("initslot_actornodename");
+							Debug.console("Link activated in actornpc.xml - " .. recordnode.getValue());							
+							if recordnode then
+								if recordnode.getValue() ~= "" then 
+									NpcManager.openNpcSheet(DB.findNode(recordnode.getValue()));
+								end
+							--[[else
+								NpcManager.openNpcSheet(window.getDatabaseNode());]]
+							end							
+						end
+					end
+				</script>
+			</buttoncontrol>			
+			
+			<!-- name -->
+			<basestringfield name="initslotname">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>82</offset>
+					</left>
+					<right>
+						<anchor>right</anchor>
+						<offset>-175</offset> <!-- was 276-->
+					</right>
+					<top>
+						<anchor>top</anchor>
+						<offset>9</offset>
+					</top>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>			
+				<empty>&#171; Unnamed &#187;</empty>
+				<script>
+					function onInit()
+						Debug.console("initslotempty.xml - initslotname.onInit - starting...");
+						if window.getDatabaseNode().getChild("actor.classname").getValue() == "npc" then
+							Debug.console("initslotempty.xml - initslotname.onInit - about to change colour if an NPC.");
+							setColor("#C0FF0000");
+							Debug.console("initslotempty.xml - initslotname.onInit - after changing colour of an NPC name.");
+						end
+						Debug.console("initslotempty.xml - initslotname.onInit - ending...");
+					end
+					
+					function onValueChanged()
+						Debug.console("initslotempty.xml - initslotname.onValueChanged - starting...");
+						local recordnode = window.getDatabaseNode().getChild("initslot_actornodename");
+						if recordnode.getValue() ~= "" then	
+							if User.isHost() then 
+								window.shortcut.setVisible(true);
+							end
+						else						
+							window.shortcut.setVisible(false);
+						end
+						Debug.console("initslotempty.xml - initslotname.onValueChanged - about to change colour of an NPC.");						
+						if window.getDatabaseNode().getChild("actor.classname").getValue() == "npc" then
+							setColor("#C0FF0000");
+						end
+						Debug.console("initslotempty.xml - initslotname.onValueChanged - ending...");	
+					end
+				</script>
+				<!--<disabled/>-->
+			</basestringfield>
+			
+			<!-- actor nodename - used to track already acted actors - not visible-->
+			<basestringfield name="initslot_actornodename">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>60</offset>
+					</left>
+					<right>
+						<anchor>right</anchor>
+						<offset>2</offset> <!-- was 276-->
+					</right>
+					<top>
+						<anchor>top</anchor>
+						<offset>9</offset>
+					</top>
+					<size>
+						<height>2</height>
+					</size>
+				</anchored>			
+				<invisible />
+			</basestringfield>			
+			
+			<!-- initiative -->
+			<sheetnumberfield name="initslotinitiative" source="actor.initiative">
+				<anchored>
+					<position>insidetopright</position>				
+					<offset>150,8</offset>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<script>
+					function onValueChanged()
+						Debug.console("initslotempty.xml - initslotinitiative.onValueChanged - starting...");
+						super.onValueChanged();
+						window.windowlist.applySort();
+						Debug.console("initslotempty.xml - initslotinitiative.onValueChanged - ending...");
+					end
+				</script>				
+			</sheetnumberfield>
+			
+			<!--Needed for ordering of matching initiative.  PC's should be classname charsheet which orders before classname npc-->
+			<basestringfield name="initslotclassname" source="actor.classname">
+				<anchored>
+					<position>insidetopright</position>				
+					<offset>176,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>	
+				<invisible />
+			</basestringfield>
+			
+			<!-- strain threshhold -->
+			<sheetnumberfield name="boost_dice" source="actor.boost_dice">
+				<!--<disabled />-->
+				<anchored>
+					<position>insidetopright</position>
+					<offset>108,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<!--<gmvisibleonly />-->				
+			</sheetnumberfield>			
+			
+			<sheetnumberfield name="setback_dice" source="actor.setback_dice">
+				<!--<disabled />-->
+				<anchored>
+					<position>insidetopright</position>
+					<offset>69,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<!--<gmvisibleonly />-->				
+			</sheetnumberfield>		
+
+<!--			<sheetnumberfield name="ct_addboostsetback">
+				<disabled />
+				<anchored>
+					<position>insidetopright</position>
+					<offset>20,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<gmvisibleonly />				
+			</sheetnumberfield>-->		
+
+			<buttoncontrol name="ct_addboostsetback">
+				<bounds>-48,4,32,23</bounds>
+				<icon>
+					<!--<normal>button_submit</normal>
+					<pressed>button_submit_down</pressed>-->
+					<normal>textentry_die</normal>
+				</icon>
+				<script>
+					function onDoubleClick()
+						window.dieboxcontrol.onDieboxButtonPress();
+					end	
+					
+					function onDrop(x, y, draginfo)
+						window.dieboxcontrol.onDrop(x, y, draginfo);
+					end
+				</script>
+			</buttoncontrol>
+
+			<sheetnumberfield name="initslotactive" source="actor.active">
+				<anchored>
+					<position>insidetopright</position>				
+					<offset>0,0</offset>
+					<size>
+						<width>0</width>
+					</size>
+				</anchored>
+				<invisible />				
+			</sheetnumberfield>			
+			
+		<!-- strain current -->
+<!--			<woundnumberfield name="strain_current" source="strain.current">
+				<chit>strain</chit>
+				<anchored>
+					<position>insidetopright</position>
+					<offset>107,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>initiative</next>
+					<prev>initiative</prev>
+				</tabtarget>
+				<gmvisibleonly />				
+			</woundnumberfield>	-->		
+			
+			<!-- strain threshhold -->
+<!--			<sheetnumberfield name="strain_threshold" source="strain.threshold">
+				<disabled />
+				<anchored>
+					<position>insidetopright</position>
+					<offset>76,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<gmvisibleonly />				
+			</sheetnumberfield>-->
+			
+			<!-- wound current -->
+<!--			<woundnumberfield name="wounds_current" source="wounds.current">
+				<chit>wound</chit>
+				<anchored>
+					<position>insidetopright</position>
+					<offset>40,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>initiative</next>
+					<prev>initiative</prev>
+				</tabtarget>
+				<gmvisibleonly />				
+			</woundnumberfield>	-->		
+			
+			<!-- wound threshhold -->
+<!--			<sheetnumberfield name="wounds_threshold" source="wounds.threshold">
+				<disabled />
+				<anchored>
+					<position>insidetopright</position>
+					<offset>9,8</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<gmvisibleonly />				
+			</sheetnumberfield>-->
+			
+			<!-- stance 
+			<stancevalue>
+				<anchored>
+					<position>insidetopright</position>
+					<offset>9,8</offset>
+				</anchored>
+				<gmvisibleonly />				
+			</stancevalue>	-->		
+		
+		</sheetdata>
+		<script file="classes/initiative/initslotempty.lua" />		
+	</windowclass>
+	
+</root>

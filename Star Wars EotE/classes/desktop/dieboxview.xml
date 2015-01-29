@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="dieboxviewsecret">
+		<placement>
+			<size>
+				<width>1</width>
+				<height>1</height>
+			</size>
+			<position>
+				<x>1</x>
+				<y>1</y>
+			</position>
+		</placement>
+		<sharable>
+			<shareas>dieboxview</shareas>
+		</sharable>
+	</windowclass>
+
+	<windowclass name="dieboxview">
+		<frame>ctbox</frame>
+		<placement>
+			<size>
+				<width>500</width>
+				<height>300</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<minimum>
+				<width>300</width>
+				<height>300</height>
+			</minimum>
+			<dynamic>
+				<resize>both</resize>
+			</dynamic>
+		</sizelimits>
+		<minimize>minimized_combat</minimize>
+		<playercontrol />
+		<nodelete />
+		<sheetdata>
+		
+		<!-- labels -->
+		<stringcontrol>
+			<bounds>2,2,-2,20</bounds>
+			<font>titlefont</font>
+			<color>#ffffffff</color>
+			<static>Dice Box Viewer</static>
+			<center />
+		</stringcontrol>		
+		
+<!-- ACTORS -->
+			<!-- labels -->
+<!--			<stringcontrol>
+				<bounds>-195,15,25,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Init</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<bounds>-161,15,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ff0000ff</color>
+				<static>Boosts</static>
+				<center />
+			</stringcontrol>	
+			<stringcontrol>
+				<bounds>-120,15,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#00000000</color>
+				<static>Setbacks</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<bounds>-70,15,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#0000A000</color>
+				<static>Add dice</static>
+				<center />
+			</stringcontrol>-->			
+
+			<!-- actor list -->
+<!--			<actorlist name="actorlist">
+				<bounds>0,30,-18,-50</bounds>
+			</actorlist>-->
+			<!--Acting list tracks the actual init slots and who has used them/is in them-->
+			<dieboxviewlist name="dieboxviewslotlist">
+				<bounds>2,30,-10,-2</bounds>
+			</dieboxviewlist>
+			
+<!--			<genericcontrol> 	
+				<icon>inittracker_separator</icon>
+				<anchored>
+					<top>
+						<parent>trackerinitslotlist</parent>
+						<anchor>bottom</anchor>
+						<offset>2</offset>
+					</top>
+					<left>
+						<anchor>left</anchor>
+						<offset>100</offset>
+					</left>
+					<size>
+						<width>136</width>
+						<height>19</height>
+					</size>
+				</anchored>
+				<!{1}**<bounds>0,30,-18,-150</bounds>**{1}>
+			</genericcontrol> -->			
+
+
+<!--			<stringcontrol>
+				<bounds>-300,-225,50,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Used 2</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<bounds>-300,-213,50,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Maneuvers</static>
+				<center />
+			</stringcontrol>			
+			<stringcontrol>
+				<bounds>-246,-213,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ff0000ff</color>
+				<static>Boosts</static>
+				<center />
+			</stringcontrol>	
+			<stringcontrol>
+				<bounds>-200,-213,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#00000000</color>
+				<static>Setbacks</static>
+				<center />
+			</stringcontrol>			
+			<stringcontrol>
+				<bounds>-146,-225,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>STRAIN</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<bounds>-150,-213,25,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Curr</static>
+				<center />
+			</stringcontrol>	
+			<stringcontrol>
+				<bounds>-119,-213,25,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Thres</static>
+				<center />
+			</stringcontrol>			
+			<stringcontrol>
+				<bounds>-80,-225,45,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>WOUNDS</static>
+				<center />
+			</stringcontrol>	
+			<stringcontrol>
+				<bounds>-84,-213,25,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Curr</static>
+				<center />
+			</stringcontrol>
+			<stringcontrol>
+				<bounds>-53,-213,25,10</bounds>
+				<font>sheetlabelsmall</font>
+				<color>#ffffffff</color>
+				<static>Thres</static>
+				<center />
+			</stringcontrol>-->			
+			
+			<!--Actorlist takes the drop action for PCs, NPCs, etc. and shows the list of actors waiting to act - i.e. they have not acted this turn.-->
+<!--			<actorlist name="actorlist">
+				<bounds>0,-200,-18,-50</bounds>
+			</actorlist>-->			
+			
+			<scrollercontrol>
+				<anchored>
+					<to>dieboxviewslotlist</to>
+					<position>belowright</position>
+					<offset>1,5</offset>
+					<size>
+						<width>45</width>
+						<height>27</height>
+					</size>
+				</anchored>
+				<target>dieboxviewslotlist</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+				</button>
+			</scrollercontrol>
+			
+			<!-- recharge button -->
+<!--			<buttoncontrol>
+				<bounds>-53,-45,33,26</bounds>
+				<icon>
+					<normal>button_ctnextround</normal>
+					<pressed>button_ctnextround_down</pressed>
+				</icon>
+				<tooltip>
+					<text>Perform End of Turn Actions</text>
+				</tooltip>
+				<class>image</class>
+				<script>
+					function onButtonPress()
+						InitiativeManager.endOfTurn();
+					end
+				</script>
+			</buttoncontrol>-->			
+			
+			<closebutton />
+		</sheetdata>
+		<script file="classes/desktop/dieboxview.lua" />		
+	</windowclass>
+</root>

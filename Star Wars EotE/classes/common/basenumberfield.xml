@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="basenumberfield">
+		<numberfield>
+			<font>sheetlabel</font>
+			<color>ff000000</color>
+			<zerocolor>20000000</zerocolor>		
+			<minvalue>0</minvalue>
+ 			<noreset />
+ 			<nodrop />
+ 			<nodrag />
+			<keyeditframe>
+				<name>sheetfocus</name>
+				<offset>4,5,4,3</offset>
+			</keyeditframe> 			
+			<script file="classes/common/basenumberfield.lua" />		
+		</numberfield>
+	</template>
+		
+</root>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="dProficiencyicon" file="graphics/dice/dProficiency/dProficiency.png" />
+	<icon name="dProficiencyicon.1" file="graphics/dice/dProficiency/dProficiency.1.png" />
+	<icon name="dProficiencyicon.2" file="graphics/dice/dProficiency/dProficiency.2.png" />
+	<icon name="dProficiencyicon.3" file="graphics/dice/dProficiency/dProficiency.3.png" />
+	<icon name="dProficiencyicon.4" file="graphics/dice/dProficiency/dProficiency.4.png" />
+	<icon name="dProficiencyicon.5" file="graphics/dice/dProficiency/dProficiency.5.png" />
+	<icon name="dProficiencyicon.6" file="graphics/dice/dProficiency/dProficiency.6.png" />
+	<icon name="dProficiencyicon.7" file="graphics/dice/dProficiency/dProficiency.7.png" />
+	<icon name="dProficiencyicon.8" file="graphics/dice/dProficiency/dProficiency.8.png" />
+	<icon name="dProficiencyicon.9" file="graphics/dice/dProficiency/dProficiency.9.png" />
+	<icon name="dProficiencyicon.10" file="graphics/dice/dProficiency/dProficiency.10.png" />
+	<icon name="dProficiencyicon.11" file="graphics/dice/dProficiency/dProficiency.11.png" />
+	<icon name="dProficiencyicon.12" file="graphics/dice/dProficiency/dProficiency.12.png" />
+
+</root>

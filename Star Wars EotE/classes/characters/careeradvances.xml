@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="careeradvances">
+		<placement>
+			<size>
+				<width>600</width>
+				<height>442</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="advances_name">
+				<bounds>12,20,563,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="advances_name_shortcut">
+				<anchored>
+					<to>advances_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>career</class>
+			</windowshortcut>
+			<basestringfield name="advances_name_name" source="name">
+				<anchored>			
+					<to>advances_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Career &#187;</empty>
+				<tabtarget>
+					<next>advances_career_value</next>
+					<prev>advances_career_encumbrance</prev>
+				</tabtarget>				
+			</basestringfield>
+			
+<!-- GENERAL -->
+			<sheetframe name="advances_general">
+				<bounds>12,60,563,228</bounds>
+			</sheetframe>
+			<sheetframetitle name="advances_general_title">
+				<anchored>
+					<to>advances_general</to>
+				</anchored>
+				<static>General Career Advances</static>
+			</sheetframetitle>
+			
+			<!-- ACTION -->
+			<sheetlabel name="advances_general_action_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,22</offset>
+					<size>
+						<width>52</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Action :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_action" source="taken.action.description">
+				<anchored>
+					<top>
+						<parent>advances_general_action_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_action_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.action.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_action_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_action_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_action</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+			
+			<!-- TALENT -->
+			<sheetlabel name="advances_general_talent_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,42</offset>
+					<size>
+						<width>51</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Talent :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_talent" source="taken.talent.description">
+				<anchored>
+					<top>
+						<parent>advances_general_talent_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_talent_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.talent.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_talent_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_talent_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_talent</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+			
+			<!-- SKILL TRAINING OR SPECIALITY -->
+			<sheetlabel name="advances_general_skill_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,62</offset>
+					<size>
+						<width>180</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Skill Training or Speciality :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_skill" source="taken.skill.description">
+				<anchored>
+					<top>
+						<parent>advances_general_skill_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_skill_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.skill.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_skill_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_skill_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_skill</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+			
+			<!-- WOUND THRESHOLD -->
+			<sheetlabel name="advances_general_wound_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,82</offset>
+					<size>
+						<width>121</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Wound Threshold :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_wound" source="taken.wound.description">
+				<anchored>
+					<top>
+						<parent>advances_general_wound_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_wound_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.wound.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_wound_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_wound_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_wound</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+			
+			<!-- OPEN ADVANCE 1 -->
+			<sheetlabel name="advances_general_open_1_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,102</offset>
+					<size>
+						<width>98</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Open Advance :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_open_1" source="taken.open.1.description">
+				<anchored>
+					<top>
+						<parent>advances_general_open_1_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_open_1_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.open.1.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_open_1_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_open_1_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_open_1</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+			
+			<!-- OPEN ADVANCE 2 -->
+			<sheetlabel name="advances_general_open_2_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,122</offset>
+					<size>
+						<width>98</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Open Advance :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_open_2" source="taken.open.2.description">
+				<anchored>
+					<top>
+						<parent>advances_general_open_2_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_open_2_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.open.2.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_open_2_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_open_2_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_open_2</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+			
+			<!-- OPEN ADVANCE 3 -->
+			<sheetlabel name="advances_general_open_3_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,142</offset>
+					<size>
+						<width>98</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Open Advance :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_open_3" source="taken.open.3.description">
+				<anchored>
+					<top>
+						<parent>advances_general_open_3_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_open_3_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.open.3.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_open_3_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_open_3_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_open_3</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+			
+			<!-- OPEN ADVANCE 4 -->
+			<sheetlabel name="advances_general_open_4_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,162</offset>
+					<size>
+						<width>98</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Open Advance :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_open_4" source="taken.open.4.description">
+				<anchored>
+					<top>
+						<parent>advances_general_open_4_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_open_4_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.open.4.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_open_4_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_open_4_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_open_4</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+			
+			<!-- OPEN ADVANCE 5 -->
+			<sheetlabel name="advances_general_open_5_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,182</offset>
+					<size>
+						<width>98</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Open Advance :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_open_5" source="taken.open.5.description">
+				<anchored>
+					<top>
+						<parent>advances_general_open_5_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_open_5_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.open.5.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_open_5_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_open_5_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_open_5</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>			
+			
+			<!-- OPEN ADVANCE 6 -->
+			<sheetlabel name="advances_general_open_6_header">
+				<anchored>
+					<to>advances_general</to>
+					<position>insidetopleft</position>
+					<offset>13,202</offset>
+					<size>
+						<width>98</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Open Advance :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_general_open_6" source="taken.open.6.description">
+				<anchored>
+					<top>
+						<parent>advances_general_open_6_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_general_open_6_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_general</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.open.6.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_general_open_6_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_general_open_6_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_general_open_6</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>			
+			
+<!-- COMPLETION -->
+			<sheetframe name="advances_completion">
+				<bounds>12,288,563,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="advances_completion_title">
+				<anchored>
+					<to>advances_completion</to>
+				</anchored>
+				<static>Career Completion Advances</static>
+			</sheetframetitle>			
+			
+			<!-- TRANSITION -->
+			<sheetlabel name="advances_completion_transition_header">
+				<anchored>
+					<to>advances_completion</to>
+					<position>insidetopleft</position>
+					<offset>13,22</offset>
+					<size>
+						<width>120</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Career Transition :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_completion_transition" source="taken.transition.description">
+				<anchored>
+					<top>
+						<parent>advances_completion_transition_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_completion_transition_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_completion</parent>
+						<anchor>right</anchor>
+						<offset>-75</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.transition.spent</sourcename>
+				<max>5</max>
+				<anchored>
+					<top>
+						<parent>advances_completion_transition_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_completion_transition_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_completion_transition</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>60</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+
+			<!-- DEDICATION -->
+			<sheetlabel name="advances_completion_dedication_header">
+				<anchored>
+					<to>advances_completion</to>
+					<position>insidetopleft</position>
+					<offset>13,42</offset>
+					<size>
+						<width>119</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Dedication Bonus :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_completion_dedication" source="taken.dedication.description">
+				<anchored>
+					<top>
+						<parent>advances_completion_dedication_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_completion_dedication_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_completion</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.dedication.spent</sourcename>
+				<anchored>
+					<top>
+						<parent>advances_completion_dedication_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_completion_dedication_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_completion_dedication</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>12</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+
+<!-- NON-CAREER -->
+			<sheetframe name="advances_noncareer">
+				<bounds>12,358,563,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="advances_noncareer_title">
+				<anchored>
+					<to>advances_noncareer</to>
+				</anchored>
+				<static>Non-Career Advances</static>
+			</sheetframetitle>			
+			
+			<!-- NON-CAREER 1 -->
+			<sheetlabel name="advances_noncareer_1_header">
+				<anchored>
+					<to>advances_noncareer</to>
+					<position>insidetopleft</position>
+					<offset>13,22</offset>
+					<size>
+						<width>95</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Advance Type :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_noncareer_1" source="taken.noncareer.1.description">
+				<anchored>
+					<top>
+						<parent>advances_noncareer_1_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_noncareer_1_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_noncareer</parent>
+						<anchor>right</anchor>
+						<offset>-75</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.noncareer.1.spent</sourcename>
+				<max>5</max>
+				<anchored>
+					<top>
+						<parent>advances_noncareer_1_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_noncareer_1_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_noncareer_1</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>60</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+
+			<!-- NON-CAREER 2 -->
+			<sheetlabel name="advances_noncareer_2_header">
+				<anchored>
+					<to>advances_noncareer</to>
+					<position>insidetopleft</position>
+					<offset>13,42</offset>
+					<size>
+						<width>95</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Advance Type :</static>		
+			</sheetlabel>
+			<sheetstringfield name="advances_noncareer_2" source="taken.noncareer.2.description">
+				<anchored>
+					<top>
+						<parent>advances_noncareer_2_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>advances_noncareer_2_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>advances_noncareer</parent>
+						<anchor>right</anchor>
+						<offset>-75</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_characteristics_fellowship_bonus</prev>
+				</tabtarget>
+			</sheetstringfield>
+			<checkboxnumberfield>
+				<sourcename>taken.noncareer.2.spent</sourcename>
+				<max>5</max>
+				<anchored>
+					<top>
+						<parent>advances_noncareer_2_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<bottom>
+						<parent>advances_noncareer_2_header</parent>
+						<anchor>bottom</anchor>
+					</bottom>
+					<left>
+						<parent>advances_noncareer_2</parent>
+						<anchor>right</anchor>
+						<offset>4</offset>
+					</left>
+					<size>
+						<width>60</width>
+					</size>
+				</anchored>
+			</checkboxnumberfield>
+						
+		</sheetdata>
+	</windowclass>
+	
+</root>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/campaign/image.xml" />
+	<includefile source="classes/campaign/images.xml" />
+	<includefile source="classes/campaign/item.xml" />
+	<includefile source="classes/campaign/itemarmour.xml" />
+	<includefile source="classes/campaign/itemmain.xml" />
+	<includefile source="classes/campaign/itemrunes.xml" />
+	<includefile source="classes/campaign/itemweapon.xml" />
+	<includefile source="classes/campaign/itemarmour.xml" />
+	<includefile source="classes/campaign/items.xml" />
+	<includefile source="classes/campaign/location.xml" />
+	<includefile source="classes/campaign/locationmain.xml" />
+	<includefile source="classes/campaign/locations.xml" />	
+	<includefile source="classes/campaign/note.xml" />
+	<includefile source="classes/campaign/notes.xml" />
+	<includefile source="classes/campaign/npc.xml" />
+	<includefile source="classes/campaign/npccombat.xml" />
+	<includefile source="classes/campaign/npcstarship.xml" />
+	<includefile source="classes/campaign/npcgroup.xml" />
+	<includefile source="classes/campaign/npcgroupactions.xml" />
+	<includefile source="classes/campaign/npcgroupdetails.xml" />
+	<includefile source="classes/campaign/npcgroupmain.xml" />
+	<includefile source="classes/campaign/npcgroupnotes.xml" />
+	<includefile source="classes/campaign/npcgroups.xml" />
+	<includefile source="classes/campaign/npcmain.xml" />
+	<includefile source="classes/campaign/npcnotes.xml" />	
+	<includefile source="classes/campaign/rune.xml" />
+	<includefile source="classes/campaign/runemain.xml" />
+	<includefile source="classes/campaign/stories.xml" />
+	<includefile source="classes/campaign/story.xml" />
+	<includefile source="classes/campaign/npcinventory.xml" />
+	<includefile source="classes/campaign/npclist.xml" />
+</root>

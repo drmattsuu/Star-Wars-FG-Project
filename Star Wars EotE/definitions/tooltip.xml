@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<tooltip>
+		<frame name="tooltipbox" margins="7,4,10,7" wrapwidth="300" />
+		<font name="mini_name" />
+	</tooltip>
+
+</root>

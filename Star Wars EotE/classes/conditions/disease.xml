@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="diseasesmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,1,20,20</bounds>
+				<class>disease</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>21,4,-1,17</bounds>
+				<empty>&#171; New Disease &#187;</empty>
+				<disabled />
+			</basestringfield>		
+		</sheetdata>
+	</windowclass>
+	
+	<windowclass name="diseasesymptom">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,1,20,20</bounds>
+				<class>disease</class>
+			</windowbutton>
+			<basestringfield name="name" source="symptom">
+				<bounds>21,4,-1,17</bounds>
+				<empty>&#171; Symptom &#187;</empty>
+				<disabled />
+			</basestringfield>
+			<sheetnumberfield name="severity">
+				<anchored>
+					<left>
+						<anchor>right</anchor>
+						<offset>-25</offset>
+					</left>
+					<top>
+						<anchor>top</anchor>
+						<offset>3</offset>
+					</top>
+				</anchored>
+				<disabled />
+			</sheetnumberfield>			
+		</sheetdata>
+	</windowclass>	
+
+	<windowclass name="disease">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<minimize>minimized_reference</minimize>
+		<playercontrol />
+		<sharable />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>disease_main</class>
+				<script file="classes/conditions/base.lua" />				
+			</subwindow>
+			<subwindow name="symptoms">
+				<bounds>0,0,-1,-1</bounds>
+				<class>disease_symptoms</class>
+				<script file="classes/conditions/base.lua" />				
+			</subwindow>			
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,157</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_symptoms</icon>
+					<subwindow>symptoms</subwindow>
+				</tab>				
+				<activate>1</activate>
+			</tabcontrol>		
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

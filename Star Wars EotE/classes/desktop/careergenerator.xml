@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="careergenerator">
+		<sizelimits>
+			<maximum>
+				<width>110</width>			
+				<height>130</height>
+			</maximum>
+			<minimum>
+				<width>110</width>			
+				<height>130</height>
+			</minimum>
+		</sizelimits>	
+		<sheetdata>
+			<librarygenerator>
+				<icon>
+					<normal>careercard</normal>
+				</icon>
+				<class>career</class>
+				<bounds>0,0,110,130</bounds>
+				<script>
+					function isValidNode(sourcenode)
+						local levelnode = sourcenode.getChild("details.level");
+						if levelnode then
+							if string.find(string.lower(levelnode.getValue()), string.lower(LanguageManager.getString("Rank 1")), 1, true) then
+								return true;
+							end
+						end
+						return false;
+					end
+				</script>
+			</librarygenerator>
+		</sheetdata>
+	</windowclass>	
+</root>

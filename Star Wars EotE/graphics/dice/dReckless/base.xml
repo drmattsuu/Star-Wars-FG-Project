@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>	
+	<icon name="dRecklessicon" file="graphics/dice/dReckless/dReckless.png" />
+	<icon name="dRecklessicon.1" file="graphics/dice/dReckless/dReckless.1.png" />
+	<icon name="dRecklessicon.2" file="graphics/dice/dReckless/dReckless.2.png" />
+	<icon name="dRecklessicon.3" file="graphics/dice/dReckless/dReckless.3.png" />
+	<icon name="dRecklessicon.4" file="graphics/dice/dReckless/dReckless.4.png" />
+	<icon name="dRecklessicon.5" file="graphics/dice/dReckless/dReckless.5.png" />
+	<icon name="dRecklessicon.6" file="graphics/dice/dReckless/dReckless.6.png" />
+	<icon name="dRecklessicon.7" file="graphics/dice/dReckless/dReckless.7.png" />
+	<icon name="dRecklessicon.8" file="graphics/dice/dReckless/dReckless.8.png" />
+	<icon name="dRecklessicon.9" file="graphics/dice/dReckless/dReckless.9.png" />
+	<icon name="dRecklessicon.10" file="graphics/dice/dReckless/dReckless.10.png" />
+</root>

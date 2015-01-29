@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="sheetframetitle">
+		<sheettitle>
+			<anchored>
+				<position>insidetop</position>
+				<offset>0,8</offset>
+			</anchored>
+			<center />
+		</sheettitle>
+	</template>
+	
+</root>

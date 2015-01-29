@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="supportsmall">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>		
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,1,20,20</bounds>
+				<class>support</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>21,4,-1,17</bounds>
+				<empty>&#171; New Support &#187;</empty>
+				<disabled />
+			</basestringfield>
+			<actiondicepool>
+				<bounds>-51,0,20,20</bounds>
+			</actiondicepool>			
+			<rechargenumberfield name="currentrecharge">
+				<anchored>
+					<left>
+						<anchor>right</anchor>
+						<offset>-29</offset>
+					</left>
+					<top>
+						<anchor>top</anchor>
+						<offset>3</offset>
+					</top>
+				</anchored>
+			</rechargenumberfield>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="support">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>300</width>
+				<height>384</height>
+			</size>
+		</placement>
+		<minimize>minimized_reference</minimize>
+		<playercontrol />
+		<sharable />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>supportmain</class>
+				<script file="classes/actions/base.lua" />				
+			</subwindow>
+			<subwindow name="details">
+				<bounds>0,0,-1,-1</bounds>
+				<class>supportdetails</class>
+				<script file="classes/actions/base.lua" />								
+			</subwindow>
+			<subwindow name="conservative">
+				<bounds>0,0,-1,-1</bounds>
+				<class>supportconservative</class>
+				<script file="classes/actions/base.lua" />								
+			</subwindow>
+			<subwindow name="reckless">
+				<bounds>0,0,-1,-1</bounds>
+				<class>supportreckless</class>
+				<script file="classes/actions/base.lua" />								
+			</subwindow>
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,291</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_details</icon>
+					<subwindow>details</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_conservative</icon>
+					<subwindow>conservative</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_reckless</icon>
+					<subwindow>reckless</subwindow>
+				</tab>
+				<activate>1</activate>
+			</tabcontrol>		
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

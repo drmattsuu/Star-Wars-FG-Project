@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="dieboxviewlist">
+		<basewindowlist>
+			<class>dieboxviewslot</class>
+			<skipempty />
+			<script file="classes/desktop/dieboxviewlist.lua" />
+		</basewindowlist>
+	</template>
+
+</root>

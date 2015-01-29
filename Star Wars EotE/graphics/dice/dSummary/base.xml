@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>	
+	<icon name="dSummaryicon" file="graphics/dice/dSummary/dSummary.png" />
+	<icon name="dSummaryicon.1" file="graphics/dice/dSummary/dSummary.1.png" />
+	<icon name="dSummaryicon.2" file="graphics/dice/dSummary/dSummary.2.png" />
+	<icon name="dSummaryicon.3" file="graphics/dice/dSummary/dSummary.3.png" />
+	<icon name="dSummaryicon.4" file="graphics/dice/dSummary/dSummary.4.png" />
+	<icon name="dSummaryicon.5" file="graphics/dice/dSummary/dSummary.5.png" />
+	<icon name="dSummaryicon.6" file="graphics/dice/dSummary/dSummary.6.png" />
+	<icon name="dSummaryicon.7" file="graphics/dice/dSummary/dSummary.7.png" />
+	<icon name="dSummaryicon.8" file="graphics/dice/dSummary/dSummary.8.png" />
+</root>

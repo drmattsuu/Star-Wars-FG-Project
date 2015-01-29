@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>	
+	<icon name="d20icon" file="graphics/dice/d20/d20.png" />
+	<icon name="d20icon.1" file="graphics/dice/d20/d20.1.png" />
+	<icon name="d20icon.2" file="graphics/dice/d20/d20.2.png" />
+	<icon name="d20icon.3" file="graphics/dice/d20/d20.3.png" />
+	<icon name="d20icon.4" file="graphics/dice/d20/d20.4.png" />
+	<icon name="d20icon.5" file="graphics/dice/d20/d20.5.png" />
+	<icon name="d20icon.6" file="graphics/dice/d20/d20.6.png" />
+	<icon name="d20icon.7" file="graphics/dice/d20/d20.7.png" />
+	<icon name="d20icon.8" file="graphics/dice/d20/d20.8.png" />
+	<icon name="d20icon.9" file="graphics/dice/d20/d20.9.png" />
+	<icon name="d20icon.10" file="graphics/dice/d20/d20.10.png" />
+	<icon name="d20icon.11" file="graphics/dice/d20/d20.11.png" />
+	<icon name="d20icon.12" file="graphics/dice/d20/d20.12.png" />
+	<icon name="d20icon.13" file="graphics/dice/d20/d20.13.png" />
+	<icon name="d20icon.14" file="graphics/dice/d20/d20.14.png" />
+	<icon name="d20icon.15" file="graphics/dice/d20/d20.15.png" />
+	<icon name="d20icon.16" file="graphics/dice/d20/d20.16.png" />
+	<icon name="d20icon.17" file="graphics/dice/d20/d20.17.png" />
+	<icon name="d20icon.18" file="graphics/dice/d20/d20.18.png" />
+	<icon name="d20icon.19" file="graphics/dice/d20/d20.19.png" />
+	<icon name="d20icon.20" file="graphics/dice/d20/d20.20.png" />
+
+</root>

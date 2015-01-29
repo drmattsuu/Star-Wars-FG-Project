@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="portraitselection_entry">
+		<sizelimits>
+			<minimum>
+				<height>96</height>
+				<width>96</width>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+			<portraitselectioncontrol name="portrait">
+				<bounds>0,0,-1,-1</bounds>
+				<base>charlist_base</base>
+				<mask>charlist_mask</mask>
+				<script>
+					local dragging = false;
+				
+					function onDoubleClick(x, y)
+						activate();
+						window.windowlist.window.close();
+					end
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+					
+					function onDrag(button, x, y, draginfo)
+						if not dragging then
+							draginfo.setType("portraitselection");
+							draginfo.setStringData(getFile());
+							draginfo.setIcon("button_dragtarget");
+							dragging = true;							
+							return true;
+						end
+					end
+					
+					function onDragEnd(draginfo)
+						dragging = false;						
+					end
+				</script>
+			</portraitselectioncontrol>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="portraitselection">
+		<frame>framebox</frame>
+		<placement>
+			<size>
+				<width>460</width>
+				<height>300</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic />
+		</sizelimits>		
+		<sheetdata>
+			<basewindowlist name="portraits">
+				<class>portraitselection_entry</class>
+				<bounds>22,30,-30,-30</bounds>
+				<columns>
+					<width>80</width>
+					<fillwidth />
+				</columns>
+				<script>
+					function onInit()
+						getWindows()[1].close();
+					
+						for k, v in ipairs(User.getPortraitFileList()) do
+							local newentry = createWindow();
+							newentry.portrait.setFile(v);
+						end
+					end
+				</script>
+			</basewindowlist>
+			<scrollbarcontrol>
+				<!--<bounds>-60,-50,45,27</bounds>-->
+				<target>portraits</target>
+				<anchored to="portraits" position="right" offset="-5,-5" width="20" />
+				<frame name="scrollbar_base" offset="0,12,0,12" />				
+				<normal name="scrollbutton_normal" />
+			</scrollbarcontrol>
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+
+</root>

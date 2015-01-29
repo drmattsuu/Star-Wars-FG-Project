@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="favournumberfield">
+		<chitnumberfield>
+			<script file="classes/common/favournumberfield.lua" />
+		</chitnumberfield>
+	</template>
+	
+</root>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="tabcontrol">
+		<genericcontrol>
+			<tab mergerule="resetandadd" />
+			<frame>
+				<name>tabs</name>
+			</frame>
+			<script file="classes/common/tabcontrol.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

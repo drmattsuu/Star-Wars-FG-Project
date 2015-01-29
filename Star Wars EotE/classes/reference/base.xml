@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/reference/template_ref.xml" />
+	<includefile source="classes/reference/ref_equipment.xml" />
+	<includefile source="classes/reference/ref_equipment_lists.xml" />
+	<includefile source="classes/reference/ref_basicclasses.xml" />	
+	
+	<includefile source="classes/reference/template_common.xml" />	
+</root>

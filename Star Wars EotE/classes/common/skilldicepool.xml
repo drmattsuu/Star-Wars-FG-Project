@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="skilldicepool">
+		<buttoncontrol>
+			<icon>
+				<normal>textentry_die</normal>
+			</icon>
+			<script file="classes/common/skilldicepool.lua" />
+		</buttoncontrol>
+	</template>
+	
+</root>

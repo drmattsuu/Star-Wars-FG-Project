@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<script name="DatabaseManager" file="managers/databasemanager.lua" />
+	<script name="DebugManager" file="managers/debugmanager.lua" />
+	<script name="GmIdentityManager" file="managers/gmidentitymanager.lua" />
+	<script name="PreferenceManager" file="managers/preferencemanager.lua" />	
+	<script name="ChatManager" file="managers/chatmanager.lua" />	
+	<script name="UserManager" file="managers/usermanager.lua" />
+	<script name="WindowManager" file="managers/windowmanager.lua" />
+	<script name="DesktopManager" file="managers/desktopmanager.lua" />
+	<script name="ExportManager" file="managers/exportmanager.lua" />
+	<script name="InitiativeManager" file="managers/initiativemanager.lua" />
+	<script name="CharacterManager" file="managers/charactermanager.lua" />	
+	<script name="NpcManager" file="managers/npcmanager.lua" />
+	<script name="NpcGroupManager" file="managers/npcgroupmanager.lua" />
+	<script name="PartySheetManager" file="managers/partysheetmanager.lua" />
+	<script name="ModifierStack" file="managers/modifierstack.lua" />
+	<!--<script name="LocationManager" file="managers/locationmanager.lua" />-->
+	<script name="NoteManager" file="managers/notemanager.lua" />		
+	<script name="TokenManager" file="managers/tokenmanager.lua" />
+	<script name="AbilityManager" file="managers/abilitymanager.lua" />
+	<script name="ActionManager" file="managers/actionmanager.lua" />
+	<script name="ConditionManager" file="managers/conditionmanager.lua" />				
+	<script name="PetManager" file="managers/petmanager.lua" />				
+	<script name="HorseManager" file="managers/horsemanager.lua" />
+	<script name="RetainerManager" file="managers/retainermanager.lua" />
+	<script name="DicePoolManager" file="managers/dicepoolmanager.lua" />
+	<script name="DieBoxManager" file="managers/dieboxmanager.lua" />
+	<script name="LanguageManager" file="managers/languagemanager.lua" />
+	
+	<script name="StringManager" file="managers/manager_string.lua" />
+	<script name="DieBoxViewListManager" file="managers/dieboxviewlistmanager.lua" />
+
+</root>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="d12icon" file="graphics/dice/d12/d12.png" />
+	<icon name="d12icon.1" file="graphics/dice/d12/d12.1.png" />
+	<icon name="d12icon.2" file="graphics/dice/d12/d12.2.png" />
+	<icon name="d12icon.3" file="graphics/dice/d12/d12.3.png" />
+	<icon name="d12icon.4" file="graphics/dice/d12/d12.4.png" />
+	<icon name="d12icon.5" file="graphics/dice/d12/d12.5.png" />
+	<icon name="d12icon.6" file="graphics/dice/d12/d12.6.png" />
+	<icon name="d12icon.7" file="graphics/dice/d12/d12.7.png" />
+	<icon name="d12icon.8" file="graphics/dice/d12/d12.8.png" />
+	<icon name="d12icon.9" file="graphics/dice/d12/d12.9.png" />
+	<icon name="d12icon.10" file="graphics/dice/d12/d12.10.png" />
+	<icon name="d12icon.11" file="graphics/dice/d12/d12.11.png" />
+	<icon name="d12icon.12" file="graphics/dice/d12/d12.12.png" />
+	
+</root>

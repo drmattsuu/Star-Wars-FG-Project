@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>	
+	<icon name="d3icon" file="graphics/dice/d3/d3.png" />
+	<icon name="d3icon.1" file="graphics/dice/d3/d3.1.png" />
+	<icon name="d3icon.2" file="graphics/dice/d3/d3.2.png" />
+	<icon name="d3icon.3" file="graphics/dice/d3/d3.3.png" />	
+</root>

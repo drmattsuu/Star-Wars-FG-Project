@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="pointerselection">
+		<placement>
+			<size>
+				<width>210</width>
+				<height>215</height>
+			</size>
+		</placement>
+		<sheetdata>
+			<genericcontrol>
+				<bounds>0,0,210,205</bounds>
+				<script file="classes/utilities/pointerselection.lua" />
+			</genericcontrol>
+			
+<!--			<closebutton>
+				<anchored>
+					<top>
+						<offset>21</offset>
+					</top>
+					<right>
+						<offset>-8</offset>
+					</right>
+				</anchored>
+			</closebutton>-->
+		</sheetdata>
+	</windowclass>
+	
+
+</root>

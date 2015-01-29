@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="scrollbar">
+		<scrollbarcontrol>
+			<anchored>
+				<position>right</position>
+				<size>
+					<width>20</width>
+				</size>
+			</anchored>
+			<frame>
+				<name>scrollbar_base</name>
+				<offset>0,12,0,12</offset>
+			</frame>
+			<normal>
+				<name>scrollbutton_normal</name>
+			</normal>
+		</scrollbarcontrol>
+	</template>
+	
+</root>

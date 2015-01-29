@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="locationmain">
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>12,20,224,40</bounds>
+				<script>
+					function onInit()
+						if not User.isHost() then
+							setStaticBounds(12,20,264,40);
+						end
+					end
+				</script>				
+			</sheetframe>
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>ability</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Location &#187;</empty>
+			</basestringfield>
+			<tokenfield name="token">
+				<bounds>238,23,34,34</bounds>
+				<empty>indicator_emptytoken</empty>				
+				<script>
+					local dragging = false;
+					
+					function onInit()
+						setVisible(User.isHost());
+					end
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+					
+					function onDrag(button, x, y, draginfo)
+						if not dragging and getPrototype() then
+							draginfo.setType("location");
+							draginfo.setTokenData(getPrototype());
+							draginfo.setShortcutData("location", window.getDatabaseNode().getNodeName());
+							draginfo.setDatabaseNode(window.getDatabaseNode().getNodeName());
+							draginfo.setStringData(window.main_name_name.getValue());
+
+							local base = draginfo.createBaseData();
+							base.setType("token");
+							base.setTokenData(getPrototype());
+
+							dragging = true;
+							return true;
+						end
+						return false;
+					end
+
+					function onDragEnd(draginfo)
+						dragging = false;
+					end					
+				</script>				
+			</tokenfield>
+			
+<!-- DESCRIPTION -->
+			<sheetframe name="main_description">
+				<bounds>12,60,264,260</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_description_title">
+				<anchored>
+					<to>main_description</to>
+				</anchored>
+				<static>Description</static>
+			</sheetframetitle>
+			
+			<sheetformattedtextfield name="main_description_description" source="description">
+				<anchored>
+					<left>
+						<parent>main_description</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>main_description</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_description</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>main_description</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>main_description_description</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>main_description_description</target>
+			</scrollbar>			
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

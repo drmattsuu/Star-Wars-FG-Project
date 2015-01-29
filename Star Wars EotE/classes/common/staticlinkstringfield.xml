@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="staticlinkstringfield">
+		<stringfield>
+			<underlineoffset>-3</underlineoffset>
+			<nodrag />
+			<readonly />
+			<script file="classes/common/staticlinkstringfield.lua" />
+		</stringfield>
+	</template>
+	
+</root>

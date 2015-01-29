@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="diepanel">
+		<genericcontrol>
+			<script file="classes/desktop/diepanel.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

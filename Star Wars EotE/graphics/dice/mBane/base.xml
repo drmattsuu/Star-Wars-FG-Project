@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>	
+	<icon name="mBaneicon" file="graphics/dice/mBane/mBane.png" />
+	<icon name="mBaneicon.1" file="graphics/dice/mBane/mBane.1.png" />
+	<icon name="mBaneicon.2" file="graphics/dice/mBane/mBane.2.png" />
+	<icon name="mBaneicon.3" file="graphics/dice/mBane/mBane.3.png" />
+	<icon name="mBaneicon.4" file="graphics/dice/mBane/mBane.4.png" />
+	<icon name="mBaneicon.5" file="graphics/dice/mBane/mBane.5.png" />
+	<icon name="mBaneicon.6" file="graphics/dice/mBane/mBane.6.png" />
+	
+</root>

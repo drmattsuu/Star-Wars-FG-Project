@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/utilities/charactersheetlist.xml" />
+	<includefile source="classes/utilities/export.xml" />
+	<includefile source="classes/utilities/identityselection.xml" />	
+	<includefile source="classes/utilities/library.xml" />
+	<includefile source="classes/utilities/lighting.xml" />
+	<includefile source="classes/utilities/modules.xml" />
+	<includefile source="classes/utilities/pointerselection.xml" />
+	<includefile source="classes/utilities/portraits.xml" />
+	<includefile source="classes/utilities/preferences.xml" />
+	<includefile source="classes/utilities/reference.xml" />
+	<includefile source="classes/utilities/splash.xml" />
+	<includefile source="classes/utilities/tokenbag.xml" />
+</root>

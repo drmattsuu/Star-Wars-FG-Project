@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="viewerlist">
+		<genericcontrol>
+			<invalididentityicon>miniportrait_base</invalididentityicon>
+			<portraitset>miniportrait</portraitset>
+			<portraitspacing>21</portraitspacing>
+			<script file="classes/common/viewerlist.lua" />
+		</genericcontrol>
+	</template>
+	
+</root>

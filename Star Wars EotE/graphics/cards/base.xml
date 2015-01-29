@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<icon name="conditioncard" file="graphics/cards/condition.png" />
+	<icon name="diseasecard" file="graphics/cards/disease.png" />
+	<icon name="insanitycard" file="graphics/cards/insanity.png" />	
+	<icon name="miscastcard" file="graphics/cards/miscast.png" />		
+	<icon name="mutationcard" file="graphics/cards/mutation.png" />		
+	<icon name="woundcard" file="graphics/cards/wound.png" />		
+	<icon name="careercard" file="graphics/cards/career.png" />		
+	
+</root>

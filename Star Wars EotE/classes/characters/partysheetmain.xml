@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="partysheetmain">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>429</height>
+			</size>
+		</placement>
+		<nodelete />	
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>12,20,472,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>partysheet</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Party &#187;</empty>
+				<tabtarget>
+					<next>main_sockets_faith</next>
+					<prev>main_sockets_tactic</prev>
+				</tabtarget>					
+			</basestringfield>
+			
+<!-- TENSION -->
+			<sheetframe name="main_tension">
+				<bounds>12,60,472,65</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_tension_title">
+				<anchored>
+					<to>main_tension</to>
+				</anchored>
+				<static>Tension</static>
+			</sheetframetitle>
+		
+			<progresstracker name="main_tension_tension">
+				<sourcename>tension</sourcename>
+				<max>12</max>
+				<anchored>
+					<left>
+						<parent>main_tension</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>main_tension</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_tension</parent>
+						<anchor>top</anchor>
+						<offset>20</offset>
+					</top>
+					<size>
+						<height>32</height>
+					</size>
+				</anchored>
+			</progresstracker>
+			
+<!-- FORTUNE -->
+			<sheetframe name="main_fortune">
+				<bounds>12,125,125,110</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_fortune_title">
+				<anchored>
+					<to>main_fortune</to>
+				</anchored>
+				<static>Fortune</static>
+			</sheetframetitle>
+			
+			<chitnumberfield name="main_fortune_fortune" source="fortune">
+				<chit>fortune</chit>
+				<frame />
+				<anchored>
+					<to>main_fortune</to>
+					<offset>14,21</offset>
+					<size>
+						<width>98</width>
+						<height>77</height>						
+					</size>				
+				</anchored>
+			</chitnumberfield>
+			
+<!-- EVENTS -->
+			<sheetframe name="main_events">
+				<bounds>136,125,348,110</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_events_title">
+				<anchored>
+					<to>main_events</to>
+				</anchored>
+				<static>Events</static>
+			</sheetframetitle>
+			
+			<sheetformattedtextfield name="main_events_events" source="events">
+				<anchored>
+					<left>
+						<parent>main_events</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>main_events</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_events</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>main_events</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>			
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>main_events_events</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>main_events_events</target>
+			</scrollbar>
+						
+<!-- SOCKETS -->
+			<sheetframe name="main_sockets">
+				<bounds>12,235,125,110</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_sockets_title">
+				<anchored>
+					<to>main_sockets</to>
+				</anchored>
+				<static>Slots</static>
+			</sheetframetitle>
+			
+			<!-- SLOT 1 -->
+			<sheetlabel>
+				<anchored>
+					<to>main_sockets</to>
+					<offset>13,22</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Slot 1</static>
+			</sheetlabel>			
+			<talentslotselector name="main_sockets_socket_1">
+				<sourcename>sockets.1</sourcename>
+				<talents>Faith,Focus,Insanity,Oath,Order,Reputation,Tactic</talents>
+				<anchored>
+					<left>
+						<parent>main_sockets</parent>
+						<anchor>left</anchor>
+						<offset>87</offset>					
+					</left>
+					<top>
+						<parent>main_sockets</parent>
+						<anchor>top</anchor>
+						<offset>21</offset>
+					</top>
+				</anchored>
+			</talentslotselector>
+
+			<!-- SLOT 2 -->
+			<sheetlabel>
+				<anchored>
+					<to>main_sockets</to>
+					<offset>13,42</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Slot 2</static>
+			</sheetlabel>				
+			<talentslotselector name="main_sockets_socket_2">
+				<sourcename>sockets.2</sourcename>			
+				<talents>Faith,Focus,Insanity,Oath,Order,Reputation,Tactic</talents>
+				<anchored>
+					<left>
+						<parent>main_sockets</parent>
+						<anchor>left</anchor>
+						<offset>87</offset>					
+					</left>
+					<top>
+						<parent>main_sockets</parent>
+						<anchor>top</anchor>
+						<offset>41</offset>
+					</top>
+				</anchored>
+			</talentslotselector>
+
+			<!-- SLOT 3 -->
+			<sheetlabel>
+				<anchored>
+					<to>main_sockets</to>
+					<offset>13,62</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Slot 3</static>
+			</sheetlabel>	
+			<talentslotselector name="main_sockets_socket_3">
+				<sourcename>sockets.3</sourcename>
+				<talents>Faith,Focus,Insanity,Oath,Order,Reputation,Tactic</talents>
+				<anchored>
+					<left>
+						<parent>main_sockets</parent>
+						<anchor>left</anchor>
+						<offset>87</offset>					
+					</left>
+					<top>
+						<parent>main_sockets</parent>
+						<anchor>top</anchor>
+						<offset>61</offset>
+					</top>
+				</anchored>
+			</talentslotselector>
+
+			<!-- SLOT 4 -->
+			<sheetlabel>
+				<anchored>
+					<to>main_sockets</to>
+					<offset>13,82</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Slot 4</static>
+			</sheetlabel>	
+			<talentslotselector name="main_sockets_socket_4">
+				<sourcename>sockets.4</sourcename>			
+				<talents>Faith,Focus,Insanity,Oath,Order,Reputation,Tactic</talents>
+				<anchored>
+					<left>
+						<parent>main_sockets</parent>
+						<anchor>left</anchor>
+						<offset>87</offset>					
+					</left>
+					<top>
+						<parent>main_sockets</parent>
+						<anchor>top</anchor>
+						<offset>81</offset>
+					</top>
+				</anchored>
+			</talentslotselector>
+
+<!-- ABILITY -->
+			<sheetframe name="main_ability">
+				<bounds>136,235,348,110</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_ability_title">
+				<anchored>
+					<to>main_ability</to>
+				</anchored>
+				<static>Special Ability</static>
+			</sheetframetitle>
+
+			<sheetformattedtextfield name="main_ability_ability" source="ability">
+				<anchored>
+					<left>
+						<parent>main_ability</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>main_ability</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_ability</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>main_ability</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>			
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>main_ability_ability</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>main_ability_ability</target>
+			</scrollbar>
+			
+<!-- TALENT SLOTS -->
+			<sheetframe name="main_slots">
+				<bounds>12,345,472,70</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_slots_title">
+				<anchored>
+					<to>main_slots</to>
+				</anchored>
+				<static>Talent Slots</static>
+			</sheetframetitle>
+			
+			<!-- SLOT 1 -->			
+			<partytalentslot name="main_slots_1">
+				<sourcename>slots.1</sourcename>
+				<slotnumber>1</slotnumber>
+				<anchored>
+					<to>main_slots</to>
+					<offset>11,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</partytalentslot>
+			<rechargenumberfield name="main_slots_1_recharge" source="slots.1.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>208,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.main_slots_1.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>
+
+			<!-- SLOT 2 -->
+			<partytalentslot name="main_slots_2">
+				<sourcename>slots.2</sourcename>
+				<slotnumber>2</slotnumber>
+				<anchored>
+					<to>main_slots</to>
+					<offset>237,19</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</partytalentslot>
+			<rechargenumberfield name="main_slots_2_recharge" source="slots.2.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>434,21</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.main_slots_2.registerControl(self);
+						super.onInit();
+					end
+				</script>
+			</rechargenumberfield>			
+
+			<!-- SLOT 3 -->
+			<partytalentslot name="main_slots_3">
+				<sourcename>slots.3</sourcename>
+				<slotnumber>3</slotnumber>
+				<anchored>
+					<to>main_slots</to>
+					<offset>11,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</partytalentslot>
+			<rechargenumberfield name="main_slots_3_recharge" source="slots.3.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>208,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.main_slots_3.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>			
+			
+			<!-- SLOT 4 -->
+			<partytalentslot name="main_slots_4">
+				<sourcename>slots.4</sourcename>
+				<slotnumber>4</slotnumber>
+				<anchored>
+					<to>main_slots</to>
+					<offset>237,39</offset>
+					<size>
+						<width>222</width>
+					</size>
+				</anchored>
+			</partytalentslot>			
+			<rechargenumberfield name="main_slots_4_recharge" source="slots.4.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>434,41</offset>
+				</anchored>
+				<script>
+					function onInit()
+						window.main_slots_4.registerControl(self);
+						super.onInit();
+					end
+				</script>				
+			</rechargenumberfield>
+
+		</sheetdata>
+	</windowclass>
+	
+</root>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="npcgroupmain">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>462</height>
+			</size>
+		</placement>
+		<nodelete />	
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>12,20,472,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>npcgroup</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New NPC Group &#187;</empty>
+				<tabtarget>
+					<next>main_traits_traits</next>
+					<prev>main_traits_traits</prev>
+				</tabtarget>					
+			</basestringfield>
+			
+<!-- TRAITS -->
+			<sheetframe name="main_traits">
+				<bounds>12,60,472,40</bounds>
+			</sheetframe>
+
+			<!-- TRAITS -->
+			<sheetlabel name="main_traits_header">
+				<anchored>
+					<to>main_traits</to>
+					<position>insidetopleft</position>
+					<offset>13,14</offset>
+					<size>
+						<width>49</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<static>Traits :</static>
+			</sheetlabel>
+			<basestringfield name="main_traits_traits" source="traits">
+				<anchored>
+					<top>
+						<parent>main_traits_header</parent>
+						<anchor>top</anchor>
+					</top>
+					<left>
+						<parent>main_traits_header</parent>
+						<anchor>right</anchor>
+					</left>
+					<right>
+						<parent>main_traits</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>
+					</right>					
+				</anchored>
+				<tabtarget>
+					<next>main_name_name</next>
+					<prev>main_name_name</prev>
+				</tabtarget>
+			</basestringfield>				
+			
+<!-- NPCS -->
+			<sheetframe name="main_npcs">
+				<bounds>12,100,472,308</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_npcs_title">
+				<anchored>
+					<to>main_npcs</to>
+				</anchored>
+				<static>NPC</static>
+			</sheetframetitle>
+
+			<-- NPCS -->
+			<sheetlist name="main_npcs_npcs">
+				<anchored>
+					<left>
+						<parent>main_npcs</parent>
+						<anchor>left</anchor>
+						<offset>12</offset>					
+					</left>
+					<right>
+						<parent>main_npcs</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_npcs</parent>
+						<anchor>top</anchor>
+						<offset>19</offset>
+					</top>
+					<bottom>
+						<parent>main_npcs</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.npcs</datasource>
+				<class>npcsmall</class>
+				<allowcreate />
+				<allowdelete />
+				<acceptdrop>
+					<class>npc</class>
+					<field>*</field>
+				</acceptdrop>
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>main_npcs_npcs</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>main_npcs_npcs</target>
+			</scrollbar>
+			
+<!-- TALENT SLOTS -->
+			<sheetframe name="main_slots">
+				<bounds>12,408,472,40</bounds>
+			</sheetframe>
+			
+			<!-- SLOT 1 -->
+			<windowbutton>
+				<class>talent</class>
+				<recordname>slots.1</recordname>
+				<anchored>
+					<to>main_slots</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<width>20</width>
+						<height>20</height>
+					</size>
+				</anchored>					
+			</windowbutton>			
+			<basestringfield name="slots.1.name">
+				<empty>&#171; Empty Talent Slot &#187;</empty>
+				<readonly  />				
+				<anchored>
+					<to>main_slots</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<width>170</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<droptypes>
+					<type>shortcut</type>
+				</droptypes>				
+				<script file="classes/campaign/npcgrouptalentslot.lua" />
+			</basestringfield>		
+			<rechargenumberfield name="main_slots_1_recharge" source="slots.1.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>208,13</offset>
+				</anchored>
+			</rechargenumberfield>			
+			
+			<!-- SLOT 2 -->
+			<windowbutton>
+				<class>talent</class>
+				<recordname>slots.2</recordname>
+				<anchored>
+					<to>main_slots</to>
+					<position>insidetopleft</position>					
+					<offset>237,11</offset>
+					<size>
+						<width>20</width>
+						<height>20</height>
+					</size>
+				</anchored>					
+			</windowbutton>			
+			<basestringfield name="slots.2.name">
+				<empty>&#171; Empty Talent Slot &#187;</empty>
+				<readonly  />				
+				<anchored>
+					<to>main_slots</to>
+					<position>insidetopleft</position>					
+					<offset>258,14</offset>
+					<size>
+						<width>170</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<droptypes>
+					<type>shortcut</type>
+				</droptypes>				
+				<script file="classes/campaign/npcgrouptalentslot.lua" />
+			</basestringfield>				
+			<rechargenumberfield name="main_slots_2_recharge" source="slots.2.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>434,13</offset>
+				</anchored>
+			</rechargenumberfield>				
+			
+		</sheetdata>
+	</windowclass>
+	
+</root>

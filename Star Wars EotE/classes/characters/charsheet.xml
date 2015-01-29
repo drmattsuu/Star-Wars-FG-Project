@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<windowclass name="charsheetsecret">
+		<placement>
+			<size>
+				<width>1</width>
+				<height>1</height>
+			</size>
+			<position>
+				<x>1</x>
+				<y>1</y>
+			</position>
+		</placement>
+		<sharable>
+			<shareas>charsheet</shareas>
+		</sharable>
+	</windowclass>	
+	
+	<windowclass name="charsheet">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>509</width>
+				<height>557</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic />
+			<minimum>
+				<width>509</width>
+				<height>557</height>
+			</minimum>
+			<maximum>
+				<width>509</width>
+			</maximum>
+		</sizelimits>		
+		<minimize>minimized_npc</minimize>
+		<nodelete />
+		<playercontrol />
+		<sharable />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<!-- Frame to show on all pages of the charsheet -->
+			<sheetframe name="main_character">
+				<bounds>12,10,393,72</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_character_title">
+				<anchored>
+					<to>main_character</to>
+				</anchored>
+				<static>Character</static>
+			</sheetframetitle>			
+
+			<!-- NAME -->
+			<sheetstringfield name="main_character_name" source="name">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>
+					<offset>13,14</offset>
+					<size>
+						<width>218</width>
+					</size>
+				</anchored>
+				<label>Name</label>
+				<empty>&#171; Unnamed &#187;</empty>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_social_shame</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- RACE SPECIES-->
+			<sheetstringfield name="main_character_race" source="race">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>					
+					<offset>237,14</offset>
+					<size>
+						<width>68</width>
+					</size>
+				</anchored>
+				<label>Species</label>
+				<tabtarget>
+					<next>main_character_gender</next>
+					<prev>main_character_name</prev>
+				</tabtarget>
+			</sheetstringfield>			
+			
+			<!-- GENDER -->
+			<sheetstringfield name="main_character_gender" source="gender">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>					
+					<offset>311,14</offset>
+					<size>
+						<width>69</width>
+					</size>
+				</anchored>
+				<label>Gender</label>
+				<tabtarget>
+					<next>main_character_career</next>
+					<prev>main_character_race</prev>
+				</tabtarget>
+			</sheetstringfield>			
+			
+			<!-- AGE now CAREER-->
+			<sheetstringfield name="main_character_career" source="career">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>					
+					<offset>13,38</offset>
+					<size>
+						<width>150</width>
+					</size>
+				</anchored>
+				<label>Career</label>
+				<tabtarget>
+					<next>main_character_specializations</next>
+					<prev>main_character_gender</prev>
+				</tabtarget>
+			</sheetstringfield>			
+
+			<!-- Career specialisations -->
+			<sheetstringfield name="main_character_specializations" source="specializations">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopleft</position>					
+					<offset>167,38</offset> <!--88-->
+					<size>
+						<width>210</width>
+					</size>
+				</anchored>
+				<label>Career Specializations</label>
+				<tabtarget>
+					<prev>main_character_career</prev>
+				</tabtarget>
+			</sheetstringfield>						
+			
+<!-- TOKEN -->			
+			<tokenfield name="main_token" source="token">
+				<bounds>409,15,64,64</bounds>
+				<empty>indicator_emptytoken</empty>
+				<script>
+					local dragging = false;
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+					
+					function onDrag(button, x, y, draginfo)
+						if not dragging and getPrototype() then
+							draginfo.setType("charsheet");
+							draginfo.setTokenData(getPrototype());
+							draginfo.setShortcutData("charsheet", window.getDatabaseNode().getNodeName());
+							draginfo.setDatabaseNode(window.getDatabaseNode().getNodeName());
+							draginfo.setStringData(window.main_character_name.getValue());
+
+							local base = draginfo.createBaseData();
+							base.setType("token");
+							base.setTokenData(getPrototype());
+
+							dragging = true;
+							return true;
+						end
+						return false;
+					end
+
+					function onDragEnd(draginfo)
+						dragging = false;
+					end					
+				</script>
+			</tokenfield>		
+			<subwindow name="main">
+				<bounds>0,75,-1,-1</bounds>
+				<class>charsheetmain</class>
+				<script file="classes/characters/charsheet.lua" />
+			</subwindow>
+			<subwindow name="skills">
+				<bounds>0,75,-1,-1</bounds>
+				<class>charsheetskills</class>
+				<script file="classes/characters/charsheet.lua" />
+			</subwindow>
+			<subwindow name="combat">
+				<bounds>0,75,-1,-1</bounds>
+				<class>charsheetcombattab</class>
+				<script file="classes/characters/charsheet.lua" />
+			</subwindow>			
+			<subwindow name="talents">
+				<bounds>0,60,-1,-1</bounds>
+				<class>charsheettalents</class>
+				<script file="classes/characters/charsheet.lua" />
+			</subwindow>			
+			<subwindow name="actions">
+				<bounds>0,60,-1,-1</bounds>
+				<class>charsheetactions</class>
+				<script file="classes/characters/charsheet.lua" />
+			</subwindow>		
+			<subwindow name="inventory">
+				<bounds>0,75,-1,-1</bounds>
+				<class>charsheetinventory</class>
+				<script file="classes/characters/charsheet.lua" />
+			</subwindow>		
+			<subwindow name="other">
+				<bounds>0,75,-1,-1</bounds>
+				<class>charsheetother</class>
+				<script file="classes/characters/charsheet.lua" />
+			</subwindow>					
+			<tabcontrol name="tabs">
+				<!--<bounds>-22,28,18,225</bounds>-->
+				<bounds>-22,28,18,530</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_skills</icon>
+					<subwindow>skills</subwindow>
+				</tab>	
+				<tab>
+					<icon>tab_combat</icon>
+					<subwindow>combat</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_inventory</icon>
+					<subwindow>inventory</subwindow>
+				</tab>
+<!--				<tab>
+					<icon>tab_talents</icon>
+					<subwindow>talents</subwindow>
+				</tab>					
+				<tab>
+					<icon>tab_actions</icon>
+					<subwindow>actions</subwindow>
+				</tab>-->		
+				<tab>
+					<icon>tab_other</icon>
+					<subwindow>other</subwindow>
+				</tab>
+				<activate>1</activate>
+			</tabcontrol>
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+
+</root>

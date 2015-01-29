@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="initskillcontrol">
+		<genericcontrol>
+			<frame>
+				<name>modifier</name>
+				<offset>4,5,4,4</offset>
+			</frame>
+			<anchored>
+				<size>
+					<width>35</width>
+					<height>16</height>
+				</size>
+			</anchored>			
+			<script file="classes/common/initskillcontrol.lua" />
+		</genericcontrol>
+	</template>	
+	
+</root>

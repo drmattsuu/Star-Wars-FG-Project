@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+<!-- BLESSINGS -->
+	<windowclass name="npcgroup_combat_blessings">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Blessings</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>blessingsmall</class>
+				<datasource>.blessings</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- MELEE -->
+	<windowclass name="npcgroup_combat_melee">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Melee</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>meleesmall</class>
+				<datasource>.melee</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- RANGED -->
+	<windowclass name="npcgroup_combat_ranged">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Ranged</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>rangedsmall</class>
+				<datasource>.ranged</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SOCIAL -->
+	<windowclass name="npcgroup_combat_social">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Social</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>socialsmall</class>
+				<datasource>.social</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SPELLS -->
+	<windowclass name="npcgroup_combat_spells">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Spells</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>spellsmall</class>
+				<datasource>.spells</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- SUPPORT -->
+	<windowclass name="npcgroup_combat_support">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Support</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>supportsmall</class>
+				<datasource>.support</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- WINDOW -->
+	<windowclass name="npcgroupactions">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>462</height>
+			</size>
+		</placement>
+		<nodelete />	
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="actions_name">
+				<bounds>12,20,472,40</bounds>
+			</sheetframe>
+			
+			<windowshortcut name="actions_name_shortcut">
+				<anchored>
+					<to>actions_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>npcgroup</class>
+			</windowshortcut>
+			<basestringfield name="actions_name_name" source="name">
+				<anchored>			
+					<to>actions_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New NPC Group &#187;</empty>
+				<tabtarget>
+					<next>actions_name_name</next>
+					<prev>actions_name_name</prev>
+				</tabtarget>					
+			</basestringfield>
+			
+<!-- ACTIONS -->
+			<sheetframe name="actions_actions">
+				<bounds>12,60,472,348</bounds>
+			</sheetframe>
+			
+			<!-- Actions -->
+			<basewindowlist name="actions_actions_actions">
+				<class>empty</class>
+				<skipempty />
+				<anchored>
+					<left>
+						<parent>actions_actions</parent>
+						<anchor>left</anchor>
+						<offset>7</offset>					
+					</left>
+					<right>
+						<parent>actions_actions</parent>
+						<anchor>right</anchor>
+						<offset>-7</offset>					
+					</right>
+					<top>
+						<parent>actions_actions</parent>
+						<anchor>top</anchor>
+						<offset>7</offset>
+					</top>
+					<bottom>
+						<parent>actions_actions</parent>
+						<anchor>bottom</anchor>
+						<offset>-7</offset>
+					</bottom>
+				</anchored>
+				<script>
+					function onInit()
+						createWindowWithClass("npcgroup_combat_blessings", window.getDatabaseNode());
+						createWindowWithClass("npcgroup_combat_melee", window.getDatabaseNode());
+						createWindowWithClass("npcgroup_combat_ranged", window.getDatabaseNode());					
+						createWindowWithClass("npcgroup_combat_social", window.getDatabaseNode());
+						createWindowWithClass("npcgroup_combat_spells", window.getDatabaseNode());					
+						createWindowWithClass("npcgroup_combat_support", window.getDatabaseNode());
+					end
+				</script>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>actions_actions_actions</to>
+					<offset>-9,-8</offset>
+				</anchored>
+				<target>actions_actions_actions</target>
+			</scrollbar>
+			
+<!-- TALENT SLOTS -->
+			<sheetframe name="main_slots">
+				<bounds>12,408,472,40</bounds>
+			</sheetframe>
+			
+			<!-- SLOT 1 -->
+			<windowbutton>
+				<class>talent</class>
+				<recordname>slots.1</recordname>
+				<anchored>
+					<to>main_slots</to>
+					<position>insidetopleft</position>					
+					<offset>11,11</offset>
+					<size>
+						<width>20</width>
+						<height>20</height>
+					</size>
+				</anchored>					
+			</windowbutton>			
+			<basestringfield name="slots.1.name">
+				<empty>&#171; Empty Talent Slot &#187;</empty>
+				<readonly  />				
+				<anchored>
+					<to>main_slots</to>
+					<position>insidetopleft</position>					
+					<offset>32,14</offset>
+					<size>
+						<width>170</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<droptypes>
+					<type>shortcut</type>
+				</droptypes>				
+				<script file="classes/campaign/npcgrouptalentslot.lua" />
+			</basestringfield>		
+			<rechargenumberfield name="main_slots_1_recharge" source="slots.1.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>208,13</offset>
+				</anchored>
+			</rechargenumberfield>			
+			
+			<!-- SLOT 2 -->
+			<windowbutton>
+				<class>talent</class>
+				<recordname>slots.2</recordname>
+				<anchored>
+					<to>main_slots</to>
+					<position>insidetopleft</position>					
+					<offset>237,11</offset>
+					<size>
+						<width>20</width>
+						<height>20</height>
+					</size>
+				</anchored>					
+			</windowbutton>			
+			<basestringfield name="slots.2.name">
+				<empty>&#171; Empty Talent Slot &#187;</empty>
+				<readonly  />				
+				<anchored>
+					<to>main_slots</to>
+					<position>insidetopleft</position>					
+					<offset>258,14</offset>
+					<size>
+						<width>170</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<droptypes>
+					<type>shortcut</type>
+				</droptypes>				
+				<script file="classes/campaign/npcgrouptalentslot.lua" />
+			</basestringfield>				
+			<rechargenumberfield name="main_slots_2_recharge" source="slots.2.currentrecharge">
+				<rechargevalue>4</rechargevalue>
+				<anchored>
+					<to>main_slots</to>
+					<offset>434,13</offset>
+				</anchored>
+			</rechargenumberfield>				
+			
+		</sheetdata>
+	</windowclass>
+	
+</root>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root version="3.0" release="1.1.2" logo="logo.png">
+	<description>
+		<text>Star Wars®:Edge of the Empire community ruleset</text>
+		<author>JamesManhattan - based on WFRP3 ruleset by Neil G. Foster</author>
+		<website>http://fantasyflightgames.com/</website>
+	</description>
+
+	<!-- desktop frame -->
+	<desktopframe>desktop</desktopframe>
+	
+	<!-- token root folder -->
+	<tokenroot>
+		<source>tokens</source>
+	</tokenroot>
+	
+	<!-- image update folder -->
+	<imageupdatefolder>
+		<folder>images</folder>
+		<rootnode>images</rootnode>
+		<field>image</field>
+		<namefield>name</namefield>
+	</imageupdatefolder>
+	
+	<!-- includes -->
+	<includefile source="classes/base.xml" />
+	<includefile source="definitions/base.xml" />
+	<includefile source="graphics/base.xml" />
+	<includefile source="managers/base.xml" />
+	
+	<!-- initialization -->
+	<script name="Base" file="base.lua" />	
+</root>

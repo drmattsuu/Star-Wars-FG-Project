@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="insanitysmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,1,20,20</bounds>
+				<class>insanity</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>21,4,-1,17</bounds>
+				<empty>&#171; New Insanity &#187;</empty>
+				<disabled />
+			</basestringfield>		
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="insanity">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<minimize>minimized_reference</minimize>
+		<playercontrol />
+		<sharable />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>insanity_main</class>
+				<script file="classes/conditions/base.lua" />				
+			</subwindow>
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,90</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<activate>1</activate>
+			</tabcontrol>		
+			<closebutton />
+		</sheetdata>
+	</windowclass>
+	
+</root>

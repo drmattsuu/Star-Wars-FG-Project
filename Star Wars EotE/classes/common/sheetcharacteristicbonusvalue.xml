@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+						
+	<template name="sheetcharacteristicbonusvalue">
+		<sheetnumberfield>
+			<font>sheetlabelsmall</font>
+			<anchored>
+				<size>
+					<width>18</width>
+					<height>18</height>
+				</size>
+			</anchored>
+			<nodrag />
+			<nodrop />
+		</sheetnumberfield>	
+	</template>
+	
+</root>

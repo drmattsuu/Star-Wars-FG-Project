@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- Weapon table -->
+	<windowclass name="reference_weapontablelistitem">
+		<margins control="0,0,0,2" />
+		<sheetdata>
+			<linkfield name="link">
+				<bounds>5,2,20,20</bounds>
+			</linkfield>
+			<string_list_link name="name">
+				<bounds>30,2,120,20</bounds>
+			</string_list_link>			
+			<genericcontrol name="reftableanchor">
+				<bounds>150,2,0,0</bounds>
+			</genericcontrol>
+			
+			<string_reftable name="skill">
+				<anchored width="90" />
+				<!--<static textres="ref_label_listname" />-->
+				<!--<static>Skill</static>-->
+			</string_reftable>	
+			<number_reftable name="damage">
+				<!--<static textres="ref_label_listdamage" />-->
+				<anchored width="35" />
+				<!--<static>Dam</static>-->
+				<!--<center />-->				
+			</number_reftable>
+			<number_reftable name="critical">
+				<!--<static textres="ref_label_listcritical" />-->
+				<anchored width="35" />
+				<!--<static>Crit</static>-->
+				<!--<center />-->
+			</number_reftable>		
+			<string_reftable name="range">
+				<!--<static textres="ref_label_listrange" />-->
+				<anchored width="50" />
+				<!--<static>Range</static>-->
+				<!--<center />-->
+			</string_reftable>
+			<number_reftable name="encumbrance">
+				<anchored width="45" />
+				<!--<static textres="ref_label_listweight" />-->
+				<!--<static>Encum</static-->
+				<!--<center />-->
+			</number_reftable>	
+			<number_reftable name="hardpoints">
+				<!--<static textres="ref_label_listweight" />-->
+				<anchored width="35" />
+				<!--<static>HP</static>-->
+				<!--<center />-->
+			</number_reftable>			
+			<string_reftable name="value">
+				<!--<static textres="ref_label_listcost" />-->
+				<!--<center />-->
+				<!--<static>Price</static>-->
+			</string_reftable>
+			<string_reftable name="rarity">
+				<anchored width="45" />
+				<!--<static textres="ref_label_listproperties" />-->
+				<!--<static>Rarity</static>-->
+			</string_reftable>
+			<string_reftable name="special">
+				<anchored width="500" />
+				<!--<static textres="ref_label_listtype" />-->
+				<!--<static>Special</static>-->	
+				<!--<multilinespacing>20</multilinespacing>-->
+			</string_reftable>	
+			<number_reftable name="order">
+				<invisible />
+			</number_reftable>	
+			
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_weapontablegroup">
+		<script file="classes/reference/scripts/ref_listgroup.lua" />
+		<sheetdata>
+			<anchor_column name="topanchor" />
+			
+			<frame_groupdesc name="descframe" />
+			<string_groupdesc name="description" />
+			<string_groupsubdesc name="subdescription" />
+
+			<list_reftablegroupitems name="list">
+				<datasource>.weapons</datasource>
+				<class>reference_weapontablelistitem</class>
+				<sortby mergerule="replace"><control>order</control></sortby>
+			</list_reftablegroupitems>
+
+			<ft_reftablefooter name="footer" />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_weapontablelist">
+		<frame>referencebox</frame>
+		<placement>
+			<size width="750" height="650" />
+		</placement>
+		<sizelimits>
+			<minimum width="750" height="300" />
+			<dynamic />
+		</sizelimits>
+		<minimize>minimized_reference</minimize>
+		<tooltip field="description" />
+		<nodelete />
+		<sheetdata>
+			<windowtitlebar>
+				<field>description</field>
+			</windowtitlebar>
+
+<!--			<basestringcontrol>
+				<bounds>26,15,-30,17</bounds>
+				<font>sheetlabel</font>
+				<color>#9fffffff</color>
+				<center />
+				<static>Weapons</static>
+			</basestringcontrol>	-->	
+
+			<genericcontrol name="headeranchor">
+				<bounds>65,45,0,0</bounds>
+			</genericcontrol>
+			<label_reftable name="headername">
+				<anchored width="120" />
+				<!--<static textres="ref_label_listname" />-->
+				<static>Name</static>
+			</label_reftable>
+			<label_reftable name="headerskill">
+				<anchored width="90" />
+				<!--<static textres="ref_label_listname" />-->
+				<static>Skill</static>
+			</label_reftable>	
+			<label_reftable name="headerdamage">
+				<!--<static textres="ref_label_listdamage" />-->
+				<anchored width="35" />
+				<static>Dam</static>
+				<!--<center />-->				
+			</label_reftable>
+			<label_reftable name="headercritical">
+				<!--<static textres="ref_label_listcritical" />-->
+				<anchored width="35" />
+				<static>Crit</static>
+				<!--<center />-->
+			</label_reftable>		
+			<label_reftable name="headerrange">
+				<!--<static textres="ref_label_listrange" />-->
+				<anchored width="50" />
+				<static>Range</static>
+				<!--<center />-->
+			</label_reftable>
+			<label_reftable name="headerencumbrance">
+				<!--<static textres="ref_label_listweight" />-->
+				<static>Encum</static>
+				<anchored width="45" />
+				<!--<center />-->
+			</label_reftable>	
+			<label_reftable name="headerhardp">
+				<!--<static textres="ref_label_listweight" />-->
+				<anchored width="35" />
+				<static>HP</static>
+				<center />
+			</label_reftable>			
+			<label_reftable name="headerprice">
+				<!--<static textres="ref_label_listcost" />-->
+				<!--<center />-->
+				<static>Price</static>
+			</label_reftable>
+			<label_reftable name="headerrarity">
+				<!--<static textres="ref_label_listproperties" />-->
+				<static>Rarity</static>
+				<anchored width="45" />
+			</label_reftable>
+			<label_reftable name="headerspecial">
+				<anchored width="150" />
+				<!--<static textres="ref_label_listtype" />-->
+				<static>Special</static>				
+			</label_reftable>
+
+			<windowlist name="grouplist">
+				<bounds>35,80,-40,-70</bounds>
+				<!--<frame name="groupbox" offset="15,15,20,15" />-->
+				<frame name="sheetgroup" offset="15,15,20,15" />
+				<class>reference_weapontablegroup</class>
+				<datasource>.groups</datasource>
+			</windowlist>
+			<scrollbar_reftablegroup />
+			
+			<filter_reftable name="filter">
+				<bounds>125,-45,-35,20</bounds>
+			</filter_reftable>
+<!--			<button_expand>
+				<bounds>30,-45,20,20</bounds>
+			</button_expand>
+			<button_collapse>
+				<bounds>60,-45,20,20</bounds>
+			</button_collapse>
+			
+			<resize_referencelist />
+			<close_referencelist />-->
+			
+			<!-- Close Button -->
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>2</offset>
+					</top>
+					<right>
+						<offset>-5</offset>
+					</right>
+				</anchored>
+			</closebutton>
+		</sheetdata>
+	</windowclass>
+
+	<!-- Armor table -->
+	<windowclass name="reference_armortablelistitem">
+		<margins control="0,0,0,2" />
+		<sheetdata>
+			<linkfield name="link">
+				<bounds>5,2,20,20</bounds>
+			</linkfield>
+			<string_list_link name="name">
+				<bounds>30,2,180,20</bounds>
+			</string_list_link>
+
+			<genericcontrol name="reftableanchor">
+				<bounds>210,2,0,0</bounds>
+			</genericcontrol>
+			<number_reftable name="armour.defence">
+				<center />
+			</number_reftable>	
+			<number_reftable name="armour.soak">
+				<center />
+			</number_reftable>
+			<string_reftable name="value">
+				<center />
+			</string_reftable>
+			<number_reftable name="encumbrance">
+				<center />
+			</number_reftable>	
+			<number_reftable name="hardpoints">
+				<anchored width="100" />
+				<center />
+			</number_reftable>		
+			<string_reftable name="rarity">
+				<center />
+			</string_reftable>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_armortablegroup">
+		<script file="classes/reference/scripts/ref_listgroup.lua" />
+		<sheetdata>
+			<anchor_column name="topanchor" />
+			
+			<frame_groupdesc name="descframe" />
+			<string_groupdesc name="description" />
+			<string_groupsubdesc name="subdescription" />
+
+			<list_reftablegroupitems name="list">
+				<datasource>.armor</datasource>
+				<class>reference_armortablelistitem</class>
+			</list_reftablegroupitems>
+
+			<ft_reftablefooter name="footer" />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_armortablelist">
+		<frame>referencebox</frame>
+		<placement>
+			<size width="700" height="400" />
+		</placement>
+		<sizelimits>
+			<minimum width="700" height="300" />
+			<dynamic />
+		</sizelimits>
+		<minimize>minimized_reference</minimize>
+		<tooltip field="description" />
+		<nodelete />
+		<sheetdata>
+			<windowtitlebar>
+				<field>description</field>
+			</windowtitlebar>
+
+			<genericcontrol name="headeranchor">
+				<bounds>65,45,0,0</bounds>
+			</genericcontrol>
+			<label_reftable name="headername">
+				<anchored width="180" />
+				<!--<static textres="ref_label_listarmorname" />-->
+				<static>Type</static>
+			</label_reftable>
+			<label_reftable name="headerdefense">
+				<!--<static textres="ref_label_listarmorcost" />-->
+				<static>Defense</static>
+				<center />
+			</label_reftable>
+			<label_reftable name="headersoak">
+				<!--<static textres="ref_label_listarmorac" />-->
+				<static>Soak</static>
+				<center />
+			</label_reftable>
+			<label_reftable name="headerprice">
+				<!--<static textres="ref_label_listarmormaxability" />-->
+				<static>Price</static>
+				<center />
+			</label_reftable>
+			<label_reftable name="headerencumbrance">
+				<!--<static textres="ref_label_listarmorscp" />-->
+				<static>Encum.</static>
+				<center />
+			</label_reftable>
+			<label_reftable name="headerhardpoints">
+				<!--<static textres="ref_label_listarmorspellfail" />-->
+				<static>Hard Points</static>
+				<anchored width="100" />
+				<center />
+			</label_reftable>
+			<label_reftable name="headerrarity">
+				<!--<static textres="ref_label_listarmorspeed30" />-->
+				<static>Rarity</static>
+				<center />
+			</label_reftable>
+			
+			<windowlist name="grouplist">
+				<bounds>35,80,-40,-70</bounds>
+				<!--<frame name="groupbox" offset="15,15,20,15" />-->
+				<frame name="sheetgroup" offset="15,15,20,15" />
+				<class>reference_armortablegroup</class>
+				<datasource>.groups</datasource>
+			</windowlist>
+			<scrollbar_reftablegroup />
+			
+			<filter_reftable name="filter">
+				<bounds>125,-45,-35,20</bounds>
+			</filter_reftable>
+<!--			<button_expand>
+				<bounds>30,-45,20,20</bounds>
+			</button_expand>
+			<button_collapse>
+				<bounds>60,-45,20,20</bounds>
+			</button_collapse>
+			
+			<resize_referencelist />
+			<close_referencelist />-->
+			
+			<!-- Close Button -->
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>2</offset>
+					</top>
+					<right>
+						<offset>-5</offset>
+					</right>
+				</anchored>
+			</closebutton>			
+		</sheetdata>
+	</windowclass>
+
+	<!-- Equipment table -->
+	<windowclass name="reference_equipmenttablelistitem">
+		<margins control="0,0,0,2" />
+		<sheetdata>
+			<linkfield name="link">
+				<bounds>5,2,20,20</bounds>
+			</linkfield>
+			<string_list_link name="name">
+				<bounds>30,2,140,20</bounds>
+			</string_list_link>
+
+			<genericcontrol name="reftableanchor">
+				<bounds>170,2,0,0</bounds>
+			</genericcontrol>
+			<string_reftable name="value">
+				<center />
+			</string_reftable>
+			<number_reftable name="encumbrance">
+				<center />
+			</number_reftable>
+			<string_reftable name="rarity">
+				<center />
+			</string_reftable>			
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_equipmenttablegroup">
+		<script file="classes/reference/scripts/ref_listgroup.lua" />
+		<sheetdata>
+			<anchor_column name="topanchor" />
+			
+			<frame_groupdesc name="descframe" />
+			<string_groupdesc name="description" />
+			<string_groupsubdesc name="subdescription" />
+
+			<list_reftablegroupitems name="list">
+				<datasource>.miscellaneous</datasource>
+				<class>reference_equipmenttablelistitem</class>
+			</list_reftablegroupitems>
+
+			<ft_reftablefooter name="footer" />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_equipmenttablelist">
+		<frame>referencebox</frame>
+		<placement>
+			<size width="450" height="550" />
+		</placement>
+		<sizelimits>
+			<minimum width="450" height="300" />
+			<dynamic />
+		</sizelimits>
+		<minimize>minimized_reference</minimize>
+		<tooltip field="description" />
+		<nodelete />
+		<sheetdata>
+			<windowtitlebar>
+				<field>description</field>
+			</windowtitlebar>
+
+			<genericcontrol name="headeranchor">
+				<bounds>65,45,0,0</bounds>
+			</genericcontrol>
+			<label_reftable name="headername">
+				<anchored width="140" />
+				<!--<static textres="ref_label_listname" />-->
+				<static>Name</static>
+			</label_reftable>
+			<label_reftable name="headerprice">
+				<!--<static textres="ref_label_listcost" />-->
+				<static>Price</static>
+				<center />
+			</label_reftable>
+			<label_reftable name="headerencumbrance">
+				<!--<static textres="ref_label_listweight" />-->
+				<static>Encum</static>
+				<center />
+			</label_reftable>
+			<label_reftable name="headerrarity">
+				<!--<static textres="ref_label_listweight" />-->
+				<static>Rarity</static>
+				<center />
+			</label_reftable>			
+			
+			<windowlist name="grouplist">
+				<bounds>35,80,-40,-70</bounds>
+				<!--<frame name="groupbox" offset="15,15,20,15" />-->
+				<frame name="sheetgroup" offset="15,15,20,15" />
+				<class>reference_equipmenttablegroup</class>
+				<datasource>.groups</datasource>
+			</windowlist>
+			<scrollbar_reftablegroup />
+			
+			<filter_reftable name="filter">
+				<bounds>125,-45,-35,20</bounds>
+			</filter_reftable>
+<!--			<button_expand>
+				<bounds>30,-45,20,20</bounds>
+			</button_expand>
+			<button_collapse>
+				<bounds>60,-45,20,20</bounds>
+			</button_collapse>
+
+			<resize_referencelist />
+			<close_referencelist />-->
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>2</offset>
+					</top>
+					<right>
+						<offset>-5</offset>
+					</right>
+				</anchored>
+			</closebutton>			
+		</sheetdata>
+	</windowclass>
+	
+	<!-- Starship and Vehicle Weapons table -->
+	<windowclass name="reference_vehicleweapontablelistitem">
+		<margins control="0,0,0,2" />
+		<sheetdata>
+			<linkfield name="link">
+				<bounds>5,2,20,20</bounds>
+			</linkfield>
+			<string_list_link name="name">
+				<bounds>30,2,180,20</bounds>
+			</string_list_link>			
+			<genericcontrol name="reftableanchor">
+				<bounds>210,2,0,0</bounds>
+			</genericcontrol>
+			
+			<string_reftable name="weapon.range">
+				<!--<static textres="ref_label_listrange" />-->
+				<anchored width="50" />
+				<!--<static>Range</static>-->
+				<!--<center />-->
+			</string_reftable>	
+			<number_reftable name="weapon.damage">
+				<!--<static textres="ref_label_listdamage" />-->
+				<anchored width="35" />
+				<!--<static>Dam</static>-->
+				<!--<center />-->				
+			</number_reftable>
+			<number_reftable name="weapon.critical">
+				<!--<static textres="ref_label_listcritical" />-->
+				<anchored width="35" />
+				<!--<static>Crit</static>-->
+				<!--<center />-->
+			</number_reftable>		
+			<string_reftable name="qualities">
+				<anchored width="500" />
+				<!--<static textres="ref_label_listtype" />-->
+				<!--<static>Special</static>-->	
+				<!--<multilinespacing>20</multilinespacing>-->
+			</string_reftable>	
+			<number_reftable name="order">
+				<invisible />
+			</number_reftable>	
+			
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_vehicleweapontablegroup">
+		<script file="classes/reference/scripts/ref_listgroup.lua" />
+		<sheetdata>
+			<anchor_column name="topanchor" />
+			
+			<frame_groupdesc name="descframe" />
+			<string_groupdesc name="description" />
+			<string_groupsubdesc name="subdescription" />
+
+			<list_reftablegroupitems name="list">
+				<datasource>.starshipweapons</datasource>
+				<class>reference_vehicleweapontablelistitem</class>
+				<sortby mergerule="replace"><control>order</control></sortby>
+			</list_reftablegroupitems>
+
+			<ft_reftablefooter name="footer" />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_vehicleweapontablelist">
+		<frame>referencebox</frame>
+		<placement>
+			<size width="750" height="650" />
+		</placement>
+		<sizelimits>
+			<minimum width="750" height="300" />
+			<dynamic />
+		</sizelimits>
+		<minimize>minimized_reference</minimize>
+		<tooltip field="description" />
+		<nodelete />
+		<sheetdata>
+			<windowtitlebar>
+				<field>description</field>
+			</windowtitlebar>
+
+<!--			<basestringcontrol>
+				<bounds>26,15,-30,17</bounds>
+				<font>sheetlabel</font>
+				<color>#9fffffff</color>
+				<center />
+				<static>Weapons</static>
+			</basestringcontrol>	-->	
+
+			<genericcontrol name="headeranchor">
+				<bounds>65,45,0,0</bounds>
+			</genericcontrol>
+			<label_reftable name="headername">
+				<anchored width="180" />
+				<!--<static textres="ref_label_listname" />-->
+				<static>Name</static>
+			</label_reftable>
+			<label_reftable name="headerrange">
+				<!--<static textres="ref_label_listrange" />-->
+				<anchored width="50" />
+				<static>Range</static>
+				<!--<center />-->
+			</label_reftable>			
+			<label_reftable name="headerdamage">
+				<!--<static textres="ref_label_listdamage" />-->
+				<anchored width="35" />
+				<static>Dam</static>
+				<!--<center />-->				
+			</label_reftable>
+			<label_reftable name="headercritical">
+				<!--<static textres="ref_label_listcritical" />-->
+				<anchored width="35" />
+				<static>Crit</static>
+				<!--<center />-->
+			</label_reftable>		
+			<label_reftable name="headerqualities">
+				<anchored width="150" />
+				<!--<static textres="ref_label_listtype" />-->
+				<static>Qualities</static>				
+			</label_reftable>
+
+			<windowlist name="grouplist">
+				<bounds>35,80,-40,-70</bounds>
+				<!--<frame name="groupbox" offset="15,15,20,15" />-->
+				<frame name="sheetgroup" offset="15,15,20,15" />
+				<class>reference_vehicleweapontablegroup</class>
+				<datasource>.groups</datasource>
+			</windowlist>
+			<scrollbar_reftablegroup />
+			
+			<filter_reftable name="filter">
+				<bounds>125,-45,-35,20</bounds>
+			</filter_reftable>
+<!--			<button_expand>
+				<bounds>30,-45,20,20</bounds>
+			</button_expand>
+			<button_collapse>
+				<bounds>60,-45,20,20</bounds>
+			</button_collapse>
+			
+			<resize_referencelist />
+			<close_referencelist />-->
+			
+			<!-- Close Button -->
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>2</offset>
+					</top>
+					<right>
+						<offset>-5</offset>
+					</right>
+				</anchored>
+			</closebutton>
+		</sheetdata>
+	</windowclass>	
+	
+	<!-- Item Customizations and Modifications table -->
+	<windowclass name="reference_itemmodstablelistitem">
+		<margins control="0,0,0,2" />
+		<sheetdata>
+			<linkfield name="link">
+				<bounds>5,2,20,20</bounds>
+			</linkfield>
+			<string_list_link name="name">
+				<bounds>30,2,140,20</bounds>
+			</string_list_link>
+
+			<genericcontrol name="reftableanchor">
+				<bounds>170,2,0,0</bounds>
+			</genericcontrol>
+			<string_reftable name="value">
+				<center />
+			</string_reftable>
+			<number_reftable name="encumbrance">
+				<center />
+			</number_reftable>
+			<number_reftable name="hardpoints">
+				<center />
+			</number_reftable>			
+			<string_reftable name="rarity">
+				<center />
+			</string_reftable>			
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_itemmodstablegroup">
+		<script file="classes/reference/scripts/ref_listgroup.lua" />
+		<sheetdata>
+			<anchor_column name="topanchor" />
+			
+			<frame_groupdesc name="descframe" />
+			<string_groupdesc name="description" />
+			<string_groupsubdesc name="subdescription" />
+
+			<list_reftablegroupitems name="list">
+				<datasource>.itemmods</datasource>
+				<class>reference_itemmodstablelistitem</class>
+			</list_reftablegroupitems>
+
+			<ft_reftablefooter name="footer" />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_itemmodstablelist">
+		<frame>referencebox</frame>
+		<placement>
+			<size width="500" height="550" />
+		</placement>
+		<sizelimits>
+			<minimum width="500" height="300" />
+			<dynamic />
+		</sizelimits>
+		<minimize>minimized_reference</minimize>
+		<tooltip field="description" />
+		<nodelete />
+		<sheetdata>
+			<windowtitlebar>
+				<field>description</field>
+			</windowtitlebar>
+
+			<genericcontrol name="headeranchor">
+				<bounds>65,45,0,0</bounds>
+			</genericcontrol>
+			<label_reftable name="headername">
+				<anchored width="140" />
+				<!--<static textres="ref_label_listname" />-->
+				<static>Name</static>
+			</label_reftable>
+			<label_reftable name="headerprice">
+				<!--<static textres="ref_label_listcost" />-->
+				<static>Price</static>
+				<center />
+			</label_reftable>
+			<label_reftable name="headerencumbrance">
+				<!--<static textres="ref_label_listweight" />-->
+				<static>Encum</static>
+				<center />
+			</label_reftable>
+			<label_reftable name="headerencumbrance">
+				<!--<static textres="ref_label_listweight" />-->
+				<static>HP Required</static>
+				<center />
+			</label_reftable>			
+			<label_reftable name="headerrarity">
+				<!--<static textres="ref_label_listweight" />-->
+				<static>Rarity</static>
+				<center />
+			</label_reftable>			
+			
+			<windowlist name="grouplist">
+				<bounds>35,80,-40,-70</bounds>
+				<!--<frame name="groupbox" offset="15,15,20,15" />-->
+				<frame name="sheetgroup" offset="15,15,20,15" />
+				<class>reference_itemmodstablegroup</class>
+				<datasource>.groups</datasource>
+			</windowlist>
+			<scrollbar_reftablegroup />
+			
+			<filter_reftable name="filter">
+				<bounds>125,-45,-35,20</bounds>
+			</filter_reftable>
+<!--			<button_expand>
+				<bounds>30,-45,20,20</bounds>
+			</button_expand>
+			<button_collapse>
+				<bounds>60,-45,20,20</bounds>
+			</button_collapse>
+
+			<resize_referencelist />
+			<close_referencelist />-->
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>2</offset>
+					</top>
+					<right>
+						<offset>-5</offset>
+					</right>
+				</anchored>
+			</closebutton>			
+		</sheetdata>
+	</windowclass>	
+</root>

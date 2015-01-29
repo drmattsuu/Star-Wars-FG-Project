@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="graphics/dice/d2/base.xml" />
+	<includefile source="graphics/dice/d3/base.xml" />
+	<includefile source="graphics/dice/d4/base.xml" />
+	<includefile source="graphics/dice/d6/base.xml" />
+	<includefile source="graphics/dice/d8/base.xml" />
+	<includefile source="graphics/dice/d10/base.xml" />
+	<includefile source="graphics/dice/d12/base.xml" />
+	<includefile source="graphics/dice/d20/base.xml" />
+	<includefile source="graphics/dice/d100/base.xml" />
+	<includefile source="graphics/dice/dBoost/base.xml" />
+	<includefile source="graphics/dice/dSetback/base.xml" />
+	<includefile source="graphics/dice/dAbility/base.xml" />
+	<includefile source="graphics/dice/dDifficulty/base.xml" />
+	<includefile source="graphics/dice/dProficiency/base.xml" />
+	<includefile source="graphics/dice/dChallenge/base.xml" />
+	<includefile source="graphics/dice/dForce/base.xml" />
+	<includefile source="graphics/dice/dCharacteristic/base.xml" />
+	<includefile source="graphics/dice/dConservative/base.xml" />	
+	<includefile source="graphics/dice/dEmpty/base.xml" />
+	<includefile source="graphics/dice/dExpertise/base.xml" />
+	<includefile source="graphics/dice/dFortune/base.xml" />
+	<includefile source="graphics/dice/dMisfortune/base.xml" />
+	<includefile source="graphics/dice/dReckless/base.xml" />
+	<includefile source="graphics/dice/dSummary/base.xml" />
+	<includefile source="graphics/dice/mBane/base.xml" />
+	<includefile source="graphics/dice/mBoon/base.xml" />
+	<includefile source="graphics/dice/mChallenge/base.xml" />
+	<includefile source="graphics/dice/mComet/base.xml" />
+	<includefile source="graphics/dice/mDelay/base.xml" />
+	<includefile source="graphics/dice/mExertion/base.xml" />
+	<includefile source="graphics/dice/mSuccess/base.xml" />
+</root>

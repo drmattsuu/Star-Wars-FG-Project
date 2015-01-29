@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="stackitem">	
+		<windowreferencecontrol>
+			<bounds>0,0,47,27</bounds>
+			<icon>
+				<normal>button_combat</normal>
+			</icon>
+			<script file="classes/desktop/stackitem.lua" />			
+		</windowreferencecontrol>
+	</template>
+	
+</root>

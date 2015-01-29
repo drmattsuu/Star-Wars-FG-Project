@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="charactersheetlistentry">
+		<sizelimits>
+			<minimum>
+				<height>92</height>
+			</minimum>
+			<maximum>
+				<width>235</width>
+			</maximum>
+		</sizelimits>
+		<frame>modifier</frame>
+		<script>
+			function onInit()
+				registerMenuItem("Clear owner", "erase", 4);
+				registerMenuItem("Export character", "goto", 3);
+			end
+			
+			function onMenuSelection(item)
+				if item == 4 and getDatabaseNode().getOwner() then
+					getDatabaseNode().removeHolder(getDatabaseNode().getOwner());
+				elseif item == 3 and getDatabaseNode() then
+					CharacterManager.export(getDatabaseNode());
+				end
+			end
+		</script>
+		<sheetdata>
+			<genericcontrol name="base">
+				<bounds>0,0,-1,-1</bounds>
+				<script>
+					function onClickDown(button, x, y)
+						return true;
+					end
+
+					function onClickRelease(button, x, y)
+						Interface.openWindow("charsheet", window.getDatabaseNode().getNodeName());
+						window.windowlist.window.close();
+						return true;
+					end
+				</script>
+			</genericcontrol>
+			<genericcontrol name="portrait">
+				<bounds>10,11,72,72</bounds>
+				<icon>charlist_base</icon>
+				<disabled />
+			</genericcontrol>
+			<genericcontrol name="localportrait">
+				<bounds>10,11,72,72</bounds>
+				<icon>charlist_base</icon>
+				<disabled />
+				<script>
+					function onInit()
+						setIcon("portrait_" .. window.getDatabaseNode().getName() .. "_charlist");
+					end
+				</script>
+			</genericcontrol>
+			<basestringcontrol name="owner">
+				<bounds>90,50,-10,20</bounds>
+				<font>chatfont</font>
+				<disabled />
+				<script>
+					function update()
+						local ownername = window.getDatabaseNode().getOwner();
+						if not ownername then
+							ownername = "None";
+						end
+						
+						setValue(LanguageManager.getString("Owned by:") .. " " .. ownername);
+					end
+					
+					function onInit()
+						window.getDatabaseNode().onObserverUpdate = update;
+						update();
+					end
+				</script>
+			</basestringcontrol>
+
+			<stringfield name="name">
+				<bounds>90,31,-10,20</bounds>
+				<font>sheettext</font>
+				<empty>&#171; Unnamed &#187;</empty>
+				<disabled />
+			</stringfield>
+			
+			<windowreferencecontrol name="link">
+				<anchored>
+					<right>
+						<anchor>right</anchor>
+						<offset>-10</offset>
+					</right>
+					<bottom>
+						<anchor>bottom</anchor>
+						<offset>-11</offset>
+					</bottom>
+					<size>
+						<width>20</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<class>charsheet</class>
+				<description>
+					<field>name</field>
+				</description>
+				<icon>
+					<normal>button_dragtarget</normal>
+				</icon>
+			</windowreferencecontrol>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="charactersheetlist">
+		<frame>characterbox</frame>
+		<placement>
+			<size>
+				<width>676</width>
+				<height>430</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+			<basewindowlist name="list">
+				<bounds>102,43,470,359</bounds>
+				<datasource>.</datasource>
+				<class>charactersheetlistentry</class>
+				<allowcreate />
+				<allowdelete />
+				<columns>
+					<width>235</width>
+					<fillwidth />
+				</columns>
+				<script>
+					function onInit()
+						registerMenuItem("Import character", "goto", 3);
+					end
+			
+					function onMenuSelection(item)
+						if item == 3 then
+							CharacterManager.import();
+						end
+					end
+				</script>				
+			</basewindowlist>
+			<scrollercontrol>
+				<bounds>-98,-60,45,27</bounds>
+				<target>list</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer</zoom>
+					<zoompressed>button_zoomer_down</zoompressed> 					
+				</button>
+			</scrollercontrol>
+			
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>9</offset>
+					</top>
+					<right>
+						<offset>-21</offset>
+					</right>
+				</anchored>
+			</closebutton>
+		</sheetdata>
+	</windowclass>
+</root>

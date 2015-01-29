@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="itemarmour">
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>12,20,264,45</bounds>
+			</sheetframe>
+			
+			<sheetframetitle name="main_name_title">
+				<anchored>
+					<to>main_name</to>
+				</anchored>
+				<static>Item</static>
+			</sheetframetitle>			
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>11,18</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>item</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>32,19</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Item &#187;</empty>
+				<tabtarget>
+					<next>main_inventory_value</next>
+					<prev>main_inventory_encumbrance</prev>
+				</tabtarget>				
+			</basestringfield>
+			
+<!-- ARMOUR -->			
+			<sheetframe name="armour_armour">
+				<bounds>12,60,264,260</bounds>
+			</sheetframe>			
+			<sheetframetitle name="armour_armour_title">
+				<anchored>
+					<to>armour_armour</to>
+				</anchored>
+				<static>Armour</static>
+			</sheetframetitle>
+								
+			<!-- Defence -->
+			<sheetlabel name="armour_armour_defence_label">
+				<anchored>
+					<to>armour_armour</to>
+					<offset>13,42</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Defence</static>
+			</sheetlabel>
+			<sheetnumberfield name="armour_armour_defence_value" source="armour.defence">
+				<anchored>
+					<to>armour_armour</to>
+					<offset>226,39</offset>
+				</anchored>
+				<tabtarget>
+					<next>armour_armour_body_value</next>
+					<prev>armour_name_name</prev>
+				</tabtarget>
+			</sheetnumberfield>			
+			
+			<!-- Soak -->
+			<sheetlabel name="armour_armour_soak_label">
+				<anchored>
+					<to>armour_armour</to>
+					<offset>13,62</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Soak</static>
+			</sheetlabel>
+			<sheetnumberfield name="armour_armour_soak_value" source="armour.soak">
+				<anchored>
+					<to>armour_armour</to>
+					<offset>226,59</offset>
+				</anchored>
+				<tabtarget>
+					<next>armour_armour_leftarm_value</next>
+					<prev>armour_armour_head_value</prev>
+				</tabtarget>
+			</sheetnumberfield>	
+			
+			<!-- Is Armour -->
+			<sheetlabel>
+				<anchored>
+					<to>armour_armour</to>
+					<offset>13,22</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Is Armour?</static>
+			</sheetlabel>			
+			<checkbox name="armour_armour_isarmour">
+				<sourcename>isarmour</sourcename>
+				<anchored>
+					<to>armour_armour</to>
+					<position>insidetopleft</position>
+					<offset>222,19</offset>
+					<size>
+						<width>33</width>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onClickDown(button, x, y)
+						if User.isHost() or window.getDatabaseNode().isOwner() then
+							super.onClickDown(button, x, y);
+						end
+					end
+				
+					function onValueChanged()
+						local value = getState();
+						if value then
+							window.armour_armour_defence_label.setColor(nil);
+							window.armour_armour_defence_value.onValueChanged();
+							window.armour_armour_defence_value.setEnabled(true);
+
+							window.armour_armour_soak_label.setColor(nil);
+							window.armour_armour_soak_value.onValueChanged();
+							window.armour_armour_soak_value.setEnabled(true);
+						else
+							window.armour_armour_defence_label.setColor("20000000");
+							window.armour_armour_defence_value.setColor("20000000");
+							window.armour_armour_defence_value.setEnabled(false);
+
+							window.armour_armour_soak_label.setColor("20000000");
+							window.armour_armour_soak_value.setColor("20000000");
+							window.armour_armour_soak_value.setEnabled(false);
+						end					
+					end					
+				</script>			
+			</checkbox>		
+			
+		</sheetdata>
+	</windowclass>
+
+</root>

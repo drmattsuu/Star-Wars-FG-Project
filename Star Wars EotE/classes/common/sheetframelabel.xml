@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="sheetframelabel">
+		<basestringcontrol>
+			<anchored>
+				<position>insidetopleft</position>	
+				<size>
+					<width>27</width>
+					<height>20</height>
+				</size>
+			</anchored>	
+			<center />
+			<font>sheetlabelinline</font>
+		</basestringcontrol>					
+	</template>	
+	
+</root>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="filter">
+		<basestringcontrol>
+			<frame>
+				<name>searchframe</name>
+				<offset>37,45,3,12</offset>
+			</frame>
+			<font>sheettext</font>
+			<script file="classes/common/filter.lua" />
+		</basestringcontrol>
+	</template>
+
+</root>

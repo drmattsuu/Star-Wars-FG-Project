@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/actions/blessing.xml" />
+	<includefile source="classes/actions/blessingconservative.xml" />	
+	<includefile source="classes/actions/blessingdetails.xml" />	
+	<includefile source="classes/actions/blessingmain.xml" />	
+	<includefile source="classes/actions/blessingreckless.xml" />	
+	<includefile source="classes/actions/melee.xml" />
+	<includefile source="classes/actions/meleeconservative.xml" />	
+	<includefile source="classes/actions/meleedetails.xml" />	
+	<includefile source="classes/actions/meleemain.xml" />	
+	<includefile source="classes/actions/meleereckless.xml" />	
+	<includefile source="classes/actions/ranged.xml" />
+	<includefile source="classes/actions/rangedconservative.xml" />	
+	<includefile source="classes/actions/rangeddetails.xml" />	
+	<includefile source="classes/actions/rangedmain.xml" />	
+	<includefile source="classes/actions/rangedreckless.xml" />	
+	<includefile source="classes/actions/social.xml" />
+	<includefile source="classes/actions/socialconservative.xml" />	
+	<includefile source="classes/actions/socialdetails.xml" />	
+	<includefile source="classes/actions/socialmain.xml" />	
+	<includefile source="classes/actions/socialreckless.xml" />	
+	<includefile source="classes/actions/spell.xml" />
+	<includefile source="classes/actions/spellconservative.xml" />	
+	<includefile source="classes/actions/spelldetails.xml" />	
+	<includefile source="classes/actions/spellmain.xml" />	
+	<includefile source="classes/actions/spellreckless.xml" />	
+	<includefile source="classes/actions/support.xml" />
+	<includefile source="classes/actions/supportconservative.xml" />	
+	<includefile source="classes/actions/supportdetails.xml" />	
+	<includefile source="classes/actions/supportmain.xml" />	
+	<includefile source="classes/actions/supportreckless.xml" />	
+</root>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<includefile source="classes/initiative/actoractiveindicator.xml" />
+	<includefile source="classes/initiative/initslotlist.xml" />			
+	<includefile source="classes/initiative/initslotempty.xml" />	
+	<includefile source="classes/initiative/actorcharsheet.xml" />
+	<includefile source="classes/initiative/actorlist.xml" />
+	<includefile source="classes/initiative/actornpc.xml" />	
+	<includefile source="classes/initiative/actorpet.xml" />			
+	<includefile source="classes/initiative/actorhorse.xml" />			
+	<includefile source="classes/initiative/actorretainer.xml" />	
+	<includefile source="classes/initiative/initiativetracker.xml" />
+</root>

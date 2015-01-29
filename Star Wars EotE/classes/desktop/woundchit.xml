@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="woundchit">
+		<sizelimits>
+			<maximum>
+				<height>56</height>
+				<width>56</width>
+			</maximum>
+			<minimum>
+				<height>56</height>
+				<width>56</width>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+			<chit>
+				<chit>wound</chit>
+				<bounds>0,0,56,56</bounds>
+				<tooltip>
+					<text>Wound</text>
+				</tooltip>
+			</chit>
+		</sheetdata>
+	</windowclass>	
+</root>
