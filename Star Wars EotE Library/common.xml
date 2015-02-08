@@ -1099,8 +1099,8 @@
                       </description>
                     </masterleader>
                     <quickstrike>
-                      <classname type="string">Quick Strike</classname>
-                      <name type="string">ABILITYNAME</name>
+                      <classname type="string">ability</classname>
+                      <name type="string">Quick Strike</name>
                       <description type="formattedtext">
                         <p>
                           Passive: The character adds one Boost Die per rank of Quick Strike to his
