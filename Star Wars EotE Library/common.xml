@@ -3677,99 +3677,494 @@
 				<npcs>
 					<name type="string">NPCs</name>
 					<entries>
-					
-						<!-- Imperial Stormtrooper Sergeant -->
-						<imperialstormtroopersgt>
-							<classname type="string">npc</classname>
-							<name type="string">Imperial Stormtrooper Sergeant</name>
-							<race type="string"></race>							
-							<categoryname type="string"></categoryname>							
-							<threat type="string">Rival</threat>
-							<token type="token">tokens/example.png@WFRP v3 - Library</token>					
-							<brawn>
-								<current type="number">3</current>							
-								<bonus type="number">0</bonus>
-							</brawn>							
-							<agility>
-								<current type="number">3</current>
-								<bonus type="number">0</bonus>
-							</agility>							
-							<intellect>
-								<current type="number">2</current>							
-								<bonus type="number">0</bonus>
-							</intellect>							
-							<cunning>
-								<current type="number">2</current>
-								<bonus type="number">0</bonus>
-							</cunning>							
-							<willpower>
-								<current type="number">3</current>							
-								<bonus type="number">0</bonus>
-							</willpower>							
-							<presence>
-								<current type="number">1</current>
-								<bonus type="number">0</bonus>
-							</presence>							
-							<stance>
-								<conservative type="number">0</conservative>
-								<reckless type="number">0</reckless>
-							</stance>							
-							<wounds>
-								<current type="number">0</current>
-								<threshold type="number">15</threshold>
-							</wounds>
-							<strain>
-								<current type="number">0</current>
-								<threshold type="number">0</threshold>
-							</strain>	
-							<damage type="number">0</damage>							
-							<armour>
-								<defence type="number">0</defence>
-								<meleedefence type="number">0</meleedefence>
-								<rangeddefence type="number">0</rangeddefence>
-								<soak type="number">3</soak>
-							</armour>
-							<aggression type="number">0</aggression>
-							<cunning type="number">0</cunning>
-							<expertise type="number">0</expertise>
-							<blessings>
-							
-								<!-- Enter blessing actions here! -->
-							
-							</blessings>
-							<melee>
-							
-								<!-- Enter melee actions here! -->
-							
-							</melee>
-							<ranged>
-							
-								<!-- Enter ranged actions here! -->
-							
-							</ranged>
-							<social>
-							
-								<!-- Enter social actions here! -->
-								
-							</social>
-							<spells>
-							
-								<!-- Enter spell actions here! -->
-							
-							</spells>
-							<support>
-							
-								<!-- Enter support actions here! -->
-								
-							</support>
-							<notes type="formattedtext">
-								<p>Skills: Athletics 2, Discipline 2, Leadership 3, Melee 2, Ranged (Heavy) 2, Ranged (Light) 2, Resilience 2, Vigilance 2</p>
-								<p>Talents: Adversary 1 (upgrade difficulty of all combat checks against this target once).</p>
-							</notes>
-						</imperialstormtroopersgt>
-						
-						
-						
+            <TiePilot>
+              <classname type="string">npc</classname>
+              <name type="string">Tie Pilot</name>
+              <race type="string">Human</race>
+              <categoryname type="string">Imperial Pilot Corps</categoryname>
+              <threat type="string">Minion</threat>
+              <token type="token">tokens/example.png@WFRP v3 - Library</token>
+              <brawn>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </brawn>
+              <agility>
+                <current type="number">3</current>
+                <bonus type="number">0</bonus>
+              </agility>
+              <intellect>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </intellect>
+              <cunning>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </cunning>
+              <willpower>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </willpower>
+              <presence>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </presence>
+              <stance>
+                <conservative type="number">0</conservative>
+                <reckless type="number">0</reckless>
+              </stance>
+              <wounds>
+                <current type="number">0</current>
+                <threshold type="number">5</threshold>
+              </wounds>
+              <strain>
+                <current type="number">0</current>
+                <threshold type="number">0</threshold>
+              </strain>
+              <damage type="number">0</damage>
+              <armour>
+                <defence type="number">0</defence>
+                <meleedefence type="number">0</meleedefence>
+                <rangeddefence type="number">0</rangeddefence>
+                <soak type="number">2</soak>
+              </armour>
+              <aggression type="number">0</aggression>
+              <cunning type="number">0</cunning>
+              <expertise type="number">0</expertise>
+              <blessings></blessings>
+              <melee></melee>
+              <ranged></ranged>
+              <social></social>
+              <spells></spells>
+              <support></support>
+              <notes type="formattedtext">
+                <p>
+                  NOTES:
+                </p>
+                <p>
+                  Skills (group only): Gunnery, Piloting (Space).
+                </p>
+                <p>
+                  Talents: None.
+                </p>
+                <p>
+                  Abilities: None.
+                </p>
+                <p>
+                  Default Equipment: Light blaster pistol (Ranged [Light]; Damage
+                  5; Critical 4; Range [Medium]; Stun setting), flight suit.
+                </p>
+                <p>
+                  Commonly disparaged by the Alliance as vastly inferior
+                  to Rebellion pilots, in truth the pilots produced by the
+                  Empire's starhghter training programs are head-andshoulders
+                  above any other equivalent force in the galaxy,
+                  with the possible exception of the Alliance. In fact,
+                  the poor reputation TIE pilots have is no fault of their
+                  own, but rather a combination of their relatively fragile
+                  equipment (TIE fighters are known for relative fragility
+                  and weak construction) and their lack of protective
+                  amenities (shields being the most notable exclusion).
+                </p>
+              </notes>
+            </TiePilot>
+            <ImpArmyTrooper>
+              <classname type="string">npc</classname>
+              <name type="string">Imperial Army Trooper</name>
+              <race type="string">Human</race>
+              <categoryname type="string">Imperial Army</categoryname>
+              <threat type="string">Minion</threat>
+              <token type="token">tokens/example.png@WFRP v3 - Library</token>
+              <brawn>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </brawn>
+              <agility>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </agility>
+              <intellect>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </intellect>
+              <cunning>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </cunning>
+              <willpower>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </willpower>
+              <presence>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </presence>
+              <stance>
+                <conservative type="number">0</conservative>
+                <reckless type="number">0</reckless>
+              </stance>
+              <wounds>
+                <current type="number">0</current>
+                <threshold type="number">5</threshold>
+              </wounds>
+              <strain>
+                <current type="number">0</current>
+                <threshold type="number">0</threshold>
+              </strain>
+              <damage type="number">0</damage>
+              <armour>
+                <defence type="number">0</defence>
+                <meleedefence type="number">0</meleedefence>
+                <rangeddefence type="number">0</rangeddefence>
+                <soak type="number">2</soak>
+              </armour>
+              <aggression type="number">0</aggression>
+              <cunning type="number">0</cunning>
+              <expertise type="number">0</expertise>
+              <blessings></blessings>
+              <melee></melee>
+              <ranged></ranged>
+              <social></social>
+              <spells></spells>
+              <support></support>
+              <notes type="formattedtext">
+                <p>
+                  NOTES:
+                </p>
+                <p>
+                  Skills (group only): Discipline, Ranged (Heavy),
+                  Ranged (Light).
+                </p>
+                <p>
+                  Talents: None.
+                </p>
+                <p>
+                  Abilities: None.
+                </p>
+                <p>
+                  Default Equipment: Blaster rifle (Ranged [Heavy); Damage
+                  9; Critical 3; Range [Long]; Stun setting), two frag grenades
+                  (Ranged (Light); Damage 8; Critical 4; Range
+                  [Short]; Blast 6, Limited Ammo 1), trooper uniform and
+                  helmet (+1 soak).
+                </p>
+                <p>
+                  The common citizen of the galaxy will never see a Star
+                  Destroyer or a stormtrooper in person, if they are
+                  fortunate. For the majority of those who never leave
+                  a planet's surface, the Imperial Army trooper is the
+                  face of the Empire. Stormtroopers and starships can
+                  be seen in promotional materials, but it is the stern
+                  and unforgiving face of the Army infantry that enforces
+                  the will of the Emperor on a planet's surface. For that
+                  reason, it is the men and women of the Imperial Army
+                  whom Alliance personnel must combat.
+                </p>
+              </notes>
+            </ImpArmyTrooper>
+            <ImpArmyOfficer>
+              <classname type="string">npc</classname>
+              <name type="string">Imperial Army Officer</name>
+              <race type="string">Human</race>
+              <categoryname type="string">Imperial Army</categoryname>
+              <threat type="string">Rival</threat>
+              <token type="token">tokens/example.png@WFRP v3 - Library</token>
+              <brawn>
+                <current type="number">3</current>
+                <bonus type="number">0</bonus>
+              </brawn>
+              <agility>
+                <current type="number">3</current>
+                <bonus type="number">0</bonus>
+              </agility>
+              <intellect>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </intellect>
+              <cunning>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </cunning>
+              <willpower>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </willpower>
+              <presence>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </presence>
+              <stance>
+                <conservative type="number">0</conservative>
+                <reckless type="number">0</reckless>
+              </stance>
+              <wounds>
+                <current type="number">0</current>
+                <threshold type="number">15</threshold>
+              </wounds>
+              <strain>
+                <current type="number">0</current>
+                <threshold type="number">0</threshold>
+              </strain>
+              <damage type="number">0</damage>
+              <armour>
+                <defence type="number">0</defence>
+                <meleedefence type="number">0</meleedefence>
+                <rangeddefence type="number">0</rangeddefence>
+                <soak type="number">3</soak>
+              </armour>
+              <aggression type="number">0</aggression>
+              <cunning type="number">0</cunning>
+              <expertise type="number">0</expertise>
+              <blessings></blessings>
+              <melee></melee>
+              <ranged></ranged>
+              <social></social>
+              <spells></spells>
+              <support></support>
+              <notes type="formattedtext">
+                <p>
+                  NOTES:
+                </p>
+                <p>
+                  Skills: Discipline 3, Knowledge (Warfare) 2, Ranged
+                  (Light) 2, Vigilance 2.
+                </p>
+                <p>
+                  Talents: Adversary 1 (upgrade difficulty of all combat
+                  checks against this target once).
+                </p>
+                <p>
+                  Abilities: Tactical Direction (may perform a maneuver
+                  to direct one Imperial Army minion group within
+                  medium range; the group may perform an immediate
+                  free maneuver or add one Boost Die to its next check), Overwhelming
+                  Fire (may perform a maneuver to direct one Imperial
+                  Army minion group within medium range; the group
+                  may perform an immediate free combat check action).
+                </p>
+                <p>
+                  Default Equipment: Blaster pistol (Ranged [Light]; Damage 6;
+                  Critical 3; Range [Medium]; Stun setting), officer uniform
+                  (+ 1 soak), long range comlink.
+                </p>
+              </notes>
+            </ImpArmyOfficer>
+            <ImpStormtrooper>
+              <classname type="string">npc</classname>
+              <name type="string">Stormtrooper</name>
+              <race type="string">Human</race>
+              <categoryname type="string">Imperial Stormtrooper Corps</categoryname>
+              <threat type="string">Minion</threat>
+              <token type="token">tokens/example.png@WFRP v3 - Library</token>
+              <brawn>
+                <current type="number">3</current>
+                <bonus type="number">0</bonus>
+              </brawn>
+              <agility>
+                <current type="number">3</current>
+                <bonus type="number">0</bonus>
+              </agility>
+              <intellect>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </intellect>
+              <cunning>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </cunning>
+              <willpower>
+                <current type="number">3</current>
+                <bonus type="number">0</bonus>
+              </willpower>
+              <presence>
+                <current type="number">1</current>
+                <bonus type="number">0</bonus>
+              </presence>
+              <stance>
+                <conservative type="number">0</conservative>
+                <reckless type="number">0</reckless>
+              </stance>
+              <wounds>
+                <current type="number">0</current>
+                <threshold type="number">5</threshold>
+              </wounds>
+              <strain>
+                <current type="number">0</current>
+                <threshold type="number">0</threshold>
+              </strain>
+              <damage type="number">0</damage>
+              <armour>
+                <defence type="number">0</defence>
+                <meleedefence type="number">0</meleedefence>
+                <rangeddefence type="number">0</rangeddefence>
+                <soak type="number">3</soak>
+              </armour>
+              <aggression type="number">0</aggression>
+              <cunning type="number">0</cunning>
+              <expertise type="number">0</expertise>
+              <blessings></blessings>
+              <melee></melee>
+              <ranged></ranged>
+              <social></social>
+              <spells></spells>
+              <support></support>
+              <notes type="formattedtext">
+                <p>
+                  NOTES:
+                </p>
+                <p>
+                  Skills (group only): Athletics, Discipline, Melee,
+                  Ranged (Heavy).
+                </p>
+                <p>
+                  Talents: None.
+                </p>
+                <p>
+                  Abilities: None.
+                </p>
+                <p>
+                  Default Equipment: Blaster rifle (Ranged [Heavy]; Damage
+                  9; Critical 3; Range [Long]; Stun setting), vibroknife
+                  (Melee; Damage 4; Critical 2; Range [Engaged]; Pierce
+                  2, Vicious 1), 2 frag grenades (Ranged [Light]; Damage
+                  8; Critical 4; Range [Short]; Blast 6, Limited Ammo
+                  1), stormtrooper armor ( + 2 soak), utility belt, extra
+                  reloads. Individuals or groups of two may be armed
+                  with light repeating blasters with slings (Ranged
+                  [Heavy]; Damage 11; Critical 3; Range [Long]; Auto-fire,
+                  Cumbersome 4, Pierce 1).
+                </p>
+                <p>
+                  There is no greater symbol of the Emperor's New
+                  Order than the elite stormtrooper legions that enforce
+                  his will without remorse, mercy, or compassion. The
+                  featureless helmets, the uniformity of their armor, and
+                  the sheer number of them advancing without care for
+                  the losses they sustain, all contribute to their intractable
+                  image. The details of the Clone Wars have been
+                  long forgotten by the majority of the galaxy's denizens.
+                  As a result, there are precious few who associate the
+                  terrifying modern stormtroopers with the once-heroic
+                  clone troopers who waged that conflict on behalf of the
+                  Galactic Republic.
+                </p>
+                <p>
+                  The Imperial Stormtrooper Corps is an independent
+                  branch of the military, and while they answer to the
+                  officers of both the Army and the Navy, their own
+                  commanders have the discretion to ignore or overrule
+                  orders issued to them if they feel they are not in the
+                  best interests of the Galactic Empire. There are numerous
+                  specialties within the stormtrooper legions, the
+                  majority of which use equipment that meshes with
+                  their training to create a cadre of elite troops that can
+                  effectively serve in virtually any combat theater.
+                </p>
+              </notes>
+            </ImpStormtrooper>
+            <ImpStormtrooperSgt>
+              <classname type="string">npc</classname>
+              <name type="string">Stormtrooper Sgt</name>
+              <race type="string">Human</race>
+              <categoryname type="string">Imperial Stormtrooper Corps</categoryname>
+              <threat type="string">Rival</threat>
+              <token type="token">tokens/example.png@WFRP v3 - Library</token>
+              <brawn>
+                <current type="number">3</current>
+                <bonus type="number">0</bonus>
+              </brawn>
+              <agility>
+                <current type="number">3</current>
+                <bonus type="number">0</bonus>
+              </agility>
+              <intellect>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </intellect>
+              <cunning>
+                <current type="number">2</current>
+                <bonus type="number">0</bonus>
+              </cunning>
+              <willpower>
+                <current type="number">3</current>
+                <bonus type="number">0</bonus>
+              </willpower>
+              <presence>
+                <current type="number">1</current>
+                <bonus type="number">0</bonus>
+              </presence>
+              <stance>
+                <conservative type="number">0</conservative>
+                <reckless type="number">0</reckless>
+              </stance>
+              <wounds>
+                <current type="number">0</current>
+                <threshold type="number">15</threshold>
+              </wounds>
+              <strain>
+                <current type="number">0</current>
+                <threshold type="number">0</threshold>
+              </strain>
+              <damage type="number">0</damage>
+              <armour>
+                <defence type="number">0</defence>
+                <meleedefence type="number">0</meleedefence>
+                <rangeddefence type="number">0</rangeddefence>
+                <soak type="number">3</soak>
+              </armour>
+              <aggression type="number">0</aggression>
+              <cunning type="number">0</cunning>
+              <expertise type="number">0</expertise>
+              <blessings></blessings>
+              <melee></melee>
+              <ranged></ranged>
+              <social></social>
+              <spells></spells>
+              <support></support>
+              <notes type="formattedtext">
+                <p>
+                  NOTES:
+                </p>
+                <p>
+                  Skills: Athletics 2, Discipline 2, Leadership 3, Melee
+                  2, Ranged (Heavy) 2, Ranged (Light) 2, Resilience 2,
+                  Vigilance 2.
+                </p>
+                <p>
+                  Talents: Adversary 1 (upgrade difficulty of all combat
+                  checks against this target once).
+                </p>
+                <p>
+                  Abilities: Tactical Direction (may perform a maneuver
+                  to direct one stormtrooper minion group within
+                  medium range; the group may perform an immediate
+                  free maneuver or add one Boost Die to its next check).
+                </p>
+                <p>
+                  Default Equipment: Heavy blaster rifle (Ranged (Heavy]; Damage
+                  10; Critical 3; Range [Long]; Auto-fire, Cumbersome
+                  3), vibroknife (Melee; Damage 4; Critical
+                  2; Engaged; Pierce 2, Vicious 1), two frag grenades (Ranged [Light];
+                  A Damage 8; Critical 4; Range [Short]; Blast 6, Limited
+                  Ammo 1), stormtrooper armor ( + 2 soak), utility belt, extra reloads.
+                </p>
+                <p>
+                  Stormtroopers who survive engagements with high
+                  marks are promoted to the position of sergeant. Typically
+                  this involves command of a single squadron, but
+                  stormtroopers who excel at leadership are promoted
+                  to higher ranks. Such positions can include supervision
+                  of entire companies of stormtroopers. Rank within the
+                  stormtrooper legions is difficult for outsiders to fully
+                  understand, as they refer to virtually any officer from
+                  their ranks as commander. The uniformity of their
+                  armor and this tendency for vague references helps to
+                  enforce the image of stormtroopers as an absolutely
+                  faceless, monolithic military entity, which only serves
+                  to enhance their fearsome reputation.
+                </p>
+              </notes>
+            </ImpStormtrooperSgt>
+            
 					</entries>					
 				</npcs>
 				
