@@ -32,18 +32,19 @@ function update()
 			newvalue = string.gsub(newvalue, "%(T%)", "&#252;"); -- #252 - (T) - Threat
 			newvalue = string.gsub(newvalue, "%(A+%)", "&#251;"); -- #251 - (A) - Advantage
 			newvalue = string.gsub(newvalue, "%(D%)", "&#250;"); -- #250 - (D) - Despair
-			newvalue = string.gsub(newvalue, "%(%+%)", "&#249;"); -- #249 - (+) - Lightside Force
-			newvalue = string.gsub(newvalue, "%(%-%)", "&#248;"); -- #248 - (-) - Darkside Force
-			--newvalue = string.gsub(newvalue, "%(C%)", "&#247;"); -- #247 - (C) - sigmars comet
+			newvalue = string.gsub(newvalue, "%(%-%)", "&#249;"); -- #249 - (-) - Darkside Force
+			newvalue = string.gsub(newvalue, "%(%+%)", "&#248;"); -- #248 - (+) - Lightside Force
+
 			
 			-- perform dice replacements
-			newvalue = string.gsub(newvalue, "%[C%]", "&#246;"); -- #246 - [C] - characteristic
-			newvalue = string.gsub(newvalue, "%[X%]", "&#245;"); -- #245 - [X] - challenge
-			newvalue = string.gsub(newvalue, "%[R%]", "&#244;"); -- #244 - [R] - reckless
-			newvalue = string.gsub(newvalue, "%[G%]", "&#243;"); -- #243 - [G] - conservative
-			newvalue = string.gsub(newvalue, "%[F%]", "&#242;"); -- #242 - [F] - fortune
-			newvalue = string.gsub(newvalue, "%[M%]", "&#241;"); -- #241 - [M] - misfortune
-			newvalue = string.gsub(newvalue, "%[E%]", "&#240;"); -- #240 - [E] - expertise
+			newvalue = string.gsub(newvalue, "%[F%]", "&#247;"); -- #247 - [F] - force die			
+			newvalue = string.gsub(newvalue, "%[A%]", "&#246;"); -- #246 - [A] - ability die
+			newvalue = string.gsub(newvalue, "%[D%]", "&#245;"); -- #245 - [D] - difficulty die
+			newvalue = string.gsub(newvalue, "%[P%]", "&#244;"); -- #244 - [P] - proficiency die
+			newvalue = string.gsub(newvalue, "%[C%]", "&#243;"); -- #243 - [C] - challenge
+			newvalue = string.gsub(newvalue, "%[B%]", "&#242;"); -- #242 - [B] - boost
+			newvalue = string.gsub(newvalue, "%[S%]", "&#241;"); -- #241 - [S] - setback
+			--newvalue = string.gsub(newvalue, "%[E%]", "&#240;"); -- #240 - [E] - expertise
 			
 			-- perform symbol replacements
 			--newvalue = string.gsub(newvalue, "%(S%)", "&#255;"); -- #255 - (S) - success

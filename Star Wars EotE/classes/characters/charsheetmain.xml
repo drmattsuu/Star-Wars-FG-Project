@@ -64,7 +64,13 @@
 					main_morality.setVisible(false);
 					main_morality_title.setVisible(false);
 					main_morality_total_label.setVisible(false);
-					main_morality_total.setVisible(false);					
+					main_morality_total.setVisible(false);	
+					main_morality_conflict_label.setVisible(false);
+					main_morality_conflict.setVisible(false);
+					main_morality_triggered_label.setVisible(false);
+					main_morality_istriggered.setVisible(false);
+					main_morality_engaged_label.setVisible(false);
+					main_morality_isengaged.setVisible(false);
 				end				
 			end
 		</script>
@@ -72,7 +78,7 @@
 		
 <!-- CHARACTERISTICS -->
 			<sheetframe name="main_characteristics">
-				<bounds>12,2,472,86</bounds>
+				<bounds>14,5,351,87</bounds>
 				<frame>
 					<name>sheetgroup</name>
 				</frame>		
@@ -88,13 +94,15 @@
 			<sheetcharacteristicvalue name="main_characteristics_brawn_current" source="brawn.current">
 				<anchored>
 					<to>main_characteristics</to>
-					<offset>42,24</offset>
+					<offset>17,24</offset>
 				</anchored>
 				<tabtarget>
 					<next>main_characteristics_brawn_bonus</next>
 					<prev>main_character_eyes</prev>
 				</tabtarget>
 			</sheetcharacteristicvalue>
+
+		
 <!--			<sheetcharacteristicbonusvalue name="main_characteristics_brawn_bonus" source="brawn.bonus">
 				<anchored>
 					<to>main_characteristics_brawn_current</to>
@@ -135,7 +143,7 @@
 			<sheetcharacteristicvalue name="main_characteristics_agility_current" source="agility.current">
 				<anchored>
 					<to>main_characteristics</to>
-					<offset>113,24</offset>
+					<offset>73,24</offset>
 				</anchored>
 				<tabtarget>
 					<next>main_characteristics_agility_bonus</next>
@@ -182,7 +190,7 @@
 			<sheetcharacteristicvalue name="main_characteristics_intellect_current" source="intellect.current">
 				<anchored>
 					<to>main_characteristics</to>
-					<offset>184,24</offset>
+					<offset>129,24</offset>
 				</anchored>
 				<tabtarget>
 					<next>main_characteristics_intellect_bonus</next>
@@ -229,7 +237,7 @@
 			<sheetcharacteristicvalue name="main_characteristics_cunning_current" source="cunning.current">
 				<anchored>
 					<to>main_characteristics</to>
-					<offset>255,24</offset>
+					<offset>185,24</offset>
 				</anchored>
 				<tabtarget>
 					<next>main_characteristics_cunning_bonus</next>
@@ -276,7 +284,7 @@
 			<sheetcharacteristicvalue name="main_characteristics_willpower_current" source="willpower.current">
 				<anchored>
 					<to>main_characteristics</to>
-					<offset>326,24</offset>
+					<offset>241,24</offset>
 				</anchored>
 				<tabtarget>
 					<next>main_characteristics_willpower_bonus</next>
@@ -323,7 +331,7 @@
 			<sheetcharacteristicvalue name="main_characteristics_presence_current" source="presence.current">
 				<anchored>
 					<to>main_characteristics</to>
-					<offset>397,24</offset>
+					<offset>297,24</offset>
 				</anchored>
 				<tabtarget>
 					<next>main_characteristics_presence_bonus</next>
@@ -365,6 +373,68 @@
 				<center />
 				<static>Presence</static>
 			</sheettitle>
+			
+<!-- INITIATIVE -->
+			<sheetframe name="combat_init">
+			<!--<bounds>355,2,128,86</bounds>-->
+			<bounds>363,5,120,87</bounds>
+			</sheetframe>
+			<sheetframetitle name="combat_init_title">
+				<anchored>
+					<to>combat_init</to>
+				</anchored>
+				<static>Initiative</static>
+			</sheetframetitle>
+			
+			<!-- Cool -->
+			<sheetlabel name="combat_init_cool">
+				<anchored>
+					<to>combat_init</to>
+					<offset>34,27</offset>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<static>Cool</static>
+			</sheetlabel>
+
+			<initdicepool name="combat_init_cool_btn">
+				<anchored>
+					<to>combat_init</to>
+					<offset>85,27</offset>
+					<position>insidetopleft</position>
+					<size>
+						<width>18</width>
+						<height>14</height>
+					</size>					
+				</anchored>			
+				<!--<bounds>118,26,10,10</bounds>-->
+			</initdicepool>									
+
+			<!-- Vigilance -->
+			<sheetlabel name = "combat_init_vigilance">
+				<anchored>
+					<to>combat_init</to>
+					<offset>20,54</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Vigilance</static>
+			</sheetlabel>		
+			
+			<initdicepool name="combat_init_vigilance_btn">
+				<anchored>
+					<to>combat_init</to>
+					<offset>85,54</offset>
+					<position>insidetopleft</position>
+					<size>
+						<width>18</width>
+						<height>14</height>
+					</size>
+				</anchored>		
+				<!--<bounds>118,26,10,10</bounds>-->
+			</initdicepool>			
 			
 			<!-- STANCE -->
 <!--			<stancetracker name="main_characteristics_stance">
@@ -445,7 +515,7 @@
 <!-- TALENTS -->
 			<sheetframe name="talents_talents">
 				<!--<bounds>12,81,351,390</bounds>-->
-				<bounds>12,81,351,-10</bounds>
+				<bounds>14,88,351,-10</bounds>
 				<frame>
 					<name>sheetgroup</name>
 				</frame>		
@@ -465,27 +535,28 @@
 					<left>
 						<parent>talents_talents</parent>
 						<anchor>left</anchor>
-						<offset>7</offset>					
+						<offset>8</offset>					
 					</left>
 					<right>
 						<parent>talents_talents</parent>
 						<anchor>right</anchor>
-						<offset>-7</offset>					
+						<offset>-15</offset>					
 					</right>
 					<top>
 						<parent>talents_talents</parent>
 						<anchor>top</anchor>
-						<offset>20</offset>
+						<offset>21</offset>
 					</top>
 					<bottom>
 						<parent>talents_talents</parent>
 						<anchor>bottom</anchor>
-						<offset>-7</offset>
+						<offset>-21</offset>
 					</bottom>
 				</anchored>
 				<script>
 					function onInit()
 						createWindowWithClass("charsheet_talents_abilities", window.getDatabaseNode());
+						createWindowWithClass("charsheet_talents_talents", window.getDatabaseNode());
 						createWindowWithClass("charsheet_combat_criticals", window.getDatabaseNode());
 						if PreferenceManager.getValue("version_edgeoftheempire") then
 							createWindowWithClass("charsheet_talents_obligations", window.getDatabaseNode());    
@@ -512,7 +583,7 @@
 			<scrollbar>
 				<anchored>
 					<to>talents_talents_talents</to>
-					<offset>-9,-8</offset>
+					<offset>-1,-2</offset>
 				</anchored>
 				<target>talents_talents_talents</target>
 			</scrollbar>
@@ -587,7 +658,7 @@
 			
 <!-- EXPERIENCE -->
 			<sheetframe name="main_experience">
-				<bounds>363,81,121,110</bounds>
+				<bounds>363,88,121,94</bounds>
 			</sheetframe>
 			<sheetframetitle name="main_experience_title">
 				<anchored>
@@ -715,7 +786,7 @@
 			</sheetnumbercontrol>
 			
 			<!-- LEVEL -->
-			<sheetlabel>
+<!--			<sheetlabel>
 				<anchored>
 					<to>main_experience</to>
 					<offset>13,82</offset>
@@ -751,13 +822,13 @@
 						onValueChanged();
 					end
 				</script>
-			</sheetnumbercontrol>
+			</sheetnumbercontrol>-->
 
 
 <!-- OBLIGATION -->
 			<sheetframe name="main_obligation">
-				<anchored to="main_experience" width="121" height="50">
-					<top anchor="bottom" relation="relative" offset="0" />
+				<anchored to="main_experience" width="121" height="54">
+					<top anchor="bottom" relation="relative" offset="-4" />
 					<left />
 				</anchored>
 				<!--<bounds>363,216,121,50</bounds>-->
@@ -787,13 +858,18 @@
 					<size>
 						<width>30</width>
 					</size>
+					<script>
+						function updateTotal()
+							Debug.console("Calling main_obligation_total.update()");
+						end
+					</script>
 				</anchored>				
 			</sheetnumberfield>		
 
 <!-- DUTY -->
 			<sheetframe name="main_duty">
-				<anchored to="main_experience" width="121" height="50">
-					<top anchor="bottom" relation="relative" offset="0" />
+				<anchored to="main_experience" width="121" height="54">
+					<top anchor="bottom" relation="relative" offset="-4" />
 					<left />
 				</anchored>
 			</sheetframe>
@@ -827,8 +903,8 @@
 
 <!-- MORALITY -->
 			<sheetframe name="main_morality">
-				<anchored to="main_experience" width="121" height="50">
-					<top anchor="bottom" relation="relative" offset="0" />
+				<anchored to="main_experience" width="121" height="108">
+					<top anchor="bottom" relation="relative" offset="-4" />
 					<left />
 				</anchored>
 			</sheetframe>
@@ -858,296 +934,87 @@
 						<width>30</width>
 					</size>
 				</anchored>				
-			</sheetnumberfield>				
-			
-<!-- BACKGROUND 
-			<sheetframe name="main_background">
-				<bounds>12,313,351,230</bounds>
-			</sheetframe>
-			<sheetframetitle name="main_background_title">
-				<anchored>
-					<to>main_background</to>
-				</anchored>
-				<static>Background</static>
-			</sheetframetitle>
-			
-			<sheetformattedtextfield name="main_background_background" source="background">
-				<anchored>
-					<left>
-						<parent>main_background</parent>
-						<anchor>left</anchor>
-						<offset>13</offset>					
-					</left>
-					<right>
-						<parent>main_background</parent>
-						<anchor>right</anchor>
-						<offset>-13</offset>					
-					</right>
-					<top>
-						<parent>main_background</parent>
-						<anchor>top</anchor>
-						<offset>18</offset>
-					</top>
-					<bottom>
-						<parent>main_background</parent>
-						<anchor>bottom</anchor>
-						<offset>-13</offset>
-					</bottom>
-				</anchored>			
-			</sheetformattedtextfield>
-			<scrollbar>
-				<anchored>
-					<to>main_background_background</to>
-					<offset>-3,-2</offset>
-				</anchored>
-				<target>main_background_background</target>
-			</scrollbar>	-->					
-			
-<!-- FORTUNE 
-			<sheetframe name="main_fortune">
-				<bounds>361,313,121,70</bounds>
-			</sheetframe>
-			<sheetframetitle name="main_fortune_title">
-				<anchored>
-					<to>main_fortune</to>
-				</anchored>
-				<static>Fortune</static>
-			</sheetframetitle> -->
+			</sheetnumberfield>	
 
-			<!-- MAXIMUM 
-			<sheetlabel>
+			<!-- CONFLICT -->
+			<sheetlabel name="main_morality_conflict_label">
 				<anchored>
-					<to>main_fortune</to>
-					<offset>13,22</offset>
-					<size>
-						<width>64</width>
-					</size>
-				</anchored>
-				<static>Maximum</static>
-			</sheetlabel>
-			<sheetnumberfield name="main_fortune_maximum" source="fortune.maximum">
-				<anchored>
-					<to>main_fortune</to>
-					<offset>83,21</offset>
-					<size>
-						<width>25</width>
-					</size>
-				</anchored>
-				<tabtarget>
-					<next>main_fortune_current</next>
-					<prev>main_experience_spent</prev>
-				</tabtarget>
-				<script>
-					function onValueChanged()
-						super.onValueChanged();
-						local currentnode = window.getDatabaseNode().getChild("fortune.current");
-						if currentnode then
-							local current = currentnode.getValue();
-							local value = getValue();
-							if current > value then
-								currentnode.setValue(value);
-							end
-						end
-					end
-				</script>
-			</sheetnumberfield> -->
-
-			<!-- CURRENT 
-			<sheetlabel>
-				<anchored>
-					<to>main_fortune</to>
+					<to>main_morality</to>
 					<offset>13,42</offset>
 					<size>
 						<width>64</width>
 					</size>
 				</anchored>
-				<static>Current</static>
+				<color>880000</color>
+				<static>Conflict</static>
 			</sheetlabel>
-			<chitnumberfield name="main_fortune_current" source="fortune.current">
-				<chit>fortune</chit>
+			<sheetnumberfield name="main_morality_conflict" source="morality.conflict">
 				<anchored>
-					<to>main_fortune</to>
-					<offset>83,41</offset>
+					<to>main_morality</to>
+					<offset>83,43</offset>
 					<size>
-						<width>25</width>
+						<width>30</width>
 					</size>
-				</anchored>
-				<tabtarget>
-					<next>main_corruption_threshold</next>
-					<prev>main_fortune_maximum</prev>
-				</tabtarget>
-				<script>
-					function onValueChanged()
-						super.onValueChanged();
-						local maximumnode = window.getDatabaseNode().getChild("fortune.maximum");
-						if maximumnode then
-							local maximum = maximumnode.getValue();
-							local value = getValue();
-							if value > maximum then
-								setValue(maximum);
-							end
-						end
-					end					
-				</script>
-			</chitnumberfield> -->
-			
-<!-- CORRUPTION 
-			<sheetframe name="main_corruption">
-				<bounds>361,383,121,70</bounds>
-			</sheetframe>
-			<sheetframetitle name="main_corruption_title">
-				<anchored>
-					<to>main_corruption</to>
-				</anchored>
-				<static>Corruption</static>
-			</sheetframetitle> -->
+				</anchored>		
+				<color>880000</color>
+				<tooltip>
+					<text>Track the current session conflict here</text>
+				</tooltip>				
+			</sheetnumberfield>	
 
-			<!-- THRESHOLD 
-			<sheetlabel>
+			<!-- Morality Triggered? -->
+			<sheetlabel name="main_morality_triggered_label">
 				<anchored>
-					<to>main_corruption</to>
-					<offset>13,22</offset>
-					<size>
-						<width>64</width>
-					</size>
-				</anchored>
-				<static>Threshold</static>
-			</sheetlabel>
-			<sheetnumberfield name="main_corruption_threshold" source="corruption.threshold">
-				<anchored>
-					<to>main_corruption</to>
-					<offset>83,21</offset>
-					<size>
-						<width>25</width>
-					</size>
-				</anchored>
-				<tabtarget>
-					<next>main_corruption_current</next>
-					<prev>main_fortune_current</prev>
-				</tabtarget>
-			</sheetnumberfield> -->
-
-			<!-- CURRENT 
-			<sheetlabel>
-				<anchored>
-					<to>main_corruption</to>
-					<offset>13,42</offset>
-					<size>
-						<width>64</width>
-					</size>
-				</anchored>
-				<static>Current</static>
-			</sheetlabel>
-			<corruptionnumberfield name="main_corruption_current" source="corruption.current">
-				<chit>corruption</chit>
-				<anchored>
-					<to>main_corruption</to>
-					<offset>83,41</offset>
-					<size>
-						<width>25</width>
-					</size>
-				</anchored>
-				<tabtarget>
-					<next>main_social_tier</next>
-					<prev>main_corruption_threshold</prev>
-				</tabtarget>
-			</corruptionnumberfield> -->
-			
-<!-- SOCIAL 
-			<sheetframe name="main_social">
-				<bounds>363,453,121,90</bounds>
-			</sheetframe>
-			<sheetframetitle name="main_social_title">
-				<anchored>
-					<to>main_social</to>
-				</anchored>
-				<static>Social</static>
-			</sheetframetitle> -->
-
-			<!-- TIER 
-			<sheetlabel>
-				<anchored>
-					<to>main_social</to>
-					<offset>13,22</offset>
-					<size>
-						<width>64</width>
-					</size>
-				</anchored>
-				<static>Tier</static>
-			</sheetlabel>			
-			<sheetstringfield name="main_social_tier" source="noble.tier">
-				<anchored>
-					<top>
-						<parent>main_social</parent>
-						<anchor>top</anchor>
-						<offset>22</offset>
-					</top>
-					<right>
-						<parent>main_social</parent>
-						<anchor>right</anchor>
-						<offset>-13</offset>
-					</right>
-					<size>
-						<height>20</height>
-					</size>
-				</anchored>
-				<right />
-				<empty>&#171; Tier &#187;</empty>
-				<tabtarget>
-					<next>main_social_rank</next>
-					<prev>main_corruption_current</prev>
-				</tabtarget>
-			</sheetstringfield> -->
-			
-			<!-- RANK 
-			<sheetlabel>
-				<anchored>
-					<to>main_social</to>
-					<offset>13,42</offset>
-					<size>
-						<width>64</width>
-					</size>
-				</anchored>
-				<static>Rank</static>
-			</sheetlabel>
-			<sheetnumberfield name="main_social_rank" source="noble.rank">
-				<anchored>
-					<to>main_social</to>
-					<offset>83,41</offset>
-					<size>
-						<width>25</width>
-					</size>
-				</anchored>
-				<tabtarget>
-					<next>main_social_shame</next>
-					<prev>main_social_tier</prev>
-				</tabtarget>
-			</sheetnumberfield>		-->	
-			
-			<!-- SHAME 
-			<sheetlabel>
-				<anchored>
-					<to>main_social</to>
+					<to>main_morality</to>
 					<offset>13,62</offset>
 					<size>
 						<width>64</width>
 					</size>
 				</anchored>
-				<static>Shame</static>
+				<!--<color>880000</color >-->
+				<static>Triggered?</static>
 			</sheetlabel>
-			<sheetnumberfield name="main_social_shame" source="noble.shame">
+			<checkbox name="main_morality_istriggered" source="istriggered">
 				<anchored>
-					<to>main_social</to>
-					<offset>83,61</offset>
+					<to>main_morality</to>
+					<position>insidetopleft</position>					
+					<offset>88,60</offset>
 					<size>
-						<width>25</width>
+						<width>20</width>
+						<height>20</height>
+					</size>
+				</anchored>				
+				<tooltip>
+					<text>Morality has been triggered for this session</text>
+				</tooltip>
+			</checkbox>	
+
+			<!-- Morality Engaged? -->
+			<sheetlabel name="main_morality_engaged_label">
+				<anchored>
+					<to>main_morality</to>
+					<offset>13,80</offset>
+					<size>
+						<width>64</width>
 					</size>
 				</anchored>
-				<tabtarget>
-					<next>main_character_name</next>
-					<prev>main_social_rank</prev>
-				</tabtarget>
-			</sheetnumberfield>			-->	
+				<!--<color>880000</color >-->
+				<static>Engaged?</static>
+			</sheetlabel>
+			<checkbox name="main_morality_isengaged" source="isengaged">
+				<anchored>
+					<to>main_morality</to>
+					<position>insidetopleft</position>					
+					<offset>88,78</offset>
+					<size>
+						<width>20</width>
+						<height>20</height>
+					</size>
+				</anchored>				
+				<tooltip>
+					<text>Triggered morality has been engaged for this session</text>
+				</tooltip>
+			</checkbox>				
 
 		</sheetdata>
 	</windowclass>

@@ -182,7 +182,7 @@
 <!-- NOTES -->				
 			<sheetframe name="other_notes">
 				<!--<bounds>12,2,472,469</bounds>-->
-				<bounds>12,2,472,-10</bounds>
+				<bounds>14,5,470,-10</bounds>
 			</sheetframe>
 			<sheetframetitle name="other_notes_title">
 				<anchored>
@@ -211,7 +211,7 @@
 					<bottom>
 						<parent>other_notes</parent>
 						<anchor>bottom</anchor>
-						<offset>-13</offset>
+						<offset>-18</offset>
 					</bottom>
 				</anchored>		
 			</sheetformattedtextfield>

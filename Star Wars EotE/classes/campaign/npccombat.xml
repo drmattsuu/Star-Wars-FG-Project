@@ -515,7 +515,7 @@
 				</anchored>
 				<static>Current</static>
 			</sheetlabel>
-			<woundnumberfield name="combat_strain_current" source="strain.current">
+			<strainnumberfield name="combat_strain_current" source="strain.current">
 				<chit>wound</chit>
 				<anchored>
 					<to>combat_strain</to>
@@ -528,7 +528,7 @@
 					<next>combat_physiology_fatigue</next>
 					<prev>combat_wounds_threshold</prev>
 				</tabtarget>
-				<script>
+<!--				<script>
 					function onValueChanged()
 						super.onValueChanged();
 						local criticalsnode = window.getDatabaseNode().getChild("criticals");
@@ -540,8 +540,8 @@
 							end
 						end
 					end
-				</script>
-			</woundnumberfield>
+				</script>-->
+			</strainnumberfield>
 
 <!-- DEFENSE -->
 			<sheetframe name="combat_armour">

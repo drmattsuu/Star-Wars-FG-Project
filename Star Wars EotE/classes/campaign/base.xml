@@ -5,7 +5,7 @@
 	<includefile source="classes/campaign/item.xml" />
 	<includefile source="classes/campaign/itemarmour.xml" />
 	<includefile source="classes/campaign/itemmain.xml" />
-	<includefile source="classes/campaign/itemrunes.xml" />
+	<includefile source="classes/campaign/itemattachments.xml" />
 	<includefile source="classes/campaign/itemweapon.xml" />
 	<includefile source="classes/campaign/itemarmour.xml" />
 	<includefile source="classes/campaign/items.xml" />
@@ -16,7 +16,7 @@
 	<includefile source="classes/campaign/notes.xml" />
 	<includefile source="classes/campaign/npc.xml" />
 	<includefile source="classes/campaign/npccombat.xml" />
-	<includefile source="classes/campaign/npcstarship.xml" />
+	<includefile source="classes/campaign/npcvehicle.xml" />
 	<includefile source="classes/campaign/npcgroup.xml" />
 	<includefile source="classes/campaign/npcgroupactions.xml" />
 	<includefile source="classes/campaign/npcgroupdetails.xml" />
@@ -25,10 +25,14 @@
 	<includefile source="classes/campaign/npcgroups.xml" />
 	<includefile source="classes/campaign/npcmain.xml" />
 	<includefile source="classes/campaign/npcnotes.xml" />	
-	<includefile source="classes/campaign/rune.xml" />
-	<includefile source="classes/campaign/runemain.xml" />
+	<includefile source="classes/campaign/attachment.xml" />
+	<includefile source="classes/campaign/attachmentmain.xml" />
+	<includefile source="classes/campaign/attachmentmods.xml" />
+	<!--<includefile source="classes/campaign/runemain.xml" />-->
 	<includefile source="classes/campaign/stories.xml" />
 	<includefile source="classes/campaign/story.xml" />
 	<includefile source="classes/campaign/npcinventory.xml" />
 	<includefile source="classes/campaign/npclist.xml" />
+	<includefile source="classes/campaign/vehicle.xml" />
+	<includefile source="classes/campaign/vehicles.xml" />
 </root>

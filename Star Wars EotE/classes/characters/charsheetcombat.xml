@@ -16,7 +16,20 @@
 			</windowbutton>
 			
 			<basestringfield name="name">
-				<bounds>21,3,96,17</bounds> <!--width was 96-->
+				<!--<bounds>21,3,96,17</bounds>--> <!--width was 96-->
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>21</offset>					
+					</left>
+					<top>
+						<anchor>top</anchor>
+						<offset>3</offset>
+					</top>	
+					<size>
+						<width>100</width>
+					</size>
+				</anchored>				
 				<empty>&#171; New Item &#187;</empty>
 				<disabled />
 			</basestringfield>
@@ -791,7 +804,7 @@
 					<next>combat_physiology_fatigue</next>
 					<prev>combat_wounds_threshold</prev>
 				</tabtarget>
-				<script>
+<!--				<script>
 					function onValueChanged()
 						super.onValueChanged();
 						local criticalsnode = window.getDatabaseNode().getChild("criticals");
@@ -803,7 +816,7 @@
 							end
 						end
 					end
-				</script>
+				</script>-->
 			</woundnumberfield>
 			
 <!-- ARMOUR -->

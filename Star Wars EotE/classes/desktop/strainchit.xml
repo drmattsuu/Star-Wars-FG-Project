@@ -15,10 +15,98 @@
 			<chit>
 				<chit>strain</chit>
 				<bounds>0,0,56,56</bounds>
-				<tooltip>
-					<text>Strain</text>
-				</tooltip>				
 			</chit>
+			<genericcontrol name="use_soak"> 	
+				<icon>indicator_shield_disable</icon>
+				<iconcolor > ffffff </iconcolor>
+				<anchored>			
+					<!--<to>main_name</to>-->
+					<position>insidetopleft</position>					
+					<offset>17,36</offset>
+					<size>
+						<height>20</height>
+						<width>21</width>
+					</size>
+				</anchored>				
+			</genericcontrol> 			
+			<numbercontrol name="strainchit_value" > 
+				<anchored>			
+					<!--<to>main_name</to>-->
+					<position>insidetopleft</position>					
+					<offset>2,0</offset>
+					<size>
+						<height>50</height>
+						<width>50</width>
+					</size>
+				</anchored>
+				<min >1</min>
+				<max >8</max> 
+				<default >1</default>
+				<!--<nodrag />-->
+				<nodrop />
+				<!--<hideonvalue >1</hideonvalue>-->
+				<font >chitnumbers</font>
+				<color >000000</color>
+				<tooltip>
+					<text>Left-click and drag/drop to apply the indicated number of strain.  Shield icon indicates if soak will be used or ignored (red X).</text>
+				</tooltip>				
+				<script>
+					local dragging = true;
+					local soakEnabled = false;
+					
+					function onInit()
+						registerMenuItem("Reset to 1", "erase", 1);
+						registerMenuItem("Assign 2 chits", "num2", 2);
+						registerMenuItem("Assign 3 chits", "num3", 3);
+						registerMenuItem("Assign 4 chits", "num4", 4);
+						registerMenuItem("Assign 5 chits", "num5", 5);
+						registerMenuItem("Assign 6 chits", "num6", 6);
+						registerMenuItem("Assign 7 chits", "num7", 7);
+						registerMenuItem("Toggle soak application", "icon_enable_soak", 8);
+					end
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+
+					function onDrag(button, x, y, draginfo)
+						local value = getValue();
+						if value > 0 then
+							if not dragging then
+								draginfo.setType("chit");
+								draginfo.setIcon("strainchit");
+								if soakEnabled then
+									draginfo.setCustomData("strainchit_soak_" .. getValue());
+								else
+									draginfo.setCustomData("strainchit_nosoak_" .. getValue());
+								end
+								dragging = true;
+								return true;
+							end
+						end	
+					end
+					
+					function onDragEnd(draginfo)
+						Debug.console("Running woundchit_value onDragEnd()");
+						dragging = false;
+					end
+					
+					function onMenuSelection(selection)
+						if selection == 8 then
+							if soakEnabled then
+								soakEnabled = false;
+								window.use_soak.setIcon("indicator_shield_disable");
+							else
+								soakEnabled = true;
+								window.use_soak.setIcon("indicator_shield");
+							end
+						else
+							setValue(selection);
+						end
+					end
+				</script>
+			</numbercontrol>			
 		</sheetdata>
 	</windowclass>	
 </root>

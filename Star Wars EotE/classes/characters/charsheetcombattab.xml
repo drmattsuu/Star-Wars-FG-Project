@@ -37,11 +37,68 @@
 			</size>
 		</placement>
 		<nodelete />
+		<script>
+			function onInit()
+		
+				--[[Debug.console("Combat tab getting main class = " .. parentcontrol.window.getClass());]]
+				if parentcontrol.window.getClass() == "npc" then
+					if string.lower(parentcontrol.window.main_npc_category.getValue()) == "minion" then
+					
+						combat_minion_info.setVisible(true);
+						combat_minion_info_title.setVisible(true);
+						combat_wounds_per_minion_label.setVisible(true);
+						combat_wounds_per_minion.setVisible(true);
+						combat_minions_in_group_label.setVisible(true);
+						combat_minions_in_group.setVisible(true);
+						
+						combat_strain.setVisible(false);
+						combat_strain_title.setVisible(false);
+						combat_strain_threshold_label.setVisible(false);
+						combat_strain_threshold.setVisible(false);
+						combat_strain_current_label.setVisible(false);
+						combat_strain_current.setVisible(false);
+						
+					elseif string.lower(parentcontrol.window.main_npc_category.getValue()) == "nemesis" then
+					
+						combat_minion_info.setVisible(false);
+						combat_minion_info_title.setVisible(false);
+						combat_wounds_per_minion_label.setVisible(false);
+						combat_wounds_per_minion.setVisible(false);
+						combat_minions_in_group_label.setVisible(false);
+						combat_minions_in_group.setVisible(false);
+
+						combat_strain.setVisible(true);
+						combat_strain_title.setVisible(true);
+						combat_strain_threshold_label.setVisible(true);
+						combat_strain_threshold.setVisible(true);
+						combat_strain_current_label.setVisible(true);
+						combat_strain_current.setVisible(true);
+
+					else
+
+						combat_minion_info.setVisible(false);
+						combat_minion_info_title.setVisible(false);
+						combat_wounds_per_minion_label.setVisible(false);
+						combat_wounds_per_minion.setVisible(false);
+						combat_minions_in_group_label.setVisible(false);
+						combat_minions_in_group.setVisible(false);	
+
+						combat_strain.setVisible(false);
+						combat_strain_title.setVisible(false);
+						combat_strain_threshold_label.setVisible(false);
+						combat_strain_threshold.setVisible(false);
+						combat_strain_current_label.setVisible(false);
+						combat_strain_current.setVisible(false);						
+						
+					end
+				end
+			end
+		</script>
 		<sheetdata>
 		
 <!-- CHARACTERISTICS -->
 			<sheetframe name="combattab_characteristics">
-				<bounds>12,2,346,86</bounds>
+				<bounds>14,5,351,87</bounds>
 				<frame>
 					<name>sheetgroup</name>
 				</frame>		
@@ -64,17 +121,6 @@
 					<prev>combattab_characteristics_stance_reckless</prev>
 				</tabtarget>
 			</sheetcharacteristicvalue>
-<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_brawn_bonus" source="brawn.bonus">
-				<anchored>
-					<to>skills_characteristics_brawn_current</to>
-					<position>righthigh</position>
-					<offset>1,0</offset>
-				</anchored>
-				<tabtarget>
-					<next>skills_characteristics_agility_current</next>
-					<prev>skills_characteristics_brawn_current</prev>
-				</tabtarget>					
-			</sheetcharacteristicbonusvalue>-->
 			<sheettitle>
 				<anchored>
 					<top>
@@ -111,17 +157,6 @@
 					<prev>combattab_characteristics_brawn_bonus</prev>
 				</tabtarget>				
 			</sheetcharacteristicvalue>
-<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_agility_bonus" source="agility.bonus">
-				<anchored>
-					<to>skills_characteristics_agility_current</to>
-					<position>righthigh</position>
-					<offset>1,0</offset>
-				</anchored>
-				<tabtarget>
-					<next>skills_characteristics_agility_current</next>
-					<prev>skills_characteristics_intellect_current</prev>
-				</tabtarget>				
-			</sheetcharacteristicbonusvalue>-->
 			<sheettitle>
 				<anchored>
 					<top>
@@ -158,17 +193,6 @@
 					<prev>combattab_characteristics_agility_bonus</prev>
 				</tabtarget>				
 			</sheetcharacteristicvalue>
-<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_intellect_bonus" source="intellect.bonus">
-				<anchored>
-					<to>skills_characteristics_intellect_current</to>
-					<position>righthigh</position>
-					<offset>1,0</offset>
-				</anchored>
-				<tabtarget>
-					<next>skills_characteristics_cunning_current</next>
-					<prev>skills_characteristics_intellect_current</prev>
-				</tabtarget>				
-			</sheetcharacteristicbonusvalue>-->
 			<sheettitle>
 				<anchored>
 					<top>
@@ -205,17 +229,6 @@
 					<prev>combattab_characteristics_intellect_bonus</prev>
 				</tabtarget>				
 			</sheetcharacteristicvalue>
-<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_cunning_bonus" source="cunning.bonus">
-				<anchored>
-					<to>skills_characteristics_cunning_current</to>
-					<position>righthigh</position>
-					<offset>1,0</offset>
-				</anchored>
-				<tabtarget>
-					<next>skills_characteristics_willpower_current</next>
-					<prev>skills_characteristics_cunning_current</prev>
-				</tabtarget>				
-			</sheetcharacteristicbonusvalue>-->
 			<sheettitle>
 				<anchored>
 					<top>
@@ -252,17 +265,6 @@
 					<prev>combattab_characteristics_cunning_bonus</prev>
 				</tabtarget>				
 			</sheetcharacteristicvalue>
-<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_willpower_bonus" source="willpower.bonus">
-				<anchored>
-					<to>skills_characteristics_willpower_current</to>
-					<position>righthigh</position>
-					<offset>1,0</offset>
-				</anchored>
-				<tabtarget>
-					<next>skills_characteristics_presence_current</next>
-					<prev>skills_characteristics_willpower_current</prev>
-				</tabtarget>				
-			</sheetcharacteristicbonusvalue>-->
 			<sheettitle>
 				<anchored>
 					<top>
@@ -299,17 +301,6 @@
 					<prev>combattab_characteristics_willpower_bonus</prev>
 				</tabtarget>				
 			</sheetcharacteristicvalue>
-<!--			<sheetcharacteristicbonusvalue name="skills_characteristics_presence_bonus" source="presence.bonus">
-				<anchored>
-					<to>skills_characteristics_presence_current</to>
-					<position>righthigh</position>
-					<offset>1,0</offset>
-				</anchored>
-				<tabtarget>
-					<next>skills_characteristics_stance_conservative</next>
-					<prev>skills_characteristics_presence_current</prev>
-				</tabtarget>				
-			</sheetcharacteristicbonusvalue>-->
 			<sheettitle>
 				<anchored>
 					<top>
@@ -335,85 +326,9 @@
 				<static>Presence</static>
 			</sheettitle>
 			
-			<!-- STANCE --> <!--
-			<stancetracker name="skills_characteristics_stance">
-				<sourcename>stance.current</sourcename>
-				<conservativename>stance.conservative</conservativename>
-				<recklessname>stance.reckless</recklessname>
-				<careersname>careers</careersname>
-				<anchored>
-					<left>
-						<parent>skills_characteristics</parent>
-						<anchor>left</anchor>
-						<offset>74</offset>					
-					</left>
-					<right>
-						<parent>skills_characteristics</parent>
-						<anchor>right</anchor>
-						<offset>-74</offset>					
-					</right>
-					<top>
-						<parent>skills_characteristics</parent>
-						<anchor>top</anchor>
-						<offset>74</offset>
-					</top>
-					<size>
-						<height>24</height>
-					</size>
-				</anchored>
-			</stancetracker>
-			
-			<!-- CONSERVATIVE --> <!--
-			<sheetnumberfield name="skills_characteristics_stance_conservative" source="stance.conservative">
-				<anchored>
-					<left>
-						<parent>skills_characteristics</parent>
-						<anchor>left</anchor>
-						<offset>24</offset>
-					</left>
-					<top>
-						<parent>skills_characteristics</parent>
-						<anchor>top</anchor>
-						<offset>75</offset>
-					</top>
-					<size>
-						<width>24</width>
-						<height>24</height>
-					</size>
-				</anchored>
-				<tabtarget>
-					<next>skills_characteristics_stance_reckless</next>
-					<prev>skills_characteristics_presence_bonus</prev>
-				</tabtarget>
-			</sheetnumberfield>
-
-			<!-- RECKLESS --> <!--
-			<sheetnumberfield name="skills_characteristics_stance_reckless" source="stance.reckless">
-				<anchored>
-					<left>
-						<parent>skills_characteristics</parent>
-						<anchor>left</anchor>
-						<offset>424</offset>
-					</left>
-					<top>
-						<parent>skills_characteristics</parent>
-						<anchor>top</anchor>
-						<offset>75</offset>
-					</top>
-					<size>
-						<width>24</width>
-						<height>24</height>
-					</size>
-				</anchored>
-				<tabtarget>
-					<next>skills_characteristics_brawn_current</next>
-					<prev>skills_characteristics_stance_conservative</prev>
-				</tabtarget>
-			</sheetnumberfield>
-			
 <!-- INITIATIVE -->
 			<sheetframe name="combat_init">
-				<bounds>355,2,128,86</bounds>
+			<bounds>363,5,120,87</bounds>
 			</sheetframe>
 			<sheetframetitle name="combat_init_title">
 				<anchored>
@@ -446,18 +361,6 @@
 				</anchored>			
 				<!--<bounds>118,26,10,10</bounds>-->
 			</initdicepool>
-			
-<!--			<sheetnumberfield name="combat_init_cool" source="init.cool">
-				<anchored>
-					<to>combat_init</to>
-					<offset>76,26</offset>
-					<size>
-						<width>25</width>
-					</size>
-				</anchored>
-				<!{1}**<disabled />**{1}>
-			</sheetnumberfield>-->									
-
 			<!-- Vigilance -->
 			<sheetlabel name = "combat_init_vigilance">
 				<anchored>
@@ -481,22 +384,11 @@
 					</size>
 				</anchored>		
 				<!--<bounds>118,26,10,10</bounds>-->
-			</initdicepool>			
-			
-<!--			<sheetnumberfield name="combat_init_vigilance" source="init.vigilance">
-				<anchored>
-					<to>combat_init</to>
-					<offset>90,53</offset>
-					<size>
-						<width>25</width>
-					</size>
-				</anchored>
-				<!{1}**<disabled />**{1}>
-			</sheetnumberfield>-->				
+			</initdicepool>					
 
 <!-- SOAK -->
 			<sheetframe name="combat_soak">
-				<bounds>12,83,118,70</bounds>
+				<bounds>14,88,116,70</bounds>
 			</sheetframe>
 			<sheetframetitle name="combat_soak_title">
 				<anchored>
@@ -505,21 +397,10 @@
 				<static>Soak</static>
 			</sheetframetitle>
 			
-			<!-- SOAK -->
-			<!--<sheetlabel>
-				<anchored>
-					<to>combat_soak</to>
-					<offset>13,22</offset>
-					<size>
-						<width>64</width>
-					</size>
-				</anchored>
-				<static>Soak</static>
-			</sheetlabel>-->
 			<sheetnumberfield name="combat_armour_soak" source="armour.soak">
 				<anchored>
 					<to>combat_soak</to>
-					<offset>47,25</offset>
+					<offset>47,30</offset>
 					<size>
 						<width>25</width>
 					</size>
@@ -529,7 +410,7 @@
 			
 <!-- WOUNDS -->
 			<sheetframe name="combat_wounds">
-				<bounds>130,83,118,70</bounds>
+				<bounds>128,88,120,70</bounds>
 			</sheetframe>
 			<sheetframetitle name="combat_wounds_title">
 				<anchored>
@@ -548,11 +429,12 @@
 					</size>
 				</anchored>
 				<static>Threshold</static>
-			</sheetlabel>
+			</sheetlabel>		
+			
 			<sheetnumberfield name="combat_wounds_threshold" source="wounds.threshold">
 				<anchored>
 					<to>combat_wounds</to>
-					<offset>80,21</offset>
+					<offset>80,22</offset>
 					<size>
 						<width>25</width>
 					</size>
@@ -578,7 +460,7 @@
 				<chit>wound</chit>
 				<anchored>
 					<to>combat_wounds</to>
-					<offset>80,41</offset>
+					<offset>80,42</offset>
 					<size>
 						<width>25</width>
 					</size>
@@ -587,24 +469,11 @@
 					<next>combat_physiology_fatigue</next>
 					<prev>combat_wounds_threshold</prev>
 				</tabtarget>
-				<script>
-					function onValueChanged()
-						super.onValueChanged();
-						local criticalsnode = window.getDatabaseNode().getChild("criticals");
-						if criticalsnode then
-							local criticals = criticalsnode.getChildCount();
-							local value = getValue();
-							if criticals > value then
-								setValue(criticals);
-							end
-						end
-					end
-				</script>
 			</woundnumberfield>
 			
 <!-- STRAIN -->
 			<sheetframe name="combat_strain">
-				<bounds>248,83,118,70</bounds>
+				<bounds>245,88,120,70</bounds>
 			</sheetframe>
 			<sheetframetitle name="combat_strain_title">
 				<anchored>
@@ -614,7 +483,7 @@
 			</sheetframetitle>
 
 			<!-- THRESHOLD -->
-			<sheetlabel>
+			<sheetlabel name="combat_strain_threshold_label">
 				<anchored>
 					<to>combat_strain</to>
 					<offset>13,22</offset>
@@ -627,7 +496,7 @@
 			<sheetnumberfield name="combat_strain_threshold" source="strain.threshold">
 				<anchored>
 					<to>combat_strain</to>
-					<offset>80,21</offset>
+					<offset>80,22</offset>
 					<size>
 						<width>25</width>
 					</size>
@@ -639,7 +508,7 @@
 			</sheetnumberfield>
 
 			<!-- CURRENT -->
-			<sheetlabel>
+			<sheetlabel name="combat_strain_current_label">
 				<anchored>
 					<to>combat_strain</to>
 					<offset>13,42</offset>
@@ -653,7 +522,7 @@
 				<chit>wound</chit>
 				<anchored>
 					<to>combat_strain</to>
-					<offset>80,41</offset>
+					<offset>80,42</offset>
 					<size>
 						<width>25</width>
 					</size>
@@ -662,56 +531,116 @@
 					<next>combat_physiology_fatigue</next>
 					<prev>combat_wounds_threshold</prev>
 				</tabtarget>
-				<script>
-					function onValueChanged()
-						super.onValueChanged();
-						local criticalsnode = window.getDatabaseNode().getChild("criticals");
-						if criticalsnode then
-							local criticals = criticalsnode.getChildCount();
-							local value = getValue();
-							if criticals > value then
-								setValue(criticals);
-							end
-						end
-					end
-				</script>
 			</strainnumberfield>
 			
-<!-- ARMOR -->
-<!--			<sheetframe name="combat_armour">
-				<bounds>366,101,118,70</bounds>
+<!-- MINION INFO -->
+			<sheetframe name="combat_minion_info">
+				<bounds>245,88,120,70</bounds>
+				<invisible />
 			</sheetframe>
-			<sheetframetitle name="combat_armour_title">
+			<sheetframetitle name="combat_minion_info_title">
 				<anchored>
-					<to>combat_armour</to>
+					<to>combat_minion_info</to>
 				</anchored>
-				<static>Armor</static>
+				<static>Minion Info</static>
+				<invisible />
 			</sheetframetitle>
 
-			<!{1}** DEFENCE **{1}>
-			<sheetlabel>
+			<!-- WOUNDS PER MINION -->
+			<sheetlabel name="combat_wounds_per_minion_label">
 				<anchored>
-					<to>combat_armour</to>
+					<to>combat_minion_info</to>
 					<offset>13,22</offset>
 					<size>
 						<width>64</width>
 					</size>
-				</anchored>
-				<static>Defence</static>
+				</anchored>				
+				<static>W./Minion</static>
+				<tooltip>
+					<text>Number of wounds per Minion in the group</text>
+				</tooltip>			
+				<invisible />
 			</sheetlabel>
-			<sheetnumberfield name="combat_armour_defence" source="armour.defence">
+			<sheetnumberfield name="combat_wounds_per_minion" source="minion.wounds_per_minion">
 				<anchored>
-					<to>combat_armour</to>
-					<offset>80,21</offset>
+					<to>combat_minion_info</to>
+					<offset>80,22</offset>
 					<size>
 						<width>25</width>
 					</size>
 				</anchored>
-				<!{1}**<disabled />**{1}>
-			</sheetnumberfield>-->
+				<script>
+					function onValueChanged()
+						super.onValueChanged();
+
+						local woundPerMinion = window.combat_wounds_per_minion.getValue();
+						
+						local totalWoundThreshold = woundPerMinion * getValue();
+						
+						window.combat_wounds_threshold.setValue(totalWoundThreshold);
+						
+						window.combat_wounds_current.update();
+					end
+				</script>				
+				<tabtarget>
+					<next>combat_strain_current</next>
+					<prev>combat_characteristics_stance_reckless</prev>
+				</tabtarget>
+				<tooltip>
+					<text>Number of wounds per Minion in the group</text>
+				</tooltip>		
+				<invisible />
+			</sheetnumberfield>
+
+			<!-- MINIONS IN GROUP -->
+			<sheetlabel name="combat_minions_in_group_label">
+				<anchored>
+					<to>combat_minion_info</to>
+					<offset>13,42</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>				
+				<static>#/Group</static>
+				<tooltip>
+					<text>Number of Minions in the group</text>
+				</tooltip>
+				<invisible />
+			</sheetlabel>
+			<sheetnumberfield name="combat_minions_in_group" source="minion.number_in_group">
+				<anchored>
+					<to>combat_minion_info</to>
+					<offset>80,42</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<script>
+					function onValueChanged()
+						super.onValueChanged();
+
+						local woundPerMinion = window.combat_wounds_per_minion.getValue();
+						
+						local totalWoundThreshold = woundPerMinion * getValue();
+						
+						window.combat_wounds_threshold.setValue(totalWoundThreshold);
+						
+						window.combat_wounds_current.update();
+					end
+				</script>				
+				<tabtarget>
+					<next>combat_physiology_fatigue</next>
+					<prev>combat_wounds_threshold</prev>
+				</tabtarget>
+				<tooltip>
+					<text>Number of Minions in the group</text>
+				</tooltip>
+				<invisible />
+			</sheetnumberfield>			
 			
+<!-- DEFENSE -->
 			<sheetframe name="combat_armour">
-				<bounds>366,83,118,70</bounds>
+				<bounds>363,88,121,70</bounds>
 			</sheetframe>
 			<sheetframetitle name="combat_armour_title">
 				<anchored>
@@ -720,11 +649,10 @@
 				<static>Defense</static>
 			</sheetframetitle>
 
-			<!-- DEFENCE -->
 			<sheetlabel>
 				<anchored>
 					<to>combat_armour</to>
-					<offset>13,22</offset>
+					<offset>18,20</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -734,7 +662,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>combat_armour</to>
-					<offset>54,22</offset>
+					<offset>59,20</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -744,7 +672,7 @@
 			<sheetnumberfield name="combat_armour_meleedefence" source="armour.meleedefence">
 				<anchored>
 					<to>combat_armour</to>
-					<offset>26,38</offset>
+					<offset>24,40</offset>
 					<size>
 						<width>25</width>
 					</size>
@@ -753,35 +681,13 @@
 			<sheetnumberfield name="combat_armour_rangeddefence" source="armour.rangeddefence">
 				<anchored>
 					<to>combat_armour</to>
-					<offset>70,38</offset>
+					<offset>68,40</offset>
 					<size>
 						<width>25</width>
 					</size>
 				</anchored>				
 			</sheetnumberfield>			
 
-			<!-- SOAK 
-			<sheetlabel>
-				<anchored>
-					<to>combat_armour</to>
-					<offset>13,42</offset>
-					<size>
-						<width>64</width>
-					</size>
-				</anchored>
-				<static>Soak</static>
-			</sheetlabel>
-			<sheetnumberfield name="combat_armour_soak" source="armour.soak">
-				<anchored>
-					<to>combat_armour</to>
-					<offset>80,41</offset>
-					<size>
-						<width>25</width>
-					</size>
-				</anchored>
-				<!--<disabled />-->				
-			<!-- </sheetnumberfield> -->
-			
 			<!-- Armour Updater -->
 			<genericcontrol>
 				<bounds>0,0,1,1</bounds>
@@ -831,103 +737,10 @@
 			</genericcontrol>	
 			
 			
-<!-- BASIC SKILLS --> 
-<!--			<sheetframe name="combattab_basic">
-				<bounds>12,166,238,380</bounds>
-			</sheetframe>
-			<sheetframetitle name="combattab_basic_title">
-				<anchored>
-					<to>combattab_basic</to>
-				</anchored>
-				<static>Basic Skills</static>
-			</sheetframetitle>
-			
-			<!{1}** SKILLS **{1}>
-			<sheetlist name="skills_basic_skills">
-				<anchored>
-					<left>
-						<parent>skills_basic</parent>
-						<anchor>left</anchor>
-						<offset>12</offset>					
-					</left>
-					<right>
-						<parent>skills_basic</parent>
-						<anchor>right</anchor>
-						<offset>-13</offset>					
-					</right>
-					<top>
-						<parent>skills_basic</parent>
-						<anchor>top</anchor>
-						<offset>18</offset>
-					</top>
-					<bottom>
-						<parent>skills_basic</parent>
-						<anchor>bottom</anchor>
-						<offset>-13</offset>
-					</bottom>
-				</anchored>
-				<datasource>.skills</datasource>
-				<class>charsheet_skills_skillsmall</class>
-				<allowcreate />
-				<allowdelete />
-				<script>
-					function onFilter(w)				
-						local windownode = w.getDatabaseNode();
-						if windownode then
-							local advancednode = windownode.getChild("advanced");
-							if advancednode and advancednode.getValue() == 1 then
-								return false;
-							end
-						end
-						return true;					
-					end
-					
-					function onInit()
-						local skillsnode = window.getDatabaseNode().getChild("skills");
-						if skillsnode then
-							local skillautocreated = skillsnode.createChild("autogenerated", "number");
-							if skillautocreated.getValue() ~= 1 then
-								for k,v in pairs(DataCommon.basicskilldata) do
-									Debug.console("Skillname = " .. k);
-									local skillnode = skillsnode.createChild();
-									skillnode.createChild("name","string").setValue(k);					
-									skillnode.createChild("characteristic","string").setValue(v.characteristic);
-									skillnode.createChild("description","formattedtext").setValue(v.description);
-								end
-								skillsnode.getChild("autogenerated").setValue(1);
-							end
-						end		
-					end
-					
-					function onDrop(x, y, draginfo)
-						local type = draginfo.getType();
-						if type == "shortcut" then
-							local class, recordname = draginfo.getShortcutData();
-							if class == "skill" then
-								local recordnode = DB.findNode(recordname)
-								if recordnode and not recordnode.isStatic() and recordnode.isOwner() then
-									if string.find(recordnode.getNodeName(), window.getDatabaseNode().getNodeName(), 1, true) then
-										recordnode.createChild("advanced", "number").setValue(0);
-										return true;
-									end
-								end
-							end
-						end
-					end						
-				</script>
-			</sheetlist>
-			<scrollbar>
-				<anchored>
-					<to>skills_basic_skills</to>
-					<offset>-3,-2</offset>
-				</anchored>
-				<target>skills_basic_skills</target>
-			</scrollbar>-->
-
 <!-- CONDITIONS -->
 			<sheetframe name="combat_conditions">
 				<!--<bounds>12,201,236,252</bounds>-->
-				<bounds>12,148,200,-10</bounds>
+				<bounds>14,154,199,-10</bounds>
 				
 				<frame>
 					<name>sheetgroup</name>
@@ -942,138 +755,45 @@
 					<left>
 						<parent>combat_conditions</parent>
 						<anchor>left</anchor>
-						<offset>7</offset>					
+						<offset>8</offset>					
 					</left>
 					<right>
 						<parent>combat_conditions</parent>
 						<anchor>right</anchor>
-						<offset>-7</offset>					
+						<offset>-10</offset>					
 					</right>
 					<top>
 						<parent>combat_conditions</parent>
 						<anchor>top</anchor>
-						<offset>7</offset>
+						<offset>20</offset>
 					</top>
 					<bottom>
 						<parent>combat_conditions</parent>
 						<anchor>bottom</anchor>
-						<offset>-7</offset>
+						<offset>-20</offset>
 					</bottom>
 				</anchored>
 				<script>
 					function onInit()
-						createWindowWithClass("charsheet_combat_criticals", window.getDatabaseNode());						
-						createWindowWithClass("charsheet_combat_conditions", window.getDatabaseNode());			
+						createWindowWithClass("charsheet_talents_abilities", window.getDatabaseNode());
+						createWindowWithClass("charsheet_talents_talents", window.getDatabaseNode());						
+						createWindowWithClass("charsheet_combat_criticals", window.getDatabaseNode());
+						createWindowWithClass("charsheet_combat_conditions", window.getDatabaseNode());	
 					end
 				</script>
 			</basewindowlist>
 			<scrollbar>
 				<anchored>
 					<to>combat_conditions_conditions</to>
-					<offset>-9,-8</offset>
+					<offset>-6,0</offset>
 				</anchored>
 				<target>combat_conditions_conditions</target>
 			</scrollbar>
 			
-<!--<!{1}** ADVANCED SKILLS **{1}> 
-			<sheetframe name="combattab_advanced">
-				<bounds>248,166,236,100</bounds>
-			</sheetframe>
-			<sheetframetitle name="combattab_advanced_title">
-				<anchored>
-					<to>combattab_advanced</to>
-				</anchored>
-				<static>Combat Skills</static>
-			</sheetframetitle>
-			
-			<!{1}** SKILLS **{1}>
-			<sheetlist name="combattab_advanced_skills">
-				<anchored>
-					<left>
-						<parent>combattab_advanced</parent>
-						<anchor>left</anchor>
-						<offset>12</offset>					
-					</left>
-					<right>
-						<parent>combattab_advanced</parent>
-						<anchor>right</anchor>
-						<offset>-13</offset>					
-					</right>
-					<top>
-						<parent>combattab_advanced</parent>
-						<anchor>top</anchor>
-						<offset>18</offset>
-					</top>
-					<bottom>
-						<parent>combattab_advanced</parent>
-						<anchor>bottom</anchor>
-						<offset>-13</offset>
-					</bottom>
-				</anchored>
-				<datasource>.skills</datasource>
-				<class>charsheet_skills_skillsmall</class>
-				<allowdelete />
-				<script>
-					function onInit()
-						local node = getDatabaseNode();
-						if node and node.isOwner() then
-							registerMenuItem("Create Item", "insert", 5);						
-						end
-					end
-					
-					function onMenuSelection(selection)
-						if selection == 5 then
-							local node = getDatabaseNode();
-							if node and node.isOwner() then
-								local child = node.createChild();
-								child.createChild("advanced", "number").setValue(1);
-							end
-						end
-					end					
-				
-					function onFilter(w)
-						local windownode = w.getDatabaseNode();
-						if windownode then
-							local advancednode = windownode.getChild("advanced");
-							if advancednode and advancednode.getValue() == 1 then
-								return true;
-							end
-						end
-						return false;
-					end
-					
-					function onDrop(x, y, draginfo)
-						local type = draginfo.getType();
-						if type == "shortcut" then
-							local class, recordname = draginfo.getShortcutData();
-							if class == "skill" then
-								local recordnode = DB.findNode(recordname)
-								if recordnode and not recordnode.isStatic() and recordnode.isOwner() then
-									if string.find(recordnode.getNodeName(), window.getDatabaseNode().getNodeName(), 1, true) then
-										recordnode.createChild("advanced", "number").setValue(1);
-										return true;
-									end
-								end
-							end
-						end
-					end					
-				</script>				
-			</sheetlist>
-			<scrollbar>
-				<anchored>
-					<to>combattab_advanced_skills</to>
-					<offset>-3,-2</offset>
-				</anchored>
-				<target>combattab_advanced_skills</target>
-			</scrollbar>-->			
-		
-		
-
-	
 <!-- WEAPONS (the listbox)-->
 			<sheetframe name="combat_weapons">
-				<bounds>208,148,276,320</bounds>
-				<bounds>208,148,276,-10</bounds>
+				<!--<bounds>208,148,276,320</bounds>-->
+				<bounds>210,154,274,-10</bounds>
 				<frame>
 					<name>sheetgroup</name>
 				</frame>		
@@ -1082,7 +802,7 @@
 				<anchored>
 					<to>combat_weapons</to>
 					<position>insidetopleft</position>
-					<offset>136,8</offset>
+					<offset>132,8</offset>
 					<size>
 						<width>25</width>
 					</size>					
@@ -1094,7 +814,7 @@
 				<anchored>
 					<to>combat_weapons</to>
 					<position>insidetopleft</position>
-					<offset>165,8</offset>
+					<offset>161,8</offset>
 					<size>
 						<width>25</width>
 					</size>					
@@ -1106,7 +826,7 @@
 				<anchored>
 					<to>combat_weapons</to>
 					<position>insidetopleft</position>
-					<offset>194,8</offset>
+					<offset>190,8</offset>
 					<size>
 						<width>25</width>
 					</size>					
@@ -1118,7 +838,7 @@
 				<anchored>
 					<to>combat_weapons</to>
 					<position>insidetopleft</position>
-					<offset>223,8</offset>
+					<offset>219,8</offset>
 					<size>
 						<width>25</width>
 					</size>					
@@ -1132,7 +852,7 @@
 					<left>
 						<parent>combat_weapons</parent>
 						<anchor>left</anchor>
-						<offset>13</offset>					
+						<offset>8</offset>					
 					</left>
 					<right>
 						<parent>combat_weapons</parent>
@@ -1142,12 +862,12 @@
 					<top>
 						<parent>combat_weapons</parent>
 						<anchor>top</anchor>
-						<offset>19</offset>
+						<offset>20</offset>
 					</top>
 					<bottom>
 						<parent>combat_weapons</parent>
 						<anchor>bottom</anchor>
-						<offset>-13</offset>
+						<offset>-20</offset>
 					</bottom>
 				</anchored>
 				<datasource>.inventory</datasource>
@@ -1179,75 +899,11 @@
 			<scrollbar>
 				<anchored>
 					<to>combat_weapons_weapons</to>
-					<offset>-3,-2</offset>
+					<offset>-6,0</offset>
 				</anchored>
 				<target>combat_weapons_weapons</target>
 			</scrollbar>
 
-<!-- SPECIALISATIONS  
-			<sheetframe name="skills_specialisations">
-				<bounds>248,382,236,161</bounds>
-			</sheetframe>
-			<sheetframetitle name="skills_specialisations_title">
-				<anchored>
-					<to>skills_specialisations</to>
-				</anchored>
-				<static>Specialisations</static>
-			</sheetframetitle> -->
-			
-			<!-- SKILLS 
-			<specialisationlist name="skills_specialisations_specialisations">
-				<anchored>
-					<left>
-						<parent>skills_specialisations</parent>
-						<anchor>left</anchor>
-						<offset>12</offset>					
-					</left>
-					<right>
-						<parent>skills_specialisations</parent>
-						<anchor>right</anchor>
-						<offset>-13</offset>					
-					</right>
-					<top>
-						<parent>skills_specialisations</parent>
-						<anchor>top</anchor>
-						<offset>18</offset>
-					</top>
-					<bottom>
-						<parent>skills_specialisations</parent>
-						<anchor>bottom</anchor>
-						<offset>-13</offset>
-					</bottom>
-				</anchored>
-				<class>specialisationsmall</class>
-				<script>
-					function onDrop(x, y, draginfo)
-						local type = draginfo.getType();
-						if type == "shortcut" then
-							local class, recordname = draginfo.getShortcutData();
-							if class == "skill" then
-								local recordnode = DB.findNode(recordname)
-								if recordnode and not recordnode.isStatic() and recordnode.isOwner() then
-									if string.find(recordnode.getNodeName(), window.getDatabaseNode().getNodeName(), 1, true) then
-										recordnode.createChild("specialisations").createChild();
-										return true;
-									end
-								end
-							end
-						end
-					end
-				</script>
-			</specialisationlist>
-			<scrollbar>
-				<anchored>
-					<to>skills_specialisations_specialisations</to>
-					<offset>-3,-2</offset>
-				</anchored>
-				<target>skills_specialisations_specialisations</target>
-			</scrollbar>	-->		
-			
-
-			
 		</sheetdata>
 	</windowclass>
 </root>

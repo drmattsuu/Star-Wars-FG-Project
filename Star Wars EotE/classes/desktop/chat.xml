@@ -5,7 +5,9 @@
 		<frame>chatbox</frame>	
 		<sheetdata>
 			<chatwindow name="chat">
-				<bounds>16,15,-20,-54</bounds>
+<!--LOBOSOLO updated bounds of the chatbox - BEGIN -->
+				<bounds>16,30,-13,-54</bounds>
+<!--LOBOSOLO updated bounds of the chatbox - END -->
 				<droptypes>
 					<type>dice</type>
 					<type>number</type>

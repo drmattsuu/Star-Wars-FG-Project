@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<windowclass name="criticalchit">
+		<sizelimits>
+			<maximum>
+				<height>56</height>
+				<width>56</width>
+			</maximum>
+			<minimum>
+				<height>56</height>
+				<width>56</width>
+			</minimum>
+		</sizelimits>
+		<sheetdata>
+			<chit>
+				<chit>critical</chit>
+				<bounds>0,0,56,56</bounds>
+				<tooltip>
+					<text>Left-click and drag/drop to apply a critical to the target.</text>
+				</tooltip>
+			</chit>
+		</sheetdata>
+	</windowclass>	
+</root>

@@ -22,6 +22,9 @@
 		<namefield>name</namefield>
 	</imageupdatefolder>
 	
+	<!-- String resources -->
+	<includefile source="strings/strings_campaign.xml" />	
+	
 	<!-- includes -->
 	<includefile source="classes/base.xml" />
 	<includefile source="definitions/base.xml" />

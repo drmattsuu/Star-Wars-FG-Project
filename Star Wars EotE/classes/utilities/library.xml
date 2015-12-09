@@ -63,12 +63,14 @@
 			</minimum>
 		</sizelimits>
 		<sheetdata>
+<!--LOBOSOLO updating the bounds for new art - BEGIN -->
 			<genericcontrol>
-				<bounds>0,1,20,20</bounds>
+				<bounds>7,1,20,20</bounds>
 				<icon>modcollector_counter</icon>
 			</genericcontrol>
 			<basestringcontrol name="name">
-				<bounds>20,4,-1,-1</bounds>
+				<bounds>27,4,-1,-1</bounds>
+<!--LOBOSOLO updating the bounds for new art -  END -->
 				<static>Back...</static>
 				<script>
 					function onHover(state)
@@ -100,8 +102,10 @@
 			</minimum>
 		</sizelimits>
 		<sheetdata>
+<!--LOBOSOLO updating the bounds for new art - BEGIN -->
 			<buttoncontrol name="librarybuttonlink">
-				<bounds>0,1,20,20</bounds>
+				<bounds>7,1,20,20</bounds>
+<!--LOBOSOLO updating the bounds for new art - END -->
 				<icon>
 					<normal>modcollector_counter</normal>
 					<pressed>modcollector_counter</pressed>
@@ -162,7 +166,9 @@
 				</script>
 			</buttoncontrol>
 			<basestringfield name="name">
-				<bounds>20,4,-1,-1</bounds>
+<!--LOBOSOLO updating the bounds for new art - BEGIN -->
+				<bounds>27,4,-1,-1</bounds>
+<!--LOBOSOLO updating the bounds for new art - END -->
 				<script>
 					local windownode = nil;
 					local classnode = nil;
@@ -214,9 +220,11 @@
 		<sheetdata>
 			<genericcontrol name="frame">
 				<bounds>0,0,350,200</bounds>
+<!--LOBOSOLO updated the frame name for search - BEGIN -->
 				<frame>
-					<name>chatbox</name>
+					<name>charsheet</name>
 				</frame>
+<!--LOBOSOLO updated the frame name for search - END -->
 				<script>
 					function onInit()
 						window.onSizeChanged = onSizeChanged;
@@ -327,8 +335,8 @@
 		</placement>
 		<sizelimits>
 			<minimum>
-				<width>700</width>
-				<height>550</height>			
+				<width>550</width>
+				<height>425</height>			
 			</minimum>
 			<dynamic>
 				<resize>both</resize>
@@ -361,16 +369,17 @@
 				<center />
 				<static>Library</static>
 			</basestringcontrol>-->
-			<basestringcontrol>
+<!--			<basestringcontrol>
 				<bounds>25,14,-30,17</bounds>
 				<font>sheetlabel</font>
 				<center />
 				<static>Library</static>
-			</basestringcontrol>
+			</basestringcontrol>-->
 			
 			<!-- Search Button -->
 			<genericcontrol name="search_frame">
-				<bounds>14,39,268,35</bounds>
+<!--LOBOSOLO updating bounds and offsets for art - BEGIN -->
+				<bounds>14,39,268,41</bounds>
 				<frame>
 					<name>sheetgroup</name>
 				</frame>
@@ -380,7 +389,7 @@
 				<anchored>
 					<to>search_frame</to>
 					<position>insidetopleft</position>
-					<offset>9,8</offset>
+					<offset>9,11</offset>
 					<size>
 						<height>20</height>
 						<width>20</width>
@@ -392,10 +401,11 @@
 				<anchored>
 					<to>search_frame</to>
 					<position>insidetopleft</position>
-					<offset>29,11</offset>
+					<offset>29,14</offset>
 					<size>
 						<height>17</height>
 						<width>200</width>
+<!--LOBOSOLO updating bounds and offsets for art - END -->
 					</size>					
 				</anchored>
 				<script>
@@ -412,20 +422,55 @@
 					end					
 				</script>
 			</basestringcontrol>			
-			
+<!--LOBOSOLO adding subframe to sections for offsets - BEGIN -->			
+			<sheetframe name="sections_title">
+				<bounds>23,80,250,-31</bounds>
+				<frame>
+					<name>sheetgroup</name>
+					<offset>9,3,9,6</offset>
+				</frame>		
+			</sheetframe>
+				
 			<!-- Sections -->
 			<basewindowlist name="sections">
 				<class>library_section</class>
 				<datasource>library</datasource>
-				<bounds>23,80,250,-30</bounds>
+				<!--<bounds>23,80,250,-31</bounds> -->
 				<skipempty /> 
-				<frame>
-					<name>sheetgroup</name>
-					<offset>9,7,9,6</offset>
-				</frame>
+				<anchored>
+					<left>
+						<parent>sections_title</parent>
+						<anchor>left</anchor>
+						<offset>0</offset>					
+					</left>
+					<right>
+						<parent>sections_title</parent>
+						<anchor>right</anchor>
+						<offset>-1</offset>					
+					</right>
+					<top>
+						<parent>sections_title</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>sections_title</parent>
+						<anchor>bottom</anchor>
+						<offset>-18</offset>
+					</bottom>
+				</anchored>
+	<!--LOBOSOLO adding subframe to sections for offsets - END -->			
 				<script file="classes/utilities/librarysections.lua" />
 			</basewindowlist>
-			<scrollercontrol>
+			<scrollbar>
+				<anchored>
+					<to>sections_title</to>
+					<offset>-7,-13</offset>
+				</anchored>
+				<target>sections</target>
+			</scrollbar>
+<!--LOBOSOLO updating offsets - END -->
+<!--			<scrollercontrol>
 				<anchored>
 					<to>sections</to>
 					<position>insidebottomright</position>
@@ -435,18 +480,49 @@
 					<normal>button_scroller</normal>
 					<pressed>button_scroller_down</pressed>
 				</button>
-			</scrollercontrol>
+			</scrollercontrol>-->
 
 			<!-- Entries -->
-			<basewindowlist name="entries">
-				<class>library_entry</class>
-				<bounds>292,50,-30,-30</bounds>
-				<useallmodules /> 
-				<skipempty />
+<!--LOBOSOLO adding subframe to entries for offsets - BEGIN -->			
+			<sheetframe name="entries_title">
+				<bounds>292,50,-30,-31</bounds>
 				<frame>
 					<name>sheetgroup</name>
 					<offset>11,11,9,6</offset>
-				</frame>
+				</frame>		
+			</sheetframe>
+			
+			<basewindowlist name="entries">
+				<class>library_entry</class>
+				<!--<bounds>292,50,-30,-30</bounds> -->
+				<useallmodules /> 
+				<skipempty />
+				<!--<frame>
+					<name>sheetgroup</name>
+					<offset>11,11,9,6</offset>
+				</frame> -->
+				<anchored>
+					<left>
+						<parent>entries_title</parent>
+						<anchor>left</anchor>
+						<offset>0</offset>					
+					</left>
+					<right>
+						<parent>entries_title</parent>
+						<anchor>right</anchor>
+						<offset>-1</offset>					
+					</right>
+					<top>
+						<parent>entries_title</parent>
+						<anchor>top</anchor>
+						<offset>7</offset>
+					</top>
+					<bottom>
+						<parent>entries_title</parent>
+						<anchor>bottom</anchor>
+						<offset>-10</offset>
+					</bottom>
+				</anchored>
 				<script>
 					function setNode(node)
 						if node then
@@ -515,7 +591,17 @@
 					end				
 				</script>
 			</basewindowlist>
-			<scrollercontrol name="scrollerone">
+<!--LOBOSOLO adding subframe to entries for offsets - END -->	
+			<scrollbar>
+				<anchored>
+					<to>entries_title</to>
+<!--LOBOSOLO updating offsets - BEGIN-->
+					<offset>-7,-10</offset>
+<!--LOBOSOLO updating offsets - END-->
+				</anchored>
+				<target>entries</target>
+			</scrollbar>			
+<!--			<scrollercontrol name="scrollerone">
 				<anchored>
 					<to>entries</to>
 					<position>insidebottomright</position>
@@ -525,7 +611,7 @@
 					<normal>button_scroller</normal>
 					<pressed>button_scroller_down</pressed>
 				</button>
-			</scrollercontrol>
+			</scrollercontrol>-->
 			
 			<!-- Search Dialog -->
 			<subwindow name="searchdialog">
@@ -534,16 +620,18 @@
 			</subwindow>
 
 			<!-- Close Button -->
+<!--LOBOSOLO updated close button position - BEGIN -->
 			<closebutton>
 				<anchored>
 					<top>
-						<offset>2</offset>
+						<offset>0</offset>
 					</top>
 					<right>
-						<offset>-5</offset>
+						<offset>-6</offset>
 					</right>
 				</anchored>
 			</closebutton>
+<!--LOBOSOLO updated close button position - END -->
 		</sheetdata>
 		<script>
 			function setEntriesNode(node)

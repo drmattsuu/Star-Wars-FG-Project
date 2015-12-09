@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <root>
-	<includefile source="graphics/cards/base.xml" />
 	<includefile source="graphics/chits/base.xml" />
 	<includefile source="graphics/dice/base.xml" />
 	<includefile source="graphics/fonts/base.xml" />

@@ -21,7 +21,7 @@
 	</windowclass>
 
 	<windowclass name="npc">
-		<frame>charsheet</frame>
+		<frame>charsheetgold</frame>
 		<placement>
 			<size>
 				<width>509</width>
@@ -44,10 +44,13 @@
 			<field>name</field>
 		</tooltip>
 		
+		<script file="classes/campaign/npc.lua" />
+		
 		<sheetdata>
 		<!-- CHARACTER -->
 			<sheetframe name="main_character">
-				<bounds>12,10,393,72</bounds>
+				<bounds>14,10,400,74</bounds>
+				<script file="classes/campaign/npc_init.lua" />
 			</sheetframe>
 			<sheetframetitle name="main_character_title">
 				<anchored>
@@ -61,37 +64,183 @@
 				<anchored>
 					<to>main_character</to>
 					<position>insidetopleft</position>
-					<offset>13,18</offset>
+					<offset>17,14</offset>
 					<size>
-						<width>218</width>
+						<width>268</width>
 					</size>
 				</anchored>
 				<label>Name</label>
 				<tabtarget>
-					<next>main_character_race</next>
+					<next>main_npc_category</next>
 					<prev>main_ace_expertise</prev>
 				</tabtarget>
 			</sheetstringfield>
 			
+			<!-- CATEGORY -->
+			<button_stringcycler name="main_npc_category" source="categoryname">
+				<anchored to="main_character" position="insidetopleft" offset="295,14" width="60" height="15" />
+				<parameters>
+					<labelsres>npc_category_nemesis|npc_category_minion</labelsres>
+					<values>nemesis|minion</values>
+					<defaultlabelres>npc_category_rival</defaultlabelres>
+				</parameters>
+				<script>
+					function onInit()
+						if super.onInit then super.onInit() end
+						
+						onValueChanged();					
+					end
+				
+					function onValueChanged()
+						
+						npcCategoryNode = window.getDatabaseNode().createChild("npc_category", "string");
+						if getValue() == "" then
+							npcCategoryNode.setValue("rival");
+						else
+							npcCategoryNode.setValue(string.lower(getValue()));
+						end
+							
+						
+					
+						if window.main.subwindow then
+							window.main.subwindow.onInit();
+						end
+					
+						if window.combat.subwindow then
+							window.combat.subwindow.onInit();
+						end
+					
+						if string.lower(getValue()) == "minion" then
+							window.main_minion_numbers.setVisible(true);
+						else
+							window.main_minion_numbers.setVisible(false);
+						end
+						
+						if window.skills.subwindow then
+
+							local visible = false;
+							
+							if string.lower(getValue()) == "minion" then
+								visible = true;
+							end
+							
+							local aRows = window.skills.subwindow.skills_basic_skills.getWindows();
+		
+							for k,v in pairs(aRows) do
+								v.skillcheck.setVisible(visible);	
+							end
+							
+							local aRows = window.skills.subwindow.skills_knowledge_skills.getWindows();
+		
+							for k,v in pairs(aRows) do
+								v.skillcheck.setVisible(visible);	
+							end
+
+							local aRows = window.skills.subwindow.skills_advanced_skills.getWindows();
+		
+							for k,v in pairs(aRows) do
+								v.skillcheck.setVisible(visible);	
+							end	
+						
+						end
+						
+					end
+				</script>
+				<tabtarget>
+					<next>main_character_race</next>
+					<prev>main_character_name</prev>
+				</tabtarget>				
+			</button_stringcycler>	
+
+			<sheettitle>
+				<anchored>
+					<top>
+						<parent>main_npc_category</parent>
+						<anchor>bottom</anchor>
+						<offset>-2</offset>						
+					</top>
+					<left>
+						<parent>main_npc_category</parent>
+						<anchor>left</anchor>
+						<offset>5</offset>
+					</left>
+<!--					<right>
+						<parent>main_npc_category</parent>
+						<anchor>right</anchor>
+						<offset>20</offset>
+					</right>-->
+					<size>
+						<height>20</height>
+						<width>50</width>
+					</size>
+				</anchored>
+				<center />
+				<static>category</static>
+			</sheettitle>	
+
+			<!-- NUMBER OF MINIONS -->
+			<sheetnumberfield name="main_minion_numbers" source="minion.minions_remaining">
+				<anchored>
+					<to>main_character</to>
+					<position>insidetopright</position>
+					<offset>15,14</offset>
+					<size>
+						<width>15</width>
+					</size>
+				</anchored>
+				<label>##</label>
+				<tabtarget>
+					<next>main_npc_category</next>
+					<prev>main_ace_expertise</prev>
+				</tabtarget>
+				<script>
+					function onInit()
+						if super.onInit then super.onInit() end
+						
+						if string.lower(window.main_npc_category.getValue()) == "minion" then
+							setVisible(true);
+						else
+							setVisible(false);
+						end
+
+						local sourcenode = getDatabaseNode();
+						
+						if sourcenode then						
+							sourcenode.onUpdate = onUpdate;
+						end
+					end
+					
+					function onUpdate(source)
+						if User.isHost() then
+							MinionManager.updateSkills(source);
+						end
+					end
+
+				</script>
+				<tooltip>
+					<text>Number of individual members remaining in the Minion group.  READ ONLY - this number is set based off the group wound information.</text>
+				</tooltip>		
+				<readonly />
+			</sheetnumberfield>			
+
 			<!-- RACE -->
 			<sheetstringfield name="main_character_race" source="race">
 				<anchored>
 					<to>main_character</to>
 					<position>insidetopleft</position>					
-					<offset>237,18</offset>
+					<offset>17,38</offset>
 					<size>
-						<width>143</width>
+						<width>218</width>
 					</size>
 				</anchored>
 				<label>Race</label>
 				<tabtarget>
-					<next>main_character_category</next>
+					<next>main_character_threat</next>
 					<prev>main_character_name</prev>
 				</tabtarget>
-			</sheetstringfield>			
+			</sheetstringfield>				
 			
-			<!-- CATEGORY -->
-			<sheetstringfield name="main_character_category" source="categoryname">
+<!--			<sheetstringfield name="main_npc_category" source="categoryname">
 				<anchored>
 					<to>main_character</to>
 					<position>insidetopleft</position>					
@@ -105,28 +254,28 @@
 					<next>main_character_threat</next>
 					<prev>main_character_race</prev>
 				</tabtarget>
-			</sheetstringfield>
+			</sheetstringfield>-->
 			
 			<!-- THREAT RATING -->
-			<sheetstringfield name="main_character_threat" source="threat">
+			<sheetstringfield name="main_character_type" source="type">
 				<anchored>
 					<to>main_character</to>
 					<position>insidetopleft</position>					
-					<offset>237,38</offset>
+					<offset>240,38</offset>
 					<size>
 						<width>143</width>
 					</size>
 				</anchored>
-				<label>Threat Rating</label>
+				<label>Type / Description</label>
 				<tabtarget>
-					<next>main_characteristics_brawn_current</next>
-					<prev>main_character_category</prev>
+					<next>main_character_name</next>
+					<prev>main_character_race</prev>
 				</tabtarget>
 			</sheetstringfield>
 					
 <!-- TOKEN -->			
 			<tokenfield name="main_token" source="token">
-				<bounds>409,15,64,64</bounds>
+				<bounds>415,15,64,64</bounds>
 				<empty>indicator_emptytoken</empty>
 				<script>
 					local dragging = false;
@@ -185,30 +334,31 @@
 			<subwindow name="main">
 				<bounds>0,75,-1,-1</bounds>
 				<class>npcmain</class>
-				<script file="classes/campaign/npc.lua" />				
+				<!--<script file="classes/campaign/npc.lua" />-->				
 			</subwindow>
 			<subwindow name="skills">
 				<bounds>0,75,-1,-1</bounds>
 				<class>charsheetskills</class>
-				<script file="classes/characters/charsheet.lua" />
+				<!--<script file="classes/characters/charsheet.lua" />-->
 			</subwindow>			
 			<subwindow name="combat">
 				<bounds>0,75,-1,-1</bounds>
 				<class>charsheetcombattab</class>
-				<script file="classes/campaign/npc.lua" />								
+				<!--<script file="classes/campaign/npc.lua" />-->								
 			</subwindow>			
 			<subwindow name="inventory">
 				<bounds>0,75,-1,-1</bounds>
-				<class>npcinventory</class>
-				<script file="classes/campaign/npc.lua" />								
+				<class>charsheetinventory</class>
+				<!--<class>npcinventory</class>-->
+				<!--<script file="classes/campaign/npc.lua" />-->								
 			</subwindow>
 			<subwindow name="starship">
 				<bounds>0,75,-1,-1</bounds>
 				<class>npcstarship</class>
-				<script file="classes/campaign/npc.lua" />								
+				<script file="classes/campaign/npcvehicle.lua" />								
 			</subwindow>			
 			<tabcontrol name="tabs">
-				<bounds>-22,28,18,509</bounds> 
+				<bounds>-22,28,18,492</bounds> 
 				<tab>
 					<icon>tab_main</icon>
 					<subwindow>main</subwindow>
@@ -226,7 +376,7 @@
 					<subwindow>inventory</subwindow>
 				</tab>	
 				<tab>
-					<icon>tab_starship</icon>
+					<icon>tab_vehicle</icon>
 					<subwindow>starship</subwindow>
 				</tab>	
 				<activate>1</activate>

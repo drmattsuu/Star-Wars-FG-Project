@@ -102,50 +102,71 @@
 		<bottomright rect="544,544,19,50" />
 	</framedef>
 
+<!--LOBOSOLO Updated Reference Frame Def for new Art BEGIN-->
 	<framedef name="referencebox">
 		<bitmap file="graphics/frames/referencebox.png" />
-		<topleft rect="0,0,14,12" />
-		<top rect="14,0,512,12" />
-		<topright rect="526,0,18,12" />
-		<left rect="0,12,14,508" />
-		<middle rect="14,12,512,508" />
-		<right rect="526,12,18,508" />
-		<bottomleft rect="0,520,14,14" />
-		<bottom rect="14,520,512,14" />
-		<bottomright rect="526,520,18,14" />
+		<topleft rect="0,0,64,40" />
+		<top rect="64,0,416,40" />
+		<topright rect="480,0,64,40" />
+		<left rect="0,40,64,468" />
+		<middle rect="64,40,416,468" />
+		<right rect="480,40,64,468" />
+		<bottomleft rect="0,508,64,26" />
+		<bottom rect="64,508,416,26" />
+		<bottomright rect="480,508,64,26" />
 	</framedef>
+<!--LOBOSOLO Updated Reference Frame Def for new Art END-->
 
+<!--LOBOSOLO Updated Tokencase Frame Def for new Art BEGIN-->
 	<framedef name="tokenbag">
 		<bitmap file="graphics/frames/tokencase2.png" />
-		<topleft rect="0,0,19,19" />
-		<top rect="19,0,290,19" />
-		<topright rect="309,0,29,19" />
-		<left rect="0,19,19,290" />
-		<middle rect="19,19,290,290" />
-		<right rect="309,19,29,290" />
-		<bottomleft rect="0,309,19,29" />
-		<bottom rect="19,309,290,29" />
-		<bottomright rect="309,309,29,29" />
+		<topleft rect="0,0,80,50" />
+		<top rect="80,0,120,50" />
+		<topright rect="638,0,80,50" />
+		<left rect="0,50,80,120" />
+		<middle rect="80,50,120,120" />
+		<right rect="638,50,80,120" />
+		<bottomleft rect="0,755,80,50" />
+		<bottom rect="80,755,120,50" />
+		<bottomright rect="638,755,80,50" />
 	</framedef>
+<!--LOBOSOLO Updated Tokencase Frame Def for new Art END-->
 
 	<framedef name="characterbox">
 		<bitmap file="graphics/frames/characterbox.png" />
 		<middle rect="0,0,676,430" />
 	</framedef>
 	
+<!--LOBOSOLO updating charsheet frame - BEGIN -->
 	<framedef name="charsheet">
 		<bitmap file="graphics/frames/charsheet.png" />
-		<topleft rect="0,0,22,22" />
-		<top rect="22,0,481,22" />
-		<topright rect="503,0,22,22" />
-		<left rect="0,22,22,567" />
-		<middle rect="22,22,481,567" />
-		<right rect="503,22,22,567" />
-		<bottomleft rect="0,589,22,22" />
-		<bottom rect="22,589,481,22" />
-		<bottomright rect="503,589,22,22" />
+		<topleft rect="0,0,29,29" />
+		<top rect="29,0,467,29" />
+		<topright rect="496,0,29,29" />
+		<left rect="0,29,29,553" />
+		<middle rect="29,29,467,553" />
+		<right rect="496,29,29,553" />
+		<bottomleft rect="0,582,29,29" />
+		<bottom rect="29,582,467,29" />
+		<bottomright rect="496,582,29,29" />
 	</framedef>
-	
+<!--LOBOSOLO updating charsheet frame - END -->
+
+<!--LOBOSOLO updating charsheet frame - BEGIN -->
+	<framedef name="charsheetgold">
+		<bitmap file="graphics/frames/charsheet_gold.png" />
+		<topleft rect="0,0,29,29" />
+		<top rect="29,0,467,29" />
+		<topright rect="496,0,29,29" />
+		<left rect="0,29,29,553" />
+		<middle rect="29,29,467,553" />
+		<right rect="496,29,29,553" />
+		<bottomleft rect="0,582,29,29" />
+		<bottom rect="29,582,467,29" />
+		<bottomright rect="496,582,29,29" />
+	</framedef>
+<!--LOBOSOLO updating charsheet frame - END -->	
+
 	<!-- Control component frames -->
 	<framedef name="chatboxhilight">
 		<bitmap file="graphics/frames/chatboxhilight.png" />
@@ -171,6 +192,97 @@
 		<middle rect="25,0,293,40" />
 		<right rect="318,0,30,40" />
 	</framedef>
+
+<!--LOBOSOLO - Title Frame Additions BEGIN-->
+	<framedef name="indexboxtitle2">
+		<bitmap file="graphics/frames/indexboxtitle02.png" />
+		<left rect="0,0,25,40" />
+		<middle rect="25,0,293,40" />
+		<right rect="318,0,30,40" />
+	</framedef>
+	
+	<framedef name="indexboxtitlepref">
+		<bitmap file="graphics/frames/preferences.png" />
+		<left rect="0,0,25,40" />
+		<middle rect="25,0,293,40" />
+		<right rect="318,0,30,40" />
+	</framedef>
+	
+	<framedef name="indexboxtitleexport">
+		<bitmap file="graphics/frames/export.png" />
+		<left rect="0,0,25,40" />
+		<middle rect="25,0,293,40" />
+		<right rect="318,0,30,40" />
+	</framedef>
+	
+	<framedef name="indexboxtitleportraits">
+		<bitmap file="graphics/frames/portraits.png" />
+		<left rect="0,0,25,40" />
+		<middle rect="25,0,293,40" />
+		<right rect="318,0,30,40" />
+	</framedef>
+
+	<framedef name="indexboxtitlecharacters">
+		<bitmap file="graphics/frames/characters.png" />
+		<left rect="0,0,25,40" />
+		<middle rect="25,0,293,40" />
+		<right rect="318,0,30,40" />
+	</framedef>
+	
+	<framedef name="indexboxtitledicebox">
+		<bitmap file="graphics/frames/dicebox.png" />
+		<left rect="0,0,25,40" />
+		<middle rect="25,0,293,40" />
+		<right rect="318,0,30,40" />
+	</framedef>
+
+	<framedef name="indexboxtitlecombattrack">
+		<bitmap file="graphics/frames/combat.png" />
+		<left rect="0,0,25,40" />
+		<middle rect="25,0,293,40" />
+		<right rect="318,0,30,40" />
+	</framedef>
+			
+	<framedef name="itemssaber">
+		<bitmap file="graphics/frames/items.png" />
+		<offset>1,1,1,1</offset>
+	</framedef>
+	
+	<framedef name="searchchat">
+		<bitmap file="graphics/frames/searchchat.png" />
+		<offset>1,1,1,1</offset>
+	</framedef>
+	
+	<framedef name="npcssaber">
+		<bitmap file="graphics/frames/npcs.png" />
+		<offset>1,1,1,1</offset>
+	</framedef>
+	
+	<framedef name="storysaber">
+		<bitmap file="graphics/frames/story.png" />
+		<offset>1,1,1,1</offset>
+	</framedef>
+	
+	<framedef name="imagessaber">
+		<bitmap file="graphics/frames/images.png" />
+		<offset>1,1,1,1</offset>
+	</framedef>
+	
+	<framedef name="notessaber">
+		<bitmap file="graphics/frames/notes.png" />
+		<offset>1,1,1,1</offset>
+	</framedef>
+	
+	<framedef name="tokenssaber">
+		<bitmap file="graphics/frames/tokens.png" />
+		<offset>1,1,1,1</offset>
+	</framedef>
+	
+	<framedef name="vehiclessaber">
+		<bitmap file="graphics/frames/vehicles.png" />
+		<offset>1,1,1,1</offset>
+	</framedef>
+<!--LOBOSOLO - Title Frame Additions END-->
 
 	<framedef name="tokenbagbar">
 		<bitmap file="graphics/frames/tokenbagbar.png" />
@@ -243,6 +355,14 @@
 		<bottomright rect="212,199,12,12" />
 	</framedef>
 
+<!--LOBOSOLO Edit to resolve graphical error in sheetgroup - BEGIN-->
+	<framedef name="sheetgroup">
+		<bitmap file="graphics/frames/sheetgroup.png" />
+		<offset>20,20,20,20</offset>
+	</framedef>
+<!--LOBOSOLO Edit to resolve graphical error in sheetgroup - END-->
+
+<!--OLD FRAMEDEF
 	<framedef name="sheetgroup">
 		<bitmap file="graphics/frames/sheetgroup.png" />
 		<topleft rect="0,0,18,18" />
@@ -254,7 +374,7 @@
 		<bottomleft rect="0,530,18,17" />
 		<bottom rect="18,530,512,17" />
 		<bottomright rect="530,530,17,17" />
-	</framedef>
+	</framedef>-->
 
 	<framedef name="textline">
 		<bitmap file="graphics/frames/textline.png" />
@@ -320,6 +440,19 @@
 		<bottomright rect="147,147,3,3" />
 	</framedef>
 
+	<framedef name="collectordesk">
+		<bitmap file="graphics/frames/collector_desk.png" />
+		<topleft rect="0,0,7,7" />
+		<top rect="7,0,140,7" />
+		<topright rect="147,0,3,7" />
+		<left rect="0,7,7,140" />
+		<middle rect="7,7,140,140" />
+		<right rect="147,7,3,140" />
+		<bottomleft rect="0,147,7,3" />
+		<bottom rect="7,147,140,3" />
+		<bottomright rect="147,147,3,3" />
+	</framedef>
+	
 	<!-- Chat die box frame -->	
 	<framedef name="diebox">
 		<bitmap file="graphics/frames/diebox.png" />
@@ -426,7 +559,7 @@
 		<bitmap file="graphics/frames/rowshade.png" />
 		<middle rect="0,0,200,100" />
 	</framedef>
-
+	
 	<framedef name="tabs">
 		<bitmap file="graphics/frames/tabs.png" />
 		<topleft rect="0,0,18,13" />
@@ -474,4 +607,9 @@
 		<bitmap file="graphics/frames/headerref.png" />
 		<middle rect="0,0,128,128" />
 	</framedef>	
+	
+	<framedef name="fielddark">
+		<bitmap file="graphics/frames/modifier.png" />
+		<offset>12,12,12,12</offset>
+	</framedef>
 </root>

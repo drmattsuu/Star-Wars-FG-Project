@@ -16,6 +16,11 @@
 				<bounds>0,0,55,55</bounds>
 				<type>dChallenge</type>
 				<modifier>mChallenge</modifier>
+<!-- LOBOSOLO adding tooltip to die - BEGIN -->
+				<tooltip>
+					<text>Challenge Die</text>
+				</tooltip>
+<!-- LOBOSOLO adding tooltip to die - END -->
 			</diepanel>
 		</sheetdata>
 	</windowclass>

@@ -2,12 +2,17 @@
 <root>
 
 	<categoryselectionsettings>
-		<iconposition normal="6,6" selected="6,4" />
+<!--LOBOSOLO updated icon positions for new art - BEGIN -->
+		<iconposition normal="8,10" selected="8,7" />
+<!--LOBOSOLO updated icon positions for new art - END -->
 		<baseicon normal="tab_base1" selected="tab_base1s" />
 		<baseicon normal="tab_base2" selected="tab_base2s" />
 		<baseicon normal="tab_base3" selected="tab_base3s" />
 		<baseicon normal="tab_base4" selected="tab_base4s" />
 		<baseicon normal="tab_base5" selected="tab_base5s" />
+<!--LOBOSOLO added tab_base6 (black) - BEGIN -->
+		<baseicon normal="tab_base6" selected="tab_base6s" />
+<!--LOBOSOLO added tab_base6 (black) - END -->
 		<decalicon name="tab_icon1" />
 		<decalicon name="tab_icon2" />
 		<decalicon name="tab_icon3" />
@@ -16,6 +21,13 @@
 		<decalicon name="tab_icon6" />
 		<decalicon name="tab_icon7" />
 		<decalicon name="tab_icon8" />
+<!--LOBOSOLO added 5 more tab icons - BEGIN -->
+		<decalicon name="tab_icon9" />
+		<decalicon name="tab_icon10" />
+		<decalicon name="tab_icon11" />
+		<decalicon name="tab_icon12" />
+		<decalicon name="tab_icon13" />
+<!--LOBOSOLO added 5 more tab icons - END -->
 	</categoryselectionsettings>
 
 </root>

@@ -23,5 +23,7 @@ function onMenuSelection(item)
 end
 
 function onDrop(x, y, draginfo)
-	return NpcManager.onDrop(getDatabaseNode(), x, y, draginfo);
+	Debug.console("initslotempty.lua:onDrop.  Class = " .. self.getClass());
+	NpcManager.onDrop(getDatabaseNode(), x, y, draginfo);
+	return true;
 end

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="attachmentmodsmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+<!--			<windowbutton name="open">
+				<bounds>0,1,20,20</bounds>
+				<class>obligation</class>
+			</windowbutton>-->
+			<basestringfield name="name">
+				<bounds>5,4,212,17</bounds>
+				<empty>&#171; New Mod &#187;</empty>
+				<!--<disabled />-->				
+			</basestringfield>	
+			
+			<button_iconcycler name="mod_installed">
+				<bounds>202,3,20,17</bounds>
+				<!--<anchored width="20" height="20" />-->
+				<parameters>
+					<icons>poll_check|poll_negative</icons>
+					<values>installed|failed</values>
+					<tooltipsres>tooltip_modinstalled|tooltip_modinstallfailed</tooltipsres>
+					<defaulttooltipres>tooltip_modnotinstalled</defaulttooltipres>
+					<defaulticon>poll_empty</defaulticon>
+				</parameters>
+				<!--<gmeditonly />-->
+<!--				<script>
+					function onValueChanged()
+						window.onFactionChanged();
+					end
+				</script>-->
+			</button_iconcycler>
+		
+<!--			<basenumberfield name="state">			
+				<bounds>-20,4,-1,17</bounds>
+				<disabled />
+				<zerocolor>000000</zerocolor>
+				<script>
+					function onValueChanged()
+						window.windowlist.onListChanged();
+					end
+				</script>
+			</basenumberfield>	-->		
+		</sheetdata>
+	</windowclass>
+	
+	<windowclass name="attachmentmods">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<minimize>minimized_reference</minimize>
+		<playercontrol />
+		<sharable />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+<!-- NAME -->
+			<sheetframe name="mods_name">
+				<bounds>14,15,264,49</bounds>
+			</sheetframe>
+			
+			<sheetframetitle name="mods_name_title">
+				<anchored>
+					<to>mods_name</to>
+				</anchored>
+				<static>Attachment</static>
+			</sheetframetitle>			
+			
+			<windowshortcut name="mods_name_shortcut">
+				<anchored>
+					<to>mods_name</to>
+					<position>insidetopleft</position>					
+					<offset>17,18</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>attachment</class>
+			</windowshortcut>
+			<basestringfield name="mods_name_name" source="name">
+				<anchored>			
+					<to>mods_name</to>
+					<position>insidetopleft</position>					
+					<offset>38,19</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Attachment &#187;</empty>
+				<tabtarget>
+					<next>mods_mods_description</next>
+					<prev>mods_traits_traits</prev>
+				</tabtarget>				
+			</basestringfield>		
+
+<!-- MODS LIST -->
+			<sheetframe name="mods_mods">
+				<bounds>14,61,264,158</bounds>
+			</sheetframe>
+			<sheetframetitle name="mods_mods_title">
+				<anchored>
+					<to>mods_mods</to>
+				</anchored>
+				<static>Modification Options</static>
+			</sheetframetitle>
+			<sheetframetitle name="mods_mods_type">
+				<anchored>
+					<to>mods_mods</to>
+					<position>insidetopleft</position>
+					<offset>17,20</offset>
+					<size>
+						<width>50</width>
+					</size>					
+				</anchored>
+				<center />
+				<static>Mod Type</static>
+				<tooltip textres="inventory_inventory_isequipped" />
+			</sheetframetitle>			
+			<sheetframetitle name="mods_mods_installed">
+				<anchored>
+					<to>mods_mods</to>
+					<position>insidetopright</position>
+					<offset>13,20</offset>
+					<size>
+						<width>55</width>
+					</size>					
+				</anchored>
+				<center />
+				<static>Installed?</static>
+			</sheetframetitle>			
+			
+<!--			<sheetformattedtextfield name="mods_mods_list" source="mods_list">
+				<anchored>
+					<left>
+						<parent>mods_mods</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>mods_mods</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>mods_mods</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>mods_mods</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>mods_mods_list</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>mods_mods_list</target>
+			</scrollbar>-->
+
+			<basewindowlist name="mods_mods_list">
+				<skipempty />
+				<anchored>
+					<left>
+						<parent>mods_mods</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>mods_mods</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>mods_mods</parent>
+						<anchor>top</anchor>
+						<offset>30</offset>
+					</top>
+					<bottom>
+						<parent>mods_mods</parent>
+						<anchor>bottom</anchor>
+						<offset>-20</offset>
+					</bottom>
+				</anchored>
+				<datasource>.mods</datasource>
+				<class>attachmentmodsmall</class>
+				<allowcreate />
+				<allowdelete /> 
+				<acceptdrop>
+					<class>attachmentmod</class>
+					<field>*</field>
+				</acceptdrop>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>mods_mods_list</to>
+					<offset>-3,0</offset>
+				</anchored>
+				<target>mods_mods_list</target>
+			</scrollbar>			
+			
+<!-- TRAITS -->
+			<sheetframe name="mods_traits">
+				<bounds>14,216,264,106</bounds>
+			</sheetframe>
+			
+			<!--** Value ** -->
+			<sheetlabel>
+				<anchored>
+					<to>mods_traits</to>
+					<offset>17,18</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Price</static>
+			</sheetlabel>			
+			<sheetstringfield name="mods_inventory_value" source="value">
+				<anchored>
+					<top>
+						<parent>mods_traits</parent>
+						<anchor>top</anchor>
+						<offset>15</offset>
+					</top>
+					<right>
+						<parent>mods_traits</parent>
+						<anchor>right</anchor>
+						<offset>-16</offset>
+					</right>
+				</anchored>
+				<empty>&#171; Price &#187;</empty>
+				<tabtarget>
+					<next>mods_inventory_hardpoints</next>
+					<prev>mods_name_name</prev>
+				</tabtarget>
+				<center />
+			</sheetstringfield>			
+			
+			<!--** Hard Points **-->
+			<sheetlabel>
+				<anchored>
+					<to>mods_traits</to>
+					<offset>17,38</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Hard Points Required</static>
+			</sheetlabel>			
+			<sheetnumberfield name="mods_inventory_hardpoints" source="hardpoints">
+				<anchored>
+					<to>mods_traits</to>
+					<offset>201,38</offset>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<empty>&#171; Hard Points &#187;</empty>
+				<tabtarget>
+					<next>mods_inventory_rarity</next>
+					<prev>mods_inventory_value</prev>
+				</tabtarget>
+			</sheetnumberfield>	
+
+			<!--** Rarity **-->
+			<sheetlabel>
+				<anchored>
+					<to>mods_traits</to>
+					<offset>17,58</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Rarity</static>
+			</sheetlabel>			
+			<sheetstringfield name="mods_inventory_rarity" source="rarity">
+				<anchored>
+					<top>
+						<parent>mods_traits</parent>
+						<anchor>top</anchor>
+						<offset>55</offset>
+					</top>
+					<right>
+						<parent>mods_traits</parent>
+						<anchor>right</anchor>
+						<offset>-16</offset>
+					</right>
+				</anchored>
+				<empty>&#171; Rarity &#187;</empty>
+				<tabtarget>
+					<next>mods_inventory_encumbrance</next>
+					<prev>mods_inventory_craftmanship</prev>
+				</tabtarget>
+				<center />
+			</sheetstringfield>
+			
+			<!--** encumbrance **-->
+			<sheetlabel>
+				<anchored>
+					<to>mods_traits</to>
+					<offset>17,78</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Encumbrance</static>
+			</sheetlabel>
+			<sheetnumberfield name="mods_inventory_encumbrance" source="encumbrance">
+				<anchored>
+					<to>mods_traits</to>
+					<offset>201,78</offset>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>mods_name_name</next>
+					<prev>mods_inventory_rarity</prev>
+				</tabtarget>
+			</sheetnumberfield>	
+			
+			<closebutton />
+		</sheetdata>
+	</windowclass>	
+	
+</root>

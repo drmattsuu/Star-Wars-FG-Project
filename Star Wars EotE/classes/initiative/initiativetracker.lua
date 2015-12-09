@@ -4,12 +4,16 @@ function onInit()
 		--registerMenuItem("End of Turn Actions", "deletetoken", 4);
 	end
 	if User.isHost() then
-		registerMenuItem("Delete all NPCs from tracker", "delete", 6);		
+		registerMenuItem("Delete all NPCs from tracker", "delete", 6);
+		registerMenuItem("CONFIRM - Delete all NPCs from tracker???", "delete", 6, 3);		
 	end
 	
 	self.onSizeChanged = onSizeChanged;
 	
 	InitiativeManager.buildActedThisRound();
+	
+	-- Show or hide vehicles based off showvehicles button state
+	toggleVehicles(showvehicles.getState());
 	
 end
 
@@ -18,16 +22,18 @@ function onSizeChanged(source)
 		if source then
 			local wWindow, hWindow = source.getSize();
 			local listcontrolheight = (hWindow - 140) / 2;
-			source.trackerinitslotlist.setStaticBounds(0, 30, -18, listcontrolheight);
-			source.actorlist.setStaticBounds(0, -55 - listcontrolheight, -18, listcontrolheight);
+--LOBOSOLO updating bounds of lists - BEGIN--
+			source.trackerinitslotlist.setStaticBounds(12, 62, -28, listcontrolheight - 17);
+			source.actorlist.setStaticBounds(12, -35 - listcontrolheight, -28, listcontrolheight - 17);
+--LOBOSOLO updating bounds of lists - END--
 		end					
 	end
 end
 
-function onMenuSelection(item)
+function onMenuSelection(item, subitem)
 	if item == 4 then
 		NpcManager.endOfTurn(getDatabaseNode());
-	elseif item == 6 then
+	elseif item == 6 and subitem == 3 then
 		for k,v in pairs (trackerinitslotlist.getWindows()) do
 			if v.initslotclassname.getValue() == "npc" then
 				InitiativeManager.removeInitSlot(v.getDatabaseNode());
@@ -119,6 +125,11 @@ function rollNPCInit()
 			Debug.console("initiativetracker.lua:rollAllInit - actorlist npcactor node = " .. v.getDatabaseNode().getNodeName());
 			
 			local skillsnode = v.getDatabaseNode().getChild("skills");
+			if not skillsnode then
+				Debug.chat("No skills node available to roll initiative - skipping.  Make sure the skills tab on the NPC sheet has previously been opened for: " .. v.getDatabaseNode().getChild("name").getValue())
+				break;
+			end
+			
 			local initskillnode = nil;
 			local initskillname = "";
 			--Debug.console("Skills node = " .. skillsnode.getNodeName());
@@ -219,3 +230,42 @@ function clearAllInit()
 	end
 
 end
+
+function toggleVehicles(showVehicles)
+	-- Shows or hides vehicle line in actorlist based off showvehicles button state
+	for k,v in pairs(actorlist.getWindows()) do
+		toggleVehicle(v, showVehicles);
+	end
+end
+
+function toggleVehicle(wHandle, showVehicle)
+	-- If either the CT wide showvehicles or the actor showvehicleinct or false, hide the actor vehicle details.
+	if not wHandle.showvehicleinct.getState() or not showvehicles.getState() then
+		showVehicle = false;
+	end
+	Debug.console("wHandle class name = " .. wHandle.getClass());
+	if User.isHost() or wHandle.getClass() == "actorcharsheet" then
+		wHandle.maxspeed_label.setVisible(showVehicle);
+		wHandle.vehicle_speed.setVisible(showVehicle);
+		wHandle.vehicle_strain_threshold.setVisible(showVehicle);
+		wHandle.vehicle_strain_current.setVisible(showVehicle);
+		wHandle.vehicle_hull_trauma_threshold.setVisible(showVehicle);
+		wHandle.vehicle_hull_trauma_current.setVisible(showVehicle);	
+	else
+		wHandle.maxspeed_label.setVisible(false);
+		wHandle.vehicle_speed.setVisible(false);
+		wHandle.vehicle_strain_threshold.setVisible(false);
+		wHandle.vehicle_strain_current.setVisible(false);
+		wHandle.vehicle_hull_trauma_threshold.setVisible(false);
+		wHandle.vehicle_hull_trauma_current.setVisible(false);	
+	end
+	wHandle.vehicle_token.setVisible(showVehicle);
+	wHandle.vehicle_name.setVisible(showVehicle);
+	wHandle.silhouette_label.setVisible(showVehicle);
+	wHandle.vehicle_silhouette.setVisible(showVehicle);
+	wHandle.currentspeed_label.setVisible(showVehicle);
+	wHandle.vehicle_currentspeed.setVisible(showVehicle);
+
+end
+
+

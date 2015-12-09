@@ -212,12 +212,14 @@
 		<sheetdata>
 			<!-- Title -->
 			<genericcontrol>
-				<bounds>150,0,200,40</bounds>
+<!--LOBOSOLO updated bounds for preferences title - BEGIN -->
+				<bounds>100,0,300,40</bounds>
 				<frame>
-					<name>indexboxtitle</name>
+					<name>indexboxtitlepref</name>
 				</frame>
 			</genericcontrol>
-			
+<!--LOBOSOLO updated bounds for preferences title - END -->
+<!--LOBOSOLO remove title from frame - BEGIN -				
 			<basestringcontrol>
 				<bounds>26,15,-30,17</bounds>
 				<font>sheetlabel</font>
@@ -231,45 +233,51 @@
 				<center />
 				<static>Preferences</static>
 			</basestringcontrol>
-			
+			- END -->
+<!--LOBOSOLO update the bounds of the frame for new art - BEGIN -->	
 			<!-- Generic -->
 			<genericcontrol name="genericframe">
-				<bounds>23,44,-27,-27</bounds>
+				<bounds>23,50,-28,-49</bounds>
 				<frame>
 					<name>sheetgroup</name>
-					<offset>9,7,9,6</offset>
+					<offset>10,11,10,11</offset>
 				</frame>
 			</genericcontrol>
 			
 			<!-- Items -->
 			<basewindowlist name="groups">
 				<class>preferences_entrygroup</class>
-				<bounds>23,44,-27,-27</bounds>
+				<bounds>28,55,-32,-56</bounds>
 				<skipempty />
+<!--LOBOSOLO update the bounds of the frame for new art - END -->
 				<script>
 					function onSortCompare(w1, w2)
 						return w1.label.getValue() &gt; w2.label.getValue();
 					end
 				</script>
 			</basewindowlist>
+<!--LOBOSOLO updating offsets of the scrollbar - BEGIN -->
 			<scrollbar>
 				<anchored>
 					<to>groups</to>
-					<offset>-8,-5</offset>					
+					<offset>-2,-2</offset>					
 				</anchored>
 				<target>groups</target>
 			</scrollbar>
+<!--LOBOSOLO updating offsets of the scrollbar - END -->
 			
+<!--LOBOSOLO update the anchor of the close button - BEGIN -->
 			<closebutton>
 				<anchored>
 					<top>
-						<offset>2</offset>
+						<offset>0</offset>
 					</top>
 					<right>
-						<offset>-5</offset>
+						<offset>-6</offset>
 					</right>
 				</anchored>
 			</closebutton>
+<!--LOBOSOLO update the anchor of the close button - END -->
 		</sheetdata>
 	</windowclass>
 </root>

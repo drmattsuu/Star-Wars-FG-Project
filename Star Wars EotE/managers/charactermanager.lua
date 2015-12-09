@@ -2,6 +2,7 @@ local SPECIAL_MSGTYPE_ADDPLAYERDICE = "addplayerdice";
 local SPECIAL_MSGTYPE_PCSELECTED = "pcselected";
 
 local addWoundsRunning = false;
+local addStrainRunning = false;
 
 function onInit()
 	if User.isHost() or User.isLocal() then
@@ -122,6 +123,8 @@ function openCharacterSheet(characternode, identity)
 			Interface.openWindow("charsheet", characternode);
 			-- Call the OOB message so that the GM can give this player ownership of the character in the database.
 			playerSelectedPC(characternode, User.getUsername());
+			-- Change name in diebox viewer - need to tell the GM to rebuild the die box viewer
+			DieBoxViewListManager.remoteRebuildDieBoxData();			
 		else
 			charactersheetwindowreference.close();		
 		end
@@ -150,7 +153,7 @@ end
 
 function onDrop(characternode, x, y, draginfo)
 
-	--Debug.console("charactermanager.lua:onDrop: Type = " .. draginfo.getType());
+	Debug.console("charactermanager.lua:onDrop: Type = " .. draginfo.getType());
 
 	-- Added to allow dragging of damage (type = wounds) drag data.
 	if draginfo.isType("wounds") then
@@ -173,6 +176,7 @@ function onDrop(characternode, x, y, draginfo)
 	-- Shortcuts
 	if draginfo.isType("shortcut") then
 		local class, recordname = draginfo.getShortcutData();
+		Debug.console("charactermanager.lua:onDrop: shortcut class = " .. class);
 		
 		-- Ability
 		if class == "ability" then
@@ -182,99 +186,51 @@ function onDrop(characternode, x, y, draginfo)
 			end
 		end
 		
-		-- Blessing
-		if class == "blessing" then
+		-- Talent
+		if class == "talent" then
 			local recordnode = DB.findNode(recordname);
 			if recordnode then
-				return addBlessing(characternode, recordnode);
+				return addTalent(characternode, recordnode);
 			end
-		end
+		end		
 		
-		-- Melee
-		if class == "melee" then
+		-- Obligation
+		if class == "obligation" then
 			local recordnode = DB.findNode(recordname);
 			if recordnode then
-				return addMelee(characternode, recordnode);
+				return addObligation(characternode, recordnode);
 			end
-		end
+		end	
 		
-		-- Ranged
-		if class == "ranged" then
+		-- Duty
+		if class == "duty" then
 			local recordnode = DB.findNode(recordname);
 			if recordnode then
-				return addRanged(characternode, recordnode);
+				return addDuty(characternode, recordnode);
 			end
 		end
-		
-		-- Social
-		if class == "social" then
+
+		-- Morality
+		if class == "morality" then
 			local recordnode = DB.findNode(recordname);
 			if recordnode then
-				return addSocial(characternode, recordnode);
+				return addMorality(characternode, recordnode);
 			end
 		end
-		
-		-- Spell
-		if class == "spell" then
+
+		-- Motivation
+		if class == "motivation" then
 			local recordnode = DB.findNode(recordname);
 			if recordnode then
-				return addSpell(characternode, recordnode);
+				return addMotivation(characternode, recordnode);
 			end
-		end
-		
-		-- Support
-		if class == "support" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addSupport(characternode, recordnode);
-			end
-		end
-		
-		-- Career
-		if class == "career" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addCareer(characternode, recordnode)
-			end
-		end
+		end		
 		
 		-- Condition
 		if class == "condition" then
 			local recordnode = DB.findNode(recordname);
 			if recordnode then
 				return addCondition(characternode, recordnode);
-			end
-		end
-		
-		-- Critical
-		if class == "critical" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addCritical(characternode, recordnode);
-			end
-		end
-		
-		-- Disease
-		if class == "disease" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addDisease(characternode, recordnode);
-			end
-		end
-		
-		-- Insanity
-		if class == "insanity" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addInsanity(characternode, recordnode);
-			end
-		end
-		
-		-- Invention
-		if class == "invention" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addInvention(characternode, recordnode);
 			end
 		end
 		
@@ -286,22 +242,6 @@ function onDrop(characternode, x, y, draginfo)
 			end
 		end
 		
-		-- Miscast
-		if class == "miscast" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addMiscast(characternode, recordnode);
-			end
-		end
-		
-		-- Mutation
-		if class == "mutation" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addMutation(characternode, recordnode);
-			end
-		end
-		
 		-- Skill
 		if class == "skill" then
 			local recordnode = DB.findNode(recordname);
@@ -310,85 +250,22 @@ function onDrop(characternode, x, y, draginfo)
 			end
 		end
 		
-		-- Faith
-		if class == "faith" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addFaith(characternode, recordnode);
-			end
-		end
-		
-		-- Focus
-		if class == "focus" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addFocus(characternode, recordnode);
-			end
-		end
-		
-		-- Oath
-		if class == "oath" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addOath(characternode, recordnode);
-			end
-		end
-		
-		-- Order
-		if class == "order" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addOrder(characternode, recordnode);
-			end
-		end
-		
-		-- Reputation
-		if class == "reputation" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addReputation(characternode, recordnode);
-			end
-		end
-		
-		-- Tactic
-		if class == "tactic" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addTactic(characternode, recordnode);
-			end
-		end
-		
-		-- Pet
-		if class == "pet" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addPet(characternode, recordnode);
-			end
-		end
-		
-		-- Horse
-		if class == "horse" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addHorse(characternode, recordnode);
-			end
-		end
-		
-		-- Retainer
-		if class == "retainer" then
-			local recordnode = DB.findNode(recordname);
-			if recordnode then
-				return addRetainer(characternode, recordnode);
-			end
-		end
-		
 		-- Rune
 		if class == "rune" then
+--			local recordnode = DB.findNode(recordname);
+--			if recordnode then
+--				return addRune(characternode, recordnode);
+--			end		
+			return true;
+		end
+		
+		-- Vehicle
+		if class == "vehicle" then
 			local recordnode = DB.findNode(recordname);
 			if recordnode then
-				return addRune(characternode, recordnode);
-			end		
-		end
+				return addVehicle(characternode, recordnode);
+			end
+		end		
 
 		-- Share
 		local class, recordname = draginfo.getShortcutData();
@@ -397,28 +274,19 @@ function onDrop(characternode, x, y, draginfo)
 
 	-- Chits
 	if draginfo.isType("chit") then
-		if draginfo.getCustomData() == "fortune" then
-			return addFortune(characternode);
-		elseif draginfo.getCustomData() == "stress" then
-			return addStress(characternode);
-		elseif draginfo.getCustomData() == "fatigue" then
-			return addFatigue(characternode);
-		elseif draginfo.getCustomData() == "wound" then
+		Debug.console("draginfo.getCustomData() = " .. draginfo.getCustomData());
+		if draginfo.getCustomData() == "wound" then
 			return addWound(characternode);
 		elseif draginfo.getCustomData() == "strain" then
 			return addStrain(characternode);
-		elseif draginfo.getCustomData() == "power" then
-			return addPower(characternode);
-		elseif draginfo.getCustomData() == "favour" then
-			return addFavour(characternode);
-		elseif draginfo.getCustomData() == "corruption" then
-			return addCorruption(characternode);
-		elseif draginfo.getCustomData() == "crown" then
-			return addGold(characternode);
-		elseif draginfo.getCustomData() == "shilling" then
-			return addSilver(characternode);
-		elseif draginfo.getCustomData() == "penny" then
-			return addBrass(characternode);
+		elseif draginfo.getCustomData() == "critical" then
+			return addCritical(characternode);
+		elseif draginfo.getCustomData() == "criticalvehicle" then
+			return addCriticalVehicle(characternode);			
+		elseif string.find(draginfo.getCustomData(), "woundchit_") then
+			addWoundsChit(characternode, draginfo);
+		elseif string.find(draginfo.getCustomData(), "strainchit_") then
+			addStrainChit(characternode, draginfo);			
 		end		
 	end
 	
@@ -440,9 +308,11 @@ function sendWhisper(characternode, message)
 		msg.text = message;
 		msg.font = "msgfont";
 		
+		Debug.console("Sending whisper to: ", User.getIdentityOwner(getIdentityName(characternode)));
+		
 		-- send to the user
 		msg.sender = "<whisper>";
-		ChatManager.deliverMessage(msg, User.getIdentityOwner(getIdentityName(characternode)));
+		Comm.deliverChatMessage(msg, User.getIdentityOwner(getIdentityName(characternode)));
 		
 		-- add to the hosts chat window
 		msg.sender = "-> " .. User.getIdentityLabel(getIdentityName(characternode));
@@ -544,59 +414,6 @@ function removeChildRecharge(node)
 	return rechargeremoved;
 end
 
-function addFortune(characternode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-
-		-- get the fortune characternode
-		local currentnode = characternode.createChild("fortune.current", "number");
-		local maximumnode = characternode.createChild("fortune.maximum", "number");		
-		if currentnode and maximumnode then
-		
-			-- get the fortune values
-			local currentvalue = currentnode.getValue();
-			local maximumvalue = maximumnode.getValue();
-			
-			-- increase the characters fortune if required
-			if maximumvalue > currentvalue then
-			
-				-- increase the characters fortune
-				currentnode.setValue(currentvalue + 1);
-
-				-- print a message
-				local msg = {};
-				msg.font = "msgfont";								
-				msg.text = getCharacterName(characternode) .. " has gained fortune";
-				ChatManager.deliverMessage(msg);
-			
-				-- and return
-				return true;
-			end
-		end
-	end
-end
-
-function addStress(characternode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-
-		-- get the stress characternode
-		local stressnode = characternode.createChild("stress", "number");
-		if stressnode then
-
-			-- increase the characters stress
-			stressnode.setValue(stressnode.getValue() + 1);
-
-			-- print a message
-			local msg = {};
-			msg.font = "msgfont";											
-			msg.text = getCharacterName(characternode) .. " has gained stress";
-			ChatManager.deliverMessage(msg);
-			
-			-- and return
-			return true;
-		end
-	end
-end
-
 function addStrain(characternode)
 	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
 
@@ -619,26 +436,80 @@ function addStrain(characternode)
 	end
 end
 
-function addFatigue(characternode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
+function addCritical(characternode)
 
-		-- get the fatigue characternode
-		local fatiguenode = characternode.createChild("fatigue", "number");
-		if fatiguenode then
-
-			-- increase the characters fatigue
-			fatiguenode.setValue(fatiguenode.getValue() + 1);
-
-			-- print a message
-			local msg = {};
-			msg.font = "msgfont";											
-			msg.text = getCharacterName(characternode) .. " has gained fatigue";
-			ChatManager.deliverMessage(msg);
+	Debug.console("Running addCritical.  characternode = " .. characternode.getNodeName());
+	
+--	if User.isHost() or User.isOwnedIdentity(getIdentityName(characternode)) then	
+	
+			-- get the criticals node.  Used to check the number of current criticals sustained.
+			local criticalsnode = characternode.createChild("criticals");
 			
-			-- and return
-			return true;
-		end
-	end
+			-- Get the current number of criticals sustained.
+			
+			local critsSustained = criticalsnode.getChildCount();
+			local modifier = critsSustained * 10;
+			
+			-- Roll d100 and add criticals sustained x 10.
+			
+			-- Set the description
+			local description = "[CRITICAL]"
+			
+			-- build the dice table
+			local dice = {};
+			table.insert(dice, "d100");
+			table.insert(dice, "d10");
+			
+			-- character node name - used to apply result of critical in Chat Manager critical result handler
+			if characternode then
+				characternodename = characternode.getNodeName();
+			end
+			
+			-- throw the dice - need to handle the result in the chatmanager handler.
+			ChatManager.throwDice("dice", dice, modifier, description, {characternodename, msgidentity, gmonly});
+
+		-- and return
+		return true;
+		
+--	end
+end
+
+function addCriticalVehicle(characternode)
+
+	Debug.console("Running addCriticalVehicle.  characternode = " .. characternode.getNodeName());
+	
+--	if User.isHost() or User.isOwnedIdentity(getIdentityName(characternode)) then	
+	
+			-- get the criticals node.  Used to check the number of current criticals sustained.
+			local criticalsnode = characternode.createChild("vehicle.shipcriticals");
+			
+			-- Get the current number of criticals sustained.
+			
+			local critsSustained = criticalsnode.getChildCount();
+			local modifier = critsSustained * 10;
+			
+			-- Roll d100 and add criticals sustained x 10.
+			
+			-- Set the description
+			local description = "[CRITVEHICLE]"
+			
+			-- build the dice table
+			local dice = {};
+			table.insert(dice, "d100");
+			table.insert(dice, "d10");
+			
+			-- character node name - used to apply result of critical in Chat Manager critical result handler
+			if characternode then
+				characternodename = characternode.getNodeName();
+			end
+			
+			-- throw the dice - need to handle the result in the chatmanager handler.
+			ChatManager.throwDice("dice", dice, modifier, description, {characternodename, msgidentity, gmonly});
+
+		-- and return
+		return true;
+		
+--	end
 end
 
 function addWound(characternode)
@@ -663,8 +534,59 @@ function addWound(characternode)
 	end
 end
 
+function addWoundsChit(characternode, draginfo)
+--	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
+	
+		if string.find(draginfo.getCustomData(), "woundchit_soak") then
+			local woundChitValue = "[Damage: " .. string.gsub(draginfo.getCustomData(),"woundchit_soak_", "") .. "]";
+			addWounds(characternode, woundChitValue);
+			return true;
+		end
+		
+		-- Adding wounds without soak.
+
+		-- get the wounds characternode
+		local woundsnode = characternode.createChild("wounds.current", "number");
+		if woundsnode then
+		
+			local woundChitValue = string.gsub(draginfo.getCustomData(),"woundchit_nosoak_", "");
+			--Debug.console("Woundchit value = " .. woundChitValue);
+			
+			-- Add modifier stack, then reset stack.
+			local modifier = ModifierStack.getSum();
+			--Debug.console("Modifier = " .. modifier);
+			ModifierStack.reset();	
+
+			local damage = woundChitValue + modifier;
+			
+			if damage > 0 then
+				-- increase the character's wounds
+				if User.isHost() or User.isOwnedIdentity(getIdentityName(characternode)) then
+					woundsnode.setValue(woundsnode.getValue() + damage);
+				else
+					-- Player doesn't own the PC database record, so need to pass this to the GM to update
+					PlayerDBManager.updateNonOwnedDB(woundsnode, "", woundsnode.getValue() + damage)
+				end				
+			end			
+
+			-- print a message
+			local msg = {};
+			msg.font = "msgfont";							
+			if damage > 0 then 
+				msg.text = getCharacterName(characternode) .. " has gained " .. damage .." wound/s" .. NpcManager.extraIdentityText();
+			else
+				msg.text = getCharacterName(characternode) .. " has not taken any wounds"
+			end			
+			ChatManager.deliverMessage(msg);
+			
+			-- and return
+			return true;
+		end
+--	end
+end
+
 function addWounds(characternode, wounds)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
+--	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
 		if not addWoundsRunning then
 			addWoundsRunning = true;
 			-- get the wounds characternode
@@ -673,23 +595,33 @@ function addWounds(characternode, wounds)
 				local sDamage = string.match(wounds, "%[Damage:%s*(%w+)%]");
 				local soaknode = characternode.createChild("armour.soak", "number");
 				local damage = 0;
+				-- Add modifier stack, then reset stack.
+				local modifier = ModifierStack.getSum();
+				--Debug.console("Modifier = " .. modifier);
+				ModifierStack.reset();				
 				if soaknode then
-					damage = tonumber(sDamage) - soaknode.getValue();
+					damage = tonumber(sDamage) - soaknode.getValue() + modifier;
 				else
-					damage = tonumber(sDamage);
+					damage = tonumber(sDamage) + modifier;
 				end
+				
 				if damage > 0 then
-					-- increase the characters wounds
-					woundsnode.setValue(woundsnode.getValue() + damage);
-				end
+					-- increase the character's wounds
+					if User.isHost() or User.isOwnedIdentity(getIdentityName(characternode)) then
+						woundsnode.setValue(woundsnode.getValue() + damage);
+					else
+						-- Player doesn't own the PC database record, so need to pass this to the GM to update
+						PlayerDBManager.updateNonOwnedDB(woundsnode, "", woundsnode.getValue() + damage)
+					end				
+				end				
 				
 				-- print a message
 				local msg = {};
 				msg.font = "msgfont";
 				if damage > 0 then 
-					msg.text = getCharacterName(characternode) .. " has gained " .. damage .." wounds";
+					msg.text = getCharacterName(characternode) .. " has gained " .. damage .." wound/s" .. NpcManager.extraIdentityText();
 				else
-					msg.text = getCharacterName(characternode) .. " has not taken any damage."
+					msg.text = getCharacterName(characternode) .. " has not taken any damage"
 				end
 				ChatManager.deliverMessage(msg);
 				
@@ -698,73 +630,107 @@ function addWounds(characternode, wounds)
 				return true;
 			end
 		end
-	end
+--	end
 end
 
-function addPower(characternode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then		
+function addStrainChit(characternode, draginfo)
+--	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
+	
+		if string.find(draginfo.getCustomData(), "strainchit_soak") then
+			local strainChitValue = "[Damage: " .. string.gsub(draginfo.getCustomData(),"strainchit_soak_", "") .. "]";
+			addStrainWithSoak(characternode, strainChitValue);
+			return true;
+		end
+		
+		-- Adding strain without soak.
 
-		-- get the power characternode
-		local powernode = characternode.createChild("power", "number");
-		if powernode then
+		-- get the strain characternode
+		local strainnode = characternode.createChild("strain.current", "number");
+		if strainnode then
+		
+			local strainChitValue = string.gsub(draginfo.getCustomData(),"strainchit_nosoak_", "");
+			--Debug.console("Strainchit value = " .. strainChitValue);
 
-			-- increase the characters power
-			powernode.setValue(powernode.getValue() + 1);
+			-- Add modifier stack, then reset stack.
+			local modifier = ModifierStack.getSum();
+			--Debug.console("Modifier = " .. modifier);
+			ModifierStack.reset();			
+			
+			local damage = strainChitValue + modifier;
+			
+			if damage > 0 then
+				-- increase the character's strain
+				if User.isHost() or User.isOwnedIdentity(getIdentityName(characternode)) then
+					strainnode.setValue(strainnode.getValue() + damage);
+				else
+					-- Player doesn't own the PC database record, so need to pass this to the GM to update
+					PlayerDBManager.updateNonOwnedDB(strainnode, "", strainnode.getValue() + damage)
+				end				
+			end			
+		
 
 			-- print a message
 			local msg = {};
 			msg.font = "msgfont";											
-			msg.text = getCharacterName(characternode) .. " has gained power";
+			if damage > 0 then 
+				msg.text = getCharacterName(characternode) .. " has gained " .. damage .." strain" .. NpcManager.extraIdentityText();
+			else
+				msg.text = getCharacterName(characternode) .. " has not taken any strain"
+			end			
 			ChatManager.deliverMessage(msg);
 			
 			-- and return
 			return true;
 		end
-	end
+--	end
 end
 
-function addFavour(characternode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-
-		-- get the favour characternode
-		local favournode = characternode.createChild("favour", "number");
-		if favournode then
-
-			-- increase the characters favour
-			favournode.setValue(favournode.getValue() + 1);
-
-			-- print a message
-			local msg = {};
-			msg.font = "msgfont";											
-			msg.text = getCharacterName(characternode) .. " has gained favour";
-			ChatManager.deliverMessage(msg);
-			
-			-- and return
-			return true;
+function addStrainWithSoak(characternode, strain)
+--	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
+		if not addStrainRunning then
+			addStrainRunning = true;
+			-- get the strain characternode
+			local strainnode = characternode.createChild("strain.current", "number");
+			if strainnode then
+				local sDamage = string.match(strain, "%[Damage:%s*(%w+)%]");
+				local soaknode = characternode.createChild("armour.soak", "number");
+				local damage = 0;
+				-- Add modifier stack, then reset stack.
+				local modifier = ModifierStack.getSum();
+				--Debug.console("Modifier = " .. modifier);
+				ModifierStack.reset();				
+				if soaknode then
+					damage = tonumber(sDamage) - soaknode.getValue() + modifier;
+				else
+					damage = tonumber(sDamage) + modifier;
+				end
+				
+				if damage > 0 then
+					-- increase the character's strain
+					if User.isHost() or User.isOwnedIdentity(getIdentityName(characternode)) then
+						strainnode.setValue(strainnode.getValue() + damage);
+					else
+						-- Player doesn't own the PC database record, so need to pass this to the GM to update
+						PlayerDBManager.updateNonOwnedDB(strainnode, "", strainnode.getValue() + damage)
+					end				
+				end	
+				
+				-- print a message
+				local msg = {};
+				msg.font = "msgfont";
+				if damage > 0 then 
+					msg.text = getCharacterName(characternode) .. " has gained " .. damage .." strain" .. NpcManager.extraIdentityText();
+				else
+					msg.text = getCharacterName(characternode) .. " has not taken any strain"
+				end
+				ChatManager.deliverMessage(msg);
+				
+				-- and return
+				addStrainRunning = false;
+				return true;
+			end
 		end
-	end
-end
-
-function addCorruption(characternode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-
-		-- get the corruption characternode
-		local corruptionnode = characternode.createChild("corruption.current", "number");
-		if corruptionnode then
-
-			-- increase the characters corruption
-			corruptionnode.setValue(corruptionnode.getValue() + 1);
-
-			-- print a message
-			local msg = {};
-			msg.font = "msgfont";											
-			msg.text = getCharacterName(characternode) .. " has gained corruption";
-			ChatManager.deliverMessage(msg);
-			
-			-- and return
-			return true;
-		end
-	end
+--	end
 end
 
 function addAbility(characternode, abilitynode)
@@ -775,7 +741,12 @@ function addAbility(characternode, abilitynode)
 		
 		-- check for duplicates
 		if DatabaseManager.checkForDuplicateName(abilitiesnode, abilitynode) then
-			return false;
+			-- print a message
+			local msg = {};
+			msg.font = "msgfont";										
+			msg.text = "Cannot add ability as " .. getCharacterName(characternode) .. " already has ability: " .. abilitynode.getChild("name").getValue();
+			ChatManager.deliverMessage(msg);
+			return true;
 		end		
 	
 		-- get the new ability
@@ -787,7 +758,7 @@ function addAbility(characternode, abilitynode)
 		-- print a message
 		local msg = {};
 		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the ability: " .. abilitynode.getChild("name").getValue();
+		msg.text = getCharacterName(characternode) .. " has gained the species/special ability: " .. abilitynode.getChild("name").getValue();
 		ChatManager.deliverMessage(msg);
 		
 		-- and return
@@ -795,200 +766,168 @@ function addAbility(characternode, abilitynode)
 	end
 end
 
-function addBlessing(characternode, blessingnode)
+function addTalent(characternode, talentnode)
 	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the blessing node
-		local blessingsnode = characternode.createChild("blessings");
-	
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(blessingsnode, blessingnode) then
-			return false;
-		end	
-	
-		-- get the new blessing
-		local newblessingnode = blessingsnode.createChild();
-		
-		-- copy the blessing
-		DatabaseManager.copyNode(blessingnode, newblessingnode);
-	
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the blessing action: " .. blessingnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;	
-	end
-end
 
-function addMelee(characternode, meleenode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the melee node
-		local meleesnode = characternode.createChild("melee");
+		-- get the abilities node
+		local talentsnode = characternode.createChild("talents");
 		
 		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(meleesnode, meleenode) then
-			return false;
+		if DatabaseManager.checkForDuplicateName(talentsnode, talentnode) then
+			-- print a message
+			local msg = {};
+			msg.font = "msgfont";										
+			msg.text = "Cannot add talent as " .. getCharacterName(characternode) .. " already has talent: " .. talentnode.getChild("name").getValue();
+			ChatManager.deliverMessage(msg);
+			return true;
 		end		
 	
-		-- get the new melee
-		local newmeleenode = meleesnode.createChild();
-		
-		-- copy the melee
-		DatabaseManager.copyNode(meleenode, newmeleenode);
-		
+		-- get the new talent
+		local newtalentnode = talentsnode.createChild();
+
+		-- copy the talent
+		DatabaseManager.copyNode(talentnode, newtalentnode);
+
 		-- print a message
 		local msg = {};
 		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the melee action: " .. meleenode.getChild("name").getValue();
+		msg.text = getCharacterName(characternode) .. " has gained the talent: " .. talentnode.getChild("name").getValue();
 		ChatManager.deliverMessage(msg);
 		
 		-- and return
-		return true;	
+		return true;		
 	end
 end
 
-function addRanged(characternode, rangednode)
+function addObligation(characternode, obligationnode)
 	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the ranged node
-		local rangesnode = characternode.createChild("ranged");
-	
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(rangesnode, rangednode) then
-			return false;
-		end	
-	
-		-- get the new ranged
-		local newrangednode = rangesnode.createChild();
-		
-		-- copy the ranged
-		DatabaseManager.copyNode(rangednode, newrangednode);
-	
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the ranged action: " .. rangednode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;	
-	end
-end
 
-function addSocial(characternode, socialnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the social node
-		local socialsnode = characternode.createChild("social");
+		-- get the obligations node
+		local obligationsnode = characternode.createChild("obligations");
 		
 		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(socialsnode, socialnode) then
-			return false;
+		if DatabaseManager.checkForDuplicateName(obligationsnode, obligationnode) then
+			-- print a message
+			local msg = {};
+			msg.font = "msgfont";										
+			msg.text = "Cannot add obligation as " .. getCharacterName(characternode) .. " already has obligation: " .. obligationnode.getChild("name").getValue();
+			ChatManager.deliverMessage(msg);
+			return true;
 		end		
 	
-		-- get the new social
-		local newsocialnode = characternode.createChild("social").createChild();
-		
-		-- copy the social
-		DatabaseManager.copyNode(socialnode, newsocialnode);
-	
+		-- get the new obligation
+		local newobligationnode = obligationsnode.createChild();
+
+		-- copy the obligation
+		DatabaseManager.copyNode(obligationnode, newobligationnode);
+
 		-- print a message
 		local msg = {};
 		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the social action: " .. socialnode.getChild("name").getValue();
+		msg.text = getCharacterName(characternode) .. " has gained the obligation: " .. obligationnode.getChild("name").getValue();
 		ChatManager.deliverMessage(msg);
 		
 		-- and return
-		return true;	
+		return true;		
 	end
 end
 
-function addSpell(characternode, spellnode)
+function addDuty(characternode, dutynode)
 	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the spells node
-		local spellsnode = characternode.createChild("spells");
+
+		-- get the duties node
+		local dutiesnode = characternode.createChild("duties");
 		
 		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(spellsnode, spellnode) then
-			return false;
+		if DatabaseManager.checkForDuplicateName(dutiesnode, dutynode) then
+			-- print a message
+			local msg = {};
+			msg.font = "msgfont";										
+			msg.text = "Cannot add duty as " .. getCharacterName(characternode) .. " already has duty: " .. dutynode.getChild("name").getValue();
+			ChatManager.deliverMessage(msg);
+			return true;
 		end		
 	
-		-- get the new spell
-		local newspellnode = spellsnode.createChild();
-		
-		-- copy the spell
-		DatabaseManager.copyNode(spellnode, newspellnode);
-	
+		-- get the new duty
+		local newdutynode = dutiesnode.createChild();
+
+		-- copy the duty
+		DatabaseManager.copyNode(dutynode, newdutynode);
+
 		-- print a message
 		local msg = {};
 		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the spell action: " .. spellnode.getChild("name").getValue();
+		msg.text = getCharacterName(characternode) .. " has gained the duty: " .. dutynode.getChild("name").getValue();
 		ChatManager.deliverMessage(msg);
 		
 		-- and return
-		return true;	
+		return true;		
 	end
 end
 
-function addSupport(characternode, supportnode)
+function addMorality(characternode, moralitynode)
 	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the support node
-		local supportsnode = characternode.createChild("support");
+
+		-- get the moralities node
+		local moralitiesnode = characternode.createChild("moralities");
 		
 		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(supportsnode, supportnode) then
-			return false;
-		end
-		
-		-- get the new support
-		local newsupportnode = supportsnode.createChild();
-		
-		-- copy the support
-		DatabaseManager.copyNode(supportnode, newsupportnode);
+		if DatabaseManager.checkForDuplicateName(moralitiesnode, moralitynode) then
+			-- print a message
+			local msg = {};
+			msg.font = "msgfont";										
+			msg.text = "Cannot add morality as " .. getCharacterName(characternode) .. " already has morality: " .. moralitynode.getChild("name").getValue();
+			ChatManager.deliverMessage(msg);
+			return true;
+		end		
 	
+		-- get the new morality
+		local newmoralitynode = moralitiesnode.createChild();
+
+		-- copy the morality
+		DatabaseManager.copyNode(moralitynode, newmoralitynode);
+
 		-- print a message
 		local msg = {};
 		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the support action: " .. supportnode.getChild("name").getValue();
+		msg.text = getCharacterName(characternode) .. " has gained the morality: " .. moralitynode.getChild("name").getValue();
 		ChatManager.deliverMessage(msg);
 		
 		-- and return
-		return true;	
+		return true;		
 	end
 end
 
-function addCareer(characternode, careernode)
+function addMotivation(characternode, motivationnode)
 	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the careers node
-		local careersnode = characternode.createChild("careers");
+
+		-- get the motivations node
+		local motivations = characternode.createChild("motivations");
 		
 		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(careersnode, careernode) then
-			return false;
-		end
+		if DatabaseManager.checkForDuplicateName(motivations, motivationnode) then
+			-- print a message
+			local msg = {};
+			msg.font = "msgfont";										
+			msg.text = "Cannot add motivation as " .. getCharacterName(characternode) .. " already has motivation: " .. motivationnode.getChild("name").getValue();
+			ChatManager.deliverMessage(msg);		
+			return true;
+		end		
 	
-		-- get the new career
-		local newcareernode = careersnode.createChild();
-		
-		-- copy the career
-		DatabaseManager.copyNode(careernode, newcareernode);
+		-- get the new motivation
+		local newmotivationnode = motivations.createChild();
+
+		-- copy the motivation
+		DatabaseManager.copyNode(motivationnode, newmotivationnode);
 
 		-- print a message
 		local msg = {};
 		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the career: " .. careernode.getChild("name").getValue();
+		msg.text = getCharacterName(characternode) .. " has gained the motivation: " .. motivationnode.getChild("name").getValue();
 		ChatManager.deliverMessage(msg);
 		
 		-- and return
-		return true;
-		
+		return true;		
 	end
 end
 
@@ -1021,140 +960,34 @@ function addCondition(characternode, conditionnode)
 	end
 end
 
-function addCritical(characternode, criticalnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the criticals node
-		local criticalsnode = characternode.createChild("criticals");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(criticalsnode, criticalnode) then
-			return false;
-		end		
-	
-		-- get the new critical
-		local newcriticalnode = criticalsnode.createChild();
-
-		-- copy the critical
-		DatabaseManager.copyNode(criticalnode, newcriticalnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the critical: " .. criticalnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- now ensure that the number of character wounds is not below the number of criticals
-		local woundsnode = characternode.createChild("wounds.current", "number");
-		if woundsnode then
-			local woundsvalue = woundsnode.getValue();
-			local criticalsvalue = criticalsnode.getChildCount();
-			if woundsvalue < criticalsvalue then
-				woundsnode.setValue(criticalsvalue);
-			end
-		end		
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addDisease(characternode, diseasenode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the diseases node
-		local diseasesnode = characternode.createChild("diseases");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(diseasesnode, diseasenode) then
-			return false;
-		end		
-	
-		-- get the new disease
-		local newdiseasenode = diseasesnode.createChild();
-
-		-- copy the disease
-		DatabaseManager.copyNode(diseasenode, newdiseasenode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the disease: " .. diseasenode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addInsanity(characternode, insanitynode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the insanities node
-		local insanitiesnode = characternode.createChild("insanities");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(insanitiesnode, insanitynode) then
-			return false;
-		end		
-	
-		-- get the new insanity
-		local newinsanitynode = insanitiesnode.createChild();
-
-		-- copy the insanity
-		DatabaseManager.copyNode(insanitynode, newinsanitynode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the insanity: " .. insanitynode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addInvention(characternode, inventionnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the inventions node
-		local inventionsnode = characternode.createChild("inventions");
-	
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(inventionsnode, inventionnode) then
-			return false;
-		end	
-	
-		-- get the new invention
-		local newinventionnode = inventionsnode.createChild();
-
-		-- copy the invention
-		DatabaseManager.copyNode(inventionnode, newinventionnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the invention: " .. inventionnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
 function addItem(characternode, itemnode)
 	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
 	
+		-- Handle trying to add a non vehicle weapon/item to a vehicle - reject the drop.
+		-- Not currently available to players
+		if characternode.getParent().getName() == "vehicle" and itemnode.createChild("isstarshipweapon").getValue() ~= 1 then
+			-- print a message
+			local msg = {};
+			msg.font = "msgfont";										
+			msg.text = "Cannot add the non-vehicle weapon: " .. itemnode.getChild("name").getValue() .. " to the vehicle: " .. getNpcName(characternode);
+			ChatManager.deliverMessage(msg);
+
+			return true;
+		end
+		
 		-- get the new item
 		local newitemnode = characternode.createChild("inventory").createChild();
 		
 		-- copy the item
 		DatabaseManager.copyNode(itemnode, newitemnode);
+		
+		-- If either the personal weapon or vehicle weapon flag isn't 1 then set it to 0 - needed when not present for correct weapon processing
+		if newitemnode.createChild("isstarshipweapon", "number").getValue() ~= 1 then
+			newitemnode.createChild("isstarshipweapon", "number").setValue(0);
+		end
+		if newitemnode.createChild("isweapon", "number").getValue() ~= 1 then
+			newitemnode.createChild("isweapon", "number").setValue(0);
+		end			
 		
 		-- print a message
 		local msg = {};
@@ -1165,64 +998,6 @@ function addItem(characternode, itemnode)
 		-- and return
 		return true;
 
-	end
-end
-
-function addMiscast(characternode, miscastnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the miscasts node
-		local miscastsnode = characternode.createChild("miscasts");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(miscastsnode, miscastnode) then
-			return false;
-		end		
-	
-		-- get the new miscast
-		local newmiscastnode = miscastsnode.createChild();
-		
-		-- copy the miscast
-		DatabaseManager.copyNode(miscastnode, newmiscastnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the miscast: " .. miscastnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-
-	end
-end
-
-function addMutation(characternode, mutationnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-
-		-- get the mutations node
-		local mutationsnode = characternode.createChild("mutations");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(mutationsnode, mutationnode) then
-			return false;
-		end		
-	
-		-- get the new mutation
-		local newmutationnode = mutationsnode.createChild();
-
-		-- copy the mutation
-		DatabaseManager.copyNode(mutationnode, newmutationnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the mutation: " .. mutationnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
 	end
 end
 
@@ -1252,362 +1027,6 @@ function addSkill(characternode, skillnode)
 		-- and return
 		return true;
 		
-	end
-end
-
-function addFaith(characternode, faithnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the faiths node
-		local faithsnode = characternode.createChild("faiths");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(faithsnode, faithnode) then
-			return false;
-		end		
-	
-		-- get the new faith
-		local newfaithnode = faithsnode.createChild();
-		
-		-- copy the faith
-		DatabaseManager.copyNode(faithnode, newfaithnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the faith: " .. faithnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addFocus(characternode, focusnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the focuses node
-		local focusesnode = characternode.createChild("focuses");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(focusesnode, focusnode) then
-			return false;
-		end		
-	
-		-- get the new focus
-		local newfocusnode = focusesnode.createChild();
-		
-		-- copy the focus
-		DatabaseManager.copyNode(focusnode, newfocusnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the focus: " .. focusnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addOath(characternode, oathnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the oaths node
-		local oathsnode = characternode.createChild("oaths");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(oathsnode, oathnode) then
-			return false;
-		end		
-	
-		-- get the new skill
-		local newoathnode = oathsnode.createChild();
-		
-		-- copy the oath
-		DatabaseManager.copyNode(oathnode, newoathnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the oath: " .. oathnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addOrder(characternode, ordernode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the orders node
-		local ordersnode = characternode.createChild("orders");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(ordersnode, ordernode) then
-			return false;
-		end		
-	
-		-- get the new skill
-		local newordernode = characternode.createChild("orders").createChild();
-		
-		-- copy the oath
-		DatabaseManager.copyNode(ordernode, newordernode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the order: " .. ordernode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addReputation(characternode, reputationnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the reputations node
-		local reputationsnode = characternode.createChild("reputations");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(reputationsnode, reputationnode) then
-			return false;
-		end		
-	
-		-- get the new skill
-		local newreputationnode = reputationsnode.createChild();
-		
-		-- copy the reputation
-		DatabaseManager.copyNode(reputationnode, newreputationnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the reputation: " .. reputationnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addTactic(characternode, tacticnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the tactics node
-		local tacticsnode = characternode.createChild("tactics");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(tacticsnode, tacticnode) then
-			return false;
-		end		
-	
-		-- get the new skill
-		local newtacticnode = tacticsnode.createChild();
-		
-		-- copy the tactic
-		DatabaseManager.copyNode(tacticnode, newtacticnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the tactic: " .. tacticnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addPet(characternode, petnode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the pets node
-		local petsnode = characternode.createChild("pets");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(petsnode, petnode) then
-			return false;
-		end		
-		
-		-- get the new skill
-		local newpetnode = petsnode.createChild();
-		
-		-- copy the pet
-		DatabaseManager.copyNode(petnode, newpetnode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the pet: " .. petnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addHorse(characternode, horsenode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the horses node
-		local horsesnode = characternode.createChild("horses");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(horsesnode, horsenode) then
-			return false;
-		end		
-		
-		-- get the new skill
-		local newhorsenode = horsesnode.createChild();
-		
-		-- copy the horse
-		DatabaseManager.copyNode(horsenode, newhorsenode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the horse: " .. horsenode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addRetainer(characternode, retainernode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the retainers node
-		local retainersnode = characternode.createChild("retainers");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(retainersnode, retainernode) then
-			return false;
-		end		
-		
-		-- get the new skill
-		local newretainernode = retainersnode.createChild();
-		
-		-- copy the retainer
-		DatabaseManager.copyNode(retainernode, newretainernode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the retainer: " .. retainernode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addRune(characternode, runenode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-	
-		-- get the runes node
-		local runesnode = characternode.createChild("runes");
-		
-		-- check for duplicates
-		if DatabaseManager.checkForDuplicateName(runesnode, runenode) then
-			return false;
-		end		
-		
-		-- get the new skill
-		local newrunenode = runesnode.createChild();
-		
-		-- copy the rune
-		DatabaseManager.copyNode(runenode, newrunenode);
-
-		-- print a message
-		local msg = {};
-		msg.font = "msgfont";										
-		msg.text = getCharacterName(characternode) .. " has gained the rune: " .. runenode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
-		
-		-- and return
-		return true;
-		
-	end
-end
-
-function addGold(characternode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-
-		-- get the gold characternode
-		local goldnode = characternode.createChild("currency.gold", "number");
-		if goldnode then
-
-			-- increase the characters gold
-			goldnode.setValue(goldnode.getValue() + 1);
-
-			-- print a message
-			local msg = {};
-			msg.font = "msgfont";											
-			msg.text = getCharacterName(characternode) .. " has gained a gold crown";
-			ChatManager.deliverMessage(msg);
-			
-			-- and return
-			return true;
-		end
-	end
-end
-
-function addSilver(characternode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-
-		-- get the silver characternode
-		local silvernode = characternode.createChild("currency.silver", "number");
-		if silvernode then
-
-			-- increase the characters silver
-			silvernode.setValue(silvernode.getValue() + 1);
-
-			-- print a message
-			local msg = {};
-			msg.font = "msgfont";											
-			msg.text = getCharacterName(characternode) .. " has gained a silver shilling";
-			ChatManager.deliverMessage(msg);
-			
-			-- and return
-			return true;
-		end
-	end
-end
-
-function addBrass(characternode)
-	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
-
-		-- get the brass characternode
-		local brassnode = characternode.createChild("currency.brass", "number");
-		if brassnode then
-
-			-- increase the characters brass
-			brassnode.setValue(brassnode.getValue() + 1);
-
-			-- print a message
-			local msg = {};
-			msg.font = "msgfont";											
-			msg.text = getCharacterName(characternode) .. " has gained a brass penny";
-			ChatManager.deliverMessage(msg);
-			
-			-- and return
-			return true;
-		end
 	end
 end
 
@@ -1654,63 +1073,6 @@ function handleAddPlayerDice(msguser, msgidentity, msgparams)
 	end
 end
 
-function movePowerToEquilibrium(characternode)
-	if characternode and characternode.isOwner() then
-		local ordersnode = characternode.createChild("orders");
-		if ordersnode and ordersnode.getChildCount() > 0 then
-			local willpowernode = characternode.createChild("willpower.current", "number");
-			local powernode = characternode.createChild("power", "number");
-			if willpowernode and powernode then
-				local willpowervalue = willpowernode.getValue();
-				local powervalue = powernode.getValue();
-				if powervalue < willpowervalue then
-				
-					-- increase power
-					powernode.setValue(powervalue + 1);
-					
-					-- display a message
-					local msg = {};
-					msg.font = "msgfont";					
-					msg.text = getCharacterName(characternode) .. "'s power has moved towards equilibrium";
-					ChatManager.deliverMessage(msg);
-					
-					-- and return
-					return true;			
-				
-				end
-			end
-		end
-	end
-end
-
-function moveFavourToEquilibrium(characternode)
-	if characternode and characternode.isOwner() then
-		local faithsnode = characternode.createChild("faiths");
-		if faithsnode and faithsnode.getChildCount() > 0 then
-			local willpowernode = characternode.createChild("willpower.current", "number");
-			local favournode = characternode.createChild("favour", "number");
-			if willpowernode and favournode then
-				local willpowervalue = willpowernode.getValue();
-				local favourvalue = favournode.getValue();
-				if favourvalue < willpowervalue then
-				
-					-- increase favour
-					favournode.setValue(favourvalue + 1);
-					
-					-- display a message
-					local msg = {};
-					msg.font = "msgfont";					
-					msg.text = getCharacterName(characternode) .. "'s favour has moved towards equilibrium";
-					ChatManager.deliverMessage(msg);
-					
-					-- and return
-					return true;			
-				
-				end
-			end
-		end
-	end
-end
 
 function onLogin(username, activated)
 -- Need to give the user access to all character records so that they show up on the combat tracker
@@ -1722,4 +1084,82 @@ function onLogin(username, activated)
 		DB.addHolder(DB.findNode("charsheet"), username);
 	end
 
+end
+
+function addVehicle(characternode, vehiclenode)
+	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
+
+		-- get the characterVehicleNode node
+		local characterVehicleNode = characternode.createChild("vehicle");
+		
+		-- The current information will be overwritten with the new info in the dragged vehiclenode
+		-- Entries in the inventory will be added to the character inventory - these should just be vehicle weapons.
+		
+		-- check for duplicates
+		--if DatabaseManager.checkForDuplicateName(talentsnode, talentnode) then
+			-- print a message
+			--local msg = {};
+			--msg.font = "msgfont";										
+			--msg.text = "Cannot add talent as " .. getcharacterName(characternode) .. " already has talent: " .. talentnode.getChild("name").getValue();
+			--ChatManager.deliverMessage(msg);
+			--return true;
+		--end		
+		
+		-- Need to use a temporary node to hold the new vehicle information - we'll remove the inventory information for the copy of the vehicle information.
+		DB.deleteNode("temp.charactervehicle");
+		local tempVehicleNode = DB.createNode("temp.charactervehicle");
+		if not tempVehicleNode then
+			return nil;
+		end		
+		DB.copyNode(vehiclenode, tempVehicleNode);
+		
+		-- Find the inventory node, copy it to a temp inventory node and then delete it from the vehicle record
+		--local inventoryNode;  -- Will hold the vehicle inventory for copying to the character inventory
+		DB.deleteNode("temp.charactervehicleinventory");
+		local inventoryNode = DB.createNode("temp.charactervehicleinventory");
+		if not inventoryNode then
+			return nil;
+		end		
+		local tempInventoryNode = tempVehicleNode.getChild("inventory");
+		if tempInventoryNode then
+			DB.copyNode(tempInventoryNode, inventoryNode);
+			tempInventoryNode.delete();
+		end		
+	
+		-- get the new vehicle
+		local newvehiclenode = characternode.createChild("vehicle");
+
+		-- copy the temp vehicle node (doesn't contain the vehicle inventory);
+		DB.copyNode(tempVehicleNode, newvehiclenode);
+		
+		-- Create and set showvehicleinct = 1 as a default when adding a vehicle to the PC
+		newvehiclenode.createChild("showvehicleinct", "number").setValue(1);
+		
+		-- Remove any vehicle weapons from the current character inventory that have been assigned to the vehicle tab.  This assumes these weapons were for the previous vehicle.
+		local characterInventoryNode = characternode.createChild("inventory");
+		if characterInventoryNode then
+			for k, v in pairs(characterInventoryNode.getChildren()) do
+				if v.createChild("isstarshipweapon", "number").getValue() == 1 and v.createChild("isequipped", "number").getValue() == 1 then
+					v.delete();
+				end
+			end
+		end		
+		
+		-- Handle copying the vehicle inventory to the character inventory.  Should just be vehicle weapons to enable processing of the weapons on the vehicle sheet.
+		if inventoryNode then
+			for k, v in pairs(inventoryNode.getChildren()) do
+				childInventoryNode = characterInventoryNode.createChild();
+				DB.copyNode(v, childInventoryNode);
+			end
+		end
+
+		-- print a message
+		local msg = {};
+		msg.font = "msgfont";										
+		msg.text = getCharacterName(characternode) .. " has gained the vehicle: " .. vehiclenode.getChild("name").getValue();
+		ChatManager.deliverMessage(msg);
+		
+		-- and return
+		return true;		
+	end
 end

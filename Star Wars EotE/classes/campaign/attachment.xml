@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="attachmentsmall">
+		<sizelimits>
+			<maximum>
+				<height>20</height>
+			</maximum>
+		</sizelimits>
+		<sheetdata>
+			<windowbutton name="open">
+				<bounds>0,0,20,20</bounds>
+				<class>attachment</class>
+			</windowbutton>
+			<basestringfield name="name">
+				<bounds>21,2,-29,17</bounds>
+				<empty>&#171; New Attachment &#187;</empty>
+				<disabled />
+			</basestringfield>	
+			<basenumberfield name="hardpoints">			
+				<bounds>-25,2,-1,22</bounds>
+				<disabled />
+				<zerocolor>000000</zerocolor>
+				<script>
+					function onValueChanged()
+						window.windowlist.onListChanged();
+					end
+				</script>
+			</basenumberfield>				
+		</sheetdata>
+	</windowclass>
+	
+	<windowclass name="attachment">
+		<frame>charsheet</frame>
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<minimize>minimized_item</minimize>
+		<playercontrol />
+		<sharable />
+		<tooltip>
+			<field>name</field>
+		</tooltip>
+		<sheetdata>
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>attachmentmain</class>
+			</subwindow>
+			<subwindow name="mods">
+				<bounds>0,0,-1,-1</bounds>
+				<class>attachmentmods</class>
+			</subwindow>
+			<tabcontrol name="tabs">
+				<bounds>-22,28,18,151</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_mods</icon>
+					<subwindow>mods</subwindow>
+				</tab>				
+				<activate>1</activate>
+			</tabcontrol>
+<!--			<viewerlist>
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>11</offset>
+					</left>
+					<bottom>
+						<anchor>bottom</anchor>
+						<offset>-14</offset>
+					</bottom>
+				</anchored>
+			</viewerlist>-->			
+			<closebutton />
+		</sheetdata>
+	</windowclass>	
+	
+</root>

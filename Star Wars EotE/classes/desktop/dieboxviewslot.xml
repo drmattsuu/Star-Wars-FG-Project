@@ -2,7 +2,8 @@
 <root>
 
 	<windowclass name="dieboxviewslot">
-		<frame>tooltipbox</frame>
+		<!--<frame>tooltipbox</frame> -->
+		<frame>collector</frame>
 		<sizelimits>
 			<minimum>
 				<height>45</height>
@@ -12,6 +13,15 @@
 		<sheetdata>
 		
 		<stringcontrol name=dieboxviewslotname>
+				<bounds>0,0,0,0</bounds>
+				<invisible />
+<!--				<font>sheetlabel</font>
+				<color>#ffffffff</color>
+				<static>1234567890</static>-->
+				<!--<center />-->
+		</stringcontrol>		
+		
+		<stringcontrol name=dieboxviewplayername>
 				<bounds>5,2,150,12</bounds>
 				<font>sheetlabel</font>
 				<color>#ffffffff</color>

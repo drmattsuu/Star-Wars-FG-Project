@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="vehiclelist">
+		<frame>scrollbox</frame>
+		<placement>
+			<size>
+				<width>275</width>
+				<height>350</height>
+			</size>
+		</placement>
+		<sizelimits>
+			<dynamic />
+			<minimum>
+				<width>250</width>
+				<height>300</height>
+			</minimum>
+			<maximum>
+				<width>475</width>
+				<height>570</height>
+			</maximum>			
+		</sizelimits>
+		<nodelete />
+		<sheetdata>
+<!-- LOBOSOLO Adding Title Frame to Vehicles - BEGIN-->		
+			<genericcontrol>
+				<bounds>0,0,37,299</bounds>
+				<frame>
+					<name>vehiclessaber</name>
+				</frame>
+			</genericcontrol>
+<!-- LOBOSOLO Adding Title Frame to Vehicles - END-->
+			<basewindowlist name="list">
+		<!--LOBOSOLO changing bounds of list for the new art - BEGIN-->
+				<bounds>43,27,-30,-34</bounds>
+		<!--LOBOSOLO changing bounds of list for the new art - END-->	
+				<datasource>.</datasource>
+				<class>vehiclesmall</class>
+				<sortfields>name</sortfields>
+				<footer>footer_narrow</footer>
+				<allowcreate />
+				<allowdelete />
+				<acceptdrop>
+					<class>vehicle</class>
+					<field>*</field>
+				</acceptdrop>				
+				<script>
+					function onSortCompare(w1, w2)
+						return w1.name.getValue() &gt; w2.name.getValue();
+					end
+				</script>
+			</basewindowlist>
+			<scrollercontrol>
+<!-- LOBOSOLO updated bounds and added zoom to resolve console error - BEGIN -->
+				<bounds>-70,-48,45,27</bounds>
+				<target>list</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
+<!-- LOBOSOLO updated bounds and added zoom to resolve console error - END -->
+				</button>
+			</scrollercontrol>
+			<buttoncontrol>
+<!--LOBOSOLO changing anchor of "new" button for the new art - BEGIN-->
+				<bounds>-50,-72,34,25</bounds>
+<!--LOBOSOLO changing anchor of "new" button for the new art - END-->
+				<icon>
+					<normal>button_newwindow</normal>
+					<pressed>button_newwindowdown</pressed>
+				</icon>
+				<class>vehicle</class>
+				<script>
+					function onButtonPress()
+						local node = window.getDatabaseNode();
+						if node then
+							node = node.createChild();
+							if node then
+								Interface.openWindow(class[1], node.getNodeName());
+							end
+						end
+					end
+				</script>
+			</buttoncontrol>
+			<categoryselectioncontrol>
+<!--LOBOSOLO changing anchor of catergories for the new art - BEGIN-->
+				<bounds>28,-36,-24,-1</bounds>
+<!--LOBOSOLO changing anchor of catergories for the new art - END-->
+				<targetcontrol>list</targetcontrol>
+			</categoryselectioncontrol>
+		
+			<closebuttonlist />
+		</sheetdata>
+	</windowclass>
+</root>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<template name="button_stringcycler">
+		<genericcontrol>
+			<anchored height="20" />
+			<frame name="fielddark" offset="7,5,7,5" hidereadonly = "true" />
+			<stateframe>
+				<hover name="fieldfocus" offset="7,5,7,5" hidereadonly="true" />
+			</stateframe>
+			<script file="classes/common/button_stringcycler.lua" />
+		</genericcontrol>
+	</template>	
+	
+</root>

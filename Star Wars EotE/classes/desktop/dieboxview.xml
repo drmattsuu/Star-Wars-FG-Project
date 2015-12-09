@@ -17,17 +17,18 @@
 		</sharable>
 	</windowclass>
 
+<!--LOBOSOLO update frame, title - BEGIN -->
 	<windowclass name="dieboxview">
-		<frame>ctbox</frame>
+		<frame>indexbox</frame>
 		<placement>
 			<size>
-				<width>500</width>
+				<width>450</width>
 				<height>300</height>
 			</size>
 		</placement>
 		<sizelimits>
 			<minimum>
-				<width>300</width>
+				<width>450</width>
 				<height>300</height>
 			</minimum>
 			<dynamic>
@@ -38,16 +39,32 @@
 		<playercontrol />
 		<nodelete />
 		<sheetdata>
-		
-		<!-- labels -->
+			<genericcontrol>
+				<bounds>70,0,315,40</bounds>
+				<frame>
+					<name>indexboxtitledicebox</name>
+				</frame>
+				<script>
+					function updatePosition()
+						local w,h = window.getSize();
+						setStaticBounds((w-315)/2, 0, 315, 40);
+					end
+					
+					function onInit()
+						window.onSizeChanged = updatePosition;
+						updatePosition();
+					end
+				</script>
+			</genericcontrol>
+		<!--LOBOSOLO Remove temp title string <!-- labels --
 		<stringcontrol>
 			<bounds>2,2,-2,20</bounds>
 			<font>titlefont</font>
 			<color>#ffffffff</color>
 			<static>Dice Box Viewer</static>
 			<center />
-		</stringcontrol>		
-		
+		</stringcontrol>		-->
+<!--LOBOSOLO update frame, title - END -->		
 <!-- ACTORS -->
 			<!-- labels -->
 <!--			<stringcontrol>
@@ -84,9 +101,11 @@
 				<bounds>0,30,-18,-50</bounds>
 			</actorlist>-->
 			<!--Acting list tracks the actual init slots and who has used them/is in them-->
+<!--LOBOSOLO updated bounds of list - BEGIN -->
 			<dieboxviewlist name="dieboxviewslotlist">
-				<bounds>2,30,-10,-2</bounds>
+				<bounds>13,43,-17,-41</bounds>
 			</dieboxviewlist>
+<!--LOBOSOLO updated bounds of list - END -->
 			
 <!--			<genericcontrol> 	
 				<icon>inittracker_separator</icon>
@@ -184,9 +203,9 @@
 <!--			<actorlist name="actorlist">
 				<bounds>0,-200,-18,-50</bounds>
 			</actorlist>-->			
-			
+<!--LOBOSOLO updating scroller button and bounds - BEGIN -->					
 			<scrollercontrol>
-				<anchored>
+				<!--<anchored>
 					<to>dieboxviewslotlist</to>
 					<position>belowright</position>
 					<offset>1,5</offset>
@@ -194,14 +213,17 @@
 						<width>45</width>
 						<height>27</height>
 					</size>
-				</anchored>
+				</anchored> -->
+				<bounds>-60,-41,45,27</bounds>
 				<target>dieboxviewslotlist</target>
 				<button>
 					<normal>button_scroller</normal>
 					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
 				</button>
 			</scrollercontrol>
-			
+<!--LOBOSOLO updating scroller button and bounds - END -->			
 			<!-- recharge button -->
 <!--			<buttoncontrol>
 				<bounds>-53,-45,33,26</bounds>
@@ -219,8 +241,20 @@
 					end
 				</script>
 			</buttoncontrol>-->			
-			
-			<closebutton />
+
+
+<!--LOBOSOLO updating the offset of the close button - BEGIN -->		
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>0</offset>
+					</top>
+					<right>
+						<offset>-6</offset>
+					</right>
+				</anchored>
+			</closebutton>
+<!--LOBOSOLO updating the offset of the close button - END -->
 		</sheetdata>
 		<script file="classes/desktop/dieboxview.lua" />		
 	</windowclass>

@@ -47,9 +47,9 @@
 				<bounds>0,0,-1,-1</bounds>
 				<class>itemarmour</class>
 			</subwindow>
-			<subwindow name="runes">
+			<subwindow name="attachments">
 				<bounds>0,0,-1,-1</bounds>
-				<class>itemrunes</class>
+				<class>itemattachments</class>
 			</subwindow>			
 			<tabcontrol name="tabs">
 				<bounds>-22,28,18,291</bounds>
@@ -66,12 +66,12 @@
 					<subwindow>armour</subwindow>
 				</tab>
 				<tab>
-					<icon>tab_mods</icon>
-					<subwindow>runes</subwindow>
+					<icon>tab_attachments</icon>
+					<subwindow>attachments</subwindow>
 				</tab>				
 				<activate>1</activate>
 			</tabcontrol>
-			<viewerlist>
+<!--			<viewerlist>
 				<anchored>
 					<left>
 						<anchor>left</anchor>
@@ -82,7 +82,7 @@
 						<offset>-14</offset>
 					</bottom>
 				</anchored>
-			</viewerlist>			
+			</viewerlist>	-->		
 			<closebutton />
 		</sheetdata>
 	</windowclass>

@@ -42,16 +42,16 @@
 		</tooltip>
 		<sheetdata>
 			<windowshortcut>
-				<bounds>18,16,20,20</bounds>
+				<bounds>17,32,20,20</bounds>
 				<class>specialisation</class>
 			</windowshortcut>
 			<basestringfield name="name">
 				<anchored>
 					<left>
-						<offset>39</offset>
+						<offset>38</offset>
 					</left>
 					<top>
-						<offset>19</offset>
+						<offset>35</offset>
 					</top>
 					<size>
 						<height>20</height>
@@ -93,7 +93,7 @@
 			</basestringcontrol>
 
 			<sheetformattedtextfield name="description">
-				<bounds>20,38,-24,-20</bounds>
+				<bounds>15,60,-20,-30</bounds>
 				<font>
 					<normal>chatfont</normal>
 					<bold>narratorfont</bold>
@@ -109,15 +109,33 @@
 				<selectioncolor>#FFD296</selectioncolor>
 				<empty>Click to enter text</empty>				
 			</sheetformattedtextfield>
-			<scrollbar>
+			<!--<scrollbar>
 				<anchored>
 					<to>description</to>
 					<offset>-3,-2</offset>
 				</anchored>
 				<target>description</target>
-			</scrollbar>
-			
-			<closebutton />
+			</scrollbar> -->
+			<scrollercontrol>
+				<bounds>-55,-38,45,27</bounds>
+				<target>description</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
+				</button>
+			</scrollercontrol>
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>0</offset>
+					</top>
+					<right>
+						<offset>-3</offset>
+					</right>
+				</anchored>
+			</closebutton>
 		</sheetdata>
 	</windowclass>
 	

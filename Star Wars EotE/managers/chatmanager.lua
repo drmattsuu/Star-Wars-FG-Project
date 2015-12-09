@@ -306,10 +306,11 @@ function processWhisper(command, params)
 			end
 
 			if user then
+				Debug.console("User for whisper = " .. user);
 				msg.text = message;
 
 				msg.sender = "<heard whisper>";
-				deliverMessage(msg, user);
+				Comm.deliverChatMessage(msg, user);
 
 				msg.sender = "-> " .. recipient;
 				addMessage(msg);
@@ -328,15 +329,20 @@ function processWhisper(command, params)
 		msg.text = "Usage: /whisper [recipient] [message]";
 		addMessage(msg);
 	else
+		-- Disable any form of player whisper.
 		local msg = {};
-		msg.font = "msgfont";
-		msg.text = params;
-
-		msg.sender = User.getIdentityLabel();
-		deliverMessage(msg, "");
-
-		msg.sender = "<sent whisper>";
+		msg.font = "systemfont";
+		msg.text = "I'm sorry, whispers from players currently doesn't work.  Only GMs can whisper to players at present.  This feature will become available at a future time when this ruleset is layered on top of CoreRPG.";
 		addMessage(msg);
+		--local msg = {};
+		--msg.font = "msgfont";
+		--msg.text = params;
+
+		--msg.sender = User.getIdentityLabel();
+		--deliverMessage(msg, "");
+
+		--msg.sender = "<sent whisper>";
+		--addMessage(msg);
 	end
 end
 
@@ -569,6 +575,13 @@ function processDice(draginfo)
 	if showsummary then
 		resultMsg.text = "Result:";
 	end
+
+	-- Crit rolls are just d100 rolls, no need to show the special dice summary.  Plus show total of the roll.
+	if string.find(description, "CRITICAL") then
+		showsummary = false;
+		resultMsg.dicedisplay = 1;
+	end
+	
 	resultMsg.font = "chatitalicfont";			
 	resultMsg.dice = resultdice;
 	resultMsg.diemodifier = modifier;
@@ -579,6 +592,8 @@ function processDice(draginfo)
 		deliverMessage(resultMsg);
 	end
 
+
+	
 	-- determine if we need to show the summary details
 	if showsummary then
 	
@@ -740,8 +755,112 @@ function processDice(draginfo)
 					deliverMessage(damagemsg);
 				end
 			end
-		end	
+		end		
 	end
+
+	-- Handle critical roll here - indicated by CRITICAL in roll description
+	if string.find(description, "CRITICAL") then
+		Debug.console("Critical result handler.")
+		Debug.console("Target node for critical = " .. sourcenode.getNodeName());
+		
+		--resultMsg.dice = resultdice;
+		local critModifier = resultMsg.diemodifier;
+		
+		local critResult = 0 + critModifier;
+		
+		for k,v in ipairs(resultMsg.dice) do
+			critResult = critResult + v.result;
+		end
+		
+		Debug.console("Critical result = " .. critResult)
+		
+		--  Determine the critical sustained from result of d100 roll plus modifiers
+
+		local critDetails = {};
+		
+		for k,v in pairs(DataCommon.critical_injury_result_data) do
+			if critResult >= v.d100_start and critResult <= v.d100_end then
+				Debug.console("Found crit of " .. v.name);
+				critDetails = v;
+				break;
+			end
+		end		
+		
+		Debug.console("Crit = " .. critDetails.name .. ". Severity = " .. critDetails.severity .. ". Description = " .. critDetails.description);
+		
+		-- print a message
+		local msg = {};
+		msg.font = "msgfont";	
+		
+		if sourcenode.getNodeName() ~= "" then
+			PlayerDBManager.createCriticalNonOwnedDB(sourcenode, critDetails.name, critDetails.description, critDetails.severity);
+			if critDetails.severity == 999 then
+				msg.text = NpcManager.getNpcName(sourcenode) .. " has gained the critical:  " .. critDetails.name .. NpcManager.extraIdentityText();
+			else
+				msg.text = NpcManager.getNpcName(sourcenode) .. " has gained the critical:  " .. critDetails.name .. ".  Severity = " .. critDetails.severity .. ", " .. NpcManager.extraIdentityText();
+			end
+		else
+			if critDetails.severity == 999 then
+				msg.text = "Critical:  " .. critDetails.name;
+			else
+				msg.text = "Critical:  " .. critDetails.name .. ".  Severity = " .. critDetails.severity;
+			end		
+		end
+		ChatManager.deliverMessage(msg);
+	end
+
+	-- Handle vehicle critical roll here - indicated by CRITVEHICLE in roll description
+	if string.find(description, "CRITVEHICLE") then
+		Debug.console("Critical vehicle result handler.")
+		Debug.console("Target node for critical = " .. sourcenode.getNodeName());
+		
+		--resultMsg.dice = resultdice;
+		local critModifier = resultMsg.diemodifier;
+		
+		local critResult = 0 + critModifier;
+		
+		for k,v in ipairs(resultMsg.dice) do
+			critResult = critResult + v.result;
+		end
+		
+		Debug.console("Critical result = " .. critResult)
+		
+		--  Determine the critical sustained from result of d100 roll plus modifiers
+
+		local critDetails = {};
+		
+		for k,v in pairs(DataCommon.critical_vehicle_result_data) do
+			if critResult >= v.d100_start and critResult <= v.d100_end then
+				Debug.console("Found crit of " .. v.name);
+				critDetails = v;
+				break;
+			end
+		end		
+		
+		Debug.console("Crit = " .. critDetails.name .. ". Severity = " .. critDetails.severity .. ". Description = " .. critDetails.description);
+		
+		-- print a message
+		local msg = {};
+		msg.font = "msgfont";		
+		if sourcenode.getNodeName() ~= "" then		
+			PlayerDBManager.createCriticalNonOwnedDB(sourcenode.createChild("vehicle"), critDetails.name, critDetails.description, critDetails.severity);
+			if critDetails.severity == 999 then
+				msg.text = NpcManager.getNpcName(sourcenode) .. " has gained the critical:  " .. critDetails.name .. NpcManager.extraIdentityText();
+			else
+				msg.text = NpcManager.getNpcName(sourcenode) .. " has gained the critical:  " .. critDetails.name .. ".  Severity = " .. critDetails.severity .. ", " .. NpcManager.extraIdentityText();
+			end
+		else
+			if critDetails.severity == 999 then
+				msg.text = "Vehicle critical:  " .. critDetails.name;
+			else
+				msg.text = "Vehicle critical:  " .. critDetails.name .. ".  Severity = " .. critDetails.severity;
+			end		
+		end
+		ChatManager.deliverMessage(msg);
+		
+
+		
+	end		
 
 	-- and return true
 	return true;

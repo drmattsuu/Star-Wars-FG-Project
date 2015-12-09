@@ -60,16 +60,20 @@
 					end
 				</script>
 			</genericcontrol>
+<!--LOBOSOLO update label bounds - BEGIN -->
 			<basestringcontrol name="name">
-				<bounds>80,23,-10,15</bounds>
+				<bounds>80,18,148,28</bounds>
 				<font>sheetlabel</font>
+				<multilinespacing>12</multilinespacing>
 				<readonly /> 
 			</basestringcontrol>
 			<basestringcontrol name="author">
-				<bounds>80,40,-10,15</bounds>
+				<bounds>80,48,148,28</bounds>
 				<font>sheetlabelsmall</font>
+				<multilinespacing>12</multilinespacing>
 				<readonly /> 
 			</basestringcontrol>
+<!--LOBOSOLO update label bounds - END -->
 			<genericcontrol name="load">
 				<bounds>-50,10,40,28</bounds>
 				<states>
@@ -102,15 +106,25 @@
 			</genericcontrol>
 		</sheetdata>
 	</windowclass>
-	
+<!--LOBOSOLO updated module frame size - BEGIN -->	
 	<windowclass name="moduleselection">
 		<frame>indexbox</frame>
 		<placement>
 			<size>
 				<width>600</width>
-				<height>400</height>
+				<height>425</height>
 			</size>
 		</placement>
+		<sizelimits>
+			<minimum>
+				<width>600</width>
+				<height>425</height>
+			</minimum>
+			<dynamic>
+				<resize>both</resize>
+			</dynamic>
+		</sizelimits>		
+<!--LOBOSOLO updated module frame size - END -->
 		<script>
 			function createEntry(name)
 				local win = list.createWindow();
@@ -129,15 +143,28 @@
 				Module.onModuleAdded = createEntry;
 			end
 		</script>
+<!--LOBOSOLO updated bounds and title - BEGIN -->
 		<sheetdata>
 			<genericcontrol>
-				<bounds>195,0,200,40</bounds>
+				<bounds>195,0,212,40</bounds>
 				<frame>
-					<name>indexboxtitle</name>
+					<name>indexboxtitle2</name>
 				</frame>
+				<script>
+					function updatePosition()
+						local w,h = window.getSize();
+						setStaticBounds((w-200)/2, 0, 212, 40);
+					end
+					
+					function onInit()
+						window.onSizeChanged = updatePosition;
+						updatePosition();
+					end
+				</script>
 			</genericcontrol>
-			
-			<basestringcontrol>
+<!--LOBOSOLO updated bounds and title - END -->	
+<!--LOBOSOLO removing Module Activation Title from the frame - BEGIN -		
+				<basestringcontrol>
 				<bounds>26,15,-30,17</bounds>
 				<font>sheetlabel</font>
 				<color>#9fffffff</color>
@@ -150,27 +177,38 @@
 				<center />
 				<static>Module Activation</static>
 			</basestringcontrol>
-			
+			-- END -->
+<!--LOBOSOLO updating the bounds of the list - BEGIN -->		
 			<basewindowlist name="list">
 				<class>moduleselection_entry</class>
-				<bounds>23,40,-27,-51</bounds>
+				<bounds>28,50,-31,-58</bounds>
 				<columns>
-					<width>275</width>
+					<width>270</width>
 					<fillwidth />
 				</columns>
 				<frame>
 					<name>sheetgroup</name>
-					<offset>9,7,9,7</offset>
+					<offset>10,11,10,11</offset>
 				</frame>
 			</basewindowlist>
-			<scrollercontrol>
+<!--LOBOSOLO updating the bounds of the list - END -->
+<!--LOBOSOLO updating the scrollbar location - BEGIN -->
+			<scrollbar>
+				<anchored>
+					<to>list</to>
+					<offset>-6,-6</offset>
+				</anchored>
+				<target>list</target>
+			</scrollbar>			
+<!--LOBOSOLO updating the scrollbar location - END -->
+<!--			<scrollercontrol>
 				<bounds>-70,-45,45,27</bounds>
 				<target>list</target>
 				<button>
 					<normal>button_scroller</normal>
 					<pressed>button_scroller_down</pressed>
 				</button>
-			</scrollercontrol>
+			</scrollercontrol>-->
 			
 			<modulepermissioncontrol>
 				<bounds>20,-47,30,31</bounds>
@@ -196,17 +234,18 @@
 					<text>Force load for players</text>
 				</tooltip>
 			</modulepermissioncontrol>
-			
+<!--LOBOSOLO updating the offset of the close button - BEGIN -->			
 			<closebutton>
 				<anchored>
 					<top>
-						<offset>2</offset>
+						<offset>0</offset>
 					</top>
 					<right>
-						<offset>-5</offset>
+						<offset>-6</offset>
 					</right>
 				</anchored>
 			</closebutton>
+<!--LOBOSOLO updating the offset of the close button - END -->
 		</sheetdata>
 	</windowclass>
 </root>

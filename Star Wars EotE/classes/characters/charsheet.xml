@@ -16,7 +16,7 @@
 			<shareas>charsheet</shareas>
 		</sharable>
 	</windowclass>	
-	
+<!--LOBOSOLO updating frame used for CharSheet - BEGIN -->	
 	<windowclass name="charsheet">
 		<frame>charsheet</frame>
 		<placement>
@@ -34,6 +34,7 @@
 			<maximum>
 				<width>509</width>
 			</maximum>
+<!--LOBOSOLO updating frame used for CharSheet - END -->	
 		</sizelimits>		
 		<minimize>minimized_npc</minimize>
 		<nodelete />
@@ -42,11 +43,15 @@
 		<tooltip>
 			<field>name</field>
 		</tooltip>
+		<script file="classes/characters/charsheet.lua" />
 		<sheetdata>
 			<!-- Frame to show on all pages of the charsheet -->
+<!--LOBOSOLO updating bounds on character frame - BEGIN -->
 			<sheetframe name="main_character">
-				<bounds>12,10,393,72</bounds>
+				<bounds>14,10,400,74</bounds>
+				<script file="classes/characters/charsheet_init.lua" />
 			</sheetframe>
+<!--LOBOSOLO updaing bounds and positions on character frame - END -->
 			<sheetframetitle name="main_character_title">
 				<anchored>
 					<to>main_character</to>
@@ -59,7 +64,7 @@
 				<anchored>
 					<to>main_character</to>
 					<position>insidetopleft</position>
-					<offset>13,14</offset>
+					<offset>17,14</offset>
 					<size>
 						<width>218</width>
 					</size>
@@ -77,9 +82,9 @@
 				<anchored>
 					<to>main_character</to>
 					<position>insidetopleft</position>					
-					<offset>237,14</offset>
+					<offset>241,14</offset>
 					<size>
-						<width>68</width>
+						<width>73</width>
 					</size>
 				</anchored>
 				<label>Species</label>
@@ -94,7 +99,7 @@
 				<anchored>
 					<to>main_character</to>
 					<position>insidetopleft</position>					
-					<offset>311,14</offset>
+					<offset>320,14</offset>
 					<size>
 						<width>69</width>
 					</size>
@@ -111,7 +116,7 @@
 				<anchored>
 					<to>main_character</to>
 					<position>insidetopleft</position>					
-					<offset>13,38</offset>
+					<offset>17,38</offset>
 					<size>
 						<width>150</width>
 					</size>
@@ -128,9 +133,9 @@
 				<anchored>
 					<to>main_character</to>
 					<position>insidetopleft</position>					
-					<offset>167,38</offset> <!--88-->
+					<offset>171,38</offset> <!--88-->
 					<size>
-						<width>210</width>
+						<width>215</width>
 					</size>
 				</anchored>
 				<label>Career Specializations</label>
@@ -139,9 +144,11 @@
 				</tabtarget>
 			</sheetstringfield>						
 			
-<!-- TOKEN -->			
+<!-- TOKEN -->
+<!--LOBOSOLO updaing bounds and positions on token - BEGIN -->					
 			<tokenfield name="main_token" source="token">
-				<bounds>409,15,64,64</bounds>
+				<bounds>415,15,64,64</bounds>
+<!--LOBOSOLO updating bounds and positions on token - END -->
 				<empty>indicator_emptytoken</empty>
 				<script>
 					local dragging = false;
@@ -177,41 +184,46 @@
 			<subwindow name="main">
 				<bounds>0,75,-1,-1</bounds>
 				<class>charsheetmain</class>
-				<script file="classes/characters/charsheet.lua" />
+				<!--<script file="classes/characters/charsheet.lua" />-->
 			</subwindow>
 			<subwindow name="skills">
 				<bounds>0,75,-1,-1</bounds>
 				<class>charsheetskills</class>
-				<script file="classes/characters/charsheet.lua" />
+				<!--<script file="classes/characters/charsheet.lua" />-->
 			</subwindow>
 			<subwindow name="combat">
 				<bounds>0,75,-1,-1</bounds>
 				<class>charsheetcombattab</class>
-				<script file="classes/characters/charsheet.lua" />
+				<!--<script file="classes/characters/charsheet.lua" />-->
 			</subwindow>			
 			<subwindow name="talents">
 				<bounds>0,60,-1,-1</bounds>
 				<class>charsheettalents</class>
-				<script file="classes/characters/charsheet.lua" />
+				<!--<script file="classes/characters/charsheet.lua" />-->
 			</subwindow>			
 			<subwindow name="actions">
 				<bounds>0,60,-1,-1</bounds>
 				<class>charsheetactions</class>
-				<script file="classes/characters/charsheet.lua" />
+				<!--<script file="classes/characters/charsheet.lua" />-->
 			</subwindow>		
 			<subwindow name="inventory">
 				<bounds>0,75,-1,-1</bounds>
 				<class>charsheetinventory</class>
-				<script file="classes/characters/charsheet.lua" />
+				<!--<script file="classes/characters/charsheet.lua" />-->
 			</subwindow>		
 			<subwindow name="other">
 				<bounds>0,75,-1,-1</bounds>
 				<class>charsheetother</class>
-				<script file="classes/characters/charsheet.lua" />
-			</subwindow>					
+				<!--<script file="classes/characters/charsheet.lua" />-->
+			</subwindow>
+			<subwindow name="vehicle">
+				<bounds>0,75,-1,-1</bounds>
+				<class>npcstarship</class>
+				<script file="classes/campaign/npcvehicle.lua" />
+			</subwindow>			
 			<tabcontrol name="tabs">
 				<!--<bounds>-22,28,18,225</bounds>-->
-				<bounds>-22,28,18,530</bounds>
+				<bounds>-22,28,18,492</bounds>
 				<tab>
 					<icon>tab_main</icon>
 					<subwindow>main</subwindow>
@@ -228,6 +240,14 @@
 					<icon>tab_inventory</icon>
 					<subwindow>inventory</subwindow>
 				</tab>
+				<tab>
+					<icon>tab_other</icon>
+					<subwindow>other</subwindow>
+				</tab>				
+				<tab>
+					<icon>tab_vehicle</icon>
+					<subwindow>vehicle</subwindow>
+				</tab>				
 <!--				<tab>
 					<icon>tab_talents</icon>
 					<subwindow>talents</subwindow>
@@ -236,10 +256,6 @@
 					<icon>tab_actions</icon>
 					<subwindow>actions</subwindow>
 				</tab>-->		
-				<tab>
-					<icon>tab_other</icon>
-					<subwindow>other</subwindow>
-				</tab>
 				<activate>1</activate>
 			</tabcontrol>
 			<closebutton />

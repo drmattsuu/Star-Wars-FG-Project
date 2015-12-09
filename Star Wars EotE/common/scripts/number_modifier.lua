@@ -87,9 +87,9 @@ function onInit()
 end
 
 function onWheel(notches)
-	if not OptionsManager.isMouseWheelEditEnabled() then
-		return false;
-	end
+--	if not OptionsManager.isMouseWheelEditEnabled() then
+--		return false;
+--	end
 
 	setModifier(getModifier() + notches);
 	return true;

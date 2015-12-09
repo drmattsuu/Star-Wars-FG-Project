@@ -11,6 +11,7 @@ function layoutControls()
 	
 	-- build the character list
 	for key, val in pairs(User.getAllActiveIdentities()) do
+		Debug.console("layoutControls - identity = " .. val);
 		table.insert(identitylist, { name = val, control = findControlForIdentity(val) });
 	end
 	
@@ -51,6 +52,7 @@ function onIdentityActivation(identity, username, activated)
 			end
 		end
 	else
+		Debug.console("onIdentityActivation - identity being destroyed = " .. identity);
 		findControlForIdentity(identity).destroy();
 		layoutControls();
 	end

@@ -53,7 +53,11 @@
 							Debug.console("Link activated in actornpc.xml - " .. recordnode.getValue());							
 							if recordnode then
 								if recordnode.getValue() ~= "" then 
-									NpcManager.openNpcSheet(DB.findNode(recordnode.getValue()));
+									if string.find(recordnode.getValue(),"charsheet") then
+										CharacterManager.openCharacterSheet(DB.findNode(recordnode.getValue()));
+									else
+										NpcManager.openNpcSheet(DB.findNode(recordnode.getValue()));
+									end
 								end
 							--[[else
 								NpcManager.openNpcSheet(window.getDatabaseNode());]]
@@ -111,6 +115,7 @@
 						Debug.console("initslotempty.xml - initslotname.onValueChanged - ending...");	
 					end
 				</script>
+				<readonly />
 				<!--<disabled/>-->
 			</basestringfield>
 			
@@ -213,7 +218,11 @@
 				</icon>
 				<script>
 					function onDoubleClick()
-						window.dieboxcontrol.onDieboxButtonPress();
+						local msg = {};
+						msg.font = "systemfont";
+						msg.text = "Sorry, this feature hasn't been implemented yet.";
+						ChatManager.addMessage(msg);
+						--[[window.dieboxcontrol.onDieboxButtonPress();]]
 					end	
 					
 					function onDrop(x, y, draginfo)

@@ -22,7 +22,7 @@
 		<frame name="framebox" />
 		<placement>
 			<size>
-				<width>165</width>
+				<width>192</width>
 				<height>460</height>
 			</size>
 		</placement>
@@ -35,7 +35,7 @@
 					</top>
 					<left>
 						<anchor>left</anchor>
-						<offset>30</offset>
+						<offset>46</offset>
 					</left>
 					<size>
 						<width>100</width>

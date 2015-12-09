@@ -16,7 +16,32 @@
 				<bounds>21,4,-1,17</bounds>
 				<empty>&#171; New Talent &#187;</empty>
 				<disabled />
-			</basestringfield>		
+			</basestringfield>
+			<basestringfield name="ranked">
+				<bounds>21,4,-1,17</bounds>
+				<disabled />
+				<invisible />
+					<script>
+					function onInit()
+						if super.onInit then super.onInit() end
+						
+						onValueChanged();
+					end
+					
+					function onValueChanged()
+						if getValue() == "ranked" or getValue() == "Yes" then
+							window.ranks.setVisible(true);
+						else
+							window.ranks.setVisible(false);
+						end
+					end
+				</script>				
+			</basestringfield>			
+			<basenumberfield name="ranks">			
+				<bounds>-20,4,-1,17</bounds>
+				<disabled />
+				<zerocolor>000000</zerocolor>
+			</basenumberfield>			
 		</sheetdata>
 	</windowclass>
 
@@ -35,19 +60,223 @@
 			<field>name</field>
 		</tooltip>
 		<sheetdata>
-			<subwindow name="main">
-				<bounds>0,0,-1,-1</bounds>
-				<class>talentmain</class>
-				<script file="classes/abilities/base.lua" />
-			</subwindow>
-			<tabcontrol name="tabs">
-				<bounds>-22,28,18,90</bounds>
-				<tab>
-					<icon>tab_main</icon>
-					<subwindow>main</subwindow>
-				</tab>
-				<activate>1</activate>
-			</tabcontrol>		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>14,15,275,49</bounds>
+			</sheetframe>
+
+			<sheetframetitle name="main_name_title">
+				<anchored>
+					<to>main_name</to>
+				</anchored>
+				<static>Talent</static>
+			</sheetframetitle>			
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>17,18</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>talent</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>38,19</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; Empty Talent Slot &#187;</empty>
+			</basestringfield>		
+			
+<!-- DESCRIPTION -->
+			<sheetframe name="main_description">
+				<!--<bounds>12,60,264,260</bounds>-->
+				<bounds>14,61,275,156</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_description_title">
+				<anchored>
+					<to>main_description</to>
+				</anchored>
+				<static>Description</static>
+			</sheetframetitle>
+			
+			<sheetformattedtextfield name="main_description_description" source="description">
+				<anchored>
+					<left>
+						<parent>main_description</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>main_description</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>main_description</parent>
+						<anchor>top</anchor>
+						<offset>20</offset>
+					</top>
+					<bottom>
+						<parent>main_description</parent>
+						<anchor>bottom</anchor>
+						<offset>-20</offset>
+					</bottom>
+				</anchored>
+			</sheetformattedtextfield>
+			<scrollbar>
+				<anchored>
+					<to>main_description_description</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>main_description_description</target>
+			</scrollbar>	
+
+<!-- TRAITS -->
+			<sheetframe name="main_traits">
+				<!--<bounds>12,280,264,40</bounds>-->
+				<bounds>14,214,275,107</bounds>
+			</sheetframe>
+			
+			<!-- Activation -->
+			<sheetlabel>
+				<anchored>
+					<to>main_traits</to>
+					<offset>17,18</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Activation</static>
+			</sheetlabel>			
+			<sheetstringfield name="main_talent_activation" source="activation">
+				<anchored>
+					<top>
+						<parent>main_traits</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<right>
+						<parent>main_traits</parent>
+						<anchor>right</anchor>
+						<offset>-14</offset>
+					</right>
+				</anchored>
+				<empty>&#171; Activation &#187;</empty>
+				<tabtarget>
+					<next>ranked</next>
+					<prev>main_description_description</prev>
+				</tabtarget>
+				<center />
+			</sheetstringfield>	
+
+			<!-- Ranked -->
+			<sheetlabel>
+				<anchored>
+					<to>main_traits</to>
+					<offset>17,38</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Ranked?</static>
+			</sheetlabel>			
+			<button_stringcycler name="ranked" source="ranked">
+				<anchored to="main_traits" position="insidetopleft" offset="198,40" width="50" height="15" />	
+				<parameters>
+					<labelsres>talent_ranked_yes</labelsres>
+					<values>ranked</values>
+					<defaultlabelres>talent_ranked_no</defaultlabelres>
+				</parameters>
+				<tabtarget>
+					<next>main_character_ranks</next>
+					<prev>main_talent_activation</prev>
+				</tabtarget>
+				<script>
+					function onInit()
+						if super.onInit then super.onInit() end
+						
+						onValueChanged();
+					end
+					
+					function onValueChanged()
+						if getValue() == "ranked" or getValue() == "Yes" then
+							window.main_talent_ranks.setVisible(true);
+						else
+							window.main_talent_ranks.setVisible(false);
+						end
+					end
+				</script>				
+			</button_stringcycler>
+			
+			<!-- Ranks -->
+			<sheetlabel>
+				<anchored>
+					<to>main_traits</to>
+					<offset>17,58</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Ranks</static>
+			</sheetlabel>			
+			<sheetnumberfield name="main_talent_ranks" source="ranks">
+				<anchored>
+					<to>main_traits</to>
+					<offset>198,60</offset>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<empty>0</empty>
+				<tabtarget>
+					<next>main_talent_trees</next>
+					<prev>ranked</prev>
+				</tabtarget>
+				<zerocolor>000000</zerocolor>				
+			</sheetnumberfield>			
+
+			<!-- Trees -->
+			<sheetlabel>
+				<anchored>
+					<to>main_traits</to>
+					<offset>18,78</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Trees</static>
+			</sheetlabel>			
+			<sheetstringfield name="main_talent_trees" source="trees">
+				<anchored>
+					<top>
+						<parent>main_traits</parent>
+						<anchor>top</anchor>
+						<offset>78</offset>
+					</top>
+					<right>
+						<parent>main_traits</parent>
+						<anchor>right</anchor>
+						<offset>-27</offset>
+					</right>
+				</anchored>
+				<empty>&#171; Trees &#187;</empty>
+				<tabtarget>
+					<next>main_name_name</next>
+					<prev>main_talent_ranks</prev>
+				</tabtarget>
+				<center />
+			</sheetstringfield>
+			
 			<closebutton />
 		</sheetdata>
 	</windowclass>

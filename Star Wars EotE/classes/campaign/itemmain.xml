@@ -13,7 +13,7 @@
 		
 <!-- NAME -->
 			<sheetframe name="main_name">
-				<bounds>12,20,264,45</bounds>
+				<bounds>14,15,264,49</bounds>
 			</sheetframe>
 			
 			<sheetframetitle name="main_name_title">
@@ -27,7 +27,7 @@
 				<anchored>
 					<to>main_name</to>
 					<position>insidetopleft</position>					
-					<offset>11,18</offset>
+					<offset>17,18</offset>
 					<size>
 						<height>20</height>
 						<width>20</width>
@@ -39,7 +39,7 @@
 				<anchored>			
 					<to>main_name</to>
 					<position>insidetopleft</position>					
-					<offset>32,19</offset>
+					<offset>38,19</offset>
 					<size>
 						<height>20</height>
 						<width>200</width>
@@ -54,7 +54,7 @@
 			
 <!-- DESCRIPTION -->
 			<sheetframe name="main_description">
-				<bounds>12,60,264,156</bounds>
+				<bounds>14,61,264,158</bounds>
 			</sheetframe>
 			<sheetframetitle name="main_description_title">
 				<anchored>
@@ -78,12 +78,12 @@
 					<top>
 						<parent>main_description</parent>
 						<anchor>top</anchor>
-						<offset>18</offset>
+						<offset>20</offset>
 					</top>
 					<bottom>
 						<parent>main_description</parent>
 						<anchor>bottom</anchor>
-						<offset>-13</offset>
+						<offset>-20</offset>
 					</bottom>
 				</anchored>
 			</sheetformattedtextfield>
@@ -97,7 +97,7 @@
 			
 <!-- INVENTORY -->			
 			<sheetframe name="main_inventory">
-				<bounds>12,214,264,106</bounds>
+				<bounds>14,216,264,106</bounds>
 			</sheetframe>			
 			<sheetframetitle name="main_inventory_title">
 				<anchored>
@@ -110,7 +110,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>main_inventory</to>
-					<offset>13,18</offset>
+					<offset>17,18</offset>
 					<size>
 						<width>209</width>
 					</size>
@@ -127,7 +127,7 @@
 					<right>
 						<parent>main_inventory</parent>
 						<anchor>right</anchor>
-						<offset>-13</offset>
+						<offset>-16</offset>
 					</right>
 				</anchored>
 				<empty>&#171; Price &#187;</empty>
@@ -142,7 +142,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>main_inventory</to>
-					<offset>13,38</offset>
+					<offset>17,38</offset>
 					<size>
 						<width>209</width>
 					</size>
@@ -152,7 +152,7 @@
 			<sheetnumberfield name="main_inventory_hardpoints" source="hardpoints">
 				<anchored>
 					<to>main_inventory</to>
-					<offset>201,35</offset>
+					<offset>201,38</offset>
 					<size>
 						<width>50</width>
 					</size>
@@ -168,7 +168,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>main_inventory</to>
-					<offset>13,58</offset>
+					<offset>17,58</offset>
 					<size>
 						<width>209</width>
 					</size>
@@ -185,7 +185,7 @@
 					<right>
 						<parent>main_inventory</parent>
 						<anchor>right</anchor>
-						<offset>-13</offset>
+						<offset>-16</offset>
 					</right>
 				</anchored>
 				<empty>&#171; Rarity &#187;</empty>
@@ -200,7 +200,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>main_inventory</to>
-					<offset>13,78</offset>
+					<offset>17,78</offset>
 					<size>
 						<width>209</width>
 					</size>
@@ -210,7 +210,7 @@
 			<sheetnumberfield name="main_inventory_encumbrance" source="encumbrance">
 				<anchored>
 					<to>main_inventory</to>
-					<offset>201,75</offset>
+					<offset>201,78</offset>
 					<size>
 						<width>50</width>
 					</size>

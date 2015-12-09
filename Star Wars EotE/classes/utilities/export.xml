@@ -213,17 +213,22 @@
 			<dynamic>
 				<resize>vertical</resize>
 			</dynamic>
+			<minimum>
+				<width>500</width>
+				<height>450</height>
+			</minimum>
 		</sizelimits>
 		<script file="classes/utilities/export.lua" />
+<!--LOBOSOLO updated bounds and title - BEGIN -->	
 		<sheetdata>
 			<!-- Title -->
 			<genericcontrol>
 				<bounds>150,0,200,40</bounds>
 				<frame>
-					<name>indexboxtitle</name>
+					<name>indexboxtitleexport</name>
 				</frame>
 			</genericcontrol>
-			
+			<!--Removing module export title from frame - BEGIN
 			<basestringcontrol>
 				<bounds>26,15,-30,17</bounds>
 				<font>sheetlabel</font>
@@ -236,17 +241,19 @@
 				<font>sheetlabel</font>
 				<center />
 				<static>Module Export</static>
-			</basestringcontrol>
+			</basestringcontrol> - END -->
+<!--LOBOSOLO updated bounds and title - END -->				
 			
 			<!-- Generic -->
+<!--LOBOSOLO updating inner frames position and bounds - BEGIN -->
 			<genericcontrol name="genericframe">
-				<bounds>23,44,-27,145</bounds>
+				<bounds>23,46,-27,140</bounds>
 				<frame>
 					<name>sheetgroup</name>
 					<offset>9,7,9,6</offset>
 				</frame>
 			</genericcontrol>
-			
+<!--LOBOSOLO updating inner frames position and bounds - END -->			
 			<basestringcontrol name="name">
 				<anchored>
 					<to>genericframe</to>
@@ -426,7 +433,16 @@
 				</frame>
 				<script file="classes/utilities/exportlist.lua" />
 			</basewindowlist>
-			<scrollercontrol>
+<!--LOBOSOLO adding a scrollbar location - BEGIN -->
+			<scrollbar>
+				<anchored>
+					<to>categories</to>
+					<offset>-7,6</offset>
+				</anchored>
+				<target>categories</target>
+			</scrollbar>			
+<!--LOBOSOLO updating the scrollbar location - END -->
+<!--LOBOSOLO removing scrollercontroller	<scrollercontrol>
 				<anchored>
 					<to>categories</to>
 					<position>insidebottomright</position>
@@ -439,9 +455,11 @@
 				<button>
 					<normal>button_scroller</normal>
 					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
 				</button>
 			</scrollercontrol>
-
+<!-- LOBOSOLO removing scrollercontroler  - END -->
 			<basestringcontrol>
 				<anchored>
 					<to>categories</to>
@@ -515,13 +533,15 @@
 			</basestringcontrol>
 -->			
 			<!-- Tokens -->
+<!--LOBOSOLO updating inner frame position - BEGIN -->
 			<genericcontrol name="tokenframe">
-				<bounds>23,-127,-27,100</bounds>
+				<bounds>23,-125,-27,102</bounds>
 				<frame>
 					<name>sheetgroup</name>
 					<offset>9,7,9,6</offset>
 				</frame>
 			</genericcontrol>
+<!--LOBOSOLO updating inner frame position - END -->
 
 			<basewindowlist name="tokens">
 				<class>export_token</class>
@@ -550,8 +570,19 @@
 				<static>Exported tokens</static>
 				<center />
 			</basestringcontrol>
-			
-			<closebutton />
+
+<!--LOBOSOLO updating the position of the close button - BEGIN -->
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>0</offset>
+					</top>
+					<right>
+						<offset>-6</offset>
+					</right>
+				</anchored>
+			</closebutton>
+<!--LOBOSOLO updating the position of the close button - END -->			
 		</sheetdata>
 	</windowclass>
 </root>

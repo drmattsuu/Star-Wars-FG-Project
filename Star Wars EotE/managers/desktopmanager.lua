@@ -3,10 +3,11 @@ stackiconsize = { 47, 27 };
 stackspacing = { 0, 0 };
 stackoffset = { 5, 2 };
 
-dockiconsize = { 91, 86 };
-dockspacing = 4;
-dockoffset = { 10, 4 };
-
+	--LOBOSOLO updated spacing and offset - BEGIN
+dockiconsize = { 87, 98 };
+dockspacing = 5;
+dockoffset = { 10, 12 };
+	--LOBOSOLO - END
 stackcontrols = {};
 dockcontrols = {};
 subdockcontrols = {};
@@ -34,9 +35,10 @@ function onInit()
 			--registerDockShortcut("button_people", "button_people_down", "NPCs", "npcgrouplist", "npcgroups");
 			registerDockShortcut("button_encounters", "button_encounters_down", "NPCs", "npclist", "npclist");
 			registerDockShortcut("button_itemchest", "button_itemchest_down", "Items", "itemlist", "items");
+			registerDockShortcut("button_vehicle", "button_vehicle_down", "Vehicles", "vehiclelist", "vehicle");			
 			--registerDockShortcut("button_notes", "button_notes_down", "Notes", "notelist", "notes" );
 			--registerDockShortcut("button_locations", "button_locations_down", "Locations", "locationlist", "locations");
-			registerDockShortcut("button_notes", "button_notes_down", "Library", "library");
+			registerDockShortcut("button_library", "button_library_down", "Library", "library");
 			registerDockShortcut("button_tokens", "button_tokens_down", "Tokens", "tokenbag");
 			
 		else
@@ -55,7 +57,7 @@ function onInit()
 			
 			registerDockShortcut("button_notes", "button_notes_down", "Notes", "notelist", "notes." .. UserManager.getUserCode(User.getUsername()));
 			--registerDockShortcut("button_people", "button_people_down", "Initiative Tracker", "initiativetracker", "initiativetracker");						
-			registerDockShortcut("button_notes", "button_notes_down", "Library", "library");
+			registerDockShortcut("button_library", "button_library_down", "Library", "library");
 			registerDockShortcut("button_tokencase", "button_tokencase_down", "Tokens", "tokenbag");
 		end
 	else

@@ -182,13 +182,20 @@
 			</label_reftable>
 
 			<windowlist name="grouplist">
-				<bounds>35,80,-40,-70</bounds>
+				<bounds>35,80,-40,-40</bounds>
 				<!--<frame name="groupbox" offset="15,15,20,15" />-->
 				<frame name="sheetgroup" offset="15,15,20,15" />
 				<class>reference_weapontablegroup</class>
 				<datasource>.groups</datasource>
 			</windowlist>
-			<scrollbar_reftablegroup />
+			<scrollbar>
+				<anchored>
+					<to>grouplist</to>
+					<offset>4,-2</offset>
+				</anchored>
+				<target>grouplist</target>
+			</scrollbar>
+			<!--<scrollbar_reftablegroup /> -->
 			
 			<filter_reftable name="filter">
 				<bounds>125,-45,-35,20</bounds>
@@ -207,10 +214,10 @@
 			<closebutton>
 				<anchored>
 					<top>
-						<offset>2</offset>
+						<offset>0</offset>
 					</top>
 					<right>
-						<offset>-5</offset>
+						<offset>-3</offset>
 					</right>
 				</anchored>
 			</closebutton>
@@ -335,7 +342,14 @@
 				<class>reference_armortablegroup</class>
 				<datasource>.groups</datasource>
 			</windowlist>
-			<scrollbar_reftablegroup />
+			<scrollbar>
+				<anchored>
+					<to>grouplist</to>
+					<offset>4,-2</offset>
+				</anchored>
+				<target>grouplist</target>
+			</scrollbar>
+			<!--<scrollbar_reftablegroup /> -->
 			
 			<filter_reftable name="filter">
 				<bounds>125,-45,-35,20</bounds>
@@ -354,10 +368,10 @@
 			<closebutton>
 				<anchored>
 					<top>
-						<offset>2</offset>
+						<offset>0</offset>
 					</top>
 					<right>
-						<offset>-5</offset>
+						<offset>-3</offset>
 					</right>
 				</anchored>
 			</closebutton>			
@@ -372,11 +386,11 @@
 				<bounds>5,2,20,20</bounds>
 			</linkfield>
 			<string_list_link name="name">
-				<bounds>30,2,140,20</bounds>
+				<bounds>30,2,200,20</bounds>
 			</string_list_link>
 
 			<genericcontrol name="reftableanchor">
-				<bounds>170,2,0,0</bounds>
+				<bounds>230,2,0,0</bounds>
 			</genericcontrol>
 			<string_reftable name="value">
 				<center />
@@ -386,7 +400,11 @@
 			</number_reftable>
 			<string_reftable name="rarity">
 				<center />
-			</string_reftable>			
+			</string_reftable>	
+			<number_reftable name="order">
+				<invisible />
+			</number_reftable>
+			
 		</sheetdata>
 	</windowclass>
 
@@ -402,6 +420,7 @@
 			<list_reftablegroupitems name="list">
 				<datasource>.miscellaneous</datasource>
 				<class>reference_equipmenttablelistitem</class>
+				<sortby mergerule="replace"><control>order</control></sortby>
 			</list_reftablegroupitems>
 
 			<ft_reftablefooter name="footer" />
@@ -411,10 +430,10 @@
 	<windowclass name="reference_equipmenttablelist">
 		<frame>referencebox</frame>
 		<placement>
-			<size width="450" height="550" />
+			<size width="500" height="550" />
 		</placement>
 		<sizelimits>
-			<minimum width="450" height="300" />
+			<minimum width="500" height="300" />
 			<dynamic />
 		</sizelimits>
 		<minimize>minimized_reference</minimize>
@@ -429,7 +448,7 @@
 				<bounds>65,45,0,0</bounds>
 			</genericcontrol>
 			<label_reftable name="headername">
-				<anchored width="140" />
+				<anchored width="200" />
 				<!--<static textres="ref_label_listname" />-->
 				<static>Name</static>
 			</label_reftable>
@@ -456,7 +475,14 @@
 				<class>reference_equipmenttablegroup</class>
 				<datasource>.groups</datasource>
 			</windowlist>
-			<scrollbar_reftablegroup />
+			<scrollbar>
+				<anchored>
+					<to>grouplist</to>
+					<offset>4,-2</offset>
+				</anchored>
+				<target>grouplist</target>
+			</scrollbar>
+			<!--<scrollbar_reftablegroup /> -->
 			
 			<filter_reftable name="filter">
 				<bounds>125,-45,-35,20</bounds>
@@ -473,10 +499,10 @@
 			<closebutton>
 				<anchored>
 					<top>
-						<offset>2</offset>
+						<offset>0</offset>
 					</top>
 					<right>
-						<offset>-5</offset>
+						<offset>-3</offset>
 					</right>
 				</anchored>
 			</closebutton>			
@@ -611,7 +637,14 @@
 				<class>reference_vehicleweapontablegroup</class>
 				<datasource>.groups</datasource>
 			</windowlist>
-			<scrollbar_reftablegroup />
+			<scrollbar>
+				<anchored>
+					<to>grouplist</to>
+					<offset>4,-2</offset>
+				</anchored>
+				<target>grouplist</target>
+			</scrollbar>
+			<!--<scrollbar_reftablegroup /> -->
 			
 			<filter_reftable name="filter">
 				<bounds>125,-45,-35,20</bounds>
@@ -630,10 +663,10 @@
 			<closebutton>
 				<anchored>
 					<top>
-						<offset>2</offset>
+						<offset>0</offset>
 					</top>
 					<right>
-						<offset>-5</offset>
+						<offset>-3</offset>
 					</right>
 				</anchored>
 			</closebutton>
@@ -665,7 +698,10 @@
 			</number_reftable>			
 			<string_reftable name="rarity">
 				<center />
-			</string_reftable>			
+			</string_reftable>	
+			<number_reftable name="order">
+				<invisible />
+			</number_reftable>			
 		</sheetdata>
 	</windowclass>
 
@@ -679,8 +715,9 @@
 			<string_groupsubdesc name="subdescription" />
 
 			<list_reftablegroupitems name="list">
-				<datasource>.itemmods</datasource>
+				<datasource>.itemattachments</datasource>
 				<class>reference_itemmodstablelistitem</class>
+				<sortby mergerule="replace"><control>order</control></sortby>
 			</list_reftablegroupitems>
 
 			<ft_reftablefooter name="footer" />
@@ -724,7 +761,7 @@
 			</label_reftable>
 			<label_reftable name="headerencumbrance">
 				<!--<static textres="ref_label_listweight" />-->
-				<static>HP Required</static>
+				<static>HP Slots</static>
 				<center />
 			</label_reftable>			
 			<label_reftable name="headerrarity">
@@ -740,7 +777,14 @@
 				<class>reference_itemmodstablegroup</class>
 				<datasource>.groups</datasource>
 			</windowlist>
-			<scrollbar_reftablegroup />
+			<scrollbar>
+				<anchored>
+					<to>grouplist</to>
+					<offset>4,-2</offset>
+				</anchored>
+				<target>grouplist</target>
+			</scrollbar>
+			<!--<scrollbar_reftablegroup /> -->
 			
 			<filter_reftable name="filter">
 				<bounds>125,-45,-35,20</bounds>
@@ -757,10 +801,10 @@
 			<closebutton>
 				<anchored>
 					<top>
-						<offset>2</offset>
+						<offset>0</offset>
 					</top>
 					<right>
-						<offset>-5</offset>
+						<offset>-3</offset>
 					</right>
 				</anchored>
 			</closebutton>			

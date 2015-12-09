@@ -11,6 +11,7 @@ function onInit()
 	registerCategory("images", "images", "Images & Maps");
 	registerCategory("npclist", "npclist", "NPC's");
 	registerCategory("items", "items", "Items");
+	registerCategory("vehicle", "vehicle", "Vehicles");
 	--registerCategory("locations", "locations", "Locations");
 
 	-- register the slash handler

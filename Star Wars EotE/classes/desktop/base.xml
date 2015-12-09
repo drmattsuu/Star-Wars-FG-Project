@@ -16,15 +16,15 @@
 	<includefile source="classes/desktop/dproficiency.xml" />
 	<includefile source="classes/desktop/dchallenge.xml" />
 	<includefile source="classes/desktop/dforce.xml" />
-	<includefile source="classes/desktop/dcharacteristic.xml" />
-	<includefile source="classes/desktop/dconservative.xml" />
-	<includefile source="classes/desktop/dexpertise.xml" />
-	<includefile source="classes/desktop/dfortune.xml" />	
+<!--	<includefile source="classes/desktop/dcharacteristic.xml" />
+	<includefile source="classes/desktop/dconservative.xml" />-->
+<!--	<includefile source="classes/desktop/dexpertise.xml" />-->
+<!--	<includefile source="classes/desktop/dfortune.xml" />	-->
 	<includefile source="classes/desktop/dicetower.xml" />
 	<includefile source="classes/desktop/diebox.xml" />
 	<includefile source="classes/desktop/diepanel.xml" />
 	<includefile source="classes/desktop/diseasegenerator.xml" />		
-	<includefile source="classes/desktop/dmisfortune.xml" />
+<!--	<includefile source="classes/desktop/dmisfortune.xml" />-->
 	<includefile source="classes/desktop/dockitem.xml" />
 	<includefile source="classes/desktop/dreckless.xml" />
 	<includefile source="classes/desktop/fatiguechit.xml" />	
@@ -49,6 +49,8 @@
 	<includefile source="classes/desktop/woundchit.xml" />	
 	<includefile source="classes/desktop/lightsidechit.xml" />
 	<includefile source="classes/desktop/darksidechit.xml" />
+	<includefile source="classes/desktop/criticalchit.xml" />
+	<includefile source="classes/desktop/criticalvehiclechit.xml" />
 	
 	<includefile source="classes/desktop/dieboxremote.xml" />
 	<includefile source="classes/desktop/dieboxviewslot.xml" />

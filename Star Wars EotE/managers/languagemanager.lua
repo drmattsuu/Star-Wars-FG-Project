@@ -249,11 +249,12 @@ function onInit()
 	languagestrings["Cool"] = "Cool";
 	languagestrings["Vigilance"] = "Vigilance";
 	languagestrings["Strain"] = "Strain";
-	languagestrings["Critical Injuries"] = "Critical Injuries";
+	languagestrings["Critical Injuries"] = "Critical Injuries (Severity)";
 	languagestrings["Species"] = "Species";
 	languagestrings["Career"] = "Career";
 	languagestrings["Career Specializations"] = "Career Specializations";
 	languagestrings["Talents"] = "Talents";
+	languagestrings["Species and Special Abilities"] = "Species and Special Abilities";
 	languagestrings["Obligation"] = "Obligation";
 	languagestrings["Obligations"] = "Obligations";
 	languagestrings["Knowledge Skills"] = "Knowledge Skills";
@@ -283,6 +284,9 @@ function onInit()
 	languagestrings["Price"] = "Price";
 	languagestrings["Duty"] = "Duty";
 	languagestrings["Morality"] = "Morality";
+	languagestrings["Conflict"] = "Conflict";
+	languagestrings["Triggered?"] = "Triggered?";
+	languagestrings["Engaged?"] = "Engaged?";	
 	languagestrings["Talents, Critical Injuries, Obligations, Motivations, etc."] = "Talents, Critical Injuries, Obligations, Motivations, etc.";
 	languagestrings["Hard Points Required"] = "Hard Points Required";
 	languagestrings["What Skill"] = "What Skill";
@@ -293,7 +297,34 @@ function onInit()
 	languagestrings["Starship"] = "Starship";
 	languagestrings["Make/Model"] = "Make/Model";
 	languagestrings["Encumbrance Capacity"] = "Encumbrance Capacity";
-	
+	languagestrings["category"] = "Category";
+	languagestrings["##"] = "##";
+	languagestrings["Minion Info"] = "Minion Info";
+	languagestrings["W./Minion"] = "W./Minion";
+	languagestrings["#/Group"] = "#/Group";
+	languagestrings["Activation"] = "Activation";
+	languagestrings["Ranks"] = "Ranks";
+	languagestrings["Motivation"] = "Motivation";
+	languagestrings["Trees"] = "Trees";
+	languagestrings["Magnitude"] = "Magnitude";
+	languagestrings["Species and Special Ability"] = "Species and Special Ability";
+	languagestrings["Inventory"] = "Inventory";
+	languagestrings["Encumbrance Threshold"] = "Encumbrance Threshold";
+	languagestrings["Base"] = "Base";
+	languagestrings["+"] = "+";
+	languagestrings["="] = "=";
+	languagestrings["Ranked?"] = "Ranked?";
+	languagestrings["Attachments"] = "Attachments";
+	languagestrings["Attachment"] = "Attachment";
+	languagestrings["Attachment Description"] = "Attachment Description";
+	languagestrings["Modification Options"] = "Modification Options";
+	languagestrings["Mod Type"] = "Mod Type";
+	languagestrings["Installed?"] = "Installed?";
+	languagestrings["Attachments"] = "Hard Points Remaining";
+	languagestrings["Type / Description"] = "Type / Description";
+	languagestrings["Vehicle"] = "Vehicle";
+	languagestrings["Class"] = "Class";
+	languagestrings["Manufacturer"] = "Manufacturer";
 	
 	
 end

@@ -3,14 +3,16 @@
 
 	<template name="closebuttonlist">
 		<closebutton>
+			<!--LOBOSOLO changing anchor or Close Button for new art - BEGIN-->
 			<anchored>
 				<top>
-					<offset>12</offset>
+					<offset>0</offset>
 				</top>
 				<right>
-					<offset>-4</offset>
+					<offset>-18</offset>
 				</right>
 			</anchored>
+		<!--LOBOSOLO changing anchor or Close Button for new art - END-->
 		</closebutton>
 	</template>
 	

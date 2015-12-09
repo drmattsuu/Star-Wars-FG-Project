@@ -25,6 +25,7 @@ function rename(name)
 end
 
 function setCurrent(state)
+	--Debug.console("Setting " .. namewidget.getText() .. " to " .. tostring(state));
 	if state then
 		if gmidentity then
 			namewidget.setFont("chatbolditalicfont");

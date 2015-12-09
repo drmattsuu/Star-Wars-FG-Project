@@ -107,7 +107,7 @@
 			<anchored>
 				<top>
 					<anchor>bottom</anchor>
-					<offset>-135</offset>
+					<offset>-128</offset>
 				</top>
 				<left>
 					<anchor>left</anchor>
@@ -140,170 +140,77 @@
 	<panel name="dProficiency">
 		<class>dProficiency</class>
 		<bounds>
-			<rect>74,-187,55,55</rect>
+			<rect>77,-187,55,55</rect>
 		</bounds>
 	</panel>
 	<panel name="dDifficulty">
 		<class>dDifficulty</class>
 		<bounds>
-			<rect>129,-187,55,55</rect>
+			<rect>135,-187,55,55</rect>
 		</bounds>
 	</panel>
 	<panel name="dChallenge">
 		<class>dChallenge</class>
 		<bounds>
-			<rect>184,-187,55,55</rect>
+			<rect>193,-187,55,55</rect>
 		</bounds>
 	</panel>	
 	<panel name="dBoost">
 		<class>dBoost</class>
 		<bounds>
-			<rect>239,-187,55,55</rect>
+			<rect>251,-187,55,55</rect>
 		</bounds>
 	</panel>
 	<panel name="dSetback">
 		<class>dSetback</class>
 		<bounds>
-			<rect>294,-187,55,55</rect>
+			<rect>309,-187,55,55</rect>
 		</bounds>
 	</panel>
 	<panel name="dForce">
 		<class>dForce</class>
 		<bounds>
-			<rect>349,-187,55,55</rect>
+			<rect>367,-187,55,55</rect>
 		</bounds>
 	</panel>
 	
 	<!-- Chits -->
-	<!--<panel name="pennychit" modes="host,client">
-		<class>pennychit</class>
+	<panel name="criticalvehiclechit" modes="host,client">
+		<class>criticalvehiclechit</class>
 		<bounds>
-			<rect>-156,-96,56,56</rect>
-		</bounds>
-	</panel>
-	<panel name="shillingchit" modes="host,client">
-		<class>shillingchit</class>
-		<bounds>
-			<rect>-200,-96,56,56</rect>
+			<rect>136,-122,56,56</rect>
 		</bounds>
 	</panel>	
-	<panel name="crownchit" modes="host,client">
-		<class>crownchit</class>
+	<panel name="criticalchit" modes="host,client">
+		<class>criticalchit</class>
 		<bounds>
-			<rect>-244,-96,56,56</rect>
-		</bounds>
-	</panel>
-	<panel name="corruptionchit" modes="host,client">
-		<class>corruptionchit</class>
-		<bounds>
-			<rect>-289,-96,56,56</rect>
+			<rect>193,-122,56,56</rect>
 		</bounds>
 	</panel>	
-	<panel name="fortunechit" modes="host,client">
-		<class>fortunechit</class>
-		<bounds>
-			<rect>-337,-96,56,56</rect>
-		</bounds>
-	</panel>	
-	<panel name="favourchit" modes="host,client">
-		<class>favourchit</class>
-		<bounds>
-			<rect>-393,-96,56,56</rect>
-		</bounds>
-	</panel>	
-	<panel name="powerchit" modes="host,client">
-		<class>powerchit</class>
-		<bounds>
-			<rect>-449,-96,56,56</rect>
-		</bounds>
-	</panel>
-	<panel name="rechargechit" modes="host,client">
-		<class>rechargechit</class>
-		<bounds>
-			<rect>-503,-96,56,56</rect>
-		</bounds>
-	</panel>	
-	<panel name="fatiguechit" modes="host,client">
-		<class>fatiguechit</class>
-		<bounds>
-			<rect>-551,-96,56,56</rect>
-		</bounds>
-	</panel>	
-	<panel name="stresschit" modes="host,client">
-		<class>stresschit</class>
-		<bounds>
-			<rect>-591,-96,56,56</rect>
-		</bounds>
-	</panel>-->	
 	<panel name="woundchit" modes="host,client">
 		<class>woundchit</class>
 		<bounds>
-			<rect>180,-96,56,56</rect>
+			<rect>249,-128,56,56</rect>
 		</bounds>
 	</panel>	
 	<panel name="strainchit" modes="host,client">
 		<class>strainchit</class>
 		<bounds>
-			<rect>219,-96,56,56</rect>
+			<rect>297,-128,56,56</rect>
 		</bounds>
 	</panel>
 	<panel name="lightsidechit" modes="host,client">
 		<class>lightsidechit</class>
 		<bounds>
-			<rect>275,-96,56,56</rect>
+			<rect>352,-128,56,56</rect>
 		</bounds>
 	</panel>
 	<panel name="darksidechit" modes="host,client">
 		<class>darksidechit</class>
 		<bounds>
-			<rect>342,-96,56,56</rect>
+			<rect>412,-128,56,56</rect>
 		</bounds>
 	</panel>
-	
-	
-	<!-- Card Generators -->
-	<!--<panel name="criticalgenerator" modes="host,client">
-		<class>criticalgenerator</class>
-		<bounds>
-			<rect>-197,-229,90,130</rect>
-		</bounds>
-	</panel>
-	<panel name="conditiongenerator" modes="host,client">
-		<class>conditiongenerator</class>
-		<bounds>
-			<rect>-282,-229,90,130</rect>
-		</bounds>
-	</panel>
-	<panel name="insanitygenerator" modes="host,client">
-		<class>insanitygenerator</class>
-		<bounds>
-			<rect>-367,-229,90,130</rect>
-		</bounds>
-	</panel>	
-	<panel name="mutationgenerator" modes="host,client">
-		<class>mutationgenerator</class>
-		<bounds>
-			<rect>-452,-229,90,130</rect>
-		</bounds>
-	</panel>	
-	<panel name="miscastgenerator" modes="host,client">
-		<class>miscastgenerator</class>
-		<bounds>
-			<rect>-537,-229,90,130</rect>
-		</bounds>
-	</panel>	
-	<panel name="diseasegenerator" modes="host,client">
-		<class>diseasegenerator</class>
-		<bounds>
-			<rect>-622,-229,90,130</rect>
-		</bounds>
-	</panel>
-	<panel name="careergenerator" modes="local">
-		<class>careergenerator</class>
-		<bounds>
-			<rect>-222,-145,110,130</rect>
-		</bounds>
-	</panel>	-->
 	
 	<!-- Dice Tower -->
 	<panel name="dicetower" modes="host,client">

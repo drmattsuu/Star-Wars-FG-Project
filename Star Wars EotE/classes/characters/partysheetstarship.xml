@@ -11,12 +11,12 @@
 		</sizelimits>
 		<sheetdata>
 			<windowbutton name="open">
-				<bounds>0,0,20,20</bounds>
+				<bounds>0,1,20,20</bounds>
 				<class>item</class>
 			</windowbutton>
 			
 			<basestringfield name="name">
-				<bounds>21,3,196,17</bounds> <!--width was 96-->
+				<bounds>21,3,260,17</bounds> <!--width was 96-->
 				<empty>&#171; New Item &#187;</empty>
 				<disabled />
 			</basestringfield>
@@ -41,7 +41,7 @@
 						<offset>21</offset>
 					</top>	
 					<size>
-						<width>450</width>
+						<width>425</width>
 					</size>
 				</anchored>
 				<!--<anchored>
@@ -56,7 +56,7 @@
 				<anchored>
 					<left>
 						<anchor>left</anchor>
-						<offset>273</offset>					
+						<offset>313</offset>					
 					</left>
 					<top>
 						<anchor>top</anchor>
@@ -68,7 +68,7 @@
 			
 			<sheetnumberfield name="damage" source="weapon.damage">
 				<anchored>
-					<offset>304,2</offset>
+					<offset>344,2</offset>
 					<size>
 						<width>25</width>
 					</size>
@@ -76,14 +76,22 @@
 				<disabled />
 			</sheetnumberfield>			
 			
-			
+			<sheetnumberfield name="critical" source="weapon.critical">
+				<anchored>
+					<offset>375,2</offset>
+					<size>
+						<width>25</width>
+					</size>
+				</anchored>
+				<disabled />
+			</sheetnumberfield>
 			
 			<rangecontrol name="range">
 				<sourcename>weapon.range</sourcename>
 				<anchored>
 					<left>
 						<anchor>left</anchor>
-						<offset>335</offset>					
+						<offset>406</offset>					
 					</left>
 					<top>
 						<anchor>top</anchor>
@@ -91,17 +99,13 @@
 					</top>					
 				</anchored>
 				<disabled />
-			</rangecontrol>		
-			
-			<sheetnumberfield name="critical" source="weapon.critical">
-				<anchored>
-					<offset>366,2</offset>
-					<size>
-						<width>25</width>
-					</size>
-				</anchored>
-				<disabled />
-			</sheetnumberfield>
+			</rangecontrol>			
+
+<!--LOBOSOLO remarking out discepool for party sheet - BEGIN --	
+			<weapondicepool>
+				<bounds>-28,0,20,20</bounds>
+			</weapondicepool>				
+<!--LOBOSOLO remarking out discepool for party sheet - END -->
 			
 		</sheetdata>
 	</windowclass>
@@ -124,7 +128,7 @@
 			
 		<!-- Starship -->
 			<sheetframe name="ship_info">
-				<bounds>12,10,393,72</bounds>
+				<bounds>14,11,393,81</bounds>
 			</sheetframe>
 			<sheetframetitle name="main_ship_title">
 				<anchored>
@@ -244,7 +248,7 @@
 
 <!-- TOKEN -->			
 			<tokenfield name="main_token" source="token">
-				<bounds>402,18,64,64</bounds>
+				<bounds>412,20,64,64</bounds>
 				<empty>indicator_emptytoken</empty>
 				<script>
 					local dragging = false;
@@ -280,7 +284,7 @@
 			
 <!-- CHARACTERISTICS -->
 			<sheetframe name="starship_characteristics">
-				<bounds>12,92,288,180</bounds>
+				<bounds>14,91,289,160</bounds>
 			</sheetframe>
 			<sheetframetitle name="starship_char_title">
 				<anchored>
@@ -293,7 +297,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_characteristics</to>
-					<offset>15,66</offset>
+					<offset>10,66</offset>
 					<size>
 						<width>84</width>
 					</size>
@@ -319,7 +323,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_characteristics</to>
-					<offset>126,66</offset>
+					<offset>127,66</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -329,7 +333,7 @@
 			<sheetnumberfield name="starship_speed" source="speed">
 				<anchored>
 					<to>starship_characteristics</to>
-					<offset>128,25</offset>
+					<offset>129,25</offset>
 					<size>
 						<width>35</width>
 						<height>35</height>				
@@ -345,7 +349,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_characteristics</to>
-					<offset>212,66</offset>
+					<offset>213,66</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -356,7 +360,7 @@
 				<minvalue>-10</minvalue>
 				<anchored>
 					<to>starship_characteristics</to>
-					<offset>220,25</offset>
+					<offset>221,25</offset>
 					<size>
 						<width>35</width>
 						<height>35</height>				
@@ -372,7 +376,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_characteristics</to>
-					<offset>15,91</offset>
+					<offset>18,91</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -396,7 +400,7 @@
 			
 			<!-- HULL TRAUMA -->
 			<sheetframe name="starship_hulltrauma">
-				<bounds>85,180,102,65</bounds>
+				<bounds>83,181,107,65</bounds>
 			</sheetframe>
 			<sheetframetitle name="starship_title">
 				<anchored>
@@ -408,7 +412,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_hulltrauma</to>
-					<offset>8,44</offset>
+					<offset>16,44</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -418,7 +422,7 @@
 			<sheetnumberfield name="starship_woundsthreshold" source="wounds.threshold">
 				<anchored>
 					<to>starship_hulltrauma</to>
-					<offset>15,22</offset>
+					<offset>23,22</offset>
 					<size>
 						<width>25</width>
 						<height>25</height>				
@@ -435,6 +439,7 @@
 					</size>
 				</anchored>
 				<static>Curr</static>
+				<color > 800000 </color>
 			</sheetlabel>
 			<sheetnumberfield name="starship_woundscurrent" source="wounds.current">
 				<anchored>
@@ -449,7 +454,7 @@
 			
 			<!-- SYSTEM STRAIN  -->
 			<sheetframe name="starship_systemstrain">
-				<bounds>190,180,102,65</bounds>
+				<bounds>188,181,107,65</bounds>
 			</sheetframe>
 			<sheetframetitle name="starship_title">
 				<anchored>
@@ -461,7 +466,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_systemstrain</to>
-					<offset>8,44</offset>
+					<offset>16,44</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -471,7 +476,7 @@
 			<sheetnumberfield name="starship_strainthreshold" source="strain.threshold">
 				<anchored>
 					<to>starship_systemstrain</to>
-					<offset>15,22</offset>
+					<offset>23,22</offset>
 					<size>
 						<width>25</width>
 						<height>25</height>				
@@ -488,6 +493,7 @@
 					</size>
 				</anchored>
 				<static>Curr</static>
+				<color > 800000 </color>
 			</sheetlabel>
 			<sheetnumberfield name="starship_straincurrent" source="strain.current">
 				<anchored>
@@ -502,7 +508,7 @@
 			
 <!-- SHIELDS -->
 			<sheetframe name="starship_shields">
-				<bounds>300,92,180,200</bounds>
+				<bounds>302,91,184,160</bounds>
 			</sheetframe>
 			<sheetframetitle name="starship_title">
 				<anchored>
@@ -515,7 +521,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_shields</to>
-					<offset>114,40</offset>
+					<offset>114,30</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -525,7 +531,7 @@
 			<sheetnumberfield name="starship_shields_fore" source="shields.fore">
 				<anchored>
 					<to>starship_shields</to>
-					<offset>75,31</offset>
+					<offset>75,21</offset>
 					<size>
 						<width>35</width>
 						<height>35</height>				
@@ -541,7 +547,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_shields</to>
-					<offset>18,67</offset>
+					<offset>20,52</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -551,7 +557,7 @@
 			<sheetnumberfield name="starship_shields_port" source="shields.port">
 				<anchored>
 					<to>starship_shields</to>
-					<offset>15,85</offset>
+					<offset>17,70</offset>
 					<size>
 						<width>35</width>
 						<height>35</height>	
@@ -567,7 +573,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_shields</to>
-					<offset>133,120</offset>
+					<offset>133,105</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -577,7 +583,7 @@
 			<sheetnumberfield name="starship_shields_starboard" source="shields.starboard">
 				<anchored>
 					<to>starship_shields</to>
-					<offset>130,85</offset>
+					<offset>130,70</offset>
 					<size>
 						<width>35</width>
 						<height>35</height>	
@@ -593,7 +599,7 @@
 			<sheetlabel>
 				<anchored>
 					<to>starship_shields</to>
-					<offset>47,154</offset>
+					<offset>47,124</offset>
 					<size>
 						<width>64</width>
 					</size>
@@ -603,7 +609,7 @@
 			<sheetnumberfield name="starship_shields_aft" source="shields.aft">
 				<anchored>
 					<to>starship_shields</to>
-					<offset>75,145</offset>
+					<offset>75,115</offset>
 					<size>
 						<width>35</width>
 						<height>35</height>	
@@ -626,7 +632,7 @@
 			
 <!-- NOTES -->
 			<sheetframe name="notes_notes">
-				<bounds>12,285,472,100</bounds> <!-- was 472,245 -->
+				<bounds>14,250,472,137</bounds> <!-- was 472,245 -->
 			</sheetframe>
 			<sheetframetitle name="notes_notes_title">
 				<anchored>
@@ -650,19 +656,19 @@
 					<top>
 						<parent>notes_notes</parent>
 						<anchor>top</anchor>
-						<offset>18</offset>
+						<offset>20</offset>
 					</top>
 					<bottom>
 						<parent>notes_notes</parent>
 						<anchor>bottom</anchor>
-						<offset>-13</offset>
+						<offset>-20</offset>
 					</bottom>
 				</anchored>		
 			</sheetformattedtextfield>
 			<scrollbar>
 				<anchored>
 					<to>notes_notes_notes</to>
-					<offset>-3,-2</offset>
+					<offset>-3,2</offset>
 				</anchored>
 				<target>notes_notes_notes</target>
 			</scrollbar>
@@ -674,7 +680,7 @@
 		<!-- WEAPONS (the listbox)-->
 			<sheetframe name="combat_weapons">
 				<!--<bounds>12,385,472,160</bounds>-->
-				<bounds>12,385,472,-10</bounds>
+				<bounds>14,387,472,-10</bounds>
 				<frame>
 					<name>sheetgroup</name>
 				</frame>		
@@ -684,7 +690,7 @@
 				<anchored>
 					<to>combat_weapons</to>
 					<position>insidetopleft</position>
-					<offset>29,8</offset>
+					<offset>31,8</offset>
 					<size>
 						<width>50</width>
 					</size>					
@@ -697,7 +703,7 @@
 				<anchored>
 					<to>combat_weapons</to>
 					<position>insidetopleft</position>
-					<offset>284,8</offset>
+					<offset>325,8</offset>
 					<size>
 						<width>25</width>
 					</size>					
@@ -709,7 +715,7 @@
 				<anchored>
 					<to>combat_weapons</to>
 					<position>insidetopleft</position>
-					<offset>316,8</offset>
+					<offset>356,8</offset>
 					<size>
 						<width>25</width>
 					</size>					
@@ -717,29 +723,29 @@
 				<center />				
 				<static>Dam</static>
 			</sheettitle>			
-			<sheettitle name="combat_weapons_range">
-				<anchored>
-					<to>combat_weapons</to>
-					<position>insidetopleft</position>
-					<offset>348,8</offset>
-					<size>
-						<width>25</width>
-					</size>					
-				</anchored>
-				<center />				
-				<static>Rng</static>
-			</sheettitle>	
 			<sheettitle name="combat_weapons_crit">
 				<anchored>
 					<to>combat_weapons</to>
 					<position>insidetopleft</position>
-					<offset>380,8</offset>
+					<offset>388,8</offset>
 					<size>
 						<width>25</width>
 					</size>					
 				</anchored>
 				<center />				
 				<static>Crit</static>
+			</sheettitle>	
+			<sheettitle name="combat_weapons_range">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>420,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Rng</static>
 			</sheettitle>			
 
 			<sheetlist name="combat_weapons_weapons">
@@ -752,17 +758,17 @@
 					<right>
 						<parent>combat_weapons</parent>
 						<anchor>right</anchor>
-						<offset>-10</offset>					
+						<offset>-13</offset>					
 					</right>
 					<top>
 						<parent>combat_weapons</parent>
 						<anchor>top</anchor>
-						<offset>19</offset>
+						<offset>20</offset>
 					</top>
 					<bottom>
 						<parent>combat_weapons</parent>
 						<anchor>bottom</anchor>
-						<offset>-13</offset>
+						<offset>-20</offset>
 					</bottom>
 				</anchored>
 				<datasource>.inventory</datasource>
@@ -794,7 +800,7 @@
 			<scrollbar>
 				<anchored>
 					<to>combat_weapons_weapons</to>
-					<offset>-3,-2</offset>
+					<offset>-3,2</offset>
 				</anchored>
 				<target>combat_weapons_weapons</target>
 			</scrollbar>	

@@ -60,12 +60,14 @@
 					<right />
 				</anchored>
 			</genericcontrol>
+<!--LOBOSOLO removing idelete to resolve console error - BEGIN -
 			<button_idelete name="idelete">
 				<anchored>
 					<top />
 					<right parent="rightanchor" anchor="left" relation="relative" offset="-5" />
 				</anchored>
-			</button_idelete>			
+			</button_idelete>
+			<!-- END -->			
 			<icon_access name="access" />
 			<icon_modified name="modified" />
 			
@@ -110,7 +112,7 @@
 					<zoompressed>button_zoomer_down</zoompressed>
 				</button>
 			</scrollercontrol>
-			<viewerlist>
+<!--			<viewerlist>
 				<anchored>
 					<left>
 						<anchor>left</anchor>
@@ -121,7 +123,7 @@
 						<offset>-27</offset>
 					</bottom>
 				</anchored>
-			</viewerlist>
+			</viewerlist>-->
 			
 			<closebutton>
 				<anchored>

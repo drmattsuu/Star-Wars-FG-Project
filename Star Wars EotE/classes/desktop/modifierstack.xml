@@ -29,6 +29,9 @@
 			<numbercontrol name="modifier">
 				<bounds>5,0,54,42</bounds>
 				<font>modcollector</font>
+<!--LOBOSOLO changing the font color - BEGIN -->
+				<color>#ffffff</color>
+<!--LOBOSOLO changing the font color - END -->
 				<displaysign />
 				<keyeditframe>
 					<name>modstackfocus</name>
@@ -48,6 +51,9 @@
 			<basestringcontrol name="label">
 				<bounds>5,34,54,12</bounds>
 				<font>modcollectorlabel</font>
+<!--LOBOSOLO changing the font color - BEGIN -->
+				<color>#ffffff</color>
+<!--LOBOSOLO changing the font color - END -->	
 				<static>Modifier</static>
 				<center />
 				<script>

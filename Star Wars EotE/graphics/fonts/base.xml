@@ -164,12 +164,13 @@
 		<fgffile name="graphics/fonts/sheetlabelsmallbold.fgf" />
 		<color value="#261A12" />
 	</font>
-	
+<!--LOBOSOLO updating charsheet font colors originally #AE8E69- BEGIN -->	
 	<font name="sheetlabelinline">
 		<fgffile name="graphics/fonts/sheetlabelsmall.fgf" />
-		<color value="#AE8E69" />
+		<color value="#FFFFFF" />
 	</font>
-	
+<!--LOBOSOLO updating charsheet font colors - END -->	
+
 	<font name="sheetlabeldisabled">
 		<fgffile name="graphics/fonts/sheetlabel.fgf" />
 		<color value="#BCA180" />
@@ -204,6 +205,13 @@
 	<!-- Windows -->
 	<font name="windowtitle">
 		<ttf file="graphics/fonts/AlegreyaSansSC-Bold.ttf" name="Alegreya Sans SC" size="26" />
+		<color value="#000000" />
+		<shadow offset="1,1" color="#808080" />
+	</font>	
+	
+	<!-- Chit Numbering-->
+	<font name="chitnumbers">
+		<ttf file="graphics/fonts/AlegreyaSansSC-Bold.ttf" name="Alegreya Sans SC" size="40" />
 		<color value="#000000" />
 		<shadow offset="1,1" color="#808080" />
 	</font>	

@@ -28,7 +28,24 @@ function onDrag(button, x, y, draginfo)
 		local weaponskillvalue = weaponnode.getChild("skill").getValue();
 		local weapondamagevalue = weaponnode.getChild("damage").getValue();
 		local weaponcriticalvalue = weaponnode.getChild("critical").getValue();
-		local skillsnode = DB.getChild(window.getDatabaseNode(), "...skills");
+		
+		local skillsnode;
+		-- See if we're rolling form the party sheet (group vehicle) or from a character sheet.
+		if string.find(window.getDatabaseNode().getNodeName(), "partysheet.inventory") then
+			if User.getCurrentIdentity() then
+				--Debug.console("Current PC = " .. "charsheet." .. User.getCurrentIdentity() .. ".skills");
+				skillsnode = DB.findNode("charsheet." .. User.getCurrentIdentity() .. ".skills");
+			end
+		else
+			skillsnode = DB.getChild(window.getDatabaseNode(), "...skills");	
+		end
+		
+		-- If we don't have the skillsnode then we can't populate the dice pool with anything - exit function.
+		if skillsnode == nil then
+			return;
+		end
+
+	
 		--Debug.console("Weapon name = " .. weaponname .. ", weapon node = " .. weaponnode.getNodeName());
 		--Debug.console("Weapon skill name = " .. weaponskillvalue .. ", PC skills node = " .. skillsnode.getNodeName());
 		
@@ -77,7 +94,7 @@ function onDrag(button, x, y, draginfo)
 		if table.getn(dice) > 0 then
 			draginfo.setType("skill");
 			if weaponskillnode.getChild("name") then
-				draginfo.setDescription(weaponname .. " - " .. weaponskillnode.getChild("name").getValue() .. " [ATTACK]\r[DAMAGE: " .. weapondamagevalue .. "] [CRITICAL: " .. weaponcriticalvalue .. "]");		
+				draginfo.setDescription(weaponname .. " - " .. weaponskillnode.getChild("name").getValue() .. " [ATTACK]\r[DAMAGE: " .. weapondamagevalue .. "] [CRIT: " .. weaponcriticalvalue .. "]");		
 			end
 			draginfo.setDieList(dice);
 			draginfo.setDatabaseNode(weaponskillnode);
@@ -109,14 +126,29 @@ end
 -- Allows population of the dice pool by a double-click on the dice button by the skill
 function onDoubleClick()
 
-	--Debug.console("Weapon roll from window class = " .. window.getClass() .. ". window database node = " .. window.getDatabaseNode().getNodeName());	
+	Debug.console("Weapon roll from window class = " .. window.getClass() .. ". window database node = " .. window.getDatabaseNode().getNodeName());	
 	--Debug.console("TODO - code Cool initiative roll.  Control = " .. self.getName());
 	local weaponnode = window.getDatabaseNode().getChild("weapon");
 	local weaponname = DB.getValue(window.getDatabaseNode(), "name");
 	local weaponskillvalue = weaponnode.getChild("skill").getValue();
 	local weapondamagevalue = weaponnode.getChild("damage").getValue();
 	local weaponcriticalvalue = weaponnode.getChild("critical").getValue();
-	local skillsnode = DB.getChild(window.getDatabaseNode(), "...skills");
+	
+	local skillsnode;
+	-- See if we're rolling form the party sheet (group vehicle) or from a character sheet.
+	if string.find(window.getDatabaseNode().getNodeName(), "partysheet.inventory") then
+		if User.getCurrentIdentity() then
+			Debug.console("Current PC = " .. "charsheet." .. User.getCurrentIdentity() .. ".skills");
+			skillsnode = DB.findNode("charsheet." .. User.getCurrentIdentity() .. ".skills");
+		end
+	else
+		skillsnode = DB.getChild(window.getDatabaseNode(), "...skills");	
+	end
+	
+	-- If we don't have the skillsnode then we can't populate the dice pool with anything - exit function.
+	if skillsnode == nil then
+		return;
+	end
 	--Debug.console("Weapon name = " .. weaponname .. ", weapon node = " .. weaponnode.getNodeName());
 	--Debug.console("Weapon skill name = " .. weaponskillvalue .. ", PC skills node = " .. skillsnode.getNodeName());
 	
@@ -168,7 +200,7 @@ function onDoubleClick()
 	DicePoolManager.addSkillDice(weaponskillnode, dice);
 	if table.getn(dice) > 0 then
 		if weaponskillnode.getChild("name") then
-			skilldescription = weaponname .. " - " .. weaponskillnode.getChild("name").getValue() .. " [ATTACK]\r[DAMAGE: " .. weapondamagevalue .. "] [CRITICAL: " .. weaponcriticalvalue .. "]";		
+			skilldescription = weaponname .. " - " .. weaponskillnode.getChild("name").getValue() .. " [ATTACK]\r[DAMAGE: " .. weapondamagevalue .. "] [CRIT: " .. weaponcriticalvalue .. "]";		
 		end
 		DieBoxManager.addSkillDice(skilldescription, dice, weaponskillnode, msgidentity);
 	end

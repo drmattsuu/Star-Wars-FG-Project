@@ -84,9 +84,12 @@ end
 -- Allows population of the dice pool by a double-click on the dice button by the skill
 function onDoubleClick()
 
-	--Debug.console("TODO - code Cool initiative roll.  Control = " .. self.getName());
+	Debug.console("initdicepool.lua - onDoubleClick");
 	--local sourcenode = window.getDatabaseNode();
 	local skillsnode = window.getDatabaseNode().getChild("skills");
+	if not skillsnode then
+		return;
+	end
 	local initskillnode = nil;
 	local initskillname = "";
 	--Debug.console("Skills node = " .. skillsnode.getNodeName());

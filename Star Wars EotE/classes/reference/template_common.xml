@@ -56,7 +56,7 @@
 						if (wControl > wWindow) then
 							wControl = wWindow;
 						end
-						setStaticBounds((wWindow - wControl) / 2, 0, wControl, 40);
+						setStaticBounds((wWindow - wControl) / 2, 5, wControl, 40);
 					end
 				end
 			</script>

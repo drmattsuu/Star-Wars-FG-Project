@@ -176,6 +176,7 @@
 	<icon name="indicator_loading" file="graphics/icons/indicator_loading.png" />
 	<icon name="indicator_shield" file="graphics/icons/indicator_shield.png" />
 	<icon name="indicator_shielddown" file="graphics/icons/indicator_shielddown.png" />
+	<icon name="indicator_shield_disable" file="graphics/icons/indicator_shield_disable.png" />
 	<icon name="indicator_sword" file="graphics/icons/indicator_sword.png" />
 	<icon name="indicator_sworddown" file="graphics/icons/indicator_sworddown.png" />
 	<icon name="indicator_effect" file="graphics/icons/indicator_effect.png" />
@@ -260,6 +261,8 @@
 	<icon name="button_locations_down" file="graphics/icons/button_locations_down.png" />
 	<icon name="button_encounters" file="graphics/icons/button_encounters.png" />
 	<icon name="button_encounters_down" file="graphics/icons/button_encounters_down.png" />
+	<icon name="button_vehicle" file="graphics/icons/button_vehicle.png" />
+	<icon name="button_vehicle_down" file="graphics/icons/button_vehicle_down.png" />	
 
 	<icon name="button_combat" file="graphics/icons/button_combat.png" />
 	<icon name="button_combat_down" file="graphics/icons/button_combat_down.png" />
@@ -282,6 +285,14 @@
 	<icon name="button_scroller_down" file="graphics/icons/button_scroller_down.png" />
 	<icon name="button_scrollerpan" file="graphics/icons/button_scrollerpan.png" />
 	<icon name="button_scrollerpan_down" file="graphics/icons/button_scrollerpan_down.png" />
+<!-- LOBOSOLO adding 6 new scroller icons - BEGIN -->
+	<icon name="button_scrollerpan_flat" file="graphics/icons/button_scrollerpan_flat.png" />
+	<icon name="button_scrollerpan_flat_down" file="graphics/icons/button_scrollerpan_flat_down.png" />
+	<icon name="button_zoomer_flat" file="graphics/icons/button_zoomer_flat.png" />
+	<icon name="button_zoomer_flat_down" file="graphics/icons/button_zoomer_flat_down.png" />
+	<icon name="button_zoomer_clear" file="graphics/icons/button_zoomer_clear.png" />
+	<icon name="button_zoomer_clear_down" file="graphics/icons/button_zoomer_clear_down.png" />
+<!-- LOBOSOLO adding 6 new scroller icons - END -->
 	<icon name="button_zoomer" file="graphics/icons/button_zoomer.png" />
 	<icon name="button_zoomer_down" file="graphics/icons/button_zoomer_down.png" />
 
@@ -307,16 +318,20 @@
 	<icon name="lighting_fire" file="graphics/icons/lighting_fire.png" />
 	<icon name="lighting_forest" file="graphics/icons/lighting_forest.png" />
 
+<!--LOBOSOLO adding black tab_base6 and 6s - BEGIN -->
 	<icon name="tab_base1" file="graphics/icons/tab_base1.png" />
 	<icon name="tab_base2" file="graphics/icons/tab_base2.png" />
 	<icon name="tab_base3" file="graphics/icons/tab_base3.png" />
 	<icon name="tab_base4" file="graphics/icons/tab_base4.png" />
 	<icon name="tab_base5" file="graphics/icons/tab_base5.png" />
+	<icon name="tab_base6" file="graphics/icons/tab_base6.png" />
 	<icon name="tab_base1s" file="graphics/icons/tab_base1s.png" />
 	<icon name="tab_base2s" file="graphics/icons/tab_base2s.png" />
 	<icon name="tab_base3s" file="graphics/icons/tab_base3s.png" />
 	<icon name="tab_base4s" file="graphics/icons/tab_base4s.png" />
 	<icon name="tab_base5s" file="graphics/icons/tab_base5s.png" />
+	<icon name="tab_base6s" file="graphics/icons/tab_base6s.png" />
+<!--LOBOSOLO adding black tab_base6 and 6s - END -->
 	<icon name="tab_icon1" file="graphics/icons/tab_icon1.png" />
 	<icon name="tab_icon2" file="graphics/icons/tab_icon2.png" />
 	<icon name="tab_icon3" file="graphics/icons/tab_icon3.png" />
@@ -325,6 +340,13 @@
 	<icon name="tab_icon6" file="graphics/icons/tab_icon6.png" />
 	<icon name="tab_icon7" file="graphics/icons/tab_icon7.png" />
 	<icon name="tab_icon8" file="graphics/icons/tab_icon8.png" />
+<!--LOBOSOLO adding 5 more tab_icons - BEGIN -->
+	<icon name="tab_icon9" file="graphics/icons/tab_icon9.png" />
+	<icon name="tab_icon10" file="graphics/icons/tab_icon10.png" />
+	<icon name="tab_icon11" file="graphics/icons/tab_icon11.png" />
+	<icon name="tab_icon12" file="graphics/icons/tab_icon12.png" />
+	<icon name="tab_icon13" file="graphics/icons/tab_icon13.png" />
+<!--LOBOSOLO adding 5 more tab_icons - END -->
 
 	<icon name="tab_main" file="graphics/icons/tab_main.png" />
 	<icon name="tab_combat" file="graphics/icons/tab_combat.png" />
@@ -344,13 +366,14 @@
 	<icon name="tab_details" file="graphics/icons/tab_details.png" />
 	<icon name="tab_specialisations" file="graphics/icons/tab_specialisations.png" />
 	<icon name="tab_severe" file="graphics/icons/tab_severe.png" />
-	<icon name="tab_runes" file="graphics/icons/tab_runes.png" />
+	<icon name="tab_attachments" file="graphics/icons/tab_attachments.png" />
 	<icon name="tab_actions" file="graphics/icons/tab_actions.png" />
 	<icon name="tab_talents" file="graphics/icons/tab_talents.png" />
 	<icon name="tab_symptoms" file="graphics/icons/tab_symptoms.png" />
 	<icon name="tab_starship" file="graphics/icons/tab_starship.png" />
 	<icon name="tab_hardpoints" file="graphics/icons/tab_hardpoints.png" />
 	<icon name="tab_mods" file="graphics/icons/tab_mods.png" />
+	<icon name="tab_vehicle" file="graphics/icons/tab_vehicle.png" />
 	
 	<icon name="footer_wide" file="graphics/icons/footer_wide.png" />
 	<icon name="footer_narrow" file="graphics/icons/footer_narrow.png" />
@@ -431,8 +454,10 @@
 	<icon name="button_upgrade_difficulty_down" file="graphics/icons/button_upgrade_difficulty_down.png" />
 	<icon name="button_downgrade_challenge" file="graphics/icons/button_downgrade_challenge.png" />	
 	<icon name="button_downgrade_challenge_down" file="graphics/icons/button_downgrade_challenge_down.png" />	
-	<icon name="visibilityoff" file="graphics/icons/visibilityoff_whiteback.png" />
-	<icon name="visibilityon" file="graphics/icons/visibilityon_whiteback.png" />
+<!--LOBOSOLO updaing visibitily icons - BEGIN -->
+	<icon name="visibilityoff" file="graphics/icons/visibilityoff.png" />
+	<icon name="visibilityon" file="graphics/icons/visibilityon.png" />
+<!--LOBOSOLO updaing visibitily icons - END -->
 	
 	<!-- Campaign records -->
 	<icon name="record_public" file="graphics/icons/record_public.png" />
@@ -456,5 +481,7 @@
 	<icon name="button_link" file="graphics/icons/button_link.png" />	
 	
 	<icon name="charlist_afk" file="graphics/icons/charlist_afk.png" />
+	
+	<icon name="icon_enable_soak" file="graphics/icons/icon_enable_soak.png" />
 		
 </root>

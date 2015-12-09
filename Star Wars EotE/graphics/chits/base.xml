@@ -32,4 +32,8 @@
 	<icon name="darksidechit7" file="graphics/chits/darkside7.png" />
 	<icon name="darksidechit8more" file="graphics/chits/darkside8more.png" />
 	<icon name="darksidechit0" file="graphics/chits/darkside0.png" />
+	
+	<icon name="criticalchit" file="graphics/chits/critical_personal.png" />
+	<icon name="criticalvehiclechit" file="graphics/chits/critical_vehicle.png" />
+
 </root>

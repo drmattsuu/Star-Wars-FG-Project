@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+	<windowclass name="itemattachments">
+		<placement>
+			<size>
+				<width>300</width>
+				<height>334</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		
+<!-- NAME -->
+			<sheetframe name="main_name">
+				<bounds>14,15,264,49</bounds>
+			</sheetframe>
+			
+			<sheetframetitle name="main_name_title">
+				<anchored>
+					<to>main_name</to>
+				</anchored>
+				<static>Item</static>
+			</sheetframetitle>			
+			
+			<windowshortcut name="main_name_shortcut">
+				<anchored>
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>17,18</offset>
+					<size>
+						<height>20</height>
+						<width>20</width>
+					</size>
+				</anchored>			
+				<class>item</class>
+			</windowshortcut>
+			<basestringfield name="main_name_name" source="name">
+				<anchored>			
+					<to>main_name</to>
+					<position>insidetopleft</position>					
+					<offset>38,19</offset>
+					<size>
+						<height>20</height>
+						<width>200</width>
+					</size>
+				</anchored>
+				<empty>&#171; New Item &#187;</empty>
+				<tabtarget>
+					<next>main_inventory_value</next>
+					<prev>main_inventory_encumbrance</prev>
+				</tabtarget>				
+			</basestringfield>
+			
+<!-- attachments -->
+			<sheetframe name="attachments_attachments">
+				<bounds>14,61,264,261</bounds>
+			</sheetframe>
+						
+			<!-- Hard Points -->
+			<sheetlabel name="attachments_attachments_HPRemain">
+				<anchored>
+					<to>attachments_attachments</to>
+					<offset>13,20</offset>
+					<size>
+						<width>209</width>
+					</size>
+				</anchored>
+				<static>Available Hard Points</static>
+			</sheetlabel>			
+			<sheetnumberfield name="main_inventory_hardpointsremaining" source="hardpointsremaining">
+				<anchored>
+					<to>attachments_attachments</to>
+					<offset>201,21</offset>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<empty>0</empty>
+				<zerocolor>000000</zerocolor>
+				<script>
+					function onInit()
+						if super.onInit then super.onInit() end
+						updateHPRemaining();
+					end
+					
+					function updateHPRemaining()
+						local attachmentsNode = window.getDatabaseNode().getChild("attachments");
+						local hardPointsRemaining = window.getDatabaseNode().getChild("hardpoints").getValue();
+						if attachmentsNode then
+							for k,v in pairs(attachmentsNode.getChildren()) do
+								hardPointsRemaining = hardPointsRemaining - v.getChild("hardpoints").getValue();
+							end
+						end
+						setValue(hardPointsRemaining);
+						if hardPointsRemaining &lt; 0 then
+							setColor("800000");
+						end
+					end
+				</script>
+<!--				<tabtarget>
+					<next>main_inventory_rarity</next>
+					<prev>main_inventory_value</prev>
+				</tabtarget>-->
+			</sheetnumberfield>			
+
+			<sheetframetitle name="attachments_attachments_name">
+				<anchored>
+					<to>attachments_attachments</to>
+					<position>insidetopleft</position>
+					<offset>38,41</offset>
+					<size>
+						<width>65</width>
+					</size>					
+				</anchored>
+				<center />
+				<static>Attachment</static>
+				<tooltip textres="inventory_inventory_isequipped" />
+			</sheetframetitle>			
+			<sheetframetitle name="attachments_attachments_hardpoints">
+				<anchored>
+					<to>attachments_attachments</to>
+					<position>insidetopright</position>
+					<offset>9,41</offset>
+					<size>
+						<width>65</width>
+					</size>					
+				</anchored>
+				<center />
+				<static>Hard Points</static>
+			</sheetframetitle>				
+			
+			<sheetframetitle name="attachments_attachments_title">
+				<anchored>
+					<to>attachments_attachments</to>
+				</anchored>
+				<static>Modifications</static>
+			</sheetframetitle>
+			
+			<!-- attachments -->			
+			<sheetlist name="attachments_attachments_attachments">
+				<anchored>
+					<left>
+						<parent>attachments_attachments</parent>
+						<anchor>left</anchor>
+						<offset>17</offset>					
+					</left>
+					<right>
+						<parent>attachments_attachments</parent>
+						<anchor>right</anchor>
+						<offset>-24</offset>					
+					</right>
+					<top>
+						<parent>attachments_attachments</parent>
+						<anchor>top</anchor>
+						<offset>55</offset>
+					</top>
+					<bottom>
+						<parent>attachments_attachments</parent>
+						<anchor>bottom</anchor>
+						<offset>-20</offset>
+					</bottom>
+				</anchored>
+				<datasource>.attachments</datasource>
+				<class>attachmentsmall</class>
+				<allowcreate />
+				<acceptdrop>
+					<class>attachment</class>
+					<field>*</field>
+				</acceptdrop>
+				<script>
+					function onListChanged()
+						window.main_inventory_hardpointsremaining.updateHPRemaining();
+					end
+				</script>				
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>attachments_attachments_attachments</to>
+					<offset>8,0</offset>
+				</anchored>
+				<target>attachments_attachments_attachments</target>
+			</scrollbar>			
+						
+		</sheetdata>
+	</windowclass>
+			
+</root>

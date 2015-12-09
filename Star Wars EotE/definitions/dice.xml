@@ -8,7 +8,9 @@
 	<die name="d4">
 		<icon>d4icon</icon>
 		<!--<position>370,-103</position>-->
-		<position>-30,-47</position>		
+		<!--LOBOSOLO updating D4 position - BEGIN -->
+		<position>-60,-160</position>		
+<!--LOBOSOLO updating D4 position - BEGIN -->
 	</die>
 	<die name="d4.1"><icon>d4icon.1</icon></die>
 	<die name="d4.2"><icon>d4icon.2</icon></die>
@@ -32,7 +34,9 @@
 	<die name="d6">
 		<icon>d6icon</icon>
 		<!--<position>318,-103</position>-->
-		<position>-30,-79</position>		
+<!--LOBOSOLO updating D6 position - BEGIN -->
+		<position>-85,-112</position>		
+<!--LOBOSOLO updating D6 position - END -->
 	</die>
 	<die name="d6.1"><icon>d6icon.1</icon></die>
 	<die name="d6.2"><icon>d6icon.2</icon></die>
@@ -55,83 +59,13 @@
 	<die name="d3.2"><icon>d3icon.2</icon></die>
 	<die name="d3.3"><icon>d3icon.3</icon></die>	
 	
-	<!-- dExpertise -->
-	<customdie name="dExpertise">
-		<model>d6</model>
-		<menuicon>customdice</menuicon>
-	</customdie>
-	<die name="dExpertise.1"><icon>dExpertiseicon.1</icon></die>
-	<die name="dExpertise.2"><icon>dExpertiseicon.2</icon></die>
-	<die name="dExpertise.3"><icon>dExpertiseicon.3</icon></die>
-	<die name="dExpertise.4"><icon>dExpertiseicon.4</icon></die>
-	<die name="dExpertise.5"><icon>dExpertiseicon.5</icon></die>
-	<die name="dExpertise.6"><icon>dExpertiseicon.6</icon></die>
-	
-	<!-- dFortune -->
-	<customdie name="dFortune">
-		<model>d6</model>
-		<menuicon>customdice</menuicon>		
-	</customdie>
-	<die name="dFortune.1"><icon>dFortuneicon.1</icon></die>
-	<die name="dFortune.2"><icon>dFortuneicon.2</icon></die>
-	<die name="dFortune.3"><icon>dFortuneicon.3</icon></die>
-	<die name="dFortune.4"><icon>dFortuneicon.4</icon></die>
-	<die name="dFortune.5"><icon>dFortuneicon.5</icon></die>
-	<die name="dFortune.6"><icon>dFortuneicon.6</icon></die>	
-	
-	<!-- dMisfortune -->
-	<customdie name="dMisfortune">
-		<model>d6</model>
-		<menuicon>customdice</menuicon>
-	</customdie>
-	<die name="dMisfortune.1"><icon>dMisfortuneicon.1</icon></die>
-	<die name="dMisfortune.2"><icon>dMisfortuneicon.2</icon></die>
-	<die name="dMisfortune.3"><icon>dMisfortuneicon.3</icon></die>
-	<die name="dMisfortune.4"><icon>dMisfortuneicon.4</icon></die>
-	<die name="dMisfortune.5"><icon>dMisfortuneicon.5</icon></die>
-	<die name="dMisfortune.6"><icon>dMisfortuneicon.6</icon></die>	
-	
-	<!-- mComet -->
-	<customdie name="mComet">
-		<model>d6</model>
-		<menuicon>customdice</menuicon>
-	</customdie>
-	<die name="mComet.1"><icon>mCometicon.1</icon></die>
-	<die name="mComet.2"><icon>mCometicon.2</icon></die>
-	<die name="mComet.3"><icon>mCometicon.3</icon></die>
-	<die name="mComet.4"><icon>mCometicon.4</icon></die>
-	<die name="mComet.5"><icon>mCometicon.5</icon></die>
-	<die name="mComet.6"><icon>mCometicon.6</icon></die>	
-
-	<!-- mBoon -->
-	<customdie name="mBoon">
-		<model>d6</model>
-		<menuicon>customdice</menuicon>
-	</customdie>
-	<die name="mBoon.1"><icon>mBoonicon.1</icon></die>
-	<die name="mBoon.2"><icon>mBoonicon.2</icon></die>
-	<die name="mBoon.3"><icon>mBoonicon.3</icon></die>
-	<die name="mBoon.4"><icon>mBoonicon.4</icon></die>
-	<die name="mBoon.5"><icon>mBoonicon.5</icon></die>
-	<die name="mBoon.6"><icon>mBoonicon.6</icon></die>
-	
-	<!-- mBane -->
-	<customdie name="mBane">
-		<model>d6</model>
-		<menuicon>customdice</menuicon>
-	</customdie>
-	<die name="mBane.1"><icon>mBaneicon.1</icon></die>
-	<die name="mBane.2"><icon>mBaneicon.2</icon></die>
-	<die name="mBane.3"><icon>mBaneicon.3</icon></die>
-	<die name="mBane.4"><icon>mBaneicon.4</icon></die>
-	<die name="mBane.5"><icon>mBaneicon.5</icon></die>
-	<die name="mBane.6"><icon>mBaneicon.6</icon></die>		
-	
 	<!-- d8 -->
 	<die name="d8">
 		<icon>d8icon</icon>
 		<!--<position>266,-103</position>-->
-		<position>-30,-103</position>		
+<!--LOBOSOLO updating d8 position on desktop - BEGIN -->
+		<position>-35,-112</position>		
+<!--LOBOSOLO updating d8 position on desktop - END -->
 	</die>
 	<die name="d8.1"><icon>d8icon.1</icon></die>
 	<die name="d8.2"><icon>d8icon.2</icon></die>
@@ -198,7 +132,9 @@
 	<die name="d12">
 		<icon>d12icon</icon>
 		<!--<position>162,-103</position>-->
-		<position>-72,-79</position>
+<!--LOBOSOLO updated d12 position on desktop - BEGIN -->
+		<position>-85,-60</position>
+<!--LOBOSOLO updated d12 position on desktop - BEGIN -->
 	</die>
 	<die name="d12.1"><icon>d12icon.1</icon></die>
 	<die name="d12.2"><icon>d12icon.2</icon></die>
@@ -280,32 +216,6 @@
 	<die name="dSummary.7"><icon>dSummaryicon.7</icon></die>
 	<die name="dSummary.8"><icon>dSummaryicon.8</icon></die>
 	
-	<!-- mSuccess -->
-	<customdie name="mSuccess">
-		<model>d8</model>
-	</customdie>
-	<die name="mSuccess.1"><icon>mSuccessicon.1</icon></die>
-	<die name="mSuccess.2"><icon>mSuccessicon.2</icon></die>
-	<die name="mSuccess.3"><icon>mSuccessicon.3</icon></die>
-	<die name="mSuccess.4"><icon>mSuccessicon.4</icon></die>
-	<die name="mSuccess.5"><icon>mSuccessicon.5</icon></die>
-	<die name="mSuccess.6"><icon>mSuccessicon.6</icon></die>
-	<die name="mSuccess.7"><icon>mSuccessicon.7</icon></die>
-	<die name="mSuccess.8"><icon>mSuccessicon.8</icon></die>	
-	
-	<!-- mChallenge -->
-	<customdie name="mChallenge">
-		<model>d8</model>
-	</customdie>
-	<die name="mChallenge.1"><icon>mChallengeicon.1</icon></die>
-	<die name="mChallenge.2"><icon>mChallengeicon.2</icon></die>
-	<die name="mChallenge.3"><icon>mChallengeicon.3</icon></die>
-	<die name="mChallenge.4"><icon>mChallengeicon.4</icon></die>
-	<die name="mChallenge.5"><icon>mChallengeicon.5</icon></die>
-	<die name="mChallenge.6"><icon>mChallengeicon.6</icon></die>
-	<die name="mChallenge.7"><icon>mChallengeicon.7</icon></die>
-	<die name="mChallenge.8"><icon>mChallengeicon.8</icon></die>	
-	
 	<!-- d10 -->
 	<die name="d10">
 		<icon>d10icon</icon>
@@ -323,75 +233,13 @@
 	<die name="d10.9"><icon>d10icon.9</icon></die>
 	<die name="d10.10"><icon>d10icon.10</icon></die>
 	
-	<!-- dReckless -->
-<!--	<customdie name="dReckless">
-		<model>d10</model>
-		<menuicon>customdice</menuicon>
-	</customdie>	
-	<die name="dReckless.1"><icon>dRecklessicon.1</icon></die>
-	<die name="dReckless.2"><icon>dRecklessicon.2</icon></die>
-	<die name="dReckless.3"><icon>dRecklessicon.3</icon></die>	
-	<die name="dReckless.4"><icon>dRecklessicon.4</icon></die>	
-	<die name="dReckless.5"><icon>dRecklessicon.5</icon></die>	
-	<die name="dReckless.6"><icon>dRecklessicon.6</icon></die>	
-	<die name="dReckless.7"><icon>dRecklessicon.7</icon></die>	
-	<die name="dReckless.8"><icon>dRecklessicon.8</icon></die>	
-	<die name="dReckless.9"><icon>dRecklessicon.9</icon></die>	
-	<die name="dReckless.10"><icon>dRecklessicon.10</icon></die>-->
-	
-	<!-- dConservative -->
-<!--	<customdie name="dConservative">
-		<model>d10</model>
-		<menuicon>customdice</menuicon>
-	</customdie>	
-	<die name="dConservative.1"><icon>dConservativeicon.1</icon></die>
-	<die name="dConservative.2"><icon>dConservativeicon.2</icon></die>
-	<die name="dConservative.3"><icon>dConservativeicon.3</icon></die>	
-	<die name="dConservative.4"><icon>dConservativeicon.4</icon></die>	
-	<die name="dConservative.5"><icon>dConservativeicon.5</icon></die>	
-	<die name="dConservative.6"><icon>dConservativeicon.6</icon></die>	
-	<die name="dConservative.7"><icon>dConservativeicon.7</icon></die>	
-	<die name="dConservative.8"><icon>dConservativeicon.8</icon></die>	
-	<die name="dConservative.9"><icon>dConservativeicon.9</icon></die>	
-	<die name="dConservative.10"><icon>dConservativeicon.10</icon></die>-->
-	
-	<!-- mDelay -->
-<!--	<customdie name="mDelay">
-		<model>d10</model>
-		<menuicon>customdice</menuicon>
-	</customdie>	
-	<die name="mDelay.1"><icon>mDelayicon.1</icon></die>
-	<die name="mDelay.2"><icon>mDelayicon.2</icon></die>
-	<die name="mDelay.3"><icon>mDelayicon.3</icon></die>	
-	<die name="mDelay.4"><icon>mDelayicon.4</icon></die>	
-	<die name="mDelay.5"><icon>mDelayicon.5</icon></die>	
-	<die name="mDelay.6"><icon>mDelayicon.6</icon></die>	
-	<die name="mDelay.7"><icon>mDelayicon.7</icon></die>	
-	<die name="mDelay.8"><icon>mDelayicon.8</icon></die>	
-	<die name="mDelay.9"><icon>mDelayicon.9</icon></die>	
-	<die name="mDelay.10"><icon>mDelayicon.10</icon></die>-->
-	
-	<!-- mExertion -->
-<!--	<customdie name="mExertion">
-		<model>d10</model>
-		<menuicon>customdice</menuicon>
-	</customdie>	
-	<die name="mExertion.1"><icon>mExertionicon.1</icon></die>
-	<die name="mExertion.2"><icon>mExertionicon.2</icon></die>
-	<die name="mExertion.3"><icon>mExertionicon.3</icon></die>	
-	<die name="mExertion.4"><icon>mExertionicon.4</icon></die>	
-	<die name="mExertion.5"><icon>mExertionicon.5</icon></die>	
-	<die name="mExertion.6"><icon>mExertionicon.6</icon></die>	
-	<die name="mExertion.7"><icon>mExertionicon.7</icon></die>	
-	<die name="mExertion.8"><icon>mExertionicon.8</icon></die>	
-	<die name="mExertion.9"><icon>mExertionicon.9</icon></die>	
-	<die name="mExertion.10"><icon>mExertionicon.10</icon></die>	-->	
-		
 	<!-- d20 -->
 	<die name="d20">
 		<icon>d20icon</icon>
 		<!--<position>110,-103</position>-->
-		<position>-72,-47</position>
+<!--LOBOSOLO updating d20 position on desktop - BEGIN -->
+		<position>-35,-60</position>
+<!--LOBOSOLO updating d20 position on desktop - END -->
 	</die>
 	<die name="d20.1"><icon>d20icon.1</icon></die>
 	<die name="d20.2"><icon>d20icon.2</icon></die>

@@ -68,5 +68,8 @@
 	
 	<includefile source="classes/common/template_lists.xml" />
 	
+	<includefile source="classes/common/button_stringcycler.xml" />
+	<includefile source="classes/common/button_iconcycler.xml" />
+	
 	<script name="DataCommon" file="classes/common/data_common.lua" />
 </root>

@@ -13,14 +13,21 @@
 		
 <!-- NAME -->
 			<sheetframe name="specialisations_name">
-				<bounds>12,20,264,40</bounds>
+				<bounds>14,15,264,49</bounds>
 			</sheetframe>
+			
+			<sheetframetitle name="main_name_title">
+				<anchored>
+					<to>specialisations_name</to>
+				</anchored>
+				<static>Skill</static>
+			</sheetframetitle>
 			
 			<windowshortcut name="specialisations_name_shortcut">
 				<anchored>
 					<to>specialisations_name</to>
 					<position>insidetopleft</position>					
-					<offset>11,11</offset>
+					<offset>17,18</offset>
 					<size>
 						<height>20</height>
 						<width>20</width>
@@ -32,7 +39,7 @@
 				<anchored>			
 					<to>specialisations_name</to>
 					<position>insidetopleft</position>					
-					<offset>32,14</offset>
+					<offset>38,19</offset>
 					<size>
 						<height>20</height>
 						<width>200</width>
@@ -48,7 +55,7 @@
 				<anchored>			
 					<to>specialisations_name</to>
 					<position>insidetopright</position>					
-					<offset>9,11</offset>
+					<offset>11,16</offset>
 					<size>
 						<height>20</height>
 						<width>20</width>
@@ -58,7 +65,7 @@
 			
 <!-- SPECIALISATIONS -->
 			<sheetframe name="specialisations_specialisations">
-				<bounds>12,60,264,260</bounds>
+				<bounds>14,61,264,261</bounds>
 			</sheetframe>
 			<sheetframetitle name="specialisations_specialisations_title">
 				<anchored>
@@ -73,22 +80,22 @@
 					<left>
 						<parent>specialisations_specialisations</parent>
 						<anchor>left</anchor>
-						<offset>12</offset>					
+						<offset>17</offset>					
 					</left>
 					<right>
 						<parent>specialisations_specialisations</parent>
 						<anchor>right</anchor>
-						<offset>-13</offset>					
+						<offset>-15</offset>					
 					</right>
 					<top>
 						<parent>specialisations_specialisations</parent>
 						<anchor>top</anchor>
-						<offset>18</offset>
+						<offset>20</offset>
 					</top>
 					<bottom>
 						<parent>specialisations_specialisations</parent>
 						<anchor>bottom</anchor>
-						<offset>-13</offset>
+						<offset>-20</offset>
 					</bottom>
 				</anchored>
 				<datasource>.specialisations</datasource>
@@ -102,7 +109,7 @@
 			<scrollbar>
 				<anchored>
 					<to>specialisations_specialisations_specialisations</to>
-					<offset>-3,-2</offset>
+					<offset>-1,0</offset>
 				</anchored>
 				<target>specialisations_specialisations_specialisations</target>
 			</scrollbar>			

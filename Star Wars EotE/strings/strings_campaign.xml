@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- General -->
+	<string name="npc_category_minion">Minion</string>
+	<string name="npc_category_rival">Rival</string>
+	<string name="npc_category_nemesis">Nemesis</string>
+	<string name="npc_category_blank">**Select**</string>
+	<string name="talent_ranked_yes">Yes</string>
+	<string name="talent_ranked_no">No</string>
+	<string name="talent_ranked">ranked</string>
+	<string name="morality_emotial_strength">Emotional Strength</string>
+	<string name="morality_emotial_weakness">Emotional Weakness</string>
+	<string name="morality_emotial_blank">**Select**</string>
+	<string name="inventory_inventory_carried">Carry item - adds item encumbrance to encumbrance total</string>
+	<string name="inventory_inventory_isequipped">Use item in combat - weapon is added to the combat tab, armor is worn</string>
+	<string name="tooltip_modinstalled">Mod successfully installed</string>
+	<string name="tooltip_modnotinstalled">Mod has not been installed</string>
+	<string name="tooltip_modinstallfailed">Failed to install mod - cannot try again</string>
+	<string name="tooltip_vehicle_token">Drag the vehicle token here</string>
+	<string name="npc_vehicle_clear">Clear vehicle details</string>
+	
+	
+	
+</root>

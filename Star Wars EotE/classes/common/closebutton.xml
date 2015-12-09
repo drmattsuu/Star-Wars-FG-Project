@@ -6,11 +6,11 @@
 			<anchored>
 				<top>
 					<anchor>top</anchor>
-					<offset>-2</offset>
+					<offset>0</offset>
 				</top>
 				<right>
 					<anchor>right</anchor>
-					<offset>-3</offset>
+					<offset>0</offset>
 				</right>
 				<size>
 					<height>24</height>

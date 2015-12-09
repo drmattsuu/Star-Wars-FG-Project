@@ -47,6 +47,11 @@ function onInit()
 			end
 		end	
 	end
+	
+	if window.getClass() == "woundchit" then
+		registerMenuItem("Reset to 1", "erase", 1);
+		registerMenuItem("Assign 2 chits", "num2", 2);
+	end
 end
 
 function refreshDestinyChits()
@@ -174,42 +179,51 @@ end
 
 function onMenuSelection(selection)
 	if chit then
-		if selection == 1 then
-			-- Reset both chit piles to 0
-			local msg = {};
-			msg.font = "msgfont";	
+		if window.getClass() == "lightsidechit" or window.getClass() == "darksidechit" then
+			if selection == 1 then
+				-- Reset both chit piles to 0
+				local msg = {};
+				msg.font = "msgfont";	
+					
+				if window.getClass() == "lightsidechit" then									
+					-- create new lightside force node, or find it if it already exists
+					lightsidenode = DB.createNode("lightsidechit.chits", "number");
+					if lightsidenode then
+						-- remove all the lightside 
+						lightsidenode.setValue(0);
+						msg.text = "Lightside destiny has been decremented to " ..  lightsidenode.getValue();
+						ChatManager.deliverMessage(msg);
+						refreshDestinyChits();								
+					end
+				end
 				
-			if window.getClass() == "lightsidechit" then									
-				-- create new lightside force node, or find it if it already exists
-				lightsidenode = DB.createNode("lightsidechit.chits", "number");
-				if lightsidenode then
-					-- remove all the lightside 
-					lightsidenode.setValue(0);
-					msg.text = "Lightside destiny has been decremented to " ..  lightsidenode.getValue();
-					ChatManager.deliverMessage(msg);
-					refreshDestinyChits();								
-				end
-			end
+				if window.getClass() == "darksidechit" then
+					darksidenode = DB.createNode("darksidechit.chits", "number");
+					if darksidenode then
+						-- remove all the darkside 
+						darksidenode.setValue(0);
+						msg.text = "Darkside destiny has been decremented to " ..  darksidenode.getValue();
+						ChatManager.deliverMessage(msg);				
+						refreshDestinyChits();				
+					end
+				end		
+			elseif selection == 7 then
+				-- Synchronise the chit piles with the connected players - added for the rare occasion where the client does not synch properly on login
+				refreshDestinyChits();
+			end			
+		end
+		
+		if window.getClass() == "woundchit" then
+			if selection == 1 then
 			
-			if window.getClass() == "darksidechit" then
-				darksidenode = DB.createNode("darksidechit.chits", "number");
-				if darksidenode then
-					-- remove all the darkside 
-					darksidenode.setValue(0);
-					msg.text = "Darkside destiny has been decremented to " ..  darksidenode.getValue();
-					ChatManager.deliverMessage(msg);				
-					refreshDestinyChits();				
-				end
-			end		
-		elseif selection == 7 then
-			-- Synchronise the chit piles with the connected players - added for the rare occasion where the client does not synch properly on login
-			refreshDestinyChits();
+			elseif selection == 2 then
+			
+			end
 		end
 	end
 end
 
 function onDragStart(button, x, y, draginfo)
-
 	if window.getClass() == "lightsidechit" or window.getClass() == "darksidechit" then
 		-- Allow all users to drag lightside destiny chits
 		if window.getClass() == "lightsidechit" then	

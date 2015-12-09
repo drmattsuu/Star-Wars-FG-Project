@@ -5,7 +5,7 @@ function onInit()
 	--local msg = {sender = "", font = "emotefont", icon="SW_logo"};
 	-- Star Wars EotE logo removed for copyright reasons.
 	local msg = {sender = "", font = "emotefont"};
-    msg.text = "Star Wars®: Edge of the Empire community ruleset V1.1.3 (FG 3.0.7+), September 2014.  Base ruleset by JamesManhattan, heaviliy based on the WFRP 3e ruleset by Neil G. Foster.  Additions by Trenloe.  \rStar Wars and all associated elements are © 2014 Lucasfilm Ltd. & TM. All rights reserved.\r\rThis ruleset is a community project developed for no monetary gain and with the understanding that game mechanics are not protected by US Copyright laws: http://www.copyright.gov/fls/fl108.html  \rAs such, no literary work (which is covered by US Copyright) has been included in this ruleset.  Edge of the Empire, Age of Rebellion and Force and Destiny are trademarks owned by Fantasy Flight Games."
+    msg.text = "Star Wars®: Edge of the Empire community ruleset V2.1.0 (FG 3.0.12+), Initial v2 release: Star Wars Day 2015.  Update July 2015.  Base ruleset by JamesManhattan, heavily based on the WFRP 3e ruleset by Neil G. Foster.  Many, many additions by Trenloe.  Graphical update by Lobosolo  \rStar Wars and all associated elements are © 2014 Lucasfilm Ltd. & TM. All rights reserved.\r\rThis ruleset is a community project developed for no monetary gain and with the understanding that game mechanics are not protected by US Copyright laws: http://www.copyright.gov/fls/fl108.html  \rAs such, no literary work (which is covered by US Copyright) has been included in this ruleset.  Edge of the Empire, Age of Rebellion and Force and Destiny are trademarks owned by Fantasy Flight Games.  Reference to other copyrighted material in no way constitutes a challenge to the respective copyright holders of that material."
 	-- Launch Message to chat window
     Comm.addChatMessage(msg);
 	
@@ -20,6 +20,15 @@ function onInit()
 end
 
 function onDrop(x, y, draginfo)
+	Debug.console("draginfo.getType = " .. draginfo.getType());
+	if draginfo.isType("chit") then
+		Debug.console("Customdata = " .. draginfo.getCustomData());
+		if draginfo.getCustomData() == "critical" then
+			return addCritical();
+		elseif draginfo.getCustomData() == "criticalvehicle" then
+			return addCriticalVehicle();	
+		end
+	end
 	if draginfo.getType() == "number" then
 		ModifierStack.applyModifierStackToRoll(draginfo);
 	end
@@ -32,3 +41,48 @@ function onDiceLanded(draginfo)
 	end
 end
 
+function addCritical()
+	
+		Debug.console("Running addCritical dropped in chat window")
+	
+		local modifier = 0;
+		
+		-- Set the description
+		local description = "[CRITICAL]"
+		
+		-- build the dice table
+		local dice = {};
+		table.insert(dice, "d100");
+		table.insert(dice, "d10");
+		
+		-- throw the dice - need to handle the result in the chatmanager handler.
+		ChatManager.throwDice("dice", dice, modifier, description, {"", msgidentity, gmonly});
+
+	
+	-- and return
+	return true;
+		
+
+end
+
+function addCriticalVehicle()
+	
+	Debug.console("Running addCriticalVehicle dropped in chat window.")
+
+	local modifier = 0;
+	
+	-- Set the description
+	local description = "[CRITVEHICLE]"
+	
+	-- build the dice table
+	local dice = {};
+	table.insert(dice, "d100");
+	table.insert(dice, "d10");
+
+	-- throw the dice - need to handle the result in the chatmanager handler.
+	ChatManager.throwDice("dice", dice, modifier, description, {npcnodename, msgidentity, gmonly});
+	
+	-- and return
+	return true;
+
+end

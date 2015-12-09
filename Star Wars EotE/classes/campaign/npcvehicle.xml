@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+
+
+	
+<!-- WINDOW -->
+	<windowclass name="npcstarship">
+		<placement>
+			<size>
+				<width>509</width>
+				<height>307</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+		<!-- vehicle -->
+			<sheetframe name="main_vehicle">
+				<bounds>14,5,400,74</bounds>
+			</sheetframe>
+			<sheetframetitle name="main_vehicle_title">
+				<anchored>
+					<to>main_vehicle</to>
+				</anchored>
+				<static>Vehicle</static>
+			</sheetframetitle>			
+
+			<!-- NAME -->
+			<sheetstringfield name="main_vehicle_name" source="vehicle.name">
+				<anchored>
+					<to>main_vehicle</to>
+					<position>insidetopleft</position>
+					<offset>17,14</offset>
+					<size>
+						<width>218</width>
+					</size>
+				</anchored>
+				<label>Name</label>
+				<tabtarget>
+					<next>main_vehicle_class</next>
+					<prev>main_vehicle_name</prev>
+				</tabtarget>
+				<script>
+					function onLoseFocus()
+						if getValue() ~= "" then
+							window.showvehicleinct.setState(true);
+						end
+					end
+				</script>				
+			</sheetstringfield>	
+
+			<!-- CLASS -->
+			<sheetstringfield name="main_vehicle_class" source="vehicle.class">
+				<anchored>
+					<to>main_vehicle</to>
+					<position>insidetopleft</position>
+					<offset>241,14</offset>
+					<size>
+						<width>143</width>
+					</size>
+				</anchored>
+				<label>Class</label>
+				<tabtarget>
+					<next>main_vehicle_type</next>
+					<prev>main_vehicle_name</prev>
+				</tabtarget>
+			</sheetstringfield>				
+
+			<!-- Type -->
+			<sheetstringfield name="main_vehicle_type" source="vehicle.type">
+				<anchored>
+					<to>main_vehicle</to>
+					<position>insidetopleft</position>					
+					<offset>17,38</offset>
+					<size>
+						<width>218</width>
+					</size>
+				</anchored>
+				<label>Type</label>
+				<tabtarget>
+					<next>main_vehicle_manufacturer</next>
+					<prev>main_vehicle_class</prev>
+				</tabtarget>
+			</sheetstringfield>				
+			
+			<!-- Manufacturer -->
+			<sheetstringfield name="main_vehicle_manufacturer" source="vehicle.manufacturer">
+				<anchored>
+					<to>main_vehicle</to>
+					<position>insidetopleft</position>					
+					<offset>241,38</offset>
+					<size>
+						<width>143</width>
+					</size>
+				</anchored>
+				<label>Manufacturer</label>
+				<tabtarget>
+					<next>main_vehicle_name</next>
+					<prev>main_vehicle_type</prev>
+				</tabtarget>
+			</sheetstringfield>
+			
+			<!-- labels -->
+			<stringcontrol name="showVehicleInCT_label">
+				<bounds>424,20,50,60</bounds>
+				<font>sheetlabel</font>
+				<!--<color>#ffffffff</color>-->
+				<multilinespacing > 15 </multilinespacing> 	
+				<center /> 
+				<static>Track Vehicle?</static>
+				<center	/>
+			</stringcontrol>	
+			
+			<checkbox name="showvehicleinct">
+				<!--<bounds>300,0,25,20</bounds>-->
+				<sourcename>vehicle.showvehicleinct</sourcename>
+				<bounds>435,44,30,30</bounds>
+				<checked />
+				<tooltip>
+					<text>Show vehicles in actor list</text>
+				</tooltip>
+				<script>
+					function onClickDown(button, x, y)
+						if User.isHost() or window.getDatabaseNode().isOwner() then
+							super.onClickDown(button, x, y);
+						end
+					end
+				</script>				
+			</checkbox>				
+					
+<!-- CHARACTERISTICS -->
+			<sheetframe name="starship_characteristics">
+				<bounds>14,75,289,160</bounds>
+			</sheetframe>
+			<sheetframetitle name="starship_char_title">
+				<anchored>
+					<to>starship_characteristics</to>
+				</anchored>
+				<static>Starship - Characteristics</static>
+			</sheetframetitle>
+			
+			<!-- Silhouette -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>10,66</offset>
+					<size>
+						<width>84</width>
+					</size>
+				</anchored>
+				<static>Silhouette</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_silhouette" source="vehicle.silhouette">
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>23,25</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_speed</next>
+					<prev>starship_shields_aft</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- SPEED -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>88,66</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Speed</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_speed" source="vehicle.speed">
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>90,25</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_handling</next>
+					<prev>starship_silhouette</prev>
+				</tabtarget>
+			</sheetnumberfield>
+
+			<!-- HANDLING -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>150,66</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Handling</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_handling" source="vehicle.handling">
+				<minvalue>-10</minvalue>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>157,25</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_currentspeed</next>
+					<prev>starship_speed</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- Current SPEED -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>207,60</offset>
+					<size>
+						<width>78</width>
+						<height>45</height>
+					</size>
+				</anchored>
+				<color > 800000 </color> 
+				<multilinespacing > 15 </multilinespacing> 	
+				<center /> 				
+				<static>Current Speed</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_currentspeed" source="vehicle.currentspeed">
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>227,25</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_silhouette</next>
+					<prev>starship_handling</prev>
+				</tabtarget>
+			</sheetnumberfield>				
+			
+			<!-- ARMOR = SOAK -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>18,91</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>ARMOR</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_soak" source="vehicle.soak">
+				<anchored>
+					<to>starship_characteristics</to>
+					<offset>23,110</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_port</next>
+					<prev>starship_speed</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- HULL TRAUMA -->
+			<sheetframe name="starship_hulltrauma">
+				<bounds>83,165,107,65</bounds>
+			</sheetframe>
+			<sheetframetitle name="starship_title">
+				<anchored>
+					<to>starship_hulltrauma</to>
+				</anchored>
+				<static>Hull Trauma</static>
+			</sheetframetitle>
+			
+			<sheetlabel>
+				<anchored>
+					<to>starship_hulltrauma</to>
+					<offset>16,44</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Thrsh</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_woundsthreshold" source="vehicle.hull_trauma.threshold">
+				<anchored>
+					<to>starship_hulltrauma</to>
+					<offset>23,22</offset>
+					<size>
+						<width>25</width>
+						<height>25</height>				
+					</size>
+				</anchored>				
+			</sheetnumberfield>
+			
+			<sheetlabel>
+				<anchored>
+					<to>starship_hulltrauma</to>
+					<offset>60,44</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Curr</static>
+				<color > 800000 </color> 
+			</sheetlabel>
+			<woundnumberfield name="starship_woundscurrent" source="vehicle.hull_trauma.current">
+				<anchored>
+					<to>starship_hulltrauma</to>
+					<offset>60,22</offset>
+					<size>
+						<width>25</width>
+						<height>25</height>				
+					</size>
+				</anchored>				
+			</woundnumberfield>
+			
+			<!-- SYSTEM STRAIN  -->
+			<sheetframe name="starship_systemstrain">
+				<bounds>188,165,107,65</bounds>
+			</sheetframe>
+			<sheetframetitle name="starship_title">
+				<anchored>
+					<to>starship_systemstrain</to>
+				</anchored>
+				<static>System Strain</static>
+			</sheetframetitle>
+			
+			<sheetlabel>
+				<anchored>
+					<to>starship_systemstrain</to>
+					<offset>16,44</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Thrsh</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_strainthreshold" source="vehicle.strain.threshold">
+				<anchored>
+					<to>starship_systemstrain</to>
+					<offset>23,22</offset>
+					<size>
+						<width>25</width>
+						<height>25</height>				
+					</size>
+				</anchored>				
+			</sheetnumberfield>
+			
+			<sheetlabel>
+				<anchored>
+					<to>starship_systemstrain</to>
+					<offset>60,44</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Curr</static>
+				<color > 800000 </color> 
+			</sheetlabel>
+			<strainnumberfield name="starship_straincurrent" source="vehicle.strain.current">
+				<anchored>
+					<to>starship_systemstrain</to>
+					<offset>60,22</offset>
+					<size>
+						<width>25</width>
+						<height>25</height>				
+					</size>
+				</anchored>				
+			</strainnumberfield>	
+	
+	
+			
+<!-- SHIELDS -->
+			<sheetframe name="starship_shields">
+				<bounds>300,75,184,160</bounds>
+			</sheetframe>
+			<sheetframetitle name="starship_title">
+				<anchored>
+					<to>starship_shields</to>
+				</anchored>
+				<static>Starship - Defense</static>
+			</sheetframetitle>
+			
+<!-- TOKEN - In the middle of the shields display-->			
+			<tokenfield name="vehicle_token" source="vehicle.token">
+				<anchored>
+					<to>starship_shields</to>
+					<position>insidetopleft</position>
+					<offset>66,60</offset>
+					<size>
+						<width>50</width>
+						<height>50</height>
+					</size>
+				</anchored>
+				<empty>indicator_emptytoken</empty>
+				<tooltip >
+					<textres>tooltip_vehicle_token</textres> 
+				</tooltip>
+				<script>
+					local dragging = false;
+					
+					function onDragStart(button, x, y, draginfo)
+						dragging = false;
+						return onDrag(button, x, y, draginfo);
+					end
+					
+					function onDrag(button, x, y, draginfo)
+						if not dragging and getPrototype() then
+							draginfo.setType("npc");
+							draginfo.setTokenData(getPrototype());
+							draginfo.setShortcutData("npc", window.getDatabaseNode().getNodeName());
+							draginfo.setDatabaseNode(window.getDatabaseNode().getNodeName());
+							draginfo.setStringData(window.main_vehicle_name.getValue());
+
+							local base = draginfo.createBaseData();
+							base.setType("token");
+							base.setTokenData(getPrototype());
+
+							dragging = true;
+							return true;
+						end
+						return false;
+					end
+
+					function onDragEnd(draginfo)
+						dragging = false;
+					end		
+				</script>
+			</tokenfield>			
+			
+			<!-- FORE -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_shields</to>
+					<offset>114,30</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>FORE</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_shields_fore" source="vehicle.shields.fore">
+				<anchored>
+					<to>starship_shields</to>
+					<offset>75,21</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>				
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_port</next>
+					<prev>starship_shields_aft</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- PORT -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_shields</to>
+					<offset>20,52</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>PORT</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_shields_port" source="vehicle.shields.port">
+				<anchored>
+					<to>starship_shields</to>
+					<offset>17,70</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>	
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_starboard</next>
+					<prev>starship_shields_fore</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- STARBOARD -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_shields</to>
+					<offset>133,105</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>STBD</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_shields_starboard" source="vehicle.shields.starboard">
+				<anchored>
+					<to>starship_shields</to>
+					<offset>130,70</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>	
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_aft</next>
+					<prev>starship_shields_fore</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+			<!-- AFT -->
+			<sheetlabel>
+				<anchored>
+					<to>starship_shields</to>
+					<offset>47,124</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>AFT</static>
+			</sheetlabel>
+			<sheetnumberfield name="starship_shields_aft" source="vehicle.shields.aft">
+				<anchored>
+					<to>starship_shields</to>
+					<offset>75,115</offset>
+					<size>
+						<width>35</width>
+						<height>35</height>	
+					</size>
+				</anchored>
+				<tabtarget>
+					<next>starship_shields_fore</next>
+					<prev>starship_shields_starboard</prev>
+				</tabtarget>
+			</sheetnumberfield>
+			
+<!-- CONDITIONS -->
+			<sheetframe name="combat_conditions">
+				<!--<bounds>12,201,236,252</bounds>-->
+				<bounds>14,231,200,-10</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>			
+
+			<!-- Conditions -->
+			<basewindowlist name="combat_conditions_conditions">
+				<class>empty</class>
+				<skipempty />
+				<anchored>
+					<left>
+						<parent>combat_conditions</parent>
+						<anchor>left</anchor>
+						<offset>7</offset>					
+					</left>
+					<right>
+						<parent>combat_conditions</parent>
+						<anchor>right</anchor>
+						<offset>-7</offset>					
+					</right>
+					<top>
+						<parent>combat_conditions</parent>
+						<anchor>top</anchor>
+						<offset>20</offset>
+					</top>
+					<bottom>
+						<parent>combat_conditions</parent>
+						<anchor>bottom</anchor>
+						<offset>-20</offset>
+					</bottom>
+				</anchored>
+				<script>
+					function onInit()
+						createWindowWithClass("npc_ship_criticals", window.getDatabaseNode().getChild("vehicle"));						
+						createWindowWithClass("npc_starship_conditions", window.getDatabaseNode().getChild("vehicle"));			
+					end
+				</script>
+			</basewindowlist>
+			<scrollbar>
+				<anchored>
+					<to>combat_conditions_conditions</to>
+					<offset>-9,0</offset>
+				</anchored>
+				<target>combat_conditions_conditions</target>
+			</scrollbar>
+			
+<!--<!{1}** ADVANCED SKILLS **{1}> 
+			<sheetframe name="combattab_advanced">
+				<bounds>248,166,236,100</bounds>
+			</sheetframe>
+			<sheetframetitle name="combattab_advanced_title">
+				<anchored>
+					<to>combattab_advanced</to>
+				</anchored>
+				<static>Combat Skills</static>
+			</sheetframetitle>
+			
+			<!{1}** SKILLS **{1}>
+			<sheetlist name="combattab_advanced_skills">
+				<anchored>
+					<left>
+						<parent>combattab_advanced</parent>
+						<anchor>left</anchor>
+						<offset>12</offset>					
+					</left>
+					<right>
+						<parent>combattab_advanced</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>combattab_advanced</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>combattab_advanced</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.skills</datasource>
+				<class>charsheet_skills_skillsmall</class>
+				<allowdelete />
+				<script>
+					function onInit()
+						local node = getDatabaseNode();
+						if node and node.isOwner() then
+							registerMenuItem("Create Item", "insert", 5);						
+						end
+					end
+					
+					function onMenuSelection(selection)
+						if selection == 5 then
+							local node = getDatabaseNode();
+							if node and node.isOwner() then
+								local child = node.createChild();
+								child.createChild("advanced", "number").setValue(1);
+							end
+						end
+					end					
+				
+					function onFilter(w)
+						local windownode = w.getDatabaseNode();
+						if windownode then
+							local advancednode = windownode.getChild("advanced");
+							if advancednode and advancednode.getValue() == 1 then
+								return true;
+							end
+						end
+						return false;
+					end
+					
+					function onDrop(x, y, draginfo)
+						local type = draginfo.getType();
+						if type == "shortcut" then
+							local class, recordname = draginfo.getShortcutData();
+							if class == "skill" then
+								local recordnode = DB.findNode(recordname)
+								if recordnode and not recordnode.isStatic() and recordnode.isOwner() then
+									if string.find(recordnode.getNodeName(), window.getDatabaseNode().getNodeName(), 1, true) then
+										recordnode.createChild("advanced", "number").setValue(1);
+										return true;
+									end
+								end
+							end
+						end
+					end					
+				</script>				
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>combattab_advanced_skills</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>combattab_advanced_skills</target>
+			</scrollbar>-->			
+		
+		
+
+	
+<!-- WEAPONS (the listbox)-->
+			<sheetframe name="combat_weapons">
+				<!--<bounds>208,156,276,315</bounds>-->
+				<bounds>211,231,273,-10</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			<sheettitle name="combat_weapons_whatskill">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>136,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Skill</static>
+			</sheettitle>		
+			<sheettitle name="combat_weapons_damage">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>165,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Dam</static>
+			</sheettitle>			
+			<sheettitle name="combat_weapons_critical">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>194,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Crit</static>
+			</sheettitle>			
+			<sheettitle name="combat_weapons_range">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>223,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Rng</static>
+			</sheettitle>
+
+			<sheetlist name="combat_weapons_weapons">
+				<anchored>
+					<left>
+						<parent>combat_weapons</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>combat_weapons</parent>
+						<anchor>right</anchor>
+						<offset>-10</offset>					
+					</right>
+					<top>
+						<parent>combat_weapons</parent>
+						<anchor>top</anchor>
+						<offset>20</offset>
+					</top>
+					<bottom>
+						<parent>combat_weapons</parent>
+						<anchor>bottom</anchor>
+						<offset>-18</offset>
+					</bottom>
+				</anchored>
+				<datasource>.inventory</datasource>
+				<class>charsheet_combat_weapon</class>
+				<script>
+					function onFilter(w)
+						local itemnode = w.getDatabaseNode();
+						
+						local isequippednode = itemnode.getChild("isequipped");
+						if not isequippednode then
+							return false;						
+						end
+						if isequippednode.getValue() == 0 then
+							return false;
+						end
+						
+						local isweaponnode = itemnode.getChild("isstarshipweapon");
+						if not isweaponnode then
+							return false;
+						end
+						if isweaponnode.getValue() == 0 then
+							return false;
+						end
+						
+						return true;
+					end								
+				</script>
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>combat_weapons_weapons</to>
+					<offset>-6,0</offset>
+				</anchored>
+				<target>combat_weapons_weapons</target>
+			</scrollbar>			
+			
+	<!-- BASIC SKILLS --> 
+<!--			<sheetframe name="skills_basic">
+				<bounds>12,166,238,380</bounds>
+			</sheetframe>
+			<sheetframetitle name="skills_basic_title">
+				<anchored>
+					<to>skills_basic</to>
+				</anchored>
+				<static>Basic Skills</static>
+			</sheetframetitle>
+			
+			<!{1}** SKILLS **{1}>
+			<sheetlist name="skills_basic_skills">
+				<anchored>
+					<left>
+						<parent>skills_basic</parent>
+						<anchor>left</anchor>
+						<offset>12</offset>					
+					</left>
+					<right>
+						<parent>skills_basic</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>skills_basic</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>skills_basic</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.skills</datasource>
+				<class>charsheet_skills_skillsmall</class>
+				<allowcreate />
+				<allowdelete />
+				<script>
+					function onFilter(w)				
+						local windownode = w.getDatabaseNode();
+						if windownode then
+							local advancednode = windownode.getChild("advanced");
+							if advancednode and advancednode.getValue() == 1 then
+								return false;
+							end
+						end
+						return true;					
+					end
+					
+					function onDrop(x, y, draginfo)
+						local type = draginfo.getType();
+						if type == "shortcut" then
+							local class, recordname = draginfo.getShortcutData();
+							if class == "skill" then
+								local recordnode = DB.findNode(recordname)
+								if recordnode and not recordnode.isStatic() and recordnode.isOwner() then
+									if string.find(recordnode.getNodeName(), window.getDatabaseNode().getNodeName(), 1, true) then
+										recordnode.createChild("advanced", "number").setValue(0);
+										return true;
+									end
+								end
+							end
+						end
+					end						
+				</script>
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>skills_basic_skills</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>skills_basic_skills</target>
+			</scrollbar>
+			
+<!{1}** ADVANCED SKILLS **{1}> 
+			<sheetframe name="skills_advanced">
+				<bounds>248,166,236,100</bounds>
+			</sheetframe>
+			<sheetframetitle name="skills_advanced_title">
+				<anchored>
+					<to>skills_advanced</to>
+				</anchored>
+				<static>Combat Skills</static>
+			</sheetframetitle>
+			
+			<!{1}** SKILLS **{1}>
+			<sheetlist name="skills_advanced_skills">
+				<anchored>
+					<left>
+						<parent>skills_advanced</parent>
+						<anchor>left</anchor>
+						<offset>12</offset>					
+					</left>
+					<right>
+						<parent>skills_advanced</parent>
+						<anchor>right</anchor>
+						<offset>-13</offset>					
+					</right>
+					<top>
+						<parent>skills_advanced</parent>
+						<anchor>top</anchor>
+						<offset>18</offset>
+					</top>
+					<bottom>
+						<parent>skills_advanced</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.skills</datasource>
+				<class>charsheet_skills_skillsmall</class>
+				<allowdelete />
+				<script>
+					function onInit()
+						local node = getDatabaseNode();
+						if node and node.isOwner() then
+							registerMenuItem("Create Item", "insert", 5);						
+						end
+					end
+					
+					function onMenuSelection(selection)
+						if selection == 5 then
+							local node = getDatabaseNode();
+							if node and node.isOwner() then
+								local child = node.createChild();
+								child.createChild("advanced", "number").setValue(1);
+							end
+						end
+					end					
+				
+					function onFilter(w)
+						local windownode = w.getDatabaseNode();
+						if windownode then
+							local advancednode = windownode.getChild("advanced");
+							if advancednode and advancednode.getValue() == 1 then
+								return true;
+							end
+						end
+						return false;
+					end
+					
+					function onDrop(x, y, draginfo)
+						local type = draginfo.getType();
+						if type == "shortcut" then
+							local class, recordname = draginfo.getShortcutData();
+							if class == "skill" then
+								local recordnode = DB.findNode(recordname)
+								if recordnode and not recordnode.isStatic() and recordnode.isOwner() then
+									if string.find(recordnode.getNodeName(), window.getDatabaseNode().getNodeName(), 1, true) then
+										recordnode.createChild("advanced", "number").setValue(1);
+										return true;
+									end
+								end
+							end
+						end
+					end					
+				</script>				
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>skills_advanced_skills</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>skills_advanced_skills</target>
+			</scrollbar>			
+		
+		
+
+	
+<!{1}** WEAPONS (the listbox)**{1}>
+			<sheetframe name="combat_weapons">
+				<bounds>248,266,236,279</bounds>
+				<frame>
+					<name>sheetgroup</name>
+				</frame>		
+			</sheetframe>
+			<sheettitle name="combat_weapons_whatskill">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>136,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Skill</static>
+			</sheettitle>		
+			<sheettitle name="combat_weapons_damage">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>167,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Dam</static>
+			</sheettitle>			
+			<!{1}**<sheettitle name="combat_weapons_critical">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>167,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Crit</static>
+			</sheettitle>	**{1}>		
+			<sheettitle name="combat_weapons_range">
+				<anchored>
+					<to>combat_weapons</to>
+					<position>insidetopleft</position>
+					<offset>198,8</offset>
+					<size>
+						<width>25</width>
+					</size>					
+				</anchored>
+				<center />				
+				<static>Rng</static>
+			</sheettitle>		
+
+			<sheetlist name="combat_weapons_weapons">
+				<anchored>
+					<left>
+						<parent>combat_weapons</parent>
+						<anchor>left</anchor>
+						<offset>13</offset>					
+					</left>
+					<right>
+						<parent>combat_weapons</parent>
+						<anchor>right</anchor>
+						<offset>-10</offset>					
+					</right>
+					<top>
+						<parent>combat_weapons</parent>
+						<anchor>top</anchor>
+						<offset>19</offset>
+					</top>
+					<bottom>
+						<parent>combat_weapons</parent>
+						<anchor>bottom</anchor>
+						<offset>-13</offset>
+					</bottom>
+				</anchored>
+				<datasource>.inventory</datasource>
+				<class>charsheet_combat_weapon</class>
+				<script>
+					function onFilter(w)
+						local itemnode = w.getDatabaseNode();
+						
+						local isequippednode = itemnode.getChild("isequipped");
+						if not isequippednode then
+							return false;						
+						end
+						if isequippednode.getValue() == 0 then
+							return false;
+						end
+						
+						local isweaponnode = itemnode.getChild("isweapon");
+						if not isweaponnode then
+							return false;
+						end
+						if isweaponnode.getValue() == 0 then
+							return false;
+						end
+						
+						return true;
+					end								
+				</script>
+			</sheetlist>
+			<scrollbar>
+				<anchored>
+					<to>combat_weapons_weapons</to>
+					<offset>-3,-2</offset>
+				</anchored>
+				<target>combat_weapons_weapons</target>
+			</scrollbar>-->	
+			
+		
+		</sheetdata>
+	</windowclass>
+</root>

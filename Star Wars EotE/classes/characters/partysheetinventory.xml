@@ -97,7 +97,7 @@
 		
 <!-- GOLD -->
 			<sheetframe name="inventory_credits">
-				<bounds>12,20,118,70</bounds>
+				<bounds>14,20,118,70</bounds>
 			</sheetframe>
 			<sheetframetitle name="inventory_credits_title">
 				<anchored>
@@ -196,13 +196,32 @@
 <!-- INVENTORY -->
 			<sheetframe name="inventory_inventory">
 				<!--<bounds>12,90,472,453</bounds>-->
-				<bounds>12,90,472,-10</bounds>
-			</sheetframe>	
+				<bounds>14,90,472,-10</bounds>
+			</sheetframe>
+			<sheetframetitle name="inventory_inventory_title">
+				<anchored>
+					<to>inventory_inventory</to>
+				</anchored>
+				<static>Inventory</static>
+			</sheetframetitle>			
+			<sheetframetitle name="inventory_inventory_isequipped">
+				<anchored>
+					<to>inventory_inventory</to>
+					<position>insidetopleft</position>
+					<offset>282,20</offset>
+					<size>
+						<width>50</width>
+					</size>					
+				</anchored>
+				<center />
+				<static>Combat?</static>
+				<tooltip textres="inventory_inventory_isequipped" />
+			</sheetframetitle>	
 			<sheetframetitle name="inventory_inventory_quantity">
 				<anchored>
 					<to>inventory_inventory</to>
 					<position>insidetopleft</position>
-					<offset>352,8</offset>
+					<offset>334,20</offset>
 					<size>
 						<width>50</width>
 					</size>					
@@ -214,14 +233,21 @@
 				<anchored>
 					<to>inventory_inventory</to>
 					<position>insidetopleft</position>
-					<offset>408,8</offset>
+					<offset>390,20</offset>
 					<size>
 						<width>50</width>
 					</size>					
 				</anchored>
 				<center />
 				<static>Enc</static>
-			</sheetframetitle>			
+			</sheetframetitle>
+			<genericcontrol name="inventory_inventory_carried">
+				<anchored to="inventory_inventory" position="insidetopleft" width="12" height="10">
+					<offset>445,20</offset>				
+				</anchored>
+				<icon>indicator_encumbrance</icon>
+				<tooltip textres="inventory_inventory_carried" />
+			</genericcontrol>			
 			
 			<sheetlist name="inventory_inventory_list">
 				<anchored>
@@ -238,7 +264,7 @@
 					<top>
 						<parent>inventory_inventory</parent>
 						<anchor>top</anchor>
-						<offset>19</offset>
+						<offset>32</offset>
 					</top>
 					<bottom>
 						<parent>inventory_inventory</parent>
@@ -280,12 +306,12 @@
 					<top>
 						<parent>inventory_inventory</parent>
 						<anchor>bottom</anchor>
-						<offset>-28</offset>
+						<offset>-30</offset>
 					</top>
 					<left>
 						<parent>inventory_inventory</parent>
 						<anchor>right</anchor>
-						<offset>-186</offset>
+						<offset>-210</offset>
 					</left>						
 					<size>
 						<width>123</width>
@@ -303,7 +329,7 @@
 					<left>
 						<parent>inventory_inventory</parent>
 						<anchor>right</anchor>
-						<offset>-63</offset>
+						<offset>-83</offset>
 					</left>	
 					<size>
 						<width>50</width>

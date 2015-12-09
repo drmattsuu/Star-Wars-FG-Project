@@ -7,7 +7,7 @@
 				<height>30</height>
 			</minimum>
 		</sizelimits>
-		<frame>collector</frame>
+		<frame>collectordesk</frame>
 		<sheetdata>
 			<genericcontrol name="dieboxcontrol">
 				<bounds>0,0,-1,-1</bounds>
@@ -22,9 +22,10 @@
 				</stateframe>
 				<script file="classes/desktop/diebox.lua" />				
 			</genericcontrol>
-			
 			<buttoncontrol name="dieboxupgradedifficulty">
-				<bounds>1,1,20,20</bounds>
+<!--LOBOSOLO edit button positions - BEGIN -->		
+				<bounds>2,2,20,20</bounds>
+<!--LOBOSOLO edit button positions - END -->	
 				<icon>
 					<normal>button_upgrade_difficulty</normal>
 					<pressed>button_upgrade_difficulty_down</pressed>
@@ -45,7 +46,9 @@
 			</buttoncontrol>
 			
 			<buttoncontrol name="dieboxdowngradechallenge">
-				<bounds>1,21,20,20</bounds>
+<!--LOBOSOLO edit button positions - BEGIN -->			
+				<bounds>2,22,20,20</bounds>
+<!--LOBOSOLO edit button positions - END -->
 				<icon>
 					<normal>button_downgrade_challenge</normal>
 					<pressed>button_downgrade_challenge_down</pressed>
@@ -66,7 +69,9 @@
 			</buttoncontrol>			
 			
 			<buttoncontrol name="dieboxupgradeability">
-				<bounds>22,1,20,20</bounds>
+<!--LOBOSOLO edit button positions - BEGIN -->		
+				<bounds>22,2,20,20</bounds>
+<!--LOBOSOLO edit button positions - END -->	
 				<icon>
 					<normal>button_upgrade_ability</normal>
 					<pressed>button_upgrade_ability_down</pressed>
@@ -87,7 +92,9 @@
 			</buttoncontrol>
 			
 			<buttoncontrol name="dieboxdowngradeproficiency">
-				<bounds>22,21,20,20</bounds>
+<!--LOBOSOLO edit button positions - BEGIN -->		
+				<bounds>22,22,20,20</bounds>
+<!--LOBOSOLO edit button positions - END -->		
 				<icon>
 					<normal>button_downgrade_proficiency</normal>
 					<pressed>button_downgrade_proficiency_down</pressed>
@@ -108,7 +115,9 @@
 			</buttoncontrol>
 			
 			<buttoncontrol name="dieboxroll">
-				<bounds>-32,1,32,23</bounds>
+<!--LOBOSOLO edit button positions - BEGIN -->		
+				<bounds>-31,1,31,21</bounds>
+<!--LOBOSOLO edit button positions - END -->	
 				<icon>
 					<normal>button_submit</normal>
 					<pressed>button_submit_down</pressed>
@@ -129,7 +138,9 @@
 			</buttoncontrol>	
 			
 			<buttoncontrol name="dieboxgmhidden">
-				<bounds>-32,20,32,23</bounds>
+<!--LOBOSOLO edit button positions - BEGIN -->		
+				<bounds>-31,22,31,21</bounds>
+<!--LOBOSOLO edit button positions - END -->
 <!--				<tooltip>
 					<text>Show/Hide GM Diebox and Rolls</text>
 				</tooltip>-->

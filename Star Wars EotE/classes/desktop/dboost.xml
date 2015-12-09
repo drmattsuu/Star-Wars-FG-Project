@@ -15,7 +15,12 @@
 			<diepanel>
 				<bounds>0,0,55,55</bounds>
 				<type>dBoost</type>
-				<modifier>mSuccess</modifier>				
+				<modifier>mSuccess</modifier>
+<!-- LOBOSOLO adding tooltip to die - BEGIN -->
+			<tooltip>
+				<text>Boost Die</text>
+			</tooltip>				
+<!-- LOBOSOLO adding tooltip to die - END -->				
 			</diepanel>
 		</sheetdata>
 	</windowclass>

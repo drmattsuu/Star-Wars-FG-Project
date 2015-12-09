@@ -88,17 +88,26 @@
 		</sheetdata>
 	</windowclass>
 
+<!--LOBOSOLO edit Frame and title - BEGIN -->
 	<windowclass name="identityselection">
-		<frame>characterbox</frame>
+		<frame>indexbox</frame>
 		<placement>
 			<size>
-				<width>676</width>
-				<height>430</height>
+				<width>570</width>
+				<height>450</height>
 			</size>
 		</placement>
 		<sheetdata>
+		<!-- Title -->
+			<genericcontrol>
+				<bounds>111,0,348,40</bounds>
+				<frame>
+					<name>indexboxtitlecharacters</name>
+				</frame>
+			</genericcontrol>
 			<basewindowlist name="list">
-				<bounds>102,43,470,359</bounds>
+				<bounds>50,43,470,370</bounds>
+<!--LOBOSOLO edit Frame and title - END -->
 				<class>identityselection_entry</class>
 				<columns>
 					<width>235</width>
@@ -106,25 +115,29 @@
 				</columns>
 				<script file="classes/utilities/identityselectionlist.lua" />
 			</basewindowlist>
+<!--LOBOSOLO update scroller and close button - BEGIN -->
 			<scrollercontrol>
-				<bounds>-98,-60,45,27</bounds>
+				<bounds>-60,-41,45,27</bounds>
 				<target>list</target>
 				<button>
 					<normal>button_scroller</normal>
 					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
 				</button>
 			</scrollercontrol>
 			
 			<closebutton>
 				<anchored>
 					<top>
-						<offset>9</offset>
+						<offset>0</offset>
 					</top>
 					<right>
-						<offset>-21</offset>
+						<offset>-6</offset>
 					</right>
 				</anchored>
 			</closebutton>
+<!--LOBOSOLO update scroller and close button - END -->
 		</sheetdata>
 	</windowclass>
 </root>

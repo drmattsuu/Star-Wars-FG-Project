@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <root>
 
-<!-- ABILITIES -->
+<!-- Species and Special Abilities -->
 	<windowclass name="charsheet_talents_abilities">
+		<sizelimits>
+			<minimum>
+				<height>20</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<genericcontrol>
+				<frame><name>rowshade</name></frame>							
+				<anchored>
+					<position>insidetop</position>
+					<size>
+						<height>20</height>
+					</size>
+				</anchored>
+				<script>
+					function onInit()
+						registerMenuItem("Create Item", "insert", 5);
+					end
+					
+					function onMenuSelection(selection)
+						window.list.createWindow();
+					end
+				</script>
+			</genericcontrol>		
+			<basestringcontrol>
+				<static>Species and Special Abilities</static>			
+				<bounds>5,4,-1,16</bounds>
+				<disabled />
+			</basestringcontrol>
+			<socketedlist name="list">
+				<bounds>5,20,-2,-1</bounds>
+				<class>abilitysmall</class>
+				<datasource>.abilities</datasource>
+				<allowdelete />
+			</socketedlist>	
+		</sheetdata>
+	</windowclass>
+
+<!-- Talents -->
+	<windowclass name="charsheet_talents_talents">
 		<sizelimits>
 			<minimum>
 				<height>20</height>
@@ -34,12 +74,12 @@
 			</basestringcontrol>
 			<socketedlist name="list">
 				<bounds>5,20,-2,-1</bounds>
-				<class>abilitysmall</class>
-				<datasource>.abilities</datasource>
+				<class>talentsmall</class>
+				<datasource>.talents</datasource>
 				<allowdelete />
 			</socketedlist>	
 		</sheetdata>
-	</windowclass>
+	</windowclass>	
 	
 <!-- CRITICALS -->
 	<windowclass name="charsheet_talents_criticals">
@@ -157,6 +197,19 @@
 				<class>obligationsmall</class>
 				<datasource>.obligations</datasource>
 				<allowdelete />
+				<script>
+					function onListChanged()
+						local obligationTotal = 0;
+						for k,v in pairs(getWindows()) do 
+							local obligationNode = v.getDatabaseNode();
+							if obligationNode.getChild("magnitude") then
+								local obligationMagnitude = obligationNode.getChild("magnitude").getValue();
+								obligationTotal = obligationTotal + obligationMagnitude;
+							end
+						end
+						window.windowlist.window.main_obligation_total.setValue(obligationTotal);
+					end
+				</script>				
 			</socketedlist>	
 		</sheetdata>
 	</windowclass>	
@@ -197,6 +250,19 @@
 				<class>dutysmall</class>
 				<datasource>.duties</datasource>
 				<allowdelete />
+				<script>
+					function onListChanged()
+						local dutyTotal = 0;
+						for k,v in pairs(getWindows()) do 
+							local dutyNode = v.getDatabaseNode();
+							if dutyNode.getChild("magnitude") then
+								local dutyMagnitude = dutyNode.getChild("magnitude").getValue();
+								dutyTotal = dutyTotal + dutyMagnitude;
+							end
+						end
+						window.windowlist.window.main_duty_total.setValue(dutyTotal);
+					end
+				</script>				
 			</socketedlist>	
 		</sheetdata>
 	</windowclass>	
@@ -237,6 +303,19 @@
 				<class>moralitysmall</class>
 				<datasource>.moralities</datasource>
 				<allowdelete />
+<!--				<script>
+					function onListChanged()
+						local moralityTotal = 0;
+						for k,v in pairs(getWindows()) do 
+							local moralityNode = v.getDatabaseNode();
+							if moralityNode.getChild("magnitude") then
+								local moralityMagnitude = moralityNode.getChild("magnitude").getValue();
+								moralityTotal = moralityTotal + moralityMagnitude;
+							end
+						end
+						window.windowlist.window.main_morality_total.setValue(moralityTotal);
+					end
+				</script>-->				
 			</socketedlist>	
 		</sheetdata>
 	</windowclass>		

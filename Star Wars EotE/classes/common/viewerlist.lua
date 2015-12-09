@@ -6,7 +6,9 @@ function update()
 		updating = true;
 		
 		for k, v in ipairs(widgets) do
-			v.destroy();
+			if v then
+				v.destroy();
+			end
 		end
 		
 		local holders = window.getViewers();

@@ -22,8 +22,18 @@
 		</sizelimits>
 		<nodelete />
 		<sheetdata>
+<!-- LOBOSOLO Adding Title Frame to Images - BEGIN-->
+			<genericcontrol>
+				<bounds>0,0,37,299</bounds>
+				<frame>
+					<name>imagessaber</name>
+				</frame>
+			</genericcontrol>
+<!-- LOBOSOLO Adding Title Frame to Images - END-->
 			<basewindowlist name="list">
-				<bounds>38,25,-30,-34</bounds>
+			<!--LOBOSOLO changing bounds of list for the new art - BEGIN-->
+				<bounds>43,27,-30,-34</bounds>
+		<!--LOBOSOLO changing bounds of list for the new art - END-->
 				<datasource>.</datasource>
 				<class>imagesmall</class>
 				<sortfields>name</sortfields>
@@ -37,15 +47,21 @@
 				</script>
 			</basewindowlist>
 			<scrollercontrol>
-				<bounds>-105,-61,45,27</bounds>
+<!-- LOBOSOLO updated bounds and added zoom to resolve console error - BEGIN -->
+				<bounds>-70,-48,45,27</bounds>
 				<target>list</target>
 				<button>
 					<normal>button_scroller</normal>
 					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
+<!-- LOBOSOLO updated bounds and added zoom to resolve console error - END -->
 				</button>
 			</scrollercontrol>
 			<buttoncontrol>
-				<bounds>-55,-57,34,25</bounds>
+		<!--LOBOSOLO changing anchor of "new" button for the new art - BEGIN-->
+				<bounds>-50,-72,34,25</bounds>
+		<!--LOBOSOLO changing anchor of "new" button for the new art - END-->
 				<icon>
 					<normal>button_newwindow</normal>
 					<pressed>button_newwindowdown</pressed>
@@ -64,7 +80,9 @@
 				</script>
 			</buttoncontrol>
 			<categoryselectioncontrol>
-				<bounds>24,-39,-24,-1</bounds>
+		<!--LOBOSOLO changing anchor of catergoies for the new art - BEGIN-->
+				<bounds>28,-36,-24,-1</bounds>
+		<!--LOBOSOLO changing anchor of categories for the new art - END-->
 				<targetcontrol>list</targetcontrol>
 			</categoryselectioncontrol>
 		

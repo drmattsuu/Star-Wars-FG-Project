@@ -17,18 +17,19 @@
 		</sharable>
 	</windowclass>
 
+<!--LOBOSOLO update frame, title - BEGIN -->
 	<windowclass name="initiativetracker">
-		<frame>ctbox</frame>
+		<frame>indexbox</frame>
 		<placement>
 			<size>
-				<width>500</width>
-				<height>400</height>
+				<width>525</width>
+				<height>425</height>
 			</size>
 		</placement>
 		<sizelimits>
 			<minimum>
-				<width>500</width>
-				<height>400</height>
+				<width>525</width>
+				<height>425</height>
 			</minimum>
 			<dynamic>
 				<resize>both</resize>
@@ -39,11 +40,29 @@
 		<nodelete />
 		<script file="classes/initiative/initiativetracker.lua" />		
 		<sheetdata>
-		
+			<genericcontrol>
+				<bounds>70,0,290,40</bounds>
+				<frame>
+					<name>indexboxtitlecombattrack</name>
+				</frame>
+				<script>
+					function updatePosition()
+						local w,h = window.getSize();
+						setStaticBounds((w-290)/2, 0, 290, 40);
+					end
+					
+					function onInit()
+						window.onSizeChanged = updatePosition;
+						updatePosition();
+					end
+				</script>
+			</genericcontrol>
+<!--LOBOSOLO update frame, title - END -->
 <!-- Init Slots -->
 			<!-- labels -->
+<!--LOBOSOLO update to inner frames and text - BEGIN -->
 			<stringcontrol name="initslot_label">
-				<bounds>60,10,132,15</bounds>
+				<bounds>60,45,90,15</bounds>
 				<font>sheetlabel</font>
 				<!--<color>#ffffffff</color>-->
 				<static>Initiative Slots - Skill:</static>
@@ -68,28 +87,28 @@
 			</initskillcontrol>	
 			
 			<stringcontrol>
-				<bounds>-196,15,25,10</bounds>
+				<bounds>-206,49,25,10</bounds>
 				<font>sheetlabelsmall</font>
-				<color>#ffffffff</color>
+				<color>#ff0000</color>
 				<static>Init</static>
 				<center />
 			</stringcontrol>
 			<stringcontrol>
-				<bounds>-161,15,45,10</bounds>
+				<bounds>-171,49,45,10</bounds>
 				<font>sheetlabelsmall</font>
 				<color>#ff0000ff</color>
 				<static>Boosts</static>
 				<center />
 			</stringcontrol>	
 			<stringcontrol>
-				<bounds>-120,15,45,10</bounds>
+				<bounds>-130,49,45,10</bounds>
 				<font>sheetlabelsmall</font>
 				<color>#00000000</color>
 				<static>Setbacks</static>
 				<center />
 			</stringcontrol>
 			<stringcontrol>
-				<bounds>-70,15,45,10</bounds>
+				<bounds>-80,49,45,10</bounds>
 				<font>sheetlabelsmall</font>
 				<color>#0000A000</color>
 				<static>Add dice</static>
@@ -102,16 +121,29 @@
 			</actorlist>-->
 			<!--Acting list tracks the actual init slots and who has used them/is in them-->
 			<initslotlist name="trackerinitslotlist">
-				<bounds>0,30,-18,-240</bounds>
+				<bounds>0,65,-18,-240</bounds>
 			</initslotlist>
-
-			<scrollbarcontrol>
+<!--LOBOSOLO END -->
+<!--LOBOSOLO changing back to scrollercontroller - BEGIN -->
+			<!--<scrollbarcontrol>
 				<!--<bounds>-60,-50,45,27</bounds>-->
-				<target>trackerinitslotlist</target>
+				<!--<target>trackerinitslotlist</target>
 				<anchored to="trackerinitslotlist" position="right" offset="-5,-5" width="20" />
 				<frame name="scrollbar_base" offset="0,12,0,12" />				
 				<normal name="scrollbutton_normal" />
-			</scrollbarcontrol>			
+			</scrollbarcontrol>  -->
+			<scrollercontrol>
+				<!--<bounds>-70,-48,45,27</bounds> -->
+				<target>trackerinitslotlist</target>
+				<anchored to="trackerinitslotlist" position="belowright" offset="0,2" />
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
+				</button>
+			</scrollercontrol>
+<!--LOBOSOLO changing back to scrollercontroller - END -->
 			
 			<genericcontrol> 	
 				<icon>inittracker_separator</icon>
@@ -119,7 +151,7 @@
 					<top>
 						<parent>trackerinitslotlist</parent>
 						<anchor>bottom</anchor>
-						<offset>2</offset>
+						<offset>7</offset>
 					</top>
 					<left>
 						<anchor>left</anchor>
@@ -138,8 +170,8 @@
 			<stringcontrol>
 				<!--<bounds>60,15,90,15</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="35" />
-					<left anchor="left" offset="63" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="45" />
+					<left anchor="left" offset="61" />
 					<size width="100" height="15" />
 				</anchored>				
 				<font>sheetlabel</font>
@@ -151,32 +183,33 @@
 			<stringcontrol>
 				<!--<bounds>-280,-215,50,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="25" />
-					<right anchor="right" offset="-230" />
+<!--LOBOSOLO updating actor list text color - BEGIN -->
+					<top parent="trackerinitslotlist" anchor="bottom" offset="35" />
+					<right anchor="right" offset="-240" />
 					<size width="50" height="10" />
 				</anchored>				
 				<font>sheetlabelsmall</font>
-				<color>#ffffffff</color>
-				<static>Used 2</static>
+				<color>#00000000</color>
+				<static>Vehicle</static>
 				<center />
 			</stringcontrol>
 			<stringcontrol>
 				<!--<bounds>-280,-203,50,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
-					<right anchor="right" offset="-230" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="47" />
+					<right anchor="right" offset="-240" />
 					<size width="50" height="10" />
 				</anchored>					
 				<font>sheetlabelsmall</font>
-				<color>#ffffffff</color>
-				<static>Maneuvers</static>
+				<color>#00000000</color>
+				<static>in Tracker</static>
 				<center />
 			</stringcontrol>			
 			<stringcontrol>
 				<!--<bounds>-234,-203,45,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
-					<right anchor="right" offset="-188" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="47" />
+					<right anchor="right" offset="-199" />
 					<size width="45" height="10" />
 				</anchored>					
 				<font>sheetlabelsmall</font>
@@ -187,8 +220,8 @@
 			<stringcontrol>
 				<!--<bounds>-195,-203,45,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
-					<right anchor="right" offset="-149" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="47" />
+					<right anchor="right" offset="-160" />
 					<size width="45" height="10" />
 				</anchored>				
 				<font>sheetlabelsmall</font>
@@ -199,109 +232,106 @@
 			<stringcontrol>
 				<!--<bounds>-146,-215,45,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="25" />
-					<right anchor="right" offset="-100" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="35" />
+					<right anchor="right" offset="-108" />
 					<size width="45" height="10" />
 				</anchored>				
 				<font>sheetlabelsmall</font>
-				<color>#ffffffff</color>
+				<color>#0000A000</color>
 				<static>STRAIN</static>
 				<center />
 			</stringcontrol>
 			<stringcontrol>
 				<!--<bounds>-150,-203,25,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
-					<right anchor="right" offset="-125" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="47" />
+					<right anchor="right" offset="-134" />
 					<size width="25" height="10" />
 				</anchored>				
 				<font>sheetlabelsmall</font>
-				<color>#ffffffff</color>
-				<static>Curr</static>
+				<color>#0000A000</color>
+				<static>Thres</static>
 				<center />
 			</stringcontrol>	
 			<stringcontrol>
 				<!--<bounds>-119,-203,25,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
-					<right anchor="right" offset="-94" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="47" />
+					<right anchor="right" offset="-103" />
 					<size width="25" height="10" />
 				</anchored>				
 				<font>sheetlabelsmall</font>
-				<color>#ffffffff</color>
-				<static>Thres</static>
+				<color>0000A000</color>
+				<static>Curr</static>
 				<center />
 			</stringcontrol>			
 			<stringcontrol>
 				<!--<bounds>-80,-215,45,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="25" />
-					<right anchor="right" offset="-33" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="35" />
+					<right anchor="right" offset="-44" />
 					<size width="45" height="10" />
 				</anchored>				
 				<font>sheetlabelsmall</font>
-				<color>#ffffffff</color>
+				<color>#ff0000</color>
 				<static>WOUNDS</static>
 				<center />
 			</stringcontrol>	
 			<stringcontrol>
 				<!--<bounds>-84,-203,25,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
-					<right anchor="right" offset="-57" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="47" />
+					<right anchor="right" offset="-68" />
 					<size width="25" height="10" />
 				</anchored>					
 				<font>sheetlabelsmall</font>
-				<color>#ffffffff</color>
-				<static>Curr</static>
+				<color>#ff0000</color>
+				<static>Thres</static>
 				<center />
 			</stringcontrol>
 			<stringcontrol>
 				<!--<bounds>-53,-203,25,10</bounds>-->
 				<anchored>
-					<top parent="trackerinitslotlist" anchor="bottom" offset="37" />
-					<right anchor="right" offset="-27" />
+					<top parent="trackerinitslotlist" anchor="bottom" offset="47" />
+					<right anchor="right" offset="-38" />
 					<size width="25" height="10" />
 				</anchored>				
 				<font>sheetlabelsmall</font>
-				<color>#ffffffff</color>
-				<static>Thres</static>
+				<color>ff0000</color>
+				<static>Curr</static>
 				<center />
-			</stringcontrol>			
+			</stringcontrol>
+<!--LOBOSOLO updating text colors - END -->			
 			
 			<!--Actorlist takes the drop action for PCs, NPCs, etc. and shows the list of actors waiting to act - i.e. they have not acted this turn.-->
 			<actorlist name="actorlist">
 				<bounds>0,-195,-18,-50</bounds>
 			</actorlist>			
-
-			<scrollbarcontrol>
-				<!--<bounds>-60,-50,45,27</bounds>-->
+<!--LOBOSOLO changing back to scrollercontroller - BEGIN -->
+			<!--<scrollbarcontrol>
+				<!--<bounds>-60,-50,45,27</bounds>
 				<target>actorlist</target>
 				<anchored to="actorlist" position="right" offset="-5,-5" width="20" />
 				<frame name="scrollbar_base" offset="0,12,0,12" />				
 				<normal name="scrollbutton_normal" />
-			</scrollbarcontrol>
+			</scrollbarcontrol> -->
 			
-<!--			<scrollercontrol>
-				<anchored>
-					<to>actorlist</to>
-					<position>belowright</position>
-					<offset>1,5</offset>
-					<size>
-						<width>45</width>
-						<height>27</height>
-					</size>
-				</anchored>
+			<scrollercontrol>
 				<target>actorlist</target>
+				<anchored to="actorlist" position="belowright" offset="0,7" />
 				<button>
 					<normal>button_scroller</normal>
 					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
 				</button>
 			</scrollercontrol>-->
-
+<!--LOBOSOLO changing back to scrollercontroller - END -->
 			<!-- next actor button -->
+<!--LOBOSOLO updating the bounds of the actor button - BEGIN -->
 			<buttoncontrol>
-				<bounds>5,-45,33,26</bounds>
+				<bounds>12,-45,45,27</bounds>
+<!--LOBOSOLO updating the bounds of the actor button - END -->
 				<icon>
 					<normal>button_ctnextactor</normal>
 					<pressed>button_ctnextactor_down</pressed>
@@ -323,7 +353,9 @@
 			
 			<!-- Menu button -->
 			<buttoncontrol>
-				<bounds>40,-40,40,15</bounds>
+<!--LOBOSOLO updating the bounds of the actor button - BEGIN -->
+				<bounds>62,-40,40,15</bounds>
+<!--LOBOSOLO updating the bounds of the actor button - END -->
 				<icon>
 					<normal>button_menu</normal>
 					<pressed>button_menu_down</pressed>
@@ -334,6 +366,7 @@
 				<class>image</class>
 				<script>
 					function onInit()
+						registerMenuItem("Rebuild Initiative Slots", "shuffle", 4);
 						registerMenuItem("Remove all entries", "erase", 5);
 						registerMenuItem("CONFIRM - Remove all entries???", "erase", 5, 3);
 						registerMenuItem("Initiative", "turn", 7);
@@ -359,7 +392,9 @@
 					end
 					
 					function onMenuSelection(item, subitem)
-						if item == 5 and subitem == 3 then
+						if item == 4 then
+							InitiativeManager.rebuildInitSlots();
+						elseif item == 5 and subitem == 3 then
 							window.clearTracker();
 						elseif item == 7 and subitem == 4 then
 							window.clearAllInit();
@@ -373,7 +408,39 @@
 					end
 				</script>
 				<gmvisibleonly />
-			</buttoncontrol>			
+			</buttoncontrol>	
+
+			<!-- labels -->
+			<stringcontrol name="showvehicles_label">
+<!--LOBOSOLO updating the bounds of the actor button - BEGIN -->
+				<bounds>-360,-40,87,15</bounds>
+<!--LOBOSOLO updating the bounds of the actor button - END -->
+				<font>sheetlabel</font>
+				<!--<color>#ffffffff</color>-->
+				<static>Show Vehicles:</static>
+				<center	/>
+			</stringcontrol>	
+			
+			<checkbox name="showvehicles">
+				<!--<bounds>300,0,25,20</bounds>-->
+<!--LOBOSOLO updating the bounds of the actor button - BEGIN -->
+				<bounds>-268,-40,15,15</bounds>
+<!--LOBOSOLO updating the bounds of the actor button - END -->
+				<tooltip>
+					<text>Show vehicles in actor list</text>
+				</tooltip>
+				<script>
+					function onClickDown(button, x, y)
+						if User.isHost() or window.getDatabaseNode().isOwner() then
+							super.onClickDown(button, x, y);
+						end
+					end			
+
+					function onValueChanged()
+						window.toggleVehicles(getState());
+					end
+				</script>				
+			</checkbox>			
 			
 <!--			<buttoncontrol>
 				<bounds>-100,-40,40,15</bounds>
@@ -404,7 +471,7 @@
 			
 			<!-- end of round button -->
 			<buttoncontrol>
-				<bounds>-53,-45,33,26</bounds>
+				<bounds>107,-45,45,27</bounds>
 				<icon>
 					<normal>button_ctnextround</normal>
 					<pressed>button_ctnextround_down</pressed>
@@ -420,8 +487,18 @@
 				</script>
 				<gmvisibleonly />
 			</buttoncontrol>			
-			
-			<closebutton />
+<!--LOBOSOLO updating close button position - BEGIN -->
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>0</offset>
+					</top>
+					<right>
+						<offset>-6</offset>
+					</right>
+				</anchored>
+			</closebutton>
+<!--LOBOSOLO updating close button position - END -->			
 		</sheetdata>
 	</windowclass>
 </root>

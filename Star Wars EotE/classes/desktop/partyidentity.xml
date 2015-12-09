@@ -4,7 +4,7 @@
 	<windowclass name="partyidentity">
 		<sheetdata>
 			<buttoncontrol name="image">
-				<bounds>0,0,66,96</bounds>
+				<bounds>0,3,66,96</bounds>
 				<icon>
 					<normal>partyidentity</normal>
 				</icon>

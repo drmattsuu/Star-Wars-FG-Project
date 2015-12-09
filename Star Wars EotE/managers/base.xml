@@ -30,5 +30,9 @@
 	
 	<script name="StringManager" file="managers/manager_string.lua" />
 	<script name="DieBoxViewListManager" file="managers/dieboxviewlistmanager.lua" />
+	
+	<script name="MinionManager" file="managers/minionManager.lua" />
+	<script name="PlayerDBManager" file="managers/playerdbmanager.lua" />
+	playerdbmanager
 
 </root>

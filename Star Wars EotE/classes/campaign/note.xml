@@ -2,11 +2,11 @@
 <root>
 
 	<windowclass name="notesmall">
-		<sizelimits>
+<!--LOBOSOLO remarked out size limits to match story.xml -- BEGIN --		<sizelimits>
 			<maximum>
 				<height>20</height>
 			</maximum>
-		</sizelimits>
+		</sizelimits>  -- LOBOSOLO END -->
 		<playercontrol />
 		<sheetdata>
 			<windowbutton name="open">
@@ -48,15 +48,17 @@
 		</tooltip>
 		<sheetdata>
 			<windowshortcut>
-				<bounds>10,8,20,20</bounds>
+<!--LOBOSOLO updating bounds for new art - BEGIN -->
+				<bounds>17,32,20,20</bounds>
 				<class>note</class>
 			</windowshortcut>
 			<basestringfield name="name">
-				<bounds>31,11,-15,20</bounds>
+				<bounds>40,32,-15,20</bounds>
 				<empty>&#171; New Note &#187;</empty>
 			</basestringfield>
 			<baseformattedtextfield name="text">
-				<bounds>12,43,-19,-10</bounds>
+				<bounds>15,60,-20,-30</bounds>
+<!--LOBOSOLO updating bounds for new art - END -->
 				<font>
 					<normal>chatfont</normal>
 					<bold>narratorfont</bold>
@@ -72,7 +74,19 @@
 				<selectioncolor>#FFD296</selectioncolor>
 				<empty>Click to enter text</empty>
 			</baseformattedtextfield>
-			<viewerlist>
+<!-- LOBOSOLO updated bounds and added zoom to resolve console error - BEGIN -->
+			<scrollercontrol>
+				<bounds>-61,-38,45,27</bounds>
+				<target>text</target>
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
+				</button>
+			</scrollercontrol>
+<!-- LOBOSOLO updated bounds and added zoom to resolve console error - END -->
+<!--			<viewerlist>
 				<anchored>
 					<left>
 						<anchor>left</anchor>
@@ -83,17 +97,27 @@
 						<offset>-14</offset>
 					</bottom>
 				</anchored>
-			</viewerlist>
-			<scrollercontrol>
+			</viewerlist>-->
+<!--			<scrollercontrol>
 				<bounds>-53,-35,45,27</bounds>
 				<target>text</target>
 				<button>
 					<normal>button_scroller</normal>
 					<pressed>button_scroller_down</pressed>
 				</button>
-			</scrollercontrol>
-			
-			<closebutton />
+			</scrollercontrol>-->
+<!-- LOBOSOLO updated anchor of the close button - BEGIN -->		
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>0</offset>
+					</top>
+					<right>
+						<offset>-9</offset>
+					</right>
+				</anchored>
+			</closebutton>
+<!-- LOBOSOLO updated anchor of the close button - END -->			
 		</sheetdata>
 	</windowclass>
 

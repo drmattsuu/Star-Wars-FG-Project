@@ -1,6 +1,7 @@
 SPECIAL_MSGTYPE_UPDATEDIEBOXLIST = "updatedieboxlist";
 SPECIAL_MSGTYPE_UPDATECLIENTDIEBOXLIST = "updateclientdieboxlist";
 SPECIAL_MSGTYPE_SYNCHDIEBOXDATA = "synchdieboxdata";
+SPECIAL_MSGTYPE_REMOTEREBUILDDIEBOX = "remoterebuilddiebox";
 
 local dieboxviewlistcontrol = nil;
 
@@ -10,6 +11,7 @@ function onInit()
 	ChatManager.registerSpecialMessageHandler(SPECIAL_MSGTYPE_UPDATEDIEBOXLIST, handleUpdateDieBoxList);
 	ChatManager.registerSpecialMessageHandler(SPECIAL_MSGTYPE_UPDATECLIENTDIEBOXLIST, handleUpdateClientDieBoxList);
 	ChatManager.registerSpecialMessageHandler(SPECIAL_MSGTYPE_SYNCHDIEBOXDATA, handleSynchDieBoxData);
+	ChatManager.registerSpecialMessageHandler(SPECIAL_MSGTYPE_REMOTEREBUILDDIEBOX, handleRemoteRebuildDieBox);
 	
 	if User.isHost() then
 			-- subscribe to the login events so that the die box list can be updated when the player logs in and logs out.
@@ -42,6 +44,19 @@ function unregisterSMHandler()
 		-- Do not unregister is the user is host (GM) - this allows the players to use the diceboxviewlist even if the GM doesn't have it open.
 		--ChatManager.unregisterSpecialMessageHandler(SPECIAL_MSGTYPE_UPDATECLIENTDIEBOXLIST, handleUpdateClientDieBoxList);
 	--end
+end
+
+function remoteRebuildDieBoxData()
+	-- Called by a remote client to rebuild the die box - usually when the player switches PCs or selects their first PC.
+	Debug.console("dieboxviewlistmanager.lua: remoteRebuildDieBoxData()");
+	
+	ChatManager.sendSpecialMessage(SPECIAL_MSGTYPE_REMOTEREBUILDDIEBOX, {});		
+end
+
+function handleRemoteRebuildDieBox()
+	if User.isHost() then 
+		updateDieBoxList("");
+	end
 end
 
 function synchDieBoxData()
@@ -160,10 +175,18 @@ function handleUpdateDieBoxList(msguser, msgidentity, msgparams)
 				end
 				
 				if v ~= localusername then
-					-- Create the dix box view control in the list
+					-- Create the die box view control in the list
 					local dieboxwindow = dieboxviewlistcontrol.createWindow();
 					--Debug.console("dieboxviewlist.lua: handleUpdateDieBoxList(). After creating window.");
 					dieboxwindow.setIdentityName(v);
+					
+					-- Set the name of the entry in the dicepool viewer to the name of the currently active PC for the player in question
+					-- Sets the name to the player name if no PC is currently selected.
+					--if User.getIdentityLabel(User.getCurrentIdentity(v)) == nil then
+					--	dieboxwindow.setIdentityName(v);
+					--else
+					--	dieboxwindow.setIdentityName(User.getIdentityLabel(User.getCurrentIdentity(v)));
+					--end
 				end
 			end
 			--Debug.console("dieboxviewlist.lua: handleUpdateDieBoxList()  getWindowCount() = " .. self.getWindowCount());

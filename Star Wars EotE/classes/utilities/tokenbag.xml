@@ -15,13 +15,31 @@
 				<width>350</width>
 				<height>353</height>
 			</minimum>
+		<!--LOBOSOLO added Max to Token Frame - BEGIN -->
+			<maximum>
+				<width>800</width>
+				<height>900</height>
+			</maximum>
+		<!--LOBOSOLO added Max to Token Frame - END -->
 		</sizelimits>
 		<sheetdata>
+<!-- LOBOSOLO Adding Title Frame to Tokens - BEGIN-->
+			<genericcontrol>
+				<bounds>0,0,37,299</bounds>
+				<frame>
+					<name>tokenssaber</name>
+				</frame>
+			</genericcontrol>
+<!-- LOBOSOLO Adding Title Frame to Tokens - END-->
 			<tokenbag>
-				<bounds>13,13,-28,-30</bounds>
+			<!-- LOBOSOLO changed bounds to new art - BEGIN -->
+				<bounds>38,27,-25,-20</bounds>
+			<!-- LOBOSOLO changed bounds to new art - END -->
 				<tokenarea>0,0,-1,-49</tokenarea>
 				<bagbar>
-					<rect>0,-49,-1,49</rect>
+				<!--LOBOSOLO changed anchor point for bagbar - BEGIN -->
+					<rect>0,-41,-1,49</rect>
+				<!--LOBOSOLO changed anchor point for bagbar - END -->
 					<frame>tokenbagbar</frame>
 					<slotsize>49,49</slotsize>
 				</bagbar>
@@ -34,12 +52,25 @@
 					<labelfont>mini_name</labelfont>
 				</bag>
 				<grid>
-					<width>46</width>
+		<!-- LOBOSOLO updating grid size for new art - BEGIN -->
+					<width>50</width>
 					<height>50</height>
+		<!-- LOBOSOLO updating grid size for new art - END -->
 				</grid>
 			</tokenbag>
-			
-			<closebutton />
+
+<!--LOBOSOLO updating the offset of the close button - BEGIN -->		
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>1</offset>
+					</top>
+					<right>
+						<offset>-2</offset>
+					</right>
+				</anchored>
+			</closebutton>
+<!--LOBOSOLO updating the offset of the close button - END -->			
 		</sheetdata>
 	</windowclass>
 </root>

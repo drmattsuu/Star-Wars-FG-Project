@@ -8,15 +8,33 @@ local thiscontrol = nil;
 local identityname = nil;
 
 function onInit()
-		-- register special messages
-		--ChatManager.registerSpecialMessageHandler(SPECIAL_MSGTYPE_REFRESHTURNINDICATOR, handleRefreshTurnIndicator);
-		ChatManager.registerSpecialMessageHandler(SPECIAL_MSGTYPE_GETPLAYERDICEPOOL, handleGetPlayerDicepool);
-		
-		thiscontrol = self;
-		
-		-- Enable the addtoinitslot buttons.
-		--InitiativeManager.getActiveInitSlot();	
-		InitiativeManager.refreshInitSlotList();		
+	
+	-- GM side adds DB holder for all currently connected players, then refreshes the Combat Tracker.
+	-- This is needed as the DB holder for a charsheet is reset to just the owning player and so the PC would disappear from other player's CTs.
+	if User.isHost() then
+		local controlName = self.getName();
+		Debug.console("characterlistentry.lua  - onInit() running as host.  Control name = " .. controlName);
+		local controlSource = "charsheet." .. string.gsub(controlName, "ctrl_", "");
+		Debug.console("characterlistentry.lua  - onInit() - control DB source = " .. controlSource);
+		for k, v in ipairs(User.getActiveUsers()) do
+			DB.addHolder(controlSource, v);
+		end
+		InitiativeManager.refreshActorList();
+		InitiativeManager.refreshInitSlotList();
+	end
+
+	-- register special messages
+	--ChatManager.registerSpecialMessageHandler(SPECIAL_MSGTYPE_REFRESHTURNINDICATOR, handleRefreshTurnIndicator);
+	ChatManager.registerSpecialMessageHandler(SPECIAL_MSGTYPE_GETPLAYERDICEPOOL, handleGetPlayerDicepool);
+	
+	thiscontrol = self;
+	
+	-- Enable the addtoinitslot buttons.
+	--InitiativeManager.getActiveInitSlot();	
+	
+	
+	-- Change name in diebox viewer - need to tell the GM to rebuild the die box viewer
+	DieBoxViewListManager.remoteRebuildDieBoxData();		
 end
 
 -- functions used to view the player dicepool via special messages
@@ -195,8 +213,28 @@ function onClickDown(button, x, y)
 end
 
 function onClickRelease(button, x, y)
-	Debug.console("characterlistentry.lua: onClickRelease - dbnode = charsheet." .. identityname);
-	CharacterManager.openCharacterSheet(DB.findNode("charsheet." .. identityname), identityname);
+	-- Removing the one-click opening of character sheets - moving to double-click.  This is more in line with the FG 3.0 rulesets.
+	--Debug.console("characterlistentry.lua: onClickRelease - dbnode = charsheet." .. identityname);
+	--CharacterManager.openCharacterSheet(DB.findNode("charsheet." .. identityname), identityname);
+	return true;
+end
+
+function onDoubleClick(button, x, y)
+	if User.isOwnedIdentity(identityname) then
+		-- Set as the active identity		
+		User.setCurrentIdentity(identityname);
+		if CampaignRegistry and CampaignRegistry.colortables and CampaignRegistry.colortables[identityname] then
+			local colortable = CampaignRegistry.colortables[identityname];
+			User.setCurrentIdentityColors(colortable.color or "000000", colortable.blacktext or false);
+		end
+		-- Change name in diebox viewer - need to tell the GM to rebuild the die box viewer
+		DieBoxViewListManager.remoteRebuildDieBoxData();	
+		-- Open the character sheet
+		CharacterManager.openCharacterSheet(DB.findNode("charsheet." .. identityname), identityname);	
+	elseif User.isHost() then
+		CharacterManager.openCharacterSheet(DB.findNode("charsheet." .. identityname), identityname);
+	end
+	
 	return true;
 end
 

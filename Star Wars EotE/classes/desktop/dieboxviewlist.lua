@@ -100,7 +100,8 @@ function handleUpdateDieBoxList(msguser, msgidentity, msgparams)
 			Debug.console("dieboxviewlist.lua: handleUpdateDieBoxList().  Looping through userlist table - " .. k .. ", " .. v);
 			local dieboxwindow = createWindow();
 			Debug.console("dieboxviewlist.lua: handleUpdateDieBoxList(). After creating window.");
-			dieboxwindow.setIdentityName(v);
+			-- Set the name of the entry in the dicepool viewer to the name of the currently active PC for the player in question
+			dieboxwindow.setIdentityName(User.getCurrentIdentity(v));
 		end
 		Debug.console("dieboxviewlist.lua: handleUpdateDieBoxList()  getWindowCount() = " .. self.getWindowCount());
 	end

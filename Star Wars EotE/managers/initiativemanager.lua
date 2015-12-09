@@ -36,10 +36,10 @@ function onInit()
 		User.onLogin = onLogin;
 
 		-- subscribe to module changes
-		-- Trenloe - not sure why these are needed - these initiate cleaning the actor list when modules are activated/deactivated - shouldn't be needed.
-		--Module.onModuleAdded = onModuleAdded;
-		--Module.onModuleRemoved = onModuleRemoved;
-		--Module.onModuleUpdated = onModuleUpdated;
+		-- Trenloe - not sure why these are needed - these initiate cleaning the actor list when modules are activated/deactivated - shouldn't be needed???  Or, do these cause module state persisting?
+		Module.onModuleAdded = onModuleAdded;
+		Module.onModuleRemoved = onModuleRemoved;
+		Module.onModuleUpdated = onModuleUpdated;
 		
 		-- Build actedthisroundlist table
 		buildActedThisRound();
@@ -103,7 +103,7 @@ function registerControl(control)
 end
 
 function addInitSlot(classname, recordname)
-	--Debug.console("addInitSlot - classname = " .. classname .. ", recordname = " .. recordname);
+	Debug.console("addInitSlot - classname = " .. classname .. ", recordname = " .. recordname);
 	-- Add a new init slot - called from addActor.
 	if initslotlistcontrol then
 	
@@ -205,9 +205,12 @@ function handleRefreshActorList(msguser, msgidentity, msgparams)
 				local classnode = n.getChild("actor.classname");
 				local recordnode = n.getChild("actor.recordname");
 				if recordnode then
+					Debug.console("handleRefreshActorList - looking to add record to actorlistcontrol:  " .. recordnode.getValue());
 					local sourcenode = DB.findNode(recordnode.getValue());
 					if sourcenode then
 						actorlistcontrol.createWindowWithClass("actor" .. classnode.getValue(), sourcenode);
+					else
+						Debug.console("handleRefreshActorList - Cannot add " .. recordnode.getValue() .. " to actor list.  DB.findNode returns nil");
 					end
 				else
 					actorlistcontrol.createWindowWithClass("actor" .. classnode.getValue(), n);			
@@ -231,6 +234,7 @@ function handleRefreshActorList(msguser, msgidentity, msgparams)
 				end
 			end
 			if not exists then
+				--Debug.console("handleRefreshActorList - removing window for actor: " .. k);
 				w.close();
 			end
 		end		
@@ -244,7 +248,7 @@ function refreshInitSlotList()
 end
 
 function handleRefreshInitSlotList(msguser, msgidentity, msgparams)
-	--Debug.console("handleRefreshInitSlotList - starting");
+	Debug.console("handleRefreshInitSlotList - starting");
 
 	--if Interface.findWindow("initiativetracker","initiativetracker") then
 		--Debug.console("handleRefreshInitSlotList - initiative tracker window open.");
@@ -438,7 +442,8 @@ function addActor(classname, recordname)
 				
 				if classname == "charsheet" then
 					-- create the record name node for the actor - this is a link.
-					actornode.createChild("actor.recordname", "string").setValue(recordname);				
+					actornode.createChild("actor.recordname", "string").setValue(recordname);
+					recordname = actornode.getNodeName();
 				elseif classname == "npc" then
 					-- Copy the node
 					DB.copyNode(sourcenode, actornode);
@@ -698,12 +703,28 @@ end
 
 function updateActorInitiative(characternode, initiativecount)
 	if User.isHost() then
-		--Debug.console("InitiativeManager.updateActorInitiative. characternode = " .. characternode.getNodeName() .. ", initiativecount = " .. initiativecount);
+		local characterNodeName = characternode.getNodeName();
+		Debug.console("InitiativeManager.updateActorInitiative. characternode = " .. characterNodeName .. ", initiativecount = " .. initiativecount);
 		--DB.setValue(characternode, "actor.initiative", "number", initiativecount);
+		if string.match(characterNodeName, "charsheet") then
+			-- We have a character sheet reference (PC not NPC) - need to find the correct initiativetracker.actors.id-XXXXX reference.
+			local actorNode = nil;
+			for k,v in pairs(actorlistnode.getChildren()) do
+				Debug.console("Actor list node = " .. v.getNodeName());
+				if v.getChild("actor.recordname") then
+					Debug.console("Checking " .. v.getChild("actor.recordname").getValue() .. " with " .. characterNodeName);
+					if v.getChild("actor.recordname").getValue() == characterNodeName then
+						-- We have a match - use this record as the characternode
+						characternode = v;
+						break;
+					end	
+				end
+			end
+		end
 		
 		-- Step through initslots records and find the record added by this character - update that node with the new initiative.
 		for k,v in pairs(initslotlistnode.getChildren()) do
-			--Debug.console("Looking at current child: " .. k);
+			Debug.console("Looking at current child: " .. k .. " comparing " .. v.getChild("actor.recordname").getValue() .. " with " .. characternode.getNodeName());
 			if v.getChild("actor.recordname").getValue() == characternode.getNodeName() then
 				--Debug.console("Have the " .. initskillname .. " db node = " .. v.getNodeName());
 				DB.setValue(v, "actor.initiative", "number", initiativecount);
@@ -764,11 +785,19 @@ function addToInitSlot(actornode)
 		local charactername = actornode.getChild("name").getValue();
 		local charactertoken = actornode.getChild("token").getValue();
 		local actornodename = actornode.getNodeName();
+		local npcCategoryNode = actornode.getChild("npc_category");
+		if npcCategoryNode then
+			category = npcCategoryNode.getValue();
+		else
+			category = "pc";
+		end
 		--Debug.console("InitiativeManager.addToInitSlot - charactername = " .. charactername .. ", charactertoken = " .. charactertoken);
 		-- Set name and token in the init slot
 		activeinitslotnode.getChild("initslot_actornodename").setValue(actornodename);		
 		activeinitslotnode.getChild("initslotname").setValue(charactername);
 		activeinitslotnode.getChild("initslotactor_token").setValue(charactertoken);
+		-- Create the category - NPC type (minion, rival, nemesis) or pc
+		activeinitslotnode.createChild("npc_category").setValue(category);
 		table.insert(actedthisroundlist, actornode);
 	end
 	--Refresh the init slot list and buttons
@@ -972,5 +1001,39 @@ function nextActor()
 				end
 			end
 		end
+	end
+end
+
+
+function rebuildInitSlots()
+	-- Deletes the current init slots and rebuilds them based on the current actor list.
+	-- Handy if some init slots or actors have been deleted and the links between actors and init slots need tidying up.
+	if User.isHost() then
+		-- Delete all current init slots
+		for k, v in pairs(initslotlistnode.getChildren()) do
+			v.delete();
+		end
+		
+		for k,actornode in pairs(actorlistnode.getChildren()) do
+			recordname = actornode.getNodeName();
+			classname = actornode.getChild("actor.classname").getValue();
+			Debug.console("About to add " .. classname .. " with record " .. recordname)
+			addInitSlot(classname, recordname);
+		end
+		
+		-- refresh the init slot list
+		refreshInitSlotList();
+	end
+
+end
+
+function removeAllInitSlots()
+	if User.isHost() then
+		--Debug.console("removeInitSlot - starting.  Sourcenode = " .. sourcenode.getNodeName());
+		for k, v in pairs(initslotlistnode.getChildren()) do
+			v.delete();
+		end
+		--refreshActorList();
+		--refreshInitSlotList();
 	end
 end

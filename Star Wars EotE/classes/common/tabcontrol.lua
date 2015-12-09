@@ -59,14 +59,15 @@ function activateTab(index)
 
 	-- Set new index
 	tabIndex = tonumber(index);
-
+--LOBOSOLO BEGIN updating the taptop widget position original ("topleft, 5, 67*(tabIndex-1)+7)
 	-- Move helper graphic into position
-	topWidget.setPosition("topleft", 5, 67*(tabIndex-1)+7);
+	topWidget.setPosition("topleft", 8, 67*(tabIndex-1)+40);
 	if tabIndex == 1 then
-		topWidget.setVisible(false);
+		topWidget.setVisible(true);
 	else
 		topWidget.setVisible(true);
 	end
+--LOBOSOLO END also changed tab 1 to true
 	
 	-- Activate text label and subwindow
 	tabWidgets[tabIndex].setColor("ffffffff");

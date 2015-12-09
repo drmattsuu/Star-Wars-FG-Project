@@ -44,21 +44,45 @@
 		</sheetdata>
 	</windowclass>
 
+<!--LOBOSOLO updated minimum bounds & title - BEGIN -->
 	<windowclass name="portraitselection">
 		<frame>framebox</frame>
 		<placement>
 			<size>
 				<width>460</width>
-				<height>300</height>
+				<height>365</height>
 			</size>
 		</placement>
 		<sizelimits>
 			<dynamic />
+			<minimum>
+				<width>300</width>
+				<height>300</height>
+			</minimum>
 		</sizelimits>		
 		<sheetdata>
+		<!-- Title -->
+			<genericcontrol>
+				<bounds>130,0,240,40</bounds>
+				<frame>
+					<name>indexboxtitleportraits</name>
+				</frame>
+				<script>
+					function updatePosition()
+						local w,h = window.getSize();
+						setStaticBounds((w-240)/2, 0, 240, 40);
+					end
+					
+					function onInit()
+						window.onSizeChanged = updatePosition;
+						updatePosition();
+					end
+				</script>
+			</genericcontrol>
 			<basewindowlist name="portraits">
 				<class>portraitselection_entry</class>
-				<bounds>22,30,-30,-30</bounds>
+				<bounds>22,43,-30,-45</bounds>
+<!--LOBOSOLO updated minimum bounds & title - END -->
 				<columns>
 					<width>80</width>
 					<fillwidth />
@@ -74,15 +98,33 @@
 					end
 				</script>
 			</basewindowlist>
-			<scrollbarcontrol>
-				<!--<bounds>-60,-50,45,27</bounds>-->
+<!--LOBOSOLO updating scroller info - BEGIN -->
+			<scrollercontrol>
+				<!--<scrollbarcontrol> -->
+				<bounds>-60,-40,45,27</bounds>-->
 				<target>portraits</target>
-				<anchored to="portraits" position="right" offset="-5,-5" width="20" />
+				<button>
+					<normal>button_scroller</normal>
+					<pressed>button_scroller_down</pressed>
+					<zoom>button_zoomer_clear</zoom>
+					<zoompressed>button_zoomer_clear_down</zoompressed>
+				</button>
+			</scrollercontrol>
+				<!--<anchored to="portraits" position="right" offset="-5,-5" width="20" />
 				<frame name="scrollbar_base" offset="0,12,0,12" />				
 				<normal name="scrollbutton_normal" />
-			</scrollbarcontrol>
-			
-			<closebutton />
+			</scrollbarcontrol> -->
+			<closebutton>
+				<anchored>
+					<top>
+						<offset>0</offset>
+					</top>
+					<right>
+						<offset>-2</offset>
+					</right>
+				</anchored>
+			</closebutton>
+<!--LOBOSOLO UPDATES - END -->
 		</sheetdata>
 	</windowclass>
 
