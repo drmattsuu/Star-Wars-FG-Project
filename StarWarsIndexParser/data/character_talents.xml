@@ -1,0 +1,4895 @@
+
+<table>
+  <tr class="sortable_header">
+    <td>
+      <a href="?order_by=name">Talent</a>
+    </td>
+    <td>
+      <a href="?order_by=activation">Activation</a>
+    </td>
+    <td>
+      <a href="?order_by=ranked">Ranked</a>
+    </td>
+    <td>
+      <a href="?order_by=force_sensitive">Force Sensitive</a>
+    </td>
+    <td>
+      <a href="?order_by=index">Index</a>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/536/">Adversary</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:142, E-CRB:132, F-BGR:27, F-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2441/">Against all Odds</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3260/">Aggressive Negotiations</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>DoH:28</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/685/">All-Terrain Driver</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:142, EtU:30, ND:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3364/">Ambush</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FiB:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2442/">Aminal Bond</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/537/">Anatomy Lessons</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:142, E-BGR:27, E-CRB:132, F-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3238/">Animal Bond (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2443/">Animal Empathy</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/538/">Armor Master</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:142, E-BGR:27, E-CRB:132, KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2747/">Armor Master (Supreme)</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/539/">Armor Master [Improved]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:143, E-CRB:132, KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/932/">Ataru Technique</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>JoY:82, F-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/540/">Bacta Specialist</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:143, E-CRB:132</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1413/">Bad Cop</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FH:32, KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/541/">Bad Motivator</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:143, E-CRB:132</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2050/">Bad Press</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/542/">Balance</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>A-CRB:143, E-CRB:132, F-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2748/">Baleful Gaze</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/543/">Barrage</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:27, FiB:34, E-BGR:27, E-CRB:132</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1194/">Basic Combat Training</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1632/">Beast Wrangler</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3492/">Better Luck Next Time</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>EV:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1414/">Biggest Fan</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FH:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/544/">Black Market Contacts</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>E-CRB:132</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2051/">Blackmail</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2749/">Blind Spot</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FiB:34, KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/545/">Blooded</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:143, E-CRB:132</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/546/">Body Guard</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:143, FiB:34, E-BGR:27, E-CRB:132, F-BGR:27, F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2444/">Body Guard (Improved)</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>LbE:34, FiB:34, E-BGR:27, F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3365/">Body Guard (Supreme)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FiB:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1633/">Bolstered Armor</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1195/">Bought Info</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:143, FH:32, ND:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/547/">Brace</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:143, E-CRB:132</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/548/">Brilliant Evasion</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:144, E-CRB:132</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/686/">Bring it Down</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>EtU:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/694/">Burly</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FiB:34, DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/549/">Bypass Security</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:144, E-CRB:133</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1852/">Call &#39;em</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2700/">Calm Commander</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>LbE:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2445/">Calming Aura</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2446/">Calming Aura (Improved)</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1196/">Careful Planning</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:144, KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2447/">Center of Being</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>True</td>
+    <td>F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2448/">Center of Being (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2449/">Circle of Shelter</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-BGR:27, F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2701/">Clever Commander</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>LbE:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1197/">Clever Solution</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:144, FC:32, KtP:30, EV:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/550/">Codebreaker</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:144, E-CRB:133, F-BGR:27, F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/551/">Command</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:144, E-CRB:133, F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1198/">Commanding Presence</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:144, F-CRB:140</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2702/">Commanding Presence (Improved)</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>LbE:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2450/">Comprehend Technology</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2451/">Conditioned</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>LbE:34, FiB:34, F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1199/">Confidence</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:144, E-CRB:133, F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2703/">Confidence (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>LbE:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1416/">Congenial</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FH:32, FC:32, DoH:28</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3493/">Constant Vigilance</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>EV:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2052/">Contingency Plan</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:33, F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/552/">Contraption</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:144, E-CRB:133</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/553/">Convincing Demeanor</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:145, E-CRB:133</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1200/">Coordinated Assault</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:145, KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1417/">Coordination Dodge</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FH:32, ND:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1634/">Corellian Sendoff</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1635/">Corellian Sendoff [Improved]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2452/">Counterstrike</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1201/">Creative Killer</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/554/">Crippling Blow</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:145, E-CRB:133, F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3261/">Crucial Point</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>DoH:28</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3366/">Cunning Snare</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FiB:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3198/">Custom Loadout</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1636/">Customized Cooling Unit</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2053/">Cutting Question</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3199/">Cyberneticist</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/555/">Dead to Rights</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:145, E-CRB:133</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/556/">Dead to Rights [Improved]</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:145, E-CRB:134</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/557/">Deadly Accuracy</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:145, E-CRB:134</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3239/">Deathblow</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1202/">Debilitating Shot</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:145, ND:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1420/">Deceptive Taunt</a>
+    </td>
+    <td>Active</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FH:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/558/">Dedication</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:145, E-CRB:134, F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2453/">Defensive Circle</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/559/">Defensive Driving</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:145, E-CRB:134</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/560/">Defensive Slicing</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:145, E-CRB:134, F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/561/">Defensive Slicing [Improved]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:145, E-CRB:134</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/562/">Defensive Stance</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:146, E-CRB:134, F-BGR:27, F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2454/">Defensive Training</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>F-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3200/">Deft Maker</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1855/">Disarming Smile</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2054/">Discredit</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/563/">Disorient</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:146, E-CRB:135</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2455/">Disruptive Strike</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1418/">Distracting Behavior</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FH:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1419/">Distracting Behavior (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FH:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2456/">Djem So Deflection</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/564/">Dodge</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:27, A-CRB:146, E-BGR:27, E-CRB:135, F-BGR:27, F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1856/">Don&#39;t Shoot</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1857/">Double or Nothing</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1858/">Double or Nothing (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1859/">Double or Nothing (Supreme)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2457/">Draw Closer</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3119/">Drive Back</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>NoP:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2458/">Duelist&#39;s Training</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/565/">Durable</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:146, E-CRB:135, F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1203/">Dynamic Fire</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3262/">Empty Soul</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>DoH:28</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2055/">Encoded Communique</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2056/">Encouraging Words</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:33, LbE:34, DoH:28</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/566/">Enduring</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:146, E-BGR:27, E-CRB:135, F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3203/">Energy Transfer</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3201/">Engineered Redundancies</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2459/">Enhanced Leader</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3240/">Essential Kill</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1204/">Exaust Port</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2460/">Exhaust Port</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1637/">Expert Handler</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/567/">Expert Tracker</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:146, E-BGR:27, E-CRB:135, F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3202/">Eye for Detail</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2461/">Falling Avalanche</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/568/">Familiar Suns</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:146, E-CRB:135</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1638/">Fancy Paint Job</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:32, SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3494/">Fear the Shadows</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>EV:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/695/">Fearsome</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>DC:32, F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2462/">Feint</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>F-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/569/">Feral Strength</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:146, E-BGR:27, E-CRB:135</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/570/">Field Commander</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:146, E-BGR:27, E-CRB:135, F-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/571/">Field Commander [Improved]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:146, E-CRB:135, F-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/572/">Fine Tuning</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:146, E-CRB:135, F-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1205/">Fire Control</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:147</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/573/">Forager</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:147, E-CRB:135, F-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2463/">Force Assault</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3241/">Force Connection</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1206/">Force of Will</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:147</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2464/">Force Protection</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>True</td>
+    <td>F-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/574/">Force Rating</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>True</td>
+    <td>A-CRB:147, E-CRB:135, F-BGR:27, F-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2465/">Forewarning</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1207/">Form on Me</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:147</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1639/">Fortified Vacuum Seal</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1860/">Fortune Favors the Bold</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3495/">Freerunning</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>EV:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3496/">Freerunning (Improved)</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>EV:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/575/">Frenzied Attack</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:147, E-CRB:135</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/687/">Full Stop</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:147, EtU:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/576/">Full Throttle</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:147, E-BGR:27, E-CRB:135, F-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/577/">Full Throttle [Improved]</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:148, E-BGR:27, E-CRB:136, EV:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/578/">Full Throttle [Supreme]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:148, E-CRB:136, EV:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/579/">Galaxy Mapper</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:148, E-CRB:136, F-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2026/">Gang Leader</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>LoNH:135</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/580/">Gearhead</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:148, E-CRB:136, KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3264/">Go Without</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DoH:28</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/936/">Good Cop</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>JoY:88, FH:33, ND:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2750/">Grapple</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:34, KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/885/">Greased Palms</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:148, JoY:14, FH:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/581/">Grit</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:148, E-BGR:27, E-CRB:136, F-BGR:27, F-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1861/">Guns Blazing</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3242/">Harass</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/582/">Hard Headed</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:148, E-CRB:136</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/583/">Hard Headed [Improved]</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:148, E-CRB:136</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3431/">Hard-Boiled</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>ND:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2466/">Hawk Bat Swoop</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2467/">Healing Trance</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>True</td>
+    <td>True</td>
+    <td>F-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2468/">Healing Trance (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/696/">Heavy Hitter</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FiB:35, DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/584/">Heightened Awareness</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:145, A-CRB:148, E-CRB:136</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/585/">Heroic Fortitude</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:148, E-CRB:137, F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/697/">Heroic Resilience</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FiB:35, DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/586/">Hidden Storage</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:148, E-BGR:28, E-CRB:137</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1640/">High-G Training</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3432/">Hindering Shot</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/587/">Hold Together</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:149, E-CRB:137</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3243/">Holistic Navigation</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/588/">Hunter</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>E-CRB:137, F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/688/">Hunter&#39;s Quarry</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>EtU:30, SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/689/">Hunter&#39;s Quarry [Improved]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>EtU:30, SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/908/">Idealist</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>JoY:62</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2469/">Imbue Item</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3497/">Impossible Fall</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>EV:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/698/">Improvised Detonation</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/699/">Improvised Detonation [Improved]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2057/">In the Know</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>DA:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2058/">In the Know (Improved)</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1208/">Incite Rebellion</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/589/">Indistinguishable</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:149, E-CRB:137, F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2059/">Informant</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:33, ND:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2512/">Inity Assault</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/590/">Insight</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>A-CRB:149, E-CRB:137</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/591/">Inspiring Rhetoric</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:149, E-CRB:28, E-CRB:137</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/592/">Inspiring Rhetoric [Improved]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:149, E-CRB:137</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/593/">Inspiring Rhetoric [Supreme]</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:149, E-CRB:137</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/594/">Intense Focus</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:150, E-CRB:137, DoH:28</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/595/">Intense Presence</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:150, E-CRB:137, F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2060/">Interjection</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/596/">Intimidating</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:150, E-CRB:137, F-BGR:27, F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2470/">Intuitive Evasion</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>True</td>
+    <td>F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2471/">Intuitive Improvements</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3244/">Intuitive Navigation</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2472/">Intuitive Shot</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2473/">Intuitive Strike</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/597/">Inventor</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:150, E-CRB:137, F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1209/">Invigorate</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>A-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3433/">Iron Body</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>ND:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3265/">Iron Soul</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DoH:28</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1210/">It&#39;s Not That Bad</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/598/">Jump Up</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:150, E-BGR:28, E-CRB:138, F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/599/">Jury Rigged</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:150, E-BGR:28, E-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1862/">Just Kidding!</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2474/">Keen Eyed</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/600/">Kill with Kindness</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:150, E-BGR:28, E-CRB:138, F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/601/">Knockdown</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:150, E-BGR:28, E-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/602/">Know Somebody</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:150, E-CRB:138, F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2475/">Knowledge is Power</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/603/">Knowledge Specialization</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:150, E-CRB:138, F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2476/">Knowledgeable Healing</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/604/">Known Schematic</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, E-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1641/">Koiogran Turn</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1642/">Larger Project</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:32, SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/605/">Let&#39;s Ride</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:151, E-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/606/">Lethal Blows</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:151, E-CRB:138, SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3120/">Lightsaber Mastery</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>NoP:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/700/">Loom</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3204/">Machine Mender</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2477/">Makashi Flourish</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2478/">Makashi Technique</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>A-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3245/">Marked for Death</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>SS:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3434/">Martial Grace</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2479/">Master Artisan</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/607/">Master Doctor</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, E-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/690/">Master Driver</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, EtU:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/701/">Master Grenadier</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2704/">Master Instructor</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>LbE:34, DoH:29</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1211/">Master Leader</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/608/">Master Merchant</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, E-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/609/">Master of Shadows</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, E-CRB:138, F-CRB:146</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/610/">Master Pilot</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, E-CRB:138</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/611/">Master Slicer</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, E-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/612/">Master Starhopper</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, E-CRB:139, SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2705/">Master Strategist</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>LbE:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3266/">Meditative Trance</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>DoH:29</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3246/">Menace</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2480/">Mental Bond</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:147</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/613/">Mental Fortress</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:151, E-CRB:139, F-CRB:147</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2481/">Mental Tools</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:147</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3267/">Mind Bleed</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>DoH:29</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3247/">Mind Over Matter</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:35, SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3205/">More Machine than Man</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SM:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3367/">Moving Target</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FiB:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2482/">Multiple Opponents</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>F-CRB:147</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/691/">Museum Worthy</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>EtU:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1423/">Natural Athlete</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FH:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2483/">Natural Blademaster</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>F-CRB:147</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/614/">Natural Brawler</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/615/">Natural Charmer</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139, F-CRB:147</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/616/">Natural Doctor</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139, F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/692/">Natural Driver</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, EtU:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/617/">Natural Enforcer</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/618/">Natural Hunter</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139, F-BGR:27, F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2706/">Natural Instructor</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>LbE:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1212/">Natural Leader</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/619/">Natural Marksman</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:153, E-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1424/">Natural Merchant</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FH:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2484/">Natural Mystic</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/620/">Natural Negotiator</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139, F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/621/">Natural Outdoorsman</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139, F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/622/">Natural Pilot</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/623/">Natural Programmer</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:153, E-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/624/">Natural Rogue</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:153, E-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/625/">Natural Scholar</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:153, E-CRB:139</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/626/">Natural Tinkerer</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139, F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2485/">Niman Technique</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2751/">No Escape</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>KtP:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/627/">Nobody&#39;s Fool</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:153, E-CRB:139, F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1643/">Not Today</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3268/">Now The Master</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DoH:29</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2486/">Now You See Me</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:148</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3435/">Offensive Driving</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3269/">Once A Learner</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>DoH:29</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3248/">One with Nature</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FiB:35, SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2487/">One With the Universe</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-BGR:27, F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/628/">Outdoorsman</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:154, E-CRB:141, F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2752/">Overbalance</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:35, KtP:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3206/">Overcharge</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3207/">Overcharge (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3208/">Overcharge (Supreme)</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1644/">Overstocked Ammo</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1213/">Overwhelm Defenses</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:154, ND:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/629/">Overwhelm Emotions</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>E-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2488/">Parry</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>ND:35, F-BGR:28, F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2489/">Parry (Improved)</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>F-BGR:28, F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2490/">Parry (Supreme)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1214/">Physical Training</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:154, DoH:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2491/">Physician</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/693/">Pin</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>EtU:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3249/">Planet Mapper</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>ND:35, SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/630/">Plausible Deniability</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:154, E-CRB:141, F-BGR:28, F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2061/">Plausible Deniability (Improved)</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/631/">Point Blank</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:28, A-CRB:154, E-BGR:29, E-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2062/">Positive Spin</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>DA:34, LbE:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2063/">Positive Spin (Improved)</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/702/">Powerful Blast</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:154, DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/632/">Precise Aim</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>E-BGR:29, E-CRB:141, SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2753/">Precision Strike</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:35, KtP:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3436/">Precision Strike (Improved)</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3437/">Precision Strike (Supreme)</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2492/">Preemptive Avoidance</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2755/">Prescient Shot</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>KtP:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/633/">Pressure Point</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>E-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2493/">Prey on the Weak</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FiB:35, F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2754/">Prime Positions</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FiB:35, KtP:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2756/">Prophetic Aim</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>KtP:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/634/">Quick Draw</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:154, E-BGR:29, E-CRB:141, F-BGR:28, F-CRB:149</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1863/">Quick Draw (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1215/">Quick Fix</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:154</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2494/">Quick Movement</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/635/">Quick Strike</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:154, E-BGR:29, E-CRB:141, F-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/703/">Rain of Death</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FiB:35, DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/636/">Rapid Reaction</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:154, E-BGR:29, E-CRB:141, F-BGR:28, F-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/637/">Rapid Recovery</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:154, E-CRB:141, F-BGR:28, F-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2707/">Ready for Anything</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>LbE:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3438/">Reconstruct the Scene</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:36, EV:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/638/">Redundant Systems</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:154, E-CRB:141</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2495/">Reflect</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>True</td>
+    <td>True</td>
+    <td>F-BGR:28, F-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2496/">Reflect (Improved)</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-BGR:28, F-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2497/">Reflect (Supreme)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2757/">Reinforce Item</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>KtP:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1645/">Reinforced Frame</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3209/">Reroute Processors</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/639/">Researcher</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:154, E-BGR:29, E-CRB:141, F-CRB:150</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2064/">Researcher (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:34, LbE:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2498/">Resist Disarm</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/640/">Resolve</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:155, E-BGR:29, E-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3210/">Resourceful Refit</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1216/">Respected Scholar</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:142, A-CRB:155</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3030/">Ritual Caster</a>
+    </td>
+    <td>Active</td>
+    <td>False</td>
+    <td>True</td>
+    <td>NoP:37</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2499/">Saber Swarm</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2500/">Saber Throw</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3498/">Saber Throw (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>EV:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2501/">Sarlacc Sweep</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3270/">Savvy Negotiator</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>DoH:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3271/">Savvy Negotiator (Improved)</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DoH:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/641/">Scathing Tirade</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:155, E-CRB:142, KtP:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/642/">Scathing Tirade [Improved]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:155, E-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/643/">Scathing Tirade [Supreme]</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:155, E-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1646/">Second Chances</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:33, FC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/644/">Second Wind</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:155, E-CRB:142, F-BGR:29, F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3368/">Seize the Initiative</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FiB:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/704/">Selective Detonation</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:155, DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2502/">Sense Advantage</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-BGR:29, F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/645/">Sense Danger</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>A-CRB:155, E-CRB:142, F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/646/">Sense Emotions</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>E-CRB:142, F-BGR:29, F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3499/">Sense the Scene</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>EV:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2503/">Share Pain</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2504/">Shein Technique</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/647/">Shortcut</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:155, E-CRB:142, EV:31, SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3250/">Shortcut (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:36, EV:31, SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1647/">Showboat</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/648/">Side Step</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:156, E-CRB:142, F-CRB:151</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1648/">Signature Vehicle</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:33, SM:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1217/">Situational Awareness</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:156</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/649/">Sixth Sense</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:156, E-CRB:142, F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/650/">Skilled Jockey</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:156, E-BGR:29, E-CRB:142, F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/651/">Skilled Slicer</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:156, E-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3272/">Skilled Teacher</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>DoH:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1218/">Sleight of Mind</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>A-CRB:156, F-BGR:29, F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2505/">Slippery Minded</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/652/">Smooth Talker</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:156, E-CRB:142, F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/653/">Sniper Shot</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:156, E-CRB:142</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/654/">Soft Spot</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:156, E-BGR:29, E-CRB:143, F-BGR:29, F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/655/">Solid Repairs</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:156, E-CRB:143, F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1649/">Soothing Tone</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:33, SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2506/">Soresu Technique</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1865/">Sorry About the Mess</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1219/">Sound Investments</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:156, FH:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/656/">Spare Clip</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:157, E-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/657/">Speaks Binary</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:157, E-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3211/">Speaks Binary (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3212/">Speaks Binary (Supreme)</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SM:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1866/">Spitfire</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1650/">Spur</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1651/">Spur [Improved]</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1652/">Spur [Supreme]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SoT:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/658/">Stalker</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:157, E-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/705/">Steady Nerves</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>DC:32</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/659/">Steely Nerves</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:157, E-CRB:143, F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/660/">Stim Application</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:157, E-BGR:29, E-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/661/">Stim Application [Improved]</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:157, E-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/662/">Stim Application [Supreme]</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:157, E-CRB:143</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/683/">Stimpack Specialization</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:157, F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2507/">Strategic Form</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/663/">Street Smarts</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:157, E-BGR:29, E-CRB:144, F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3439/">Street Smarts (Improved)</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:36, EV:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/664/">Stroke of Genius</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:157, E-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/665/">Strong Arm</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:157, E-BGR:29, E-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3251/">Studious Plotting</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/666/">Stunning Blow</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:157, E-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/667/">Stunning Blow [Improved]</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:157, E-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2508/">Sum Djem</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:152</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3273/">Sunder (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DoH:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3500/">Superhuman Reflexes</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>EV:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/668/">Superior Reflexes</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:157, E-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2065/">Supporting Evidence</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>DA:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2758/">Suppressing Fire</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FiB:35, KtP:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/669/">Surgeon</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:158, E-BGR:29, E-CRB:144, F-BGR:29, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3252/">Survival of the Fittest</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/820/">Swift</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:158, E-CRB:144, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1220/">Tactical Combat Training</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:158</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/706/">Talk the Talk</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DC:33, EV:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/670/">Targeted Blow</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:158, E-CRB:144</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/671/">Technical Aptitude</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:158, E-CRB:145, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2509/">Terrify</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2510/">Terrify (Improved)</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3253/">Terrifying Kill</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>SS:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2708/">That&#39;s how it&#39;s Done</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>LbE:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2511/">The Force is my Allay</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2066/">Thorough Assesment</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:34, LbE:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1426/">Throwing Credits</a>
+    </td>
+    <td>Active</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FH:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/707/">Time to Go</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:158, DC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/708/">Time to Go [Improved]</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:158, DC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/672/">Tinkerer</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:158, E-CRB:145, KtP:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/673/">Touch of Fate</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>True</td>
+    <td>A-CRB:158, E-CRB:145, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/674/">Toughened</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:158, E-BGR:29, E-CRB:145, F-BGR:29, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/675/">Tricky Target</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:158, E-CRB:145, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/676/">True Aim</a>
+    </td>
+    <td>Active (Maneuver)</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-BGR:29, A-CRB:158, E-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1653/">Tuned Maneuvering Thrusters</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>SoT:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2067/">Twisted Words</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:34</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3440/">Unarmed Parry</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>ND:36</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/677/">Uncanny Reactions</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>True</td>
+    <td>A-CRB:158, E-CRB:145, F-BGR:29, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/678/">Uncanny Senses</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>True</td>
+    <td>A-CRB:158, E-CRB:145, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1427/">Unrelenting Skeptic</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FH:33, EV:31</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1428/">Unrelenting Skeptic (Improved)</a>
+    </td>
+    <td>Active (Incidential, Out of Turn)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>FH:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1221/">Unstoppable</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:159</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1867/">Up the Ante</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>FC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/679/">Utility Belt</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:159, E-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/680/">Utinni!</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>E-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2068/">Valuable Facts</a>
+    </td>
+    <td>Active (Action)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DA:34, F-BGR:29, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1222/">Vehicle Combat Training</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:159</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/709/">Walk the Walk</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DC:33</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/2709/">Well Read</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>LbE:35</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/681/">Well Rounded</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:159, E-BGR:29, E-CRB:145, F-BGR:29, F-CRB:153</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1223/">Well Traveled</a>
+    </td>
+    <td>Passive</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:159, DoH:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/682/">Wheel and Deal</a>
+    </td>
+    <td>Passive</td>
+    <td>True</td>
+    <td>False</td>
+    <td>A-CRB:159, E-CRB:145</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3274/">Wise Warrior</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DoH:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/3275/">Wise Warrior (Improved)</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>DoH:30</td>
+  </tr>
+
+
+  <tr>
+    <td class="item_name">
+      <a href="/character/talent/1224/">Works Like a Charm</a>
+    </td>
+    <td>Active (Incidential)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>A-CRB:159, FC:33</td>
+  </tr>
+
+
+</table>

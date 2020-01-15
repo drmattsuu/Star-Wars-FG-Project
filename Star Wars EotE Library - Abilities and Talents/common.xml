@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root version="2.0">
+	<library static="true">
+		<characters>
+			<categoryname type="string">Player Library</categoryname>
+			<name type="string">Characters</name>
+			<entries>
+				<!-- Talents -->
+				<talents>
+					<name type="string">Talents</name>
+					<entries>
+						<ADV>
+							<classname type="string">talent</classname>
+							<name type="string">Adversary</name>
+							<description type="formattedtext">Upgrades any combat check against this character by the number of ranks.</description>
+							<ranked type="string">ranked</ranked>
+							<activation type="string">Passive</activation>
+						</ADV>
+						<AAODDS>
+							<classname type="string">talent</classname>
+							<name type="string">Against all Odds</name>
+							<description type="formattedtext">F-CRB:138</description>
+							<!-- <description type="formattedtext">
+								<p>
+									<i>Force Talent.</i>
+								</p>
+								<p>Once per session, if this character is incapacitated due to exceeding their wound threshold, they may perform a Hard Resilience Check (rolling their force rating). If successful, the character heals wounds equal to success tokens (may use force tokens to augment the result).</p>
+							</description> -->
+							<activation type="string">Action</activation>
+						</AAODDS>
+						<AGRN>
+							<classname type="string">talent</classname>
+							<name type="string">Aggressive Negotiations</name>
+							<description type="formattedtext">DoH:28</description>
+							<!-- <description type="formattedtext">
+								<p>
+									<i>Force Talent.</i>
+								</p>
+								<p>Once per session, this character may perform a hard lightsaber check. If successful this character decreases the difficulty of all negotiation	checks he makes for the remainder of the encounter by two, to a minimum if 0.</p>
+							</description> -->
+							<activation type="string">Action</activation>
+						</AGRN>
+						<ALLTERDRIV>
+							<classname type="string">talent</classname>
+							<name type="string">All-Terrain Driver</name>
+							<description type="formattedtext">A-CRB:142, EtU:30, ND:34</description>
+							<!-- <description type="formattedtext">
+								<p>When piloting a vehicle using the Piloting (Planetary) skill, the character does not suffer the penalties for driving through difficult terrain.</p>
+							</description> -->
+							<activation type="string">Passive</activation>
+						</ALLTERDRIV>
+						<AMBUSH>
+							<classname type="string">talent</classname>
+							<name type="string">Ambush</name>
+							<description type="formattedtext">FiB:34</description>
+							<activation type="string">Maneuver</activation>
+						</AMBUSH>
+						<ANIMBOND>
+							<classname type="string">talent</classname>
+							<name type="string">Aminal Bond</name>
+							<description type="formattedtext">F-CRB:138</description>
+							<activation type="string">Passive</activation>
+						</ANIMBOND>
+						<ANAT>
+							<classname type="string">talent</classname>
+							<name type="string">Anatomy Lessons</name>
+							<description type="formattedtext">A-CRB:142, E-BGR:27, E-CRB:132, F-CRB:138</description>
+							<activation type="string">Incidental</activation>
+						</ANAT>
+						<ANIMBONDIMP>
+							<classname type="string">talent</classname>
+							<name type="string">Aminal Bond (Improved)</name>
+							<description type="formattedtext">SS:30</description>
+							<activation type="string">Passive</activation>
+						</ANIMBONDIMP>
+						<ANIMEMP>
+							<classname type="string">talent</classname>
+							<name type="string">Animal Empathy</name>
+							<description type="formattedtext">F-CRB:139</description>
+							<ranked type="string">ranked</ranked>
+							<activation type="string">Passive</activation>
+						</ANIMEMP>
+						<ARM>
+							<classname type="string">talent</classname>
+							<name type="string">Armor Master</name>
+							<description type="formattedtext"></description>
+							<activation type="string">Passive</activation>
+						</ARM>
+						<ARMIMP>
+							<classname type="string">talent</classname>
+							<name type="string">Armor Master (Improved)</name>
+							<description type="formattedtext"></description>
+							<activation type="string">Passive</activation>
+						</ARMIMP>
+						<ARMSUP>
+							<classname type="string">talent</classname>
+							<name type="string">Armor Master (Improved)</name>
+							<description type="formattedtext"></description>
+							<activation type="string">Passive</activation>
+						</ARMSUP>
+						<!--
+						<EXAMPLE2>
+							<classname type="string">talent</classname>
+							<name type="string">ExampleTalent</name>
+							<description type="formattedtext">DescriptionText</description>
+							<ranked type="string">ranked</ranked>
+							<activation type="string">Passive</activation>
+						</EXAMPLE2>
+
+						<EXAMPLE>
+							<classname type="string">talent</classname>
+							<name type="string">ExampleTalent</name>
+							<description type="formattedtext">DescriptionText</description>
+							<ranked type="string">ranked</ranked> // this is optional
+							<activation type="string">Passive</activation> // Passive/Action/Maneuver/Incidental/Incidental (Out of Turn)
+						</EXAMPLE>
+						!-->
+					</entries>
+				</talents>
+				<!-- Species and Special Abilities -->
+				<abilities>
+					<name type="string">Abilities</name>
+					<entries>
+					</entries>
+				</abilities>
+			</entries>
+		</characters>
+
+	</library>
+</root>
