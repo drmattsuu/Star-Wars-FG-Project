@@ -71,6 +71,16 @@
 					main_morality_istriggered.setVisible(false);
 					main_morality_engaged_label.setVisible(false);
 					main_morality_isengaged.setVisible(false);
+					
+					--[[Section comented out.  Show force rating for all FFG Star Wars flavours.
+					force_rating.setVisible(false);
+					force_rating_title.setVisible(false);
+					force_rating_total_label.setVisible(false);
+					force_rating_total.setVisible(false);
+					force_rating_spent_label.setVisible(false);
+					force_rating_spent.setVisible(false);
+					main_characteristics_force_current_label.setVisible(false);
+					main_characteristics_force_current.setVisible(false);]]				
 				end				
 			end
 		</script>
@@ -1014,7 +1024,90 @@
 				<tooltip>
 					<text>Triggered morality has been engaged for this session</text>
 				</tooltip>
-			</checkbox>				
+			</checkbox>		
+			
+<!--Force Rating Section - thanks to Archamus for this-->			
+			<sheetframe name="force_rating">
+				<bounds>363,378,121,93</bounds>
+			</sheetframe>
+			<sheetframetitle name="force_rating_title">
+				<anchored>
+					<to>force_rating</to>
+				</anchored>
+				<static>Force Rating</static>
+			</sheetframetitle>
+
+			<!-- TOTAL -->
+			<sheetlabel name="force_rating_total_label">	<anchored>
+					<to>force_rating</to>
+					<offset>13,22</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Total</static>
+			</sheetlabel>
+			<sheetnumberfield name="force_rating_total" source="force.total">
+				<anchored>
+					<to>force_rating</to>
+					<offset>83,21</offset>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				 <tooltip>	
+					<textres>tooltip_force_rating</textres>					
+				 </tooltip>					
+			</sheetnumberfield>
+
+			<!-- Committed -->
+			<sheetlabel name="force_rating_spent_label">
+				<anchored>
+					<to>force_rating</to>
+					<offset>13,42</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Used</static>
+			</sheetlabel>
+			<sheetnumberfield name="force_rating_spent" source="force.spent">
+				<anchored>
+					<to>force_rating</to>
+					<offset>83,41</offset>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				 <tooltip>	
+					<textres>tooltip_force_comitted</textres>					
+				 </tooltip>				
+			</sheetnumberfield>
+			
+			<!-- REMAINING -->
+			<sheetlabel name="main_characteristics_force_current_label">
+				<anchored>
+					<to>force_rating</to>
+					<offset>13,62</offset>
+					<size>
+						<width>64</width>
+					</size>
+				</anchored>
+				<static>Available</static>
+			</sheetlabel>	
+
+			<sheetforcevalue name="main_characteristics_force_current" source="force.current">
+				<anchored>
+					<to>force_rating</to>
+					<offset>83,61</offset>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				 <tooltip>	
+					<textres>tooltip_force_available</textres>					
+				 </tooltip>				
+			</sheetforcevalue>			
 
 		</sheetdata>
 	</windowclass>

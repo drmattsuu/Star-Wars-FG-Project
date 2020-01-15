@@ -489,3 +489,19 @@ function addActionDice(actionnode, dice)
 		end
 	end
 end
+
+--Added support for force rating dice - thanks to Archamus for this
+function addForceDice(forcenode, dice)
+	if forcenode then
+		local forcetotal = forcenode.getChild("force.current");
+		local forcevalue = forcetotal.getValue();
+		if forcevalue > 0 then
+			
+		--my new code JL
+		for i = 1, forcevalue do
+			table.insert(dice, "dForce");
+		end
+			
+		end
+	end
+end

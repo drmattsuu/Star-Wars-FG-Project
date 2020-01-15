@@ -5,7 +5,8 @@ function onInit()
 	sourcenode = getDatabaseNode();
 	if sourcenode then
 		if sourcenode.isStatic() then
-			setEnabled(false);
+			--setEnabled(false);
+			setReadOnly(true);
 		end
 	end
 end

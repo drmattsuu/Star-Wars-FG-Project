@@ -40,6 +40,9 @@ function onDragEnd(draginfo)
 end
 
 function onDrop(x, y, draginfo)
+	if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+		Debug.console("Campaign Option interface_cleardicepoolondrag set");
+	end
 	if not dragging then
 		
 		-- Dice
@@ -85,7 +88,9 @@ function onDrop(x, y, draginfo)
 		if draginfo.isType("action") then
 			local dielist = draginfo.getDieList();
 			if dielist then
-				resetAll();
+				if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+					resetAll();
+				end
 				setType(draginfo.getType());
 				setDescription(draginfo.getDescription());
 				setSourcenode(draginfo.getDatabaseNode());
@@ -99,7 +104,9 @@ function onDrop(x, y, draginfo)
 		if draginfo.isType("characteristic") then
 			local dielist = draginfo.getDieList();
 			if dielist then
-				resetAll();			
+				if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+					resetAll();
+				end			
 				setType(draginfo.getType());
 				setDescription(draginfo.getDescription());
 				setSourcenode(draginfo.getDatabaseNode());
@@ -113,7 +120,9 @@ function onDrop(x, y, draginfo)
 		if draginfo.isType("skill") then
 			local dielist = draginfo.getDieList();
 			if dielist then
-				resetAll();			
+				if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+					resetAll();
+				end			
 				setType(draginfo.getType());
 				setDescription(draginfo.getDescription());
 				setSourcenode(draginfo.getDatabaseNode());
@@ -127,7 +136,9 @@ function onDrop(x, y, draginfo)
 		if draginfo.isType("specialisation") then
 			local dielist = draginfo.getDieList();
 			if dielist then
-				resetAll();			
+				if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+					resetAll();
+				end			
 				setType(draginfo.getType());
 				setDescription(draginfo.getDescription());
 				setSourcenode(draginfo.getDatabaseNode());
@@ -147,7 +158,9 @@ function onDrop(x, y, draginfo)
 				local modifiers = {};
 				local recordnode = DB.findNode(recordname);
 				if recordnode then
-					resetAll();				
+					if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+						resetAll();
+					end				
 					setType("skill");
 					local namenode = recordnode.getChild("name");
 					if namenode then
@@ -166,7 +179,9 @@ function onDrop(x, y, draginfo)
 				local modifiers = {};
 				local recordnode = DB.findNode(recordname);
 				if recordnode then
-					resetAll();				
+					if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+						resetAll();
+					end				
 					setType("action");
 					local namenode = recordnode.getChild("name");
 					if namenode then
@@ -185,7 +200,9 @@ function onDrop(x, y, draginfo)
 				local modifiers = {};
 				local recordnode = DB.findNode(recordname);
 				if recordnode then
-					resetAll();					
+					if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+						resetAll();
+					end				
 					setType("specialisation");
 					local namenode = recordnode.getChild("name");
 					if namenode then
@@ -425,10 +442,8 @@ function onDieboxButtonPress()
 		end
 		-- throw the dice
 		ChatManager.throwDice(type, dice, modifier, description, {sourcenodename, msgidentity, gmonly});
-		
-		if PreferenceManager.getValue("interface_cleardicepoolondrag") then
-			resetAll();
-		end		
+
+		resetAll();		
 end	
 
 function DieBoxUpgradeDowngradeButtonPress(controlname)

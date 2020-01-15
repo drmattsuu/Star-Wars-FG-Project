@@ -65,6 +65,7 @@
 	<includefile source="classes/common/woundnumberfield.xml" />
 	<includefile source="classes/common/weaponskillcontrol.xml" />
 	<includefile source="classes/common/initskillcontrol.xml" />
+	<includefile source="classes/common/forcevalue.xml" />
 	
 	<includefile source="classes/common/template_lists.xml" />
 	

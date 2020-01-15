@@ -1,3 +1,5 @@
 *.mod
 *.pak
+.vs
 !/Star Wars EotE/*
+!/Star Wars EotE Library/*

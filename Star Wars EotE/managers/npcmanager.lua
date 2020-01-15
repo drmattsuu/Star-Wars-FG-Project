@@ -160,7 +160,7 @@ function removeRecharge(npcnode)
 			local msg = {};
 			msg.font = "msgfont";					
 			msg.text = "Recharge has been removed from " .. getNpcName(npcnode);
-			ChatManager.deliverMessage(msg);
+			Comm.addChatMessage(msg);
 			return true;			
 		end
 	end
@@ -227,7 +227,7 @@ function addSkill(npcnode, skillnode)
 		local msg = {};
 		msg.font = "msgfont";										
 		msg.text = getNpcName(npcnode) .. " has gained the skill: " .. skillnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
+		Comm.addChatMessage(msg);
 		
 		-- and return
 		return true;
@@ -262,7 +262,9 @@ function addItem(npcnode, itemnode)
 		local msg = {};
 		msg.font = "msgfont";										
 		msg.text = getNpcName(npcnode) .. " has gained the item: " .. itemnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
+		--Comm.addChatMessage(msg);
+		-- Only deliver message to GM
+		Comm.addChatMessage(msg);
 		
 		-- and return
 		return true;
@@ -743,7 +745,7 @@ function addAbility(npcnode, abilitynode)
 			local msg = {};
 			msg.font = "msgfont";										
 			msg.text = "Cannot add ability as " .. getNpcName(npcnode) .. " already has ability: " .. abilitynode.getChild("name").getValue();
-			ChatManager.deliverMessage(msg);
+			Comm.addChatMessage(msg);
 			return true;
 		end		
 	
@@ -757,7 +759,7 @@ function addAbility(npcnode, abilitynode)
 		local msg = {};
 		msg.font = "msgfont";										
 		msg.text = getNpcName(npcnode) .. " has gained the species/special ability: " .. abilitynode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
+		Comm.addChatMessage(msg);
 		
 		-- and return
 		return true;		
@@ -776,7 +778,7 @@ function addTalent(npcnode, talentnode)
 			local msg = {};
 			msg.font = "msgfont";										
 			msg.text = "Cannot add talent as " .. getNpcName(npcnode) .. " already has talent: " .. talentnode.getChild("name").getValue();
-			ChatManager.deliverMessage(msg);
+			Comm.addChatMessage(msg);
 			return true;
 		end		
 	
@@ -790,7 +792,7 @@ function addTalent(npcnode, talentnode)
 		local msg = {};
 		msg.font = "msgfont";										
 		msg.text = getNpcName(npcnode) .. " has gained the talent: " .. talentnode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
+		Comm.addChatMessage(msg);
 		
 		-- and return
 		return true;		
@@ -812,7 +814,7 @@ function addVehicle(npcnode, vehiclenode)
 			--local msg = {};
 			--msg.font = "msgfont";										
 			--msg.text = "Cannot add talent as " .. getNpcName(npcnode) .. " already has talent: " .. talentnode.getChild("name").getValue();
-			--ChatManager.deliverMessage(msg);
+			--Comm.addChatMessage(msg);
 			--return true;
 		--end		
 		
@@ -868,7 +870,7 @@ function addVehicle(npcnode, vehiclenode)
 		local msg = {};
 		msg.font = "msgfont";										
 		msg.text = getNpcName(npcnode) .. " has gained the vehicle: " .. vehiclenode.getChild("name").getValue();
-		ChatManager.deliverMessage(msg);
+		Comm.addChatMessage(msg);
 		
 		-- and return
 		return true;		
@@ -907,7 +909,7 @@ end
 --				else
 --					msg.text = getNpcName(characternode) .. " has not taken any damage."
 --				end
---				ChatManager.deliverMessage(msg);
+--				Comm.addChatMessage(msg);
 --				
 --				-- and return
 --				addWoundsRunning = false;

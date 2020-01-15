@@ -25,6 +25,16 @@
 	<string name="tooltip_vehicle_token">Drag the vehicle token here</string>
 	<string name="npc_vehicle_clear">Clear vehicle details</string>
 	
+	<!--Images-->
+	<string name="image_menu_size">Resize</string>
+	<string name="image_menu_sizeoriginal">Original Size</string>
+	<string name="image_menu_sizevertical">Adjust Vertical</string>
+	<string name="image_menu_sizehorizontal">Adjust Horizontal</string>	
+	<string name="resize_to_grid">Resize to Grid</string>
 	
+	<!--Force controls on main page of character sheet-->
+	<string name="tooltip_force_rating">The total Force rating for this character before removing/committing Force dice to powers</string>
+	<string name="tooltip_force_comitted">The total number of Force dice currently removed/unavailable or committed to Force powers</string>
+	<string name="tooltip_force_available">The current number of Force dice available for use.  Double-click to add to the dice pool or drag to the chat window to roll</string>
 	
 </root>

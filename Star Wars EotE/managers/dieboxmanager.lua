@@ -65,7 +65,9 @@ end
 -- Added to allow skill dice to be added to the die box by clicking on the button next to the skill.
 function addSkillDice(skilldescription, dice, sourcenode, msgidentity)
 	if dice then
-		control.resetAll();			
+		if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+			control.resetAll();	
+		end			
 		control.setType("skill");
 		control.setDescription(skilldescription);
 		control.setSourcenode(sourcenode);
@@ -79,7 +81,9 @@ end
 -- Added to allow skill dice to be added to the die box by clicking on the button next to the skill.
 function addCharacteristicDice(description, dice, sourcenode, msgidentity)
 	if dice then
-		control.resetAll();			
+		if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+			control.resetAll();	
+		end				
 		control.setType("characteristic");
 		control.setDescription(description);
 		control.setSourcenode(sourcenode);
@@ -152,4 +156,16 @@ function handleSendPlayerDicepool(msguser, msgidentity, msgparams)
 	--	Debug.console("charlistentry.lua: handleSendPlayerDicepool.  I am the player with the dicepool!  This is the dicepool you are looking for.");
 	--	DieBoxManager.readDicepool();
 	--end
+end
+
+-- Added to allow double clicking on force dice to add to the diebox without overwriting it - thanks to Archamus for this
+function addForceDice(dice, sourcenode, msgidentity)
+	if dice then		
+		control.setType("dice");
+		control.setSourcenode(sourcenode);
+		control.setIdentity(msgidentity);
+		for k, v in pairs(dice) do
+			control.addDie(v);
+		end
+	end
 end

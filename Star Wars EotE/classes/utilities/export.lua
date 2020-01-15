@@ -119,8 +119,9 @@ function onMenuSelection(...)
 	end
 	
 	-- Export
+	playervisible = false	-- New v3.3.0 parameter for player module.  Not used currently in this ruleset
 	--if not Module.export(moduleproperties.name, moduleproperties.file, moduleproperties.author, hostnodes, commonnodes, clientnodes, tokenlist, moduleproperties.thumbnail) then
-	if not Module.export(moduleproperties.name, moduleproperties.indexgroup, moduleproperties.author, moduleproperties.file, moduleproperties.thumbnail, nodelist, tokenlist) then
+	if not Module.export(moduleproperties.name, moduleproperties.indexgroup, moduleproperties.author, moduleproperties.file, moduleproperties.thumbnail, nodelist, tokenlist, playervisible) then
 		ChatManager.addMessage( { font = "systemfont", text = "Module export failed!" } );
 	else
 		ChatManager.addMessage( { font = "systemfont", text = "Module exported successfully" } );

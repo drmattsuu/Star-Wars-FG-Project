@@ -478,7 +478,7 @@ function processDice(draginfo)
 	local sourcenode = draginfo.getDatabaseNode();
 	local gmonly = false;
 	
-	--Debug.console("processDice - type = " .. type);
+	Debug.console("processDice - draginfo = ", draginfo);
 	
 	-- Used to track success and advantages for initiative in the form of <successes>.<advantages>
 	local initiativecount = 0;
@@ -577,7 +577,7 @@ function processDice(draginfo)
 	end
 
 	-- Crit rolls are just d100 rolls, no need to show the special dice summary.  Plus show total of the roll.
-	if string.find(description, "CRITICAL") then
+	if string.find(description, "CRITICAL") or string.find(description, "CRITVEHICLE") then
 		showsummary = false;
 		resultMsg.dicedisplay = 1;
 	end
@@ -761,7 +761,7 @@ function processDice(draginfo)
 	-- Handle critical roll here - indicated by CRITICAL in roll description
 	if string.find(description, "CRITICAL") then
 		Debug.console("Critical result handler.")
-		Debug.console("Target node for critical = " .. sourcenode.getNodeName());
+		Debug.console("Target node for critical = ", sourcenode);
 		
 		--resultMsg.dice = resultdice;
 		local critModifier = resultMsg.diemodifier;
@@ -791,6 +791,7 @@ function processDice(draginfo)
 		-- print a message
 		local msg = {};
 		msg.font = "msgfont";	
+		msg.type = "critical";
 		
 		if sourcenode.getNodeName() ~= "" then
 			PlayerDBManager.createCriticalNonOwnedDB(sourcenode, critDetails.name, critDetails.description, critDetails.severity);
@@ -812,7 +813,7 @@ function processDice(draginfo)
 	-- Handle vehicle critical roll here - indicated by CRITVEHICLE in roll description
 	if string.find(description, "CRITVEHICLE") then
 		Debug.console("Critical vehicle result handler.")
-		Debug.console("Target node for critical = " .. sourcenode.getNodeName());
+		Debug.console("Target node for critical = ", sourcenode);
 		
 		--resultMsg.dice = resultdice;
 		local critModifier = resultMsg.diemodifier;
@@ -841,7 +842,9 @@ function processDice(draginfo)
 		
 		-- print a message
 		local msg = {};
-		msg.font = "msgfont";		
+		msg.font = "msgfont";
+		msg.type = "critvehicle";
+		
 		if sourcenode.getNodeName() ~= "" then		
 			PlayerDBManager.createCriticalNonOwnedDB(sourcenode.createChild("vehicle"), critDetails.name, critDetails.description, critDetails.severity);
 			if critDetails.severity == 999 then

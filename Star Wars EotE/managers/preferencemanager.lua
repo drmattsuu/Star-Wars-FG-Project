@@ -1,8 +1,8 @@
 local SPECIAL_MSGTYPE_PREFERENCECHANGED = "preferencechanged";
 
-local entries = {};
-local groups = {};
-local values = {};
+entries = {};
+groups = {};
+values = {};
 local observers = {};
 
 function onInit()

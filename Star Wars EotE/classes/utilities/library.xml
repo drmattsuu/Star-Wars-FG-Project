@@ -49,7 +49,10 @@
 						if entriesnode then
 							window.windowlist.window.setEntriesNode(entriesnode);
 						end
-					end					
+					end
+					function onInit()
+						Debug.console("library_section name = " .. getValue());
+					end
 				</script>
 			</basestringfield>
 		</sheetdata>

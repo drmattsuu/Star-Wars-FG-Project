@@ -16,6 +16,8 @@
 			<basestringfield name="name">
 				<bounds>22,3,-1,18</bounds>
 				<empty>&#171; New Image &#187;</empty>
+				<underlineoffset>-1</underlineoffset>
+				<linktarget>open</linktarget>
 				<script>
 					editmode = false;
 
@@ -34,11 +36,28 @@
 						end
 					end
 					
+					function onHover(oncontrol)
+						if not editmode then
+							setUnderline(oncontrol);
+						end
+					end					
+					
 					function onClickDown(button, x, y)
 						if not editmode then
 							return true;
 						end
 					end
+					
+					function onClickRelease(button, x, y)
+						if not editmode then
+							if self.activate then
+								self.activate();
+							elseif linktarget then
+								window[linktarget[1]].activate();
+							end
+						end
+						return true;
+					end					
 					
 					function onMenuSelection(...)
 						setEditMode(not editmode);
@@ -97,9 +116,13 @@
 		<tooltip>
 			<field>name</field>
 		</tooltip>
+		<!--Added in v2.1.1 - CoreRPG image resize options + Trenloe size-to-grid functionality.-->
+		<script file="classes/campaign/image.lua" />
 		<sheetdata>
 			<baseimagecontrol name="image">
 				<bounds>20,22,-26,-27</bounds>
+				<marginx>46</marginx>
+				<marginy>49</marginy>				
 				<drawingdefaultsize>500,500</drawingdefaultsize>
 			</baseimagecontrol>
 			<scrollercontrol>

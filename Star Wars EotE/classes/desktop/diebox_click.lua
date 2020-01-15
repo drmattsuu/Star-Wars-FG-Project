@@ -6,7 +6,9 @@ end
 
 function addSkillDice(skilldescription, dice, sourcenode)
 	if dice then
-		control.resetAll();			
+		if PreferenceManager.getValue("interface_cleardicepoolondrag") then
+			control.resetAll();	
+		end				
 		control.setType("skill");
 		control.setDescription(skilldescription);
 		control.setSourcenode(sourcenode);

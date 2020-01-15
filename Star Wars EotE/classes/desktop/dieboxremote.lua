@@ -40,6 +40,13 @@ function onDragEnd(draginfo)
 end
 
 function onDrop(x, y, draginfo)
+	
+	-- Don't allow dropping of dice or anything else to the viewer - it is not two-way and there is no drop functionality.
+	return true;
+	
+end
+
+function XXX_Old_onDrop(x, y, draginfo)
 	if not dragging then
 		
 		-- Dice

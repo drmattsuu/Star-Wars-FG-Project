@@ -18,9 +18,9 @@
 		<!--<sheetdata>-->
 			<genericcontrol name="dieboxcontrol">
 				<bounds>0,0,-1,-1</bounds>
-				<droptypes>
+<!--				<droptypes>
 					<type>dice</type>
-				</droptypes>
+				</droptypes>-->
 				<stateframe>
 					<drophilight>
 						<name>modstackfocus</name>

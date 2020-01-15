@@ -74,6 +74,7 @@
 		<bottomleft rect="0,405,150,150" />
 		<bottom rect="150,405,252,150" />
 		<bottomright rect="402,405,150,150" />
+		<insideoffset>0,0,20,22</insideoffset>
 	</framedef>
 
 	<framedef name="indexbox">

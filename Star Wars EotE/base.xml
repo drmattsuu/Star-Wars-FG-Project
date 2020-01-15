@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<root version="3.0" release="1.1.2" logo="logo.png">
+<root version="3.0" release="2.1.1" logo="logo.png">
 	<description>
 		<text>Star Wars®:Edge of the Empire community ruleset</text>
 		<author>JamesManhattan - based on WFRP3 ruleset by Neil G. Foster</author>
 		<website>http://fantasyflightgames.com/</website>
 	</description>
+	
+	<announcement text="Star Wars®: Edge of the Empire community ruleset V2.1.1d (FG 3.1.7+), Initial v2 release: Star Wars Day 2015.  Update September 2018.  Base ruleset by JamesManhattan, heavily based on the WFRP 3e ruleset by Neil G. Foster.  Many, many additions by Trenloe.  Graphical update by Lobosolo  \rStar Wars and all associated elements are © 2014 Lucasfilm Ltd. & TM. All rights reserved.\r\rThis ruleset is a community project developed for no monetary gain and with the understanding that game mechanics are not protected by US Copyright laws: http://www.copyright.gov/fls/fl108.html  \rAs such, no literary work (which is covered by US Copyright) has been included in this ruleset.  Edge of the Empire, Age of Rebellion and Force and Destiny are trademarks owned by Fantasy Flight Games.  Reference to other copyrighted material in no way constitutes a challenge to the respective copyright holders of that material." font="emotefont" icon="" />	
 
 	<!-- desktop frame -->
 	<desktopframe>desktop</desktopframe>

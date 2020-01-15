@@ -1087,7 +1087,9 @@ function onLogin(username, activated)
 end
 
 function addVehicle(characternode, vehiclenode)
+	Debug.console("Running addVehicle()");
 	if User.isHost() or User.isLocal() or User.isOwnedIdentity(getIdentityName(characternode)) then	
+		Debug.console("addVehicle() : Starting code...");
 
 		-- get the characterVehicleNode node
 		local characterVehicleNode = characternode.createChild("vehicle");
@@ -1106,18 +1108,26 @@ function addVehicle(characternode, vehiclenode)
 		--end		
 		
 		-- Need to use a temporary node to hold the new vehicle information - we'll remove the inventory information for the copy of the vehicle information.
-		DB.deleteNode("temp.charactervehicle");
-		local tempVehicleNode = DB.createNode("temp.charactervehicle");
+		-- Remove a previous temporary holder
+		if characternode.getChild("temp.charactervehicle") then
+			characternode.getChild("temp.charactervehicle").delete();
+		end
+		--local tempVehicleNode = DB.createNode("temp.charactervehicle");
+		local tempVehicleNode = characternode.createChild("temp.charactervehicle");
 		if not tempVehicleNode then
+			Debug.console("addVehicle() - unable to create temporary vehicle node.");
 			return nil;
 		end		
 		DB.copyNode(vehiclenode, tempVehicleNode);
 		
 		-- Find the inventory node, copy it to a temp inventory node and then delete it from the vehicle record
 		--local inventoryNode;  -- Will hold the vehicle inventory for copying to the character inventory
-		DB.deleteNode("temp.charactervehicleinventory");
-		local inventoryNode = DB.createNode("temp.charactervehicleinventory");
+		if characternode.getChild("temp.charactervehicleinventory") then
+			characternode.getChild("temp.charactervehicleinventory").delete();
+		end		
+		local inventoryNode = characternode.createChild("temp.charactervehicleinventory");
 		if not inventoryNode then
+			Debug.console("addVehicle() - unable to create temporary inventory Node.");
 			return nil;
 		end		
 		local tempInventoryNode = tempVehicleNode.getChild("inventory");
@@ -1152,6 +1162,11 @@ function addVehicle(characternode, vehiclenode)
 				DB.copyNode(v, childInventoryNode);
 			end
 		end
+		
+		-- Delete the temporary holder
+		if characternode.getChild("temp.charactervehicle") then
+			characternode.getChild("temp.charactervehicle").delete();
+		end		
 
 		-- print a message
 		local msg = {};

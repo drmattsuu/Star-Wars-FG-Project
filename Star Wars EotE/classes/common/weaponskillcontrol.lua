@@ -100,7 +100,7 @@ function onClickDown(button, x, y)
 			elseif value == "RH" then
 				sourcenode.setValue("G");				
 			elseif value == "G" and PreferenceManager.getValue("version_forceanddestiny") then
-				-- Include lightsaber skill is houserule option enabled
+				-- Include lightsaber skill if houserule option enabled
 				sourcenode.setValue("LS");
 			else
 				sourcenode.setValue("");

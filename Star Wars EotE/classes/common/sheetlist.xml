@@ -4,6 +4,7 @@
 	<template name="sheetlist">
 		<basewindowlist>
 			<allowdelete />
+			<useallmodules merge="delete" /> 
 			<script file="classes/common/sheetlist.lua" />
 		</basewindowlist>
 	</template>

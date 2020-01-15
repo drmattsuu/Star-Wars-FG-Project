@@ -35,4 +35,6 @@
 	<includefile source="classes/campaign/npclist.xml" />
 	<includefile source="classes/campaign/vehicle.xml" />
 	<includefile source="classes/campaign/vehicles.xml" />
+	
+	<script name="PlayerImageAutoSize" file="classes/campaign/PlayerImageAutoSize.lua" /> 
 </root>

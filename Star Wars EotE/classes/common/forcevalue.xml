@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	
+	<template name="sheetforcevalue">
+		<sheetnumberfield>
+			<anchored>
+				<position>insidetopleft</position>
+				<size>
+					<width>25</width>
+					<height>17</height>
+				</size>
+			</anchored>
+			<script file="classes/common/forcevalue.lua" />
+		</sheetnumberfield>
+	</template>
+	
+</root>

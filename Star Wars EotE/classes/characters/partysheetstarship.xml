@@ -48,7 +48,7 @@
 					<to>starship_combat_weapon</to>
 					<offset>42,24</offset>
 				</anchored>-->
-				<!--<disabled />-->
+				<disabled />
 			</baseformattedtextfield>
 			
 			<weaponskillcontrol name="skill">
@@ -101,11 +101,9 @@
 				<disabled />
 			</rangecontrol>			
 
-<!--LOBOSOLO remarking out discepool for party sheet - BEGIN --	
 			<weapondicepool>
-				<bounds>-28,0,20,20</bounds>
+				<bounds>-18,0,20,20</bounds>
 			</weapondicepool>				
-<!--LOBOSOLO remarking out discepool for party sheet - END -->
 			
 		</sheetdata>
 	</windowclass>
@@ -641,7 +639,7 @@
 				<static>Notes</static>
 			</sheetframetitle>			
 			
-			<sheetformattedtextfield name="notes_notes_notes" source="notes">
+			<sheetformattedtextfield name="notes_notes_notes" source="starship_notes">
 				<anchored>
 					<left>
 						<parent>notes_notes</parent>
@@ -663,7 +661,14 @@
 						<anchor>bottom</anchor>
 						<offset>-20</offset>
 					</bottom>
-				</anchored>		
+				</anchored>	
+				<!--Custom onDrop function for this control.  return nil so that formatted text control allows dropping of links
+				This means that the overiding manager drop code does not execute for this control.-->
+				<script>
+					function onDrop(x, y, draginfo)
+						return;
+					end
+				</script>
 			</sheetformattedtextfield>
 			<scrollbar>
 				<anchored>
