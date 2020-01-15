@@ -8424,7 +8424,7 @@
 							<qualities type="string">Accurate, Linked 3</qualities>								
 						</quadlaser>
 						<!--Dual lasers aren't in the main EotE rulebook - standard lasers are grouped together to provide linked lasers.-->
-<!--						<duallaser>
+            <!--<duallaser>
 							<classname type="string">item</classname>
 							<name type="string">Dual Laser Cannon</name>
 							<description type="formattedtext">			
