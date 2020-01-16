@@ -1,7 +1,9 @@
+
+#include "FantasyGroundsLibraryWriter.h"
+#include "TalentParser.h"
+
 #include <iostream>
 #include <string>
-
-#include "TalentParser.h"
 
 #include <boost/filesystem.hpp>
 
@@ -19,10 +21,21 @@ int main(int argc, char* argv[])
     boost::filesystem::current_path(PARSER_WORKING_DIR);
 #endif
 
-    std::cout << "Hello app! " << kver << std::endl;
+    std::cout << "Star Wars index parser: " << kver << std::endl;
 
-    TalentParser tp;
-    tp.Parse("testOut.xml");
+    try
+    {
+        FantasyGroundsLibraryWriter writer("testOut.xml");
+
+        TalentParser tp(writer);
+        tp.Parse();
+
+        writer.WriteToDisk();
+    }
+    catch (std::exception e)
+    {
+        std::cout << "Did an exception: " << e.what() << std::endl;
+    }
 
     return 0;
 }
