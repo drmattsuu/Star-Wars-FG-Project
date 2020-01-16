@@ -360,7 +360,7 @@ critical_injury_result_data = {
 			d100_start = 141,
 			d100_end = 150,
 			name = "The End is Nigh (4)",
-			description = "Character dies after last Initiative slot of next round..</p>",
+			description = "<p>Character dies after last Initiative slot of next round.</p>",
 			severity = 4,
 		},
 	["Dead"] = {

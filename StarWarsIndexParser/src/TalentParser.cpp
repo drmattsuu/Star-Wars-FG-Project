@@ -1,19 +1,16 @@
 #include "TalentParser.h"
 
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
-
-#include <boost/filesystem.hpp>
-#include <boost/filesystem/fstream.hpp>
 
 #include <rapidxml.hpp>
 #include <rapidxml_iterators.hpp>
 #include <rapidxml_print.hpp>
 #include <rapidxml_utils.hpp>
 
-namespace fs = boost::filesystem;
-using namespace rapidxml;
+using namespace xml;
 
 void TalentParser::ParseXMLToTalents(const std::string& xml)
 {
@@ -32,10 +29,10 @@ void TalentParser::ParseXMLToTalents(const std::string& xml)
         // in our spec, table entries without a class are talent entries.
         if (!trClass)
         {
-            Talent newTalent;
             auto entry = tableItem->first_node();
             if (entry)
             {
+                Talent newTalent;
                 auto talentName = entry->first_node();
                 if (!talentName)
                 {
@@ -82,9 +79,9 @@ void TalentParser::ParseXMLToTalents(const std::string& xml)
                 }
 
                 newTalent.index = entry->value();
-            }
 
-            m_talents.push_back(newTalent);
+                m_talents.push_back(newTalent);
+            }
         }
 
         tableItem = tableItem->next_sibling();
@@ -101,14 +98,13 @@ void TalentParser::ExportFantasyGroundsXML()
         auto characters = library->first_node("characters");
         if (!characters)
         {
-            characters = createCharactersLocation(library);
+            characters = CreateCharactersLocation(library);
         }
 
         auto entries = characters->first_node("entries");
         if (!entries)
         {
-            // todo: error
-            return;
+            throw std::exception("No entries node found under library.characters");
         }
 
         auto talents = m_writer.AllocateNode(node_element, "talents");
@@ -123,77 +119,16 @@ void TalentParser::ExportFantasyGroundsXML()
 
         for (auto talent : m_talents)
         {
-            std::string id = talent.name;
-            id.erase(std::remove_if(id.begin(), id.end(), [](char c) { return !std::isalpha(c); }), id.end());
-            std::transform(id.begin(), id.end(), id.begin(), [](unsigned char c) { return std::toupper(c); });
-
-            auto entryNode = m_writer.AllocateNode(node_element, m_writer.AllocateString(id.c_str()));
-            talentEntries->append_node(entryNode);
-
-            auto classname = m_writer.AllocateNode(node_element, "classname", "talent");
-            classname->append_attribute(m_writer.AllocateAttr("type", "string"));
-            entryNode->append_node(classname);
-
-            auto entryName = m_writer.AllocateNode(node_element, "name", m_writer.AllocateString(talent.name.c_str()));
-            entryName->append_attribute(m_writer.AllocateAttr("type", "string"));
-            entryNode->append_node(entryName);
-
-            std::string desc = talent.forceSensitive ? "<i>Force Talent.</i>" : "";
-            desc += "<p>" + talent.index + "</p>";
-            auto entryDescription =
-                m_writer.AllocateNode(node_element, "description", m_writer.AllocateString(desc.c_str()));
-            entryDescription->append_attribute(m_writer.AllocateAttr("type", "formattedtext"));
-            entryNode->append_node(entryDescription);
-
-            if (talent.ranked)
-            {
-                auto entryRanked = m_writer.AllocateNode(node_element, "activation", "ranked");
-                entryRanked->append_attribute(m_writer.AllocateAttr("type", "string"));
-                entryNode->append_node(entryRanked);
-            }
-
-            auto entryActiviation =
-                m_writer.AllocateNode(node_element, "activation", m_writer.AllocateString(talent.activation.c_str()));
-            entryActiviation->append_attribute(m_writer.AllocateAttr("type", "string"));
-            entryNode->append_node(entryActiviation);
+            ExportTalent(talent, talentEntries);
         }
     }
-}
-
-xml_node<char>* TalentParser::createCharactersLocation(xml_node<>* library)
-{
-    auto characters = m_writer.AllocateNode(node_element, "characters");
-    library->append_node(characters);
-
-    auto categoryName = m_writer.AllocateNode(node_element, "categoryname");
-    categoryName->append_attribute(m_writer.AllocateAttr("type", "string"));
-    categoryName->value("Player Library");
-    characters->append_node(categoryName);
-
-    auto name = m_writer.AllocateNode(node_element, "name");
-    name->append_attribute(m_writer.AllocateAttr("type", "string"));
-    name->value("Characters");
-    characters->append_node(name);
-
-    auto entries = m_writer.AllocateNode(node_element, "entries");
-    characters->append_node(entries);
-    return characters;
 }
 
 void TalentParser::Parse()
 {
     const char* fileToLoad = "./data/character_talents.xml";
 
-    std::string characterTalents;
-
-    fs::path p(fileToLoad);
-    if (fs::exists(p))
-    {
-        if (fs::is_regular_file(p))
-        {
-            fs::load_string_file(p, characterTalents);
-        }
-    }
+    std::string characterTalents = ReadFileToString(fileToLoad);
 
     ParseXMLToTalents(characterTalents);
 
@@ -201,4 +136,35 @@ void TalentParser::Parse()
     {
         ExportFantasyGroundsXML();
     }
+}
+
+void TalentParser::ExportTalent(Talent& talent, xml_node<>* talentEntries)
+{
+    auto entryNode = AddEntryToNode(talentEntries, talent.name, "talent");
+
+    auto entryDescription = m_writer.AllocateNode(node_element, "description");
+    entryDescription->append_attribute(m_writer.AllocateAttr("type", "formattedtext"));
+
+    if (talent.forceSensitive)
+    {
+        auto index = m_writer.AllocateNode(node_element, "i", "Force Talent.");
+        entryDescription->append_node(index);
+    }
+
+    auto desc = m_writer.AllocateNode(node_element, "p", m_writer.AllocateString(talent.index.c_str()));
+    entryDescription->append_node(desc);
+
+    entryNode->append_node(entryDescription);
+
+    if (talent.ranked)
+    {
+        auto entryRanked = m_writer.AllocateNode(node_element, "activation", "ranked");
+        entryRanked->append_attribute(m_writer.AllocateAttr("type", "string"));
+        entryNode->append_node(entryRanked);
+    }
+
+    auto entryActiviation =
+        m_writer.AllocateNode(node_element, "activation", m_writer.AllocateString(talent.activation.c_str()));
+    entryActiviation->append_attribute(m_writer.AllocateAttr("type", "string"));
+    entryNode->append_node(entryActiviation);
 }

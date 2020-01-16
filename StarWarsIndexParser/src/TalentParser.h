@@ -1,8 +1,11 @@
 #pragma once
 
-#include "FantasyGroundsLibraryWriter.h"
+#include "Parser.h"
 
+#include <rapidxml.hpp>
+#include <string>
 #include <vector>
+namespace xml = rapidxml;
 
 struct Talent
 {
@@ -13,21 +16,19 @@ struct Talent
     std::string index;
 };
 
-class TalentParser
+class TalentParser final : public BaseParser
 {
 public:
-    TalentParser(FantasyGroundsLibraryWriter& writer) : m_writer(writer) {}
+    TalentParser(FantasyGroundsLibraryWriter& writer) : BaseParser(writer) {}
     ~TalentParser() = default;
 
-    void Parse();
+    void Parse() override;
 
 private:
     void ParseXMLToTalents(const std::string& xml);
     void ExportFantasyGroundsXML();
-
-    xml::xml_node<>* createCharactersLocation(xml::xml_node<>* library);
+    void ExportTalent(Talent& talent, xml::xml_node<>* talentEntries);
 
 private:
-    FantasyGroundsLibraryWriter& m_writer;
     std::vector<Talent> m_talents;
 };

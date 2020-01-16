@@ -1,6 +1,8 @@
 
 #include "FantasyGroundsLibraryWriter.h"
+
 #include "TalentParser.h"
+#include "AbilityParser.h"
 
 #include <iostream>
 #include <string>
@@ -25,12 +27,17 @@ int main(int argc, char* argv[])
 
     try
     {
-        FantasyGroundsLibraryWriter writer("testOut.xml");
+        FantasyGroundsLibraryWriter writerDb("db.xml");
+        FantasyGroundsLibraryWriter writerCommon("common.xml");
 
-        TalentParser tp(writer);
+        TalentParser tp(writerCommon);
         tp.Parse();
 
-        writer.WriteToDisk();
+        AbilityParser ap(writerCommon);
+        ap.Parse();
+
+        writerCommon.WriteToDisk();
+        writerDb.WriteToDisk();
     }
     catch (std::exception e)
     {

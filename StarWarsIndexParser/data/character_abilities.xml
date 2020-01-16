@@ -1,0 +1,1914 @@
+<table>
+<tr class="sortable_header">
+    <td><a href="?order_by=name">Ability</a></td>
+    <td><a href="?order_by=description">Description</a></td>
+    <td><a href="?order_by=index">Index</a></td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1925/">Acidic drool</a></td>
+    <td>As an incidental, spend a dark side Destiny Point to give the toothy bite weapon the Burn 2 quality until the end of the [SPECIES]&#39;s turn; this is a chemical burn.</td>
+    <td>LoNH:45</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/896/">Additional Limbs</a></td>
+    <td>Xexto have six limbs, two legs and four armsl as a result, gain an additional free maneuver per turn, though still may not perform more than two maneuvers per turn.</td>
+    <td>JoY:46</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2124/">Advanced Language Module</a></td>
+    <td>When encountering a new speries or language not in its databases, a TC-series protocol droid may make an Easy Knowledge [Education] check to learn enough of the new dilect to communicate.</td>
+    <td>DA:56</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/900/">Airborne</a></td>
+    <td>[SPECIES] can exist in an atmosphere without ever needing to land on solid ground.</td>
+    <td>JoY:51</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2624/">All the Luck in the Galaxy</a></td>
+    <td>When making a check to gamble, a Deception check, or a Negotiation check, add [FORCE] to the check.  Each [LIGHT] result automatically adds [SUCCESS] to the check.  [DARK][DARK] results automatically add [DISPAIR]  to the check</td>
+    <td>F-CRB:412</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1268/">Alliance Leader</a></td>
+    <td>Alliance operatives add [BOOST] to all Vigilance and PErception checks when in the NPC&#39;s presence</td>
+    <td>A-CRB:414</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2588/">Ammonia Breather</a></td>
+    <td>Breathes ammonia; must use a respirator, and if exposed to oxygen, treats it as a dangerous atsmophere with a rating 8</td>
+    <td>F-CRB:403</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/726/">Amphibious</a></td>
+    <td>[SPECIES] may breathe underwater without penalty and never suffer movement penalties for traveling through water.</td>
+    <td>A-BGR:47</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3234/">Anatomical Knowledge</a></td>
+    <td>Anx have an innate grasp of how bodies are put togther and are able to intuit the anatomical vulnerabilities of almost any species.  Anx gain one rank of the Lethal Blows talent.</td>
+    <td>SoF:19</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1170/">Animal Combatant</a></td>
+    <td>Upgrade Ability dice when fighting wild creatures once</td>
+    <td>BtR:62</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1020/">Aquatic Creature</a></td>
+    <td>[SPECIES] suffer no movement penalties in aquatic environments.</td>
+    <td>SoF:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1001/">Aquatic only Creature</a></td>
+    <td>[SPECIES] suffer no penealties for moving through water and can breate underwater, but cannot move or survive on land.</td>
+    <td>SoF:35</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2843/">Arboreal Creature</a></td>
+    <td>Tarvixes treat trees and branches as normal terrain and do not make checks or spend extra maneuvers in order to move along them vertically or horizontally.</td>
+    <td>CotG:24</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2838/">Arboreal Predator</a></td>
+    <td>Bearsloths treat trees and branches as normal terrain and do not make checks or spend extra maneuvers in order to move along them vertically or horizontally.</td>
+    <td>CotG:22</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2919/">Asharl Pelt</a></td>
+    <td>Remove [SETBACK] on Survival checks due to cold environments.</td>
+    <td>NoP:14</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2423/">Awe-inspiring</a></td>
+    <td>Noira is such an aws-inspiring figure that anyone attempting to attack her suffers [SETBACK] to their check unless they spend a Destiny Point;  use of the Destiny Point for this purpose makes the character in question immune from this ability</td>
+    <td>MPQ:91</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/777/">Awkward</a></td>
+    <td>[SPECIES] have great physical strength but their bulk imposes severe limitations in flexibility and agility.  They add [SETBACK][SETBACK][SETBACK] to all Brawl, Melee, and Coordination checks they&#39;re required to make.</td>
+    <td>E-CRB:407</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1469/">Backup Entertainer</a></td>
+    <td>When a SDMN Session Droid performs the Assist maneuver to help a character make a check as part of a performance, that character adds automatic [ADVANTAGE][ADVANTAGE] to the results instead of the usual benifits.</td>
+    <td>FH:50</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2881/">Bad Knee</a></td>
+    <td>If TH-313 generates 3[THREAT] on [DISPAIR] on an Athletics, Brawl, or Melee check, he is immobilized for one round.</td>
+    <td>CotG:65</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1510/">Balrekk&#39;s Butchery</a></td>
+    <td>As an incidental, the GM may spend a dark side Destiny point for Balrekk to gain Vicious +2 on all his weapons until the end of his turn.</td>
+    <td>OaA:38</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1960/">Barbed Hide</a></td>
+    <td>When a rass is hit by a melee attack, the GM can spend [THREAT][THREAT] to inflict 1 wound [ignoring soak] on the attacker.</td>
+    <td>LoNH:73</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1709/">Beast of Burden 10</a></td>
+    <td>[SPECIES] add 10 to their encumbrance threshold</td>
+    <td>SoT:83</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1732/">Beast of Burden 20</a></td>
+    <td>[SPECIES] add 20 to their encumbrance threshold.</td>
+    <td>SoT:86</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3058/">Beast of Burden 4</a></td>
+    <td>[SPECIES] add 4 to their encumbrance threshold</td>
+    <td>NoP:51</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1723/">Beast of Burden 5</a></td>
+    <td>[SPECIES] add 5 to their encumbrance threshold.</td>
+    <td>SoT:85</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1846/">Beguiling Pheromones</a></td>
+    <td>By emitting pheromones and altering their skin color, [SPECIES] can affect emotional states of other sentients.  Once per check as an incidental, a [SPECIES] may suffer 2 strain to upgrade the ability of a Charm, Deception, or Negotiation check against a living sentient being within short range once.  This ability has no effect on targets wearing breath masks or without respiratory systems.</td>
+    <td>FC:20</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2397/">Berserk Rage</a></td>
+    <td>When the Savrip has sffered any wounds, it deatls +1 damage to Brawl and Melee attacks; when the Savrip is Critically Injured, it instead deals +2 damage to Brawl and Melee attacks</td>
+    <td>MPQ:70</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2430/">Binary Processing</a></td>
+    <td>Cereans treat all Knowledge skills as carrer skills</td>
+    <td>F-CRB:55</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1974/">Bite at Their Heels</a></td>
+    <td>When engaged with a target, allies recieve [BOOST] to combat checks made against the engaged target.</td>
+    <td>LoNH:77</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1956/">Blessing of the Acients</a></td>
+    <td>Once per game session as an incidental, the elder may have a character within short range heal 4 wounds.</td>
+    <td>LoNH:69</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1527/">Blind</a></td>
+    <td>This creature relies on smell and vibration to find its prey.  A target gains no benefit from cover in an engagement with this creature as it smells the victim and senses its movement.</td>
+    <td>OaA:57</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3034/">Bloodfly Sickness</a></td>
+    <td>A character who takes damage from a bloodfly bite must make an Average Resilience checks; failure results in 4 damage, ignoring soak, and the character halves his strain threshold, rounding up, util the character spends at least an hour in a bacta tank or undergoes similarly extensive medical treatment.</td>
+    <td>NoP:42</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/882/">Blubber</a></td>
+    <td>+1 soak</td>
+    <td>JoY:14</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3194/">Born to Ride</a></td>
+    <td>Dugs are particularly adept rifders.  The begin the game with one rank of the Defensive Driving talent.</td>
+    <td>SM:22</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1970/">Brute Strength</a></td>
+    <td>May add [ADVANTAGE] to all Brawn-related skill checks.</td>
+    <td>LoNH:77</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2213/">Camouflaged</a></td>
+    <td>When in jungle, choku add [BOOST}[BOOST] to all Stealth checks</td>
+    <td>SoR:59</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/935/">Captain of the Wing Guard</a></td>
+    <td>May spend a maneuver giving orders to other Wing Guar allies in  medium range, granting them [BOOST] on their next checks.</td>
+    <td>JoY:88</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2715/">CDE-T Tactical Computer</a></td>
+    <td>T-series tactical droids adds [BOOST][BOOST] when making Leadership and Knowledge [Warfare] checks</td>
+    <td>LbE:45</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3427/">Changeling</a></td>
+    <td>As an action, a [SPECIES] may suffer 3 strain and make an [AVERAGE] Resilience check. If the [SPECIES] succeeds, she changes appearance to match that of a silhouette 1 character whom she has observed before. An observing character must make opposed Perception vs Deception check to detect that something is amiss with the impersonated character&#39;s likeness, mannerisms, or behavior. As always, the GM can add [BOOST] or [SETBACK] for situational effects that might affect the check.</td>
+    <td>ND:21</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2657/">Cloak</a></td>
+    <td>Add [SETBACK][SETBACK][SETBACK] to all checks made to spot or track the maalraa.</td>
+    <td>F-CRB:416</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1153/">Color-shifting Hide</a></td>
+    <td>Add [BOOST][BOOST] to Stealth checks</td>
+    <td>BtR:46</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3336/">Combat Training</a></td>
+    <td>Any other character who spends at least 1 hour practicing with this droid can increase their melee defense rating by 2 for rest of session.</td>
+    <td>DoH:56</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2167/">Companion Animal</a></td>
+    <td>Once per encounter, may make an Easy Charm check targeting an engaged character; that character recovers 1 strain per [SUCCESS]</td>
+    <td>SoR:27</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2622/">Computer Affinity</a></td>
+    <td>May add [FORCE] to any Computers check or Skulduggery check to analyze or infiltrate a security system.  Spend [FORCE POINT] to add [ADVANTAGE] to the check.  Spend [FORCE POINT][FORCE POINT] to add [SUCCESS] to any Computers check.</td>
+    <td>F-CRB:411</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2195/">Constabulary Honor 2</a></td>
+    <td>Add automatic [THREAT][THREAT] to all social checks made to convince an orange-rating constable to act against the best interest of Sullust</td>
+    <td>SoR:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2197/">Constabulary Honor 3</a></td>
+    <td>Add automatic [THREAT][THREAT][THREAT] to all social checks made to convince an orange-rating constable to act against the best interest of Sullust</td>
+    <td>SoR:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1025/">Constrictor</a></td>
+    <td>Opponents affected by the Ensnare quality immediately begin suffering the effects of suffocation as outlined on page 214 of E-CRB.</td>
+    <td>SoF:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/849/">Convincing Demeanor +1</a></td>
+    <td>[SPECIES] starts with one rank in Convincing Demeanor</td>
+    <td>E-CRB:44</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1358/">Cornered Fury</a></td>
+    <td>May upgrade one skill die when engaged and outnumbered by enemies</td>
+    <td>A-CRB:449</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/873/">Covering Fire</a></td>
+    <td>May spend a maneuver to add +1 ranged defense to up to two allied characters or minion groups within short range until the end of the next round.  This does not stack with multiple uses.</td>
+    <td>JoY:12</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2209/">Create Bacta</a></td>
+    <td>Vratix can secrete one liter of bacta per day</td>
+    <td>SoR:55</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2894/">Creature of Illusion</a></td>
+    <td>Combat checks targeting Moraband Sith phantasms always use Willpower in place of the characteristic normally associated with that skill;  the Pierce and Breach qualities do not reduce a Sith phantasm&#39;s soak</td>
+    <td>CotG:85</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1701/">Creature of the Sea</a></td>
+    <td>[SPECIES] are not capable of operating on land.</td>
+    <td>SoT:83</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1312/">Critical Eye</a></td>
+    <td>Gain [BOOST] on all rolls made to duplicate a familiar document</td>
+    <td>A-CRB:424</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1065/">Crushing Body</a></td>
+    <td>Any victim affected by the [SPECIES]&#39;s Ensnare quality suffers 2 strain and 1 wound ignoring soak at the beginning of their turn.</td>
+    <td>SoF:73</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/727/">Crushing Grip</a></td>
+    <td>A [SELF] has many tenacles and can maintain a grip with some while attacking with others.  When it hits an enemy, a [SELF} cen spend two Advantage [ADVANTAGE] to ensnare it in its tentacles.  A trapped character may make a [HARD] Athletics check as an action to try and escape the [SELF]&#39;s grasping limbs; a character who succeeds wrestles free.</td>
+    <td>A-BGR:47</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1942/">Crystalline</a></td>
+    <td>Does not need to breathe and can survive in vacuum and underwater;  immune to poisons and toxins.</td>
+    <td>LoNH:60</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2942/">Cunning Ambusher 1</a></td>
+    <td>Opponents add [SETBACK] to Initiative checks using Vigilance</td>
+    <td>NoP:22</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1934/">Cybernetic communications</a></td>
+    <td>Due to their cybernetic modifications, Ganks can communicate silently with other Ganks</td>
+    <td>LoNH:57</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1173/">Cybernetic Microscopic Vision</a></td>
+    <td>[SELF] gains +1 ranks in Vigilance and Perception and can zoom in to see items and organisms in the microscopic realm</td>
+    <td>BtR:64</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1174/">Cybernetics Expert</a></td>
+    <td>May ignore one [FAILURE] and [THREAT] when making Medicine check related to cybernetics installation, diagnostics, or alterations</td>
+    <td>BtR:64</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2626/">Dark Side Force User</a></td>
+    <td>uses Dark Side results instead of Light Side results, see page 281 F-CRB)</td>
+    <td>F-CRB:412</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2432/">Dark Vision</a></td>
+    <td>When making skill checks, Kel Dors remove up to [SETBACK][SETBACK] imposed due to darkness.</td>
+    <td>F-CRB:58</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2895/">Darkest Dreams</a></td>
+    <td>A Moraband Sith phantasm can spend [2 ADVANTAGE] on a combat check or [@ THREAT] on an engaged enemy&#39;s combat check to have the target mak an Average fear check [upgraded once for the phantasm&#39;s terrifying nature]; if the target fails, the phantasm transforms into a figure inspired by the target&#39;s greatest fear in addition to any other effects of the failed check.</td>
+    <td>CotG:85</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1005/">Death Lunge</a></td>
+    <td>When incapacitated, [SPECIES] make one out-of-turn Brawl attack against one opponent with whom they are engaged.  This check gains [BOOST]</td>
+    <td>SoF:42</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3488/">Deep Pockets</a></td>
+    <td>Muun characters start the game with an additional 1,000 credits that may not be spent during character creation.</td>
+    <td>EV:21</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2936/">Dense Feathers</a></td>
+    <td>Immune to the effects of cold and hazardous weather</td>
+    <td>NoP:15</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3360/">Dense Musculature</a></td>
+    <td>Kyuzo are adapted for relatively high gravity, and can make bounding leaps on most other worlds. Once per round as a maneuver, a Kyuzo may suffer 3 strain to leap horizontally or vertically to any location within medium range.</td>
+    <td>FiB:24</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1285/">Destabilizing Influence</a></td>
+    <td>As a maneuver once per encounter, may add [THREAT] to all subsequent Cool and Discipline checks made by enemies within medium range for the remainder of the encounter</td>
+    <td>A-CRB:417</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2661/">Detect Force-sensitivity</a></td>
+    <td>The vornskr may make an Average PErception check to detect all Force-sensitive creatures or characters witha  Force rating within medium range.</td>
+    <td>F-CRB:417</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3357/">Digging Claws</a></td>
+    <td>Before using a maneuver to move, an Elom may spend a maneuver to dig, allowing the character to use that move maneuver to travel through loose soil or similar terrain. At the GM&#39;s discretion, this excavation can result in a low, narrow tunnel that others can use.</td>
+    <td>FiB:21</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1056/">Dive Attack</a></td>
+    <td>The first attack made during an encounter gains +2 damage and [BOOST].</td>
+    <td>SoF:69</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2172/">Dive-bomb</a></td>
+    <td>As an action, may make an oppesed Coercion check vs. Cool against one character at up to medium range;  on a success, the target is staggered for one round and the falcon moves to engaged with the target; [ADVANTAGE] may be spent to cause the target to suffer 1 strain, and [TRIUMPH] may be spent to extend the effect of the stagger by 1 round.</td>
+    <td>SoR:27</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1703/">Domesticable 1</a></td>
+    <td>Downgrade difficulty of checks to train [SPECIES] by one</td>
+    <td>SoT:83</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1727/">Domesticable 2</a></td>
+    <td>Downgrade the difficulty of checks to train [SPECIES] by two.</td>
+    <td>SoT:85</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1758/">Domesticated</a></td>
+    <td>Difficulty for training this beast is not upgraded.</td>
+    <td>SoT:88</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2014/">Drain Life</a></td>
+    <td>Whenever a shaoryn inflicts damage on a target after soak, it heals half that many wounds [rounded up]</td>
+    <td>LoNH:129</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/800/">Droid</a></td>
+    <td>Does not need to breathe, eat, or drink and can survive in vacuum or underwater.  Immune to poisons or toxins.</td>
+    <td>E-CRB:47</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1114/">Droid Leader</a></td>
+    <td>May spend a maneuver giving orders to all droid allies in medium range, granting the [BOOST] on their next check.</td>
+    <td>GMK:8</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/722/">Energy Parasite</a></td>
+    <td>[PLURAL_SELF] can make an [AVERAGE] Coordination check to latch onto any starship or vehicle they are engaged with.  Ships of Vehicles with a [SELF] attached suffer 1 system strain per [SELF] each day and reduce their handling by 1.</td>
+    <td>A-BGR:47</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1848/">Energy Sensitivty</a></td>
+    <td>The head cones of a Gotal are finly tuned sensory organs used to detect almost the entirety of the electromagnetic spectrum. Once per encounter as a maneuver, a Gotal may sense the presence and current emotional states of all living things within short range of himself. </td>
+    <td>FC:22</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1294/">Enhanced Senses</a></td>
+    <td>Add automatic [ADVANTAGE] to app Perception checks</td>
+    <td>A-CRB:422</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2839/">Envenomed Bite</a></td>
+    <td>Whenever a bearsloth successfully attacks a target [wether or not it deals damage], the GM may flip a dark side Destiny Point to have the target suffer the effects of being exposed to bearsloth venom.</td>
+    <td>CotG:22</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/806/">Etiquette and Protocol</a></td>
+    <td>[SELF]s allow allies to add [BOOST] to any Negotiation checks or other checks made to negotiate or mediate.</td>
+    <td>E-CRB:412</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2329/">Excellent Climber</a></td>
+    <td>Once per game session, the character mar reroll any one Athletics check made when climbing</td>
+    <td>MPQ:15</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1733/">Fearless</a></td>
+    <td>[SPECIES] are immune to the effects of fear.</td>
+    <td>SoT:86</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2883/">Fearsome Aspect</a></td>
+    <td>Add [BOOST] to all Coercion checks.</td>
+    <td>CotG:67</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2439/">Fearsome Countenance</a></td>
+    <td>Zabrak add automatic [ADVANTAGE] to all Coercion Checks they make.</td>
+    <td>F-CRB:63</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2148/">Fecklen Boom</a></td>
+    <td>As an action, may make an Easy Survival Check; each [SUCCESS] causes one target in medium range to be disoriented for 1 round.  Each [ADVANTAGE][ADVANTAGE] extends the number of rounds by 1</td>
+    <td>SoR:17</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1158/">Fierce Pounce</a></td>
+    <td>If the [SPECIES] users the aim maneuver, it also gains Knockdown on its next attack</td>
+    <td>BtR:47</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/825/">Fire Resistant</a></td>
+    <td>Immune to fire damage or weapons with the Burn quality</td>
+    <td>SoF:102</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2887/">Fire Sweep</a></td>
+    <td>As an action, a droideka can make a Hard Gunnery check to inflict on hit that deals base damage with its built-in twin heavy blasters on up to two targets within medium range, plus one additional target per [ADVANTAGE] on the check; it can only hit each target once this way</td>
+    <td>CotG:69</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/824/">Firefighter</a></td>
+    <td>May make an Average [difficulty][difficulty] Athletics check to extinguish a fire</td>
+    <td>SoF:102</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/723/">Flyer</a></td>
+    <td>[PLURAL_SELF] can fly</td>
+    <td>A-BGR:47</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2854/">For Quolas!</a></td>
+    <td>As an action, make an Average LEadership check to add [BOOST] to all combat checks by allies within short range for one round.</td>
+    <td>CotG:31</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1529/">Force Hunter</a></td>
+    <td>Roll [FORCE] on Initiative checks; [LIGHT]: gain [SUCCESS] per point on its initiative check</td>
+    <td>OaA:56</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2648/">Force Mimic</a></td>
+    <td>At the GM&#39;s discresion, the kaaten may make and opposed Charm or Deception versus Vigilance check as an action to pretend to be a friend, companion, loved one, or of the same species as its target.</td>
+    <td>F-CRB:416</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2571/">Force Power Battle Meditation</a></td>
+    <td>Telepathically guide allies</td>
+    <td>F-CRB:284</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2572/">Force Power Bind</a></td>
+    <td>Telekinetic powers than can seize others from afar.</td>
+    <td>F-CRB:286</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3503/">Force Power Ebb/Flow</a></td>
+    <td>Empower the user or sap strength from foes.</td>
+    <td>DoH:38</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1325/">Force Power Enhance</a></td>
+    <td>Gain [SUCCESS] or [ADVANTAGE] on Athletics checks</td>
+    <td>A-CRB:298, F-BGA:41, F-CRB:288</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3254/">Force Power Farsight</a></td>
+    <td>Expand normal cisual senses through a connection to the force.</td>
+    <td>SS:36</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1326/">Force Power Forsee</a></td>
+    <td>Gain vague hints of events to come.</td>
+    <td>A-CRB:300, F-CRB:290</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2573/">Force Power Heal/Harm</a></td>
+    <td>Manipulate the living energy in things around him.</td>
+    <td>F-BGA:41*, F-CRB:292</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3502/">Force Power Imbue</a></td>
+    <td>Lends strength to allies, making them more potent, resourceful, or resilient for a time.</td>
+    <td>DoH:36</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/931/">Force Power Influence</a></td>
+    <td>Inflict strain on target</td>
+    <td>E-CRB:282, F-CRB:294</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3501/">Force Power Manipulate</a></td>
+    <td>Shapes machine components</td>
+    <td>EV:36</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2574/">Force Power Misdirect</a></td>
+    <td>Create illusions to fool those around him.</td>
+    <td>F-CRB:296</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/930/">Force Power Move</a></td>
+    <td>Move objects at range.</td>
+    <td>E-CRB:284, F-BGA:42, F-CRB:298</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2575/">Force Power Protect/Unleash</a></td>
+    <td>Guide the flow of energy</td>
+    <td>F-CRB:300</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2576/">Force Power Seek</a></td>
+    <td>Allow the will of the force to lead the way.</td>
+    <td>F-CRB:302</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2577/">Force Power Sense</a></td>
+    <td>Sense the Force interacting with the world.</td>
+    <td>F-BGR:43, F-CRB:304</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2759/">Force Power Suppress</a></td>
+    <td>Can dampen the effect of incoming force powers.</td>
+    <td>KtP:38</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2836/">Force Power Warde&#39;s Foresight</a></td>
+    <td>Can feel the Force flowing around another specific individual to gain insight into what that person might do.</td>
+    <td>CotG:10</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1530/">Force Stalker</a></td>
+    <td>commit [FORCE]: gain [BOOST][BOOST] on Stealth checks</td>
+    <td>OaA:56</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2901/">Force-Sensitive Negotiation</a></td>
+    <td>add [BOOST] to any Negotiation or Streetwise checks unless the target is immune to Foce powers.</td>
+    <td>F-BGR:46</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/798/">Four-armed</a></td>
+    <td>The [SPECIES gains [BOOST] on all Brawl checks and may spend [ADVANTAGE][ADVANTAGE] on a successful melee attack to hit a second target engaged with it, dealing the same damage as dealt to the original target.</td>
+    <td>E-CRB:415</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2937/">Frightening Visage</a></td>
+    <td>As an action, may make an opposed Deception check vs. Vigilance [when multiple opponents are present, the best Vigilance skill determines difficulty] to create illusion of greater size and threat.  If the snowfeather succeeds, all opponents present must make a Hard fear check.  Force-sensitive characters add [SETBACK] to the fear check; droids and other characters immune fo Force powers automatically pass the check.</td>
+    <td>NoP:15</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1605/">Gand Discipline</a></td>
+    <td>One free rank of Discipline.  May not train above rank 2 during character creation.</td>
+    <td>E-CRB:48</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1763/">Glider</a></td>
+    <td>[SPECIES] can suffer 2 strain to count as a flyer for the remainder of the turn.</td>
+    <td>SoT:89</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1287/">Gun Crew</a></td>
+    <td>For each [SELF] member in the minion group beyond the first, reduce the Cumbersome rating of their weapons by 1</td>
+    <td>E-CRB:418</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2347/">Hard of Hearing</a></td>
+    <td>Add [SETBACK] when attempting a Perception check based on auditory clues.</td>
+    <td>MPQ:30</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1948/">Hard to Kill</a></td>
+    <td>The GM may flip aone dark side Destiny Point to have the Kintan Strider heal 5 wounds.</td>
+    <td>LoNH:64</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/962/">Hardy</a></td>
+    <td>[SPECIES] add [BOOST] to all Resilience checks.</td>
+    <td>SoF:20</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2745/">Hardy Survivalist</a></td>
+    <td>A Whiphid adds automatic [SUCCESS] to Survival checks and can survive several weeks without food thanks to reserve blubber.</td>
+    <td>KtP:22</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2673/">Heat Resistance</a></td>
+    <td>Remove up to [SETBACK] from any checks due to hot or arid environmental conditions.</td>
+    <td>F-CRB:418</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2931/">Heightened Sense of Smell</a></td>
+    <td>Razhak upgrade all Perception checks once.</td>
+    <td>NoP:15</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/724/">Helium Allergy</a></td>
+    <td>When exposed to helium, [PLURAL_SELF] suffer 1 wound per round, ignoring soak, until their bodies inflate and explode.</td>
+    <td>A-BGR:47</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/816/">Hoverer</a></td>
+    <td>Floats up to several meters in the air and may move through difficult terrain without spending additional maneuvers.</td>
+    <td>EtU:57</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1998/">Humming Vibrations</a></td>
+    <td>As an action, may make an Opposed Charm vs. Discipline check against a target at up to medium range to disorient the target for a number of rounds equal to [SUCCESS]; may spend [ADVANTAGE][ADVANTAGE][ADVANTAGE] or [TRIUMPH] to stagger the target for 1 round instead</td>
+    <td>LoNH:87</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3362/">Hunter&#39;s Instincts</a></td>
+    <td>When making a check for Initiative, a Shistavanen may make a Survival check instead of a Cool or Vigilance check.</td>
+    <td>FiB:26</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2039/">Huttese</a></td>
+    <td>Hutt security droid neither speaks nor understands Basic</td>
+    <td>LoNH:144</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3429/">Hypersensitive Antennae</a></td>
+    <td>[SPECIES] begin the game with the Heightened Awareness talent.</td>
+    <td>ND:26</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/912/">Imperial Haughtiness</a></td>
+    <td>When a non-humanoid alien species is targeting [SELF] with a social skill check, add [SETBACK].</td>
+    <td>JoY:64</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/717/">Imperial Valor</a></td>
+    <td>May perform a maneuver to cause all ranged attacks targeting [SELF] to instead hit one ally or helpless enemy he is engaged with until the beginning of his next turn.</td>
+    <td>A-BGR:46, E-CRB:403</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1258/">Improved Covering Fire</a></td>
+    <td>When allied minion groups within short range perform the Covering Fire maneuver, they add +2 ranged defense instead.</td>
+    <td>A-CRB:413</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2698/">Indomitable</a></td>
+    <td>A Lannik removes up to [SETBACK] caused by Critical Injuries, fear, or the disoriented condition from all checks.</td>
+    <td>LbE:25</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1623/">Infravision</a></td>
+    <td>Remove up to [SETBACK] due to lighting conditions.</td>
+    <td>EtU:21</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1850/">Ink Spray</a></td>
+    <td>Quarren can spit ink from a specialized sac within their gills that disperses in water, creating a brief murk used to confuse foes or escape predators.  This ability can be used on land as well, though it is considerably less effective because it must be sprayed directly on the target.  Once per encounter, as an out-of-turn incidental, a Quarren may suffer 2 strain to add [SETBACK] to a combat check made by a character within a short range (under water, it adds [SETBACK][SETBACK][SETBACK])</td>
+    <td>FC:24</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2130/">Insectoid Appearance</a></td>
+    <td>LOM-series protocol droids allow allies to remove [SETBACK] from Negotiation checks or other checks made to negotiate mor mediate when dealing with insectoid species.</td>
+    <td>DA:58</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3116/">Intimidating Presence</a></td>
+    <td>All enemies within short range add [THREAT] to all skill checks they make.</td>
+    <td>NoP:139</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2295/">Intuitive Navigation</a></td>
+    <td>Add [ADVANTAGE] to all Astrogation Checks</td>
+    <td>SoR:126</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2176/">Invoke Doellin</a></td>
+    <td>Once per encounter, the Doellinist High Priest may re-roll a social skill check that targeted a Gran character.</td>
+    <td>SoR:27</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1015/">Jungle Hunter</a></td>
+    <td>[SPECIES] suffer no penalties when moving through rough terrain in dense jungle, dense forrecs, or swampy environments.</td>
+    <td>SoF:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1953/">Kajain&#39;sa&#39;Nikto</a></td>
+    <td>When making skill checks, Red Niktos mar remove [SETBACK] imposed due to arid or hot environmental conditions.</td>
+    <td>LoNH:65</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2358/">Keen Eyesight</a></td>
+    <td>Add [BOOST] to any Perception checks involving vision.</td>
+    <td>MPQ:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/951/">Keen Senses</a></td>
+    <td>Thanks to their finely hones senses of sight and hearing [SPECIES] gain [BOOST] to all Perception checks.</td>
+    <td>SoF:19</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2433/">Kel Dor Atmospheric Requirement</a></td>
+    <td>Kel Dors must wear a specialized mask to breathe and see outside of their native atmosphere.</td>
+    <td>F-CRB:58</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1143/">Knockout Poison</a></td>
+    <td>It the [SPECIES] scores a Critical Hit or exceeds a target&#39;s strain threshold, the target must make a successful Hard Resilience check or fall unconscious for 5 minutes or until a successful Average Medicine check revives him.</td>
+    <td>BtR:44</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/773/">Leader</a></td>
+    <td>All subordinates within medium range add [BOOST] to all Discipline checks</td>
+    <td>E-CRB:405</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/968/">Leap</a></td>
+    <td>[SPECIES] add [BOOST][BOOST] to all Athletics checks made to perform vertical or horizontal jumps.</td>
+    <td>SoF:20</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/732/">Light Sensitive</a></td>
+    <td>[SELF] are vulnerable to bright lights, which cause them intense pain and temporary blindness id viewed without protection.  A [SELF] exposed to bright light without protective goggles suffers [SETBACK][SETBACK] on all skill checks.</td>
+    <td>E-CRB:392</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/957/">Lightning Charge</a></td>
+    <td>Once per encounter, a [SPECIES] can use its free maneuver to move from medium range to engaged to attack a target.  Along with allowing the [SPECIES] to close quickly with its prey, a charge also adds 2 damage to the attack.</td>
+    <td>SoR:34, SoF:19</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2892/">Living Shadow</a></td>
+    <td>Add [SETBACK][SETBACK] to all combat checks and Perception checks against phantasmal beasts of Moraband</td>
+    <td>CotG:84</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1060/">Long Arms</a></td>
+    <td>The [SPECIES]&#39;s arms are suprisingly long and nimble, removing [SETBACK] imposed on its combat checks due to an opponet&#39;s defense.</td>
+    <td>SoF:73</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1995/">Loyalty</a></td>
+    <td>Upgrade the difficulty of the social checks targeting the Vordan Enforcer&#39;s loyalty or interfere with his duty to his Hutt masters</td>
+    <td>LoNH:85</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2782/">Loyalty Imprint</a></td>
+    <td>add [BOOST] to all checks made to defend its designated master.</td>
+    <td>KtP:49</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/865/">Luck be a Lady</a></td>
+    <td>Once per encounter, [SELF] may reroll a skill check.</td>
+    <td>JoY:11</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1565/">Magnetic Sense</a></td>
+    <td>All [SPECIES] gain [BOOST] on any Coordination or Piloting checks and know which way is north at all times</td>
+    <td>OaA:85</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3014/">Master Metalshaper</a></td>
+    <td>When making a check to repair or craft an item, the cendiary priest may add 3[FORCE] to the check.  The cendiary priest may spend 4[FORCE POINT] to give the item the Cortosis or Superior quality.</td>
+    <td>NoP:36</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3341/">Master of Rhetoric</a></td>
+    <td>Allow allies to add [BOOST][BOOST] to any opposed Presence- or Willpower-based checks or other checks to negotiate or mediate in the Outer Rim.</td>
+    <td>DoH:56</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2046/">Memnii</a></td>
+    <td>Once per game session, a Caamasi may orm a new memnis that encompasses one scene or encounter.  At any time, a Caamasi may perfectly recall any memnis that he has formed or witnessed, or share it with another Caamasi or a Force-sensitive character.</td>
+    <td>DA:20</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2231/">Microvision</a></td>
+    <td>the compound eyesof a Verpine are capable of seeing tiny, even microscopic, details.   When closely examining an object, Verpine characters add [BOOST] to their Perception checks.</td>
+    <td>SoR:103</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2126/">Military Analyst</a></td>
+    <td>M-3PO-series military protocol droids allow allies to add pBOOST] to any Knowledge (Warfare) checks that benifit from an understanding of logistics or military procedure.</td>
+    <td>DA:56</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3235/">Mood Indicator</a></td>
+    <td>In an Anx&#39;s head-crest is not covered, the character upgrades the difficulty of Deception checks once.</td>
+    <td>SS:19</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1626/">Mood Reader</a></td>
+    <td>Add [ADVANTAGE] to any Charm or Negotiation check.</td>
+    <td>FH:20</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1014/">Natural Camouflage</a></td>
+    <td>Any Perception checks made to detect a [SPECIES] suffer [SETBACK][SETBACK]; this affects scanners and macrobinoculars using thermal sensors or passive light amplification as well).</td>
+    <td>SoF:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2349/">Near-Sighted</a></td>
+    <td>Add [SETBACK] to ranged attacks and vision-based Perception checks at long and extreme range</td>
+    <td>MPQ:30</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2666/">Negate Force Powers</a></td>
+    <td>An adult ysalamir creates a spherical zone extending out to short range, inside which Force-sensitive characters and creatures cannot exert influence over the Force.</td>
+    <td>F-CRB:417</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3519/">Networking</a></td>
+    <td>For every three DUM-series droids in a group, add [BOOST] to all Computers, Mechanics, and Perception checks they make.</td>
+    <td>EV:45</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2652/">Neurotoxin</a></td>
+    <td>If a target suffers wounds from a kouhun&#39;s mandible attack, the target must make an Average Resilience check.</td>
+    <td>F-CRB:416</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2598/">Neurotoxin Doses</a></td>
+    <td>Has multiple does of neurotoxin.  Can introduce into food or drink for a maneuver or apply to a weapon for a maneuver.</td>
+    <td>F-CRB:406</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3038/">Nightvision</a></td>
+    <td>Loth-cats remove all [SETBACK] added to checks due to low-light conditions or darkness</td>
+    <td>NoP:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2228/">No Vocal Cords</a></td>
+    <td>The vast majority of Polis Massans are born without vocal cords, though a small subset does possess them.  When creating a Polis Massan character, a player may spend 10 starting XP to specify that the character possesses vocal cords.</td>
+    <td>SoR:99</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3321/">Non-humanoid Etiquette and Protocol</a></td>
+    <td>Allow allies to add [BOOST] to any Negotiation or other checks to negotiate or mediate with any non-humanoid species.</td>
+    <td>DoH:55</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1936/">Olfactory perception</a></td>
+    <td>Gain a [BOOST] on all Survival checks made to trak prey, and adds [SETBACK] to enemy Stealth checks made against the [SPECIES]</td>
+    <td>LoNH:57</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2783/">Olfactory Sensor Suite</a></td>
+    <td>reduces the difficulty of scent-based Perception checks by 1</td>
+    <td>KtP:49</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3045/">Ornery</a></td>
+    <td>Add 2[SETBACK] to all check made to handle, domesticate, or otherwise work with a nerf</td>
+    <td>NoP:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3315/">Outland Etiquette and Protocol</a></td>
+    <td>Allies add [BOOST] to any Negotiation or other checks to negotiate or mediate in the Outer Rim.</td>
+    <td>DoH:54</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1051/">Overrun</a></td>
+    <td>The [SPECIES] may spend [ADVANTAGE] to hit an additional target with a successful Brawl check, provided the additional target is engaged with the first target.</td>
+    <td>SoF:65</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/712/">Overwhelming Fire</a></td>
+    <td>may perform a maneuver to direct one [TARGET] minion group within medium range.  The group may perform an immediate free combat check action</td>
+    <td>A-BGR:45</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2437/">Pack Instincts</a></td>
+    <td>When performing the assist maneuver, Togrutas grand [BOOST][BOOST] instead of [BOOST]</td>
+    <td>F-CRB:60</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1064/">Paralyzing Neurotoxin</a></td>
+    <td>If the [SPECIES] hits its target with a bite attack, the target must immediately make a Hard Resilience check.  Failure means the target is immobolized for 1 round plus 1 round per [THREAT] generated.  [DISPAIR] on a successful or failed check means the target is staggered for one round.</td>
+    <td>SoF:73</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1979/">Pheromone Communication</a></td>
+    <td>Weequay may communicate with other Weequay using pheromones if they are within short range of each other.</td>
+    <td>LoNH:77</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1943/">Photonic Burst</a></td>
+    <td>Once per encounter as an action, [SPECIES] can unleash a pulse of light from its body;  all targets within short range are disoriented for two turns.</td>
+    <td>LoNH:60</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/739/">Pirate Leader</a></td>
+    <td>May spend a maneuver giving orders to other pirate allies in medium range, granting them [BOOST] on their next check.</td>
+    <td>E-CRB:394</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2041/">Poisonous</a></td>
+    <td>Any creature  that successfully hits the amphibipole with a successful unarmed attack must succeed at a Hard Resilience check or be poisoned, suffering 3 wounds at the beginning of his turn for the next three rounds [this ignores soak]</td>
+    <td>LoNH:143</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2366/">Poisonous Bite</a></td>
+    <td>Anyone bitten by a [SPECIES] must succeed at an Average Resilience check or lose his free maneuver for five rounds</td>
+    <td>MPQ:44</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/778/">Ponderous</a></td>
+    <td>[SPECIES] can never spend more than one maneuver per turn.</td>
+    <td>E-CRB:407</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2351/">Poor Memory</a></td>
+    <td>has difficulty remembering specific details, and must succeed at an Average Vigilance check to recall anything important.</td>
+    <td>MPQ:30</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2865/">Praticed Resistance</a></td>
+    <td>Upgrade the difficulty of Force power skill checks targeting Oberos once.</td>
+    <td>CotG:47</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2742/">Precognition</a></td>
+    <td>Iktotchi occasionally see glimpses of the future, letting them predict certain events even before they occur.</td>
+    <td>KtP:19</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1152/">Prehensile Tail</a></td>
+    <td>Tail can be used to grab.</td>
+    <td>BtR:46</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3077/">Projectile Guidance</a></td>
+    <td>When making a ranged attack with a concussion bow, a Ysanna hunter can add [FORCE] to the check and spend [FORCE POINT] to give the attack the Pierce 3 quality.</td>
+    <td>NoP:67</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2876/">Push the Limit</a></td>
+    <td>As an incidental, add [BOOST] to Piloting (Planetary) checks by voluntarily inflicting 2 system strain on vehicle</td>
+    <td>CotG:58</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2232/">Radio-wave Communication</a></td>
+    <td>Verpine can produce and hear radio waves, which allows them to silently communicate with other Verpine and specially tuned comlinks within a 100-kilometer range.</td>
+    <td>SoR:103</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1949/">Reckless Strike</a></td>
+    <td>As an incidental, once per round, the GM may have the Kintan Strider reroll a Brawl or Melee check;  if he does so, the Kintan Strider loses the benefits of the Adversary and Durable talents until the beginning of its next turn.</td>
+    <td>LoNH:64</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1188/">Regeneration</a></td>
+    <td>Recover 1 additional would from natural rest or bacta tank, regrow lost limb in 1 month</td>
+    <td>BtR:87</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1182/">Repulsorlift Locomotion</a></td>
+    <td>Maximum altitude 3 meters</td>
+    <td>BtR:71</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3090/">Resilient Metabolism</a></td>
+    <td>Physiology is naturely hardy and resistant to toxins.  Members of the species add automatic [SUCCESS] to all Resilience checks they make.</td>
+    <td>NoP:101</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2850/">Restraint</a></td>
+    <td>Increase the difficulty of a Melee or Ranged [Light] attack check by one in order to inflict stun damage and gain the Knockdown quality; spend [ADVANTAGE] to grant this ability to a Quolas guard minion group at short range for one round.</td>
+    <td>CotG:26</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2128/">Rhetorical Mimic</a></td>
+    <td>May make Charm, Deception, and Negotiation checks using the characteristics and skills of its master; such checks suffer [SETBACK][SETBACK] due to the imperfect mimicry, and the droid does not benefit from any relevant talents that its master possesses.</td>
+    <td>DA:57</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/760/">Riot Tactics</a></td>
+    <td>Groups of three or more [RELATED_MINION] minions in the [SELF] presence gain +1 soak and deal +1 damage on successful combat checks.</td>
+    <td>E-CRB:401</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1718/">Sand Walker</a></td>
+    <td>[SPECIES] remove [SETBACK] from any checks made to traverse sandy or desert terrain.</td>
+    <td>SoT:85</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2389/">Scent</a></td>
+    <td>Add [BOOST][BOOST] to Survival checks made to track prey</td>
+    <td>MPQ:67</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1124/">Scomp Link Piloting</a></td>
+    <td>[SELF] can pilot a Vehicle through it&#39;s comp link, and can handle piloting duties and operate the Vehicle&#39;s weapons.</td>
+    <td>GMK:9</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2932/">Searing Touch</a></td>
+    <td>When an opponent ends its turn engaged with the razhak, the opponent suffers 2 wounds and 2 strain.</td>
+    <td>NoP:15</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1501/">Self-destruct</a></td>
+    <td>As a maneuver, may self destruct to inflict one automatic hit dealing 15 damage to everything within short range</td>
+    <td>OaA:27</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2610/">Self-destruct Mechanism</a></td>
+    <td>Should the probe droid&#39;s mission become compromised, it may self-destruct as an out of turn incidental;  this explosion does 10 damage to engaged characters.</td>
+    <td>F-CRB:410</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3258/">Sensitive Hearing</a></td>
+    <td>Add [BOOST] to all Perception and Vigilance checks while wearing protective earpieces. Without earpieces, add [THREAT] to Perception and Vigilance checks they make instead.</td>
+    <td>DoH:20</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1183/">Sensors</a></td>
+    <td>Range [Medium]</td>
+    <td>BtR:71</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/733/">Shadowed</a></td>
+    <td>[SELF] possess the ability to absorb certain wavelengths of light, making them all but invisible in darkness.  When in darkness or deep shadow, a [SELF] gains [BOOST][BOOST] to all Stealth checks.</td>
+    <td>E-CRB:392</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/939/">Shadowport Savvy</a></td>
+    <td>When purchasing legal or illegal goods, may reduce rarity by 1 without any accompanying price increase.</td>
+    <td>JoY:89</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2888/">Shield Projector</a></td>
+    <td>Maneuver to activate or deactivate; while active, gains defense 2 and upgrades the difficulty of all combat attacks targeting the droideka once, but droideka cannot use the Move maneuver.</td>
+    <td>CotG:69</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2923/">Shriek</a></td>
+    <td>A minion group of four or more blismal can set up a shrieking racket as an action.  All targets within close range must make a Hard Resilience check.  Failure causes a target to suffer 4 strain and become disoriented until the noise stops.  Characters in sealed armor or who are wearing ear protection are not effected.</td>
+    <td>NoP:14</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/982/">Sight Hunter</a></td>
+    <td>[SPECIES] decrease the difficulty of any Perception or Vigilance checks they make by one.</td>
+    <td>SoF:28</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/952/">Silent Hunter</a></td>
+    <td>Opponets suffer [SETBACK][SETBACK] on any Perception or Vigilance checks made to detect a [SPECIES] while it is hunting.</td>
+    <td>SoF:19</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/878/">Silhouette 0</a></td>
+    <td>Silhouette 0</td>
+    <td>JoY:14</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1010/">Silhouette 2</a></td>
+    <td>Silhouette 2</td>
+    <td>SoF:42</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/795/">Silhouette 3</a></td>
+    <td>Silhouette 3</td>
+    <td>E-CRB:224</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1731/">Silhouette 4</a></td>
+    <td> </td>
+    <td>SoT:86</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2957/">Silhouette 5</a></td>
+    <td>Silhouette 5</td>
+    <td>NoP:23</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1505/">Sithspawn scales</a></td>
+    <td>The [SELF] hide is immune to the Pierce or Breach qualities</td>
+    <td>OaA:32</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2636/">Six-armed</a></td>
+    <td>The acklay gains [BOOST] on all Brawl checks and may spend [ADVANTAGE][ADVANTAGE] on a successful melee attack to hit a second target engaged with it, dealing the same damage as dealt to the original target.</td>
+    <td>F-CRB:414</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1073/">Skilled Cheater</a></td>
+    <td>Once per session when gambling, the character may cancel a [DISPAIR] he rolls on a skill check, or add a [DISPAIR] to another character&#39;s check.</td>
+    <td>SoF:120</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2644/">Soothing Song</a></td>
+    <td>The Jubba Bird may make an Average Charm check to heal 1 strain per [SUCCESS] from all creatures within medium range.</td>
+    <td>F-CRB:415</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/754/">Spaceport Leader</a></td>
+    <td>Spaceport staff add [BOOST] to all Vigilance and Perception checks when in the [SELF]&#39;s presence.</td>
+    <td>E-CRB:399</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2343/">Squad Leader</a></td>
+    <td>Spend a maneuver to direct one clone trooper within medium range.  The clone trooper may perform an immediate free maneuver or add [BOOST] to the trooper&#39;s next check.</td>
+    <td>MPQ:29</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2202/">Sticky Saliva</a></td>
+    <td>Knytix produce viscous saliva that can be used as an advesive.</td>
+    <td>SoR:54</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1930/">Stinky</a></td>
+    <td>While within short range of a Huttlet,  non-Hutt characters reduce their strain thresholds by 2.</td>
+    <td>LoNH:46</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/848/">Streetwise +1</a></td>
+    <td>[SPECIES]s begin the game with one rank in Streetwise.  They still may not train Streetwise above rank 2 during character creation.</td>
+    <td>E-CRB:44</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2870/">Strength in Numbers</a></td>
+    <td>Minion groups of Neimoidian citizens possess the Discipline and Cool skills as long as no member of the group has been killed or incapacitated.</td>
+    <td>CotG:52</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2640/">Strong as a Jakobeast</a></td>
+    <td>Jakobeasts have an encumbrance threshold of 20</td>
+    <td>F-CRB:414</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/963/">Strong as a Murra</a></td>
+    <td>Murra have an encumbrance threshold of 25, and the difficulty of all Athletics checks made to lift excessive encumbrance is reduced by one.</td>
+    <td>SoF:20</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3256/">Strong Backed</a></td>
+    <td>Encumbrance threshold of 10 + Brawn.</td>
+    <td>DoH:19</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1722/">Stubborn 1</a></td>
+    <td>Upgrade the difficulty of checks to train [SPECIES] by one.</td>
+    <td>SoT:85</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/879/">Stubborn and Dependable</a></td>
+    <td>Remove all [SETBACK] from all checks</td>
+    <td>JoY:14</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3087/">Sturdy Frame</a></td>
+    <td>Begin the game with one rank in the Durable Talent</td>
+    <td>NoP:98</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1747/">Suited to the Cold</a></td>
+    <td>[SPECIES] are immune to the effects of cold and below-feezing environments</td>
+    <td>SoT:87</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1743/">Suited to the Heat</a></td>
+    <td>[SPECIES] are immune to the effects of heat and hot environments</td>
+    <td>SoT:87</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2958/">Supremely Terrifying</a></td>
+    <td>Upon first seeing a sando aqua monster, and individual must make a Daunting fear check with the difficulty upgraded once to reflect the sheer dread the beast invokes.</td>
+    <td>NoP:23</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/956/">Sure-Footed</a></td>
+    <td>[SPECIES] suffer no penalties when moving through difficult terrain.</td>
+    <td>SoR:59, SoF:19</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1464/">Surgeon&#39;s Aid</a></td>
+    <td>When a minion group of one or more Mini-Meds performs the assist maneuver to help a character with a Medicine check, that character counts as having +1 rank in the Surgeon talent per Mini-Med in the group</td>
+    <td>FH:50</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1141/">Swarm</a></td>
+    <td>Halve the damage dealt to the swarm before applying soak unless the weapon has the Blast or Burn quality [Regardless of wether or not that quality is activated]</td>
+    <td>BtR:44</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/796/">Sweep attack</a></td>
+    <td>The [SPECIES] can spend [TRIUMPH] on a successful Brawl check to hit the target as well as anyone engaged with the target.</td>
+    <td>E-CRB:415</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1271/">Swipe 1</a></td>
+    <td>Spend [ADVANTAGE] during melee combat to cause an engaged opponent to suffer 1 strain</td>
+    <td>A-CRB:415</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/711/">Tactical Direction</a></td>
+    <td>May spend a maneuver to direct one [TARGET] minion group within medium range.  The group may make an immediate free maneuver or adds one Boost die [BOOST] to its next check</td>
+    <td>A-BGR:45, E-CRB:404</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2344/">Teamwork</a></td>
+    <td>Add [BOOST] to all checks during combat while within medium range of one or more clone trooper allies.</td>
+    <td>MPQ:29</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/829/">Technical Master</a></td>
+    <td>All subordinates within Medium range add one [boost] die to all Mechanics checks</td>
+    <td>BtR:16</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2229/">Telepathy</a></td>
+    <td>Polis Massans can communicate with other beings at short range using a simple form of telepathy.  This communication is akin to broadcast, and anyone within short range &quot;hears&quot; the Polis Massan&#39;s speech.  Polis Massans can only &quot;whisper&quot; privately to beings they are engaged with.</td>
+    <td>SoR:99</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1026/">Terrifying</a></td>
+    <td>Upon first seeing a [SPECIES], an individual must make a Hard check following the rules for fear on page 298 ot the E-CRB.</td>
+    <td>SoF:43</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/972/">Terrifying Howl</a></td>
+    <td>Anyone hearing the howl of a [SPECIES] must make a HARD Discipline check or become disoriented for one round plus one additional round for every [THREAT] generated.</td>
+    <td>SoF:20</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/967/">Territorial</a></td>
+    <td>[SPECIES] are incredibly territorial, and gain [BOOST] to all brawl checks made when attacking any intruders into what they consider their territory.</td>
+    <td>SoF:20</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1151/">Toughened Hide</a></td>
+    <td>+1 soak, +1 defense</td>
+    <td>BtR:46</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1044/">Toxic Environment Dweller</a></td>
+    <td>Can survive in almost any poisonous, acidic, toxic, irradiated, or otherwise dangerous environment.</td>
+    <td>SoF:61</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1704/">Trained Mount 1</a></td>
+    <td>add [BOOST] to a rider&#39;s Survival checks while mounted on a [SPECIES]</td>
+    <td>SoT:83</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1710/">Trained Mount 2</a></td>
+    <td>add [BOOST][BOOST] to a rider&#39;s Survival checks while mounted on a [SPECIES]</td>
+    <td>SoT:84</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1052/">Trample</a></td>
+    <td>If a [SPECIES] takes a maneuver to move closer to its target before attacking, it gains [BOOST] to its attack check and deals +2 damage.</td>
+    <td>SoF:65</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2020/">Trandoshan Claws</a></td>
+    <td>Brawl; Damage +1; Critical 3; Range [Engaged]</td>
+    <td>E-CRB:50</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2350/">Tremor</a></td>
+    <td>Add [SETBACK] to any Agility checks</td>
+    <td>MPQ:30</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/3490/">Tundra Dwellers</a></td>
+    <td>When making skill checks, Pantorans may remove [SETBACK] imposed due to cold environmental conditions.</td>
+    <td>EV:23</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/993/">Tunneling</a></td>
+    <td>Using their powerful maws and their quick-acting acidic saliva, [SPECIES] can move through solid stone as if it were difficult terrain.</td>
+    <td>SoF:35</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/906/">Twi&#39;lek</a></td>
+    <td>Remove up to [SETBACK] from any checks due to hot or arid environmental conditions.</td>
+    <td>JoY:62</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/851/">Two-Weapon Combat</a></td>
+    <td>A character my opt to carry a Ranged [Light] weapon or a one-handed melee weapon in each hand.</td>
+    <td>E-CRB:210</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1759/">Unstable 4</a></td>
+    <td>When [SPECIES] suffer a Critical Injury, they add +40 to the Critical Injury roll</td>
+    <td>SoT:88</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/721/">Vacuum Dweller</a></td>
+    <td>Can survive in vacuum without penalty, and can move in a vacuum environment</td>
+    <td>A-BGR:47</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/950/">Venomous</a></td>
+    <td>Anyone who suffers damage from the [SPECIES] must immediately make an Average Resilience check, suffering 5 strain if he fails.  Any [THREAT] generated on the Resilience check adds [SETBACK] to all the target&#39;s actions for a number of rounds equal to the [THREAT] generated.</td>
+    <td>SoF:19</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1142/">Venomous Stinger</a></td>
+    <td>On a successful hit the target must pass an Average Resilience check or be disoriented for 3 rounds.</td>
+    <td>BtR:44</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1165/">Water Blast</a></td>
+    <td>Spit a stream of water as a ranged attack</td>
+    <td>BtR:58</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/2696/">Water Dependence</a></td>
+    <td>If an Ishi Tib has not been doused in salt water in the last twenty-four hours the character&#39;s wound threshold is reduced by 2.</td>
+    <td>LbE:22</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/1171/">Wilderness Valor</a></td>
+    <td>Add [BOOST][BOOST] to resist fear against wild creatures</td>
+    <td>BtR:63</td>
+</tr>
+
+    
+    <tr>
+    <td class="item_name"><a href="/character/ability/792/">Wookie Rage</a></td>
+    <td>When the [SELF] suffers any wounds, he deals +1 damage with Brawl and Melee attacks.  When suffering a Critical Injury, he deals +2 damage with Brawl and Melee atacks instead.</td>
+    <td>E-CRB:53</td>
+</tr>
+
+    
+    </table>
+              
